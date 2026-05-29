@@ -6,11 +6,17 @@ type FormDict = {
   eyebrow: string;
   title: string;
   intro: string;
+  reassurance: string[];
+  nextSteps: {
+    title: string;
+    items: string[];
+  };
   fields: {
     parentName: { label: string; placeholder: string };
     childName: { label: string; placeholder: string };
     email: { label: string; placeholder: string };
     phone: { label: string; placeholder: string };
+    preferredContact: { label: string; options: string[] };
     division: { label: string; options: string[] };
     message: { label: string; placeholder: string };
   };
@@ -26,11 +32,42 @@ type Status = "idle" | "submitting" | "success";
 export default function ContactForm({ dict }: { dict: FormDict }) {
   const [status, setStatus] = useState<Status>("idle");
   const f = dict.fields;
+  const WHATSAPP_NUMBER = "14383427730";
+  const EMAIL = "bonjour@mentou.ca";
+
+  const formatMessage = (formData: FormData): string => {
+    const parentName = formData.get("parentName") || "";
+    const childName = formData.get("childName") || "";
+    const email = formData.get("email") || "";
+    const phone = formData.get("phone") || "";
+    const division = formData.get("division") || "";
+    const message = formData.get("message") || "";
+
+    return `Parent: ${parentName}\nJeune: ${childName}\nEmail: ${email}\nTéléphone: ${phone}\nDivision: ${division}\nMessage: ${message}`;
+  };
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 900));
+
+    const formData = new FormData(e.currentTarget);
+    const preferredContact = formData.get("preferredContact") as string;
+    const messageText = formatMessage(formData);
+
+    await new Promise((r) => setTimeout(r, 600));
+
+    if (preferredContact === "Téléphone" || preferredContact === "Phone") {
+      const smsText = encodeURIComponent(messageText);
+      window.location.href = `sms:+1 (438) 342-7730?body=${smsText}`;
+    } else if (preferredContact === "WhatsApp") {
+      const waText = encodeURIComponent(messageText);
+      window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+    } else {
+      const subject = encodeURIComponent("Demande d'admission Mentou");
+      const body = encodeURIComponent(messageText);
+      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    }
+
     setStatus("success");
   };
 
@@ -45,6 +82,17 @@ export default function ContactForm({ dict }: { dict: FormDict }) {
           {dict.title}
         </h2>
         <p className="text-bone/60 leading-relaxed max-w-md">{dict.intro}</p>
+        <ul className="mt-3 grid gap-3 sm:grid-cols-3">
+          {dict.reassurance.map((item) => (
+            <li
+              key={item}
+              className="border border-bone/10 px-4 py-3 text-sm leading-relaxed text-bone/65"
+            >
+              <span className="mb-2 block h-px w-8 bg-gold/70" aria-hidden />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {status === "success" ? (
@@ -61,9 +109,32 @@ export default function ContactForm({ dict }: { dict: FormDict }) {
             <Field label={f.phone.label} name="phone" type="tel" placeholder={f.phone.placeholder} />
           </div>
 
-          <FieldSelect label={f.division.label} name="division" options={f.division.options} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FieldSelect
+              label={f.preferredContact.label}
+              name="preferredContact"
+              options={f.preferredContact.options}
+            />
+            <FieldSelect label={f.division.label} name="division" options={f.division.options} />
+          </div>
 
           <FieldTextarea label={f.message.label} name="message" placeholder={f.message.placeholder} required />
+
+          <div className="border border-bone/10 bg-night/30 p-5">
+            <h3 className="text-[0.65rem] uppercase tracking-[0.3em] text-gold">
+              {dict.nextSteps.title}
+            </h3>
+            <ol className="mt-4 grid gap-3 md:grid-cols-3">
+              {dict.nextSteps.items.map((item, index) => (
+                <li key={item} className="flex gap-3 text-sm text-bone/60">
+                  <span className="font-mono text-xs text-gold tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+          </div>
 
           <label className="flex items-start gap-3 text-sm text-bone/60 cursor-pointer">
             <input
