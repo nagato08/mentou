@@ -11,7 +11,7 @@
     "gallery": "Galerie",
     "contact": "Contact",
     "cta": "Demander une entrevue",
-    "phone": "1-514-555-0142"
+    "phone": "+1 (438) 342-7730"
   },
   "home": {
     "hero": {
@@ -364,7 +364,7 @@
         "parentName": { "label": "Nom du parent", "placeholder": "Votre nom complet" },
         "childName": { "label": "Nom du jeune", "placeholder": "Prénom et âge" },
         "email": { "label": "Courriel", "placeholder": "votre@email.com" },
-        "phone": { "label": "Téléphone", "placeholder": "(514) 555-0142" },
+        "phone": { "label": "Téléphone", "placeholder": "(438) 342-7730" },
         "division": { "label": "Division d'intérêt", "options": ["Junior (12-16 ans)", "Senior (17-22 ans)", "Pas encore décidé"] },
         "message": { "label": "Votre message", "placeholder": "Parlez-nous de votre enfant, de ses passions, de ce que vous cherchez…" }
       },
@@ -378,7 +378,7 @@
       "eyebrow": "Coordonnées",
       "title": "Plusieurs façons de nous joindre",
       "items": [
-        { "label": "Téléphone", "value": "1-514-555-0142", "href": "tel:+15145550142", "note": "Du lundi au vendredi, 9h–18h" },
+        { "label": "Téléphone", "value": "+1 (438) 342-7730", "href": "tel:+14383427730", "note": "Du lundi au vendredi, 9h–18h" },
         { "label": "Courriel", "value": "bonjour@mentou.ca", "href": "mailto:bonjour@mentou.ca", "note": "Réponse sous 48h" },
         { "label": "WhatsApp", "value": "+1 (438) 342-7730", "href": "https://wa.me/14383427730", "note": "Réponse rapide" },
         { "label": "Adresse", "value": "Québec, Canada", "href": null, "note": "Rencontres sur rendez-vous" }
