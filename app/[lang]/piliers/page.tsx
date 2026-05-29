@@ -40,7 +40,7 @@ export default async function PillarsPage({
   return (
     <>
       {/* Page Hero */}
-      <section className="relative min-h-[60vh] flex items-end border-b border-bone/10 overflow-hidden bg-ink">
+      <section className="relative min-h-[80vh] flex items-end border-b border-bone/10 overflow-hidden bg-ink">
         <Image
           src="/images/piliers-hero.jpg"
           alt=""
