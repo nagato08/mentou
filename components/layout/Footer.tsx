@@ -13,7 +13,7 @@ export default function Footer({ lang, dict }: FooterProps) {
 
   return (
     <footer className="border-t border-bone/10 bg-ink text-bone/70">
-      <Container size="wide" as="div" className="py-16">
+      <Container size="wide" as="div" className="py-12 px-3 md:px-6">
         {/* Main grid: Brand + Navigation + Pillars + Contact */}
         <div className="grid gap-12 md:grid-cols-6">
           {/* Brand section */}
@@ -54,10 +54,10 @@ export default function Footer({ lang, dict }: FooterProps) {
 
           {/* The 7 Pillars */}
           <nav aria-label="Les 7 Piliers" className="flex flex-col gap-3 text-sm">
-            <span className="eyebrow text-gold/90">{dict.home.pillars.title.split(',')[0]}</span>
+            <span className="eyebrow text-gold/90">Piliers</span>
             {dict.home.pillars.items.map((pillar, i) => (
               <div key={i} className="text-bone/70 hover:text-gold transition-colors cursor-default">
-                <span className="font-display text-xs text-gold/80">{pillar.roman}.</span> {pillar.title}
+                {pillar.title}
               </div>
             ))}
           </nav>
