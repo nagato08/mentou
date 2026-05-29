@@ -3,8 +3,12 @@ import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import GalleryGrid from "@/components/sections/GalleryGrid";
 import CtaPanel from "@/components/sections/CtaPanel";
-import { getDictionary, hasLocale, type Locale } from "@/lib/i18n";
+import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
+
+export async function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
 
 export async function generateMetadata({
   params,

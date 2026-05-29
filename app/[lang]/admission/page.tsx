@@ -5,8 +5,12 @@ import AdmissionProcess from "@/components/sections/AdmissionProcess";
 import AdmissionEligibility from "@/components/sections/AdmissionEligibility";
 import AdmissionFaq from "@/components/sections/AdmissionFaq";
 import CtaPanel from "@/components/sections/CtaPanel";
-import { getDictionary, hasLocale, type Locale } from "@/lib/i18n";
+import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
+
+export async function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
 
 export async function generateMetadata({
   params,
