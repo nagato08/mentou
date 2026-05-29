@@ -1,0 +1,63 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import PageHeader from "@/components/ui/PageHeader";
+import AdmissionProcess from "@/components/sections/AdmissionProcess";
+import AdmissionEligibility from "@/components/sections/AdmissionEligibility";
+import AdmissionFaq from "@/components/sections/AdmissionFaq";
+import CtaPanel from "@/components/sections/CtaPanel";
+import { getDictionary, hasLocale, type Locale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  return buildMetadata({
+    lang,
+    path: "/admission",
+    title: `${dict.admission.title} ${dict.admission.titleAccent}`,
+    description: dict.admission.subtitle,
+  });
+}
+
+export default async function AdmissionPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang as Locale);
+  const a = dict.admission;
+
+  return (
+    <>
+      <PageHeader
+        kicker={a.kicker}
+        title={a.title}
+        titleAccent={a.titleAccent}
+        subtitle={a.subtitle}
+        image={a.image}
+      />
+      <AdmissionProcess dict={dict} />
+      <AdmissionEligibility dict={dict} />
+      <AdmissionFaq
+        eyebrow={a.faq.eyebrow}
+        title={a.faq.title}
+        items={a.faq.items}
+      />
+      <CtaPanel
+        title={a.cta.title}
+        body={a.cta.body}
+        primaryLabel={a.cta.label}
+        primaryHref={`/${lang}/contact`}
+        secondaryLabel={a.cta.secondary}
+        secondaryHref={`/${lang}/contact`}
+      />
+    </>
+  );
+}

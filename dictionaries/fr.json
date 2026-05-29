@@ -1,0 +1,403 @@
+{
+  "meta": {
+    "siteName": "Mentou",
+    "tagline": "Les Piliers des Leaders"
+  },
+  "nav": {
+    "home": "Accueil",
+    "pillars": "Les Piliers",
+    "vision": "Vision",
+    "admission": "Admission",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "cta": "Demander une entrevue",
+    "phone": "1-514-555-0142"
+  },
+  "home": {
+    "hero": {
+      "kicker": "Programme privé · Québec",
+      "title": "Bâtir les leaders",
+      "titleAccent": "de demain",
+      "subtitle": "Un programme privé qui accompagne les jeunes de 12 à 22 ans dans le développement de leur confiance, de leur discipline et de leur leadership.",
+      "ageBadge": "12 – 22 ans",
+      "ageLabel": "Cohortes Junior & Senior",
+      "primaryCta": "Demander une entrevue",
+      "secondaryCta": "Découvrir le programme"
+    },
+    "manifesto": {
+      "eyebrow": "Notre approche",
+      "lead": "À",
+      "body": " l'école, on apprend les matières. Chez Mentou, on apprend à devenir soi. Notre programme réunit tutorat, lecture, expression, mouvement et mentorat dans une même méthode pensée pour aider chaque jeune à révéler sa voix, sa confiance et sa direction.",
+      "quote": "Bien plus qu'un soutien scolaire : un accompagnement complet pour grandir avec assurance.",
+      "quoteAuthor": "L'équipe Mentou"
+    },
+    "pillars": {
+      "eyebrow": "Le programme",
+      "title": "Sept disciplines, un même fil conducteur",
+      "items": [
+        {
+          "roman": "I",
+          "title": "Tutorat Académique",
+          "lead": "Des bases solides",
+          "body": "Accompagnement scolaire ciblé pour viser le meilleur au secondaire et au collégial, et préparer sereinement la suite des études. Nos tuteurs adaptent chaque séance au rythme et aux besoins du jeune, avec des objectifs clairs et mesurables.",
+          "image": "/images/tutorat.jpeg",
+          "image2": "/images/tutorat1.jpeg",
+          "outcomes": ["Maîtrise des matières clés", "Méthodes d'étude efficaces", "Confiance en classe", "Préparation collégiale solide"]
+        },
+        {
+          "roman": "II",
+          "title": "Lecture Stratégique",
+          "lead": "Lire pour comprendre",
+          "body": "Une sélection de livres marquants — finance, habitudes, stratégie, communication — qu'on lit ensemble et qu'on applique au quotidien. Chaque livre devient un outil concret pour penser autrement et agir plus intelligemment.",
+          "image": "/images/lecture.jpeg",
+          "image2": "/images/lecture1.jpeg",
+          "outcomes": ["Culture financière de base", "Habitudes de lecture durables", "Vocabulaire et raisonnement élargis", "Pensée stratégique"]
+        },
+        {
+          "roman": "III",
+          "title": "Causeries Éducatives",
+          "lead": "Prendre la parole",
+          "body": "Des moments d'échange et de débat pour développer la culture générale, la pensée critique et l'aisance à s'exprimer. Le jeune apprend à défendre ses idées, à écouter l'autre et à construire une argumentation solide.",
+          "image": "/images/causerie.jpeg",
+          "image2": "/images/causerie2.jpeg",
+          "outcomes": ["Aisance à l'oral", "Arguments structurés", "Écoute active", "Curiosité intellectuelle"]
+        },
+        {
+          "roman": "IV",
+          "title": "L'Art du Sketch",
+          "lead": "Oser s'exprimer",
+          "body": "Improvisation et petites scènes pour gagner en confiance, poser sa voix et apprivoiser le regard des autres. À travers le jeu, le jeune développe une présence naturelle et apprend à être à l'aise dans toutes les situations sociales.",
+          "image": "/images/causerie1.jpeg",
+          "image2": "/images/sketch2.jpeg",
+          "outcomes": ["Confiance sur scène", "Présence naturelle", "Maîtrise de l'improvisation", "Gestion du stress social"]
+        },
+        {
+          "roman": "V",
+          "title": "Danse & Présence",
+          "lead": "Se tenir debout",
+          "body": "Travailler la posture, le rythme et le langage du corps pour se sentir bien dans sa peau et inspirer naturellement confiance. La danse enseigne que le corps est le premier vecteur du leadership — avant même les mots.",
+          "image": "/images/danse.jpeg",
+          "image2": "/images/danse1.jpeg",
+          "outcomes": ["Posture et maintien assurés", "Conscience corporelle", "Rythme et coordination", "Image de soi positive"]
+        },
+        {
+          "roman": "VI",
+          "title": "Maîtrise Musicale",
+          "lead": "Apprendre à se concentrer",
+          "body": "L'apprentissage d'un instrument renforce la patience, l'écoute et la capacité à progresser un peu chaque jour. La musique apprend une vérité fondamentale : la discipline constante produit des résultats extraordinaires.",
+          "image": "/images/musique.jpeg",
+          "image2": "/images/musique1.jpeg",
+          "outcomes": ["Discipline quotidienne", "Concentration prolongée", "Sensibilité artistique", "Persévérance face à la difficulté"]
+        },
+        {
+          "roman": "VII",
+          "title": "Mentorat & Culture",
+          "lead": "Être bien entouré",
+          "body": "Un accompagnement personnel pour clarifier ses objectifs, et une ouverture sur les cultures du monde pour grandir avec curiosité et respect. Un mentor, c'est quelqu'un qui a déjà tracé un chemin et qui aide à en trouver un, à soi.",
+          "image": "/images/mentorat.jpeg",
+          "image2": "/images/mentorat1.jpeg",
+          "outcomes": ["Clarté sur ses objectifs de vie", "Réseau de pairs solides", "Ouverture culturelle", "Vision à long terme"]
+        }
+      ]
+    },
+    "transformation": {
+      "eyebrow": "Le parcours",
+      "title": "Ce qui change, chez ceux qui passent par Mentou",
+      "pairs": [
+        { "before": "Timide", "after": "Charismatique" },
+        { "before": "Passif", "after": "Stratège" },
+        { "before": "Désorganisé", "after": "Discipliné" },
+        { "before": "Bonnes notes", "after": "Vision globale" },
+        { "before": "Hésitant", "after": "Affirmé" }
+      ]
+    },
+    "divisions": {
+      "eyebrow": "Deux divisions",
+      "title": "Un parcours adapté à chaque étape",
+      "junior": {
+        "label": "Cohorte Junior",
+        "ageRange": "12 — 16 ans",
+        "headline": "Prendre confiance et trouver son rythme",
+        "points": [
+          "Vaincre la timidité",
+          "Installer la discipline",
+          "Sécuriser le secondaire",
+          "Éveil aux arts de la scène"
+        ]
+      },
+      "senior": {
+        "label": "Cohorte Senior",
+        "ageRange": "17 — 22 ans",
+        "headline": "Construire son projet et sa direction",
+        "points": [
+          "Maximiser la Cote R",
+          "Maîtriser la négociation",
+          "Pitch et stratégie",
+          "Réseau de mentors établis"
+        ]
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Ils en parlent",
+      "title": "Ce que disent les familles",
+      "items": [
+        {
+          "quote": "En quelques mois, mon fils a complètement changé. Il ose s'exprimer, il s'intéresse à de nouvelles choses, il a trouvé sa place. Mentou lui a donné un cadre qu'il ne savait pas qu'il cherchait.",
+          "author": "Marie L.",
+          "role": "Maman de Léo, 14 ans"
+        },
+        {
+          "quote": "L'approche est rigoureuse mais profondément humaine. Mes deux ados y vont avec plaisir et reviennent grandis chaque semaine. C'est rare et précieux.",
+          "author": "Karim D.",
+          "role": "Papa de Yasmine et Adam"
+        },
+        {
+          "quote": "Avant Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch et les causeries m'ont vraiment débloqué.",
+          "author": "Sophia",
+          "role": "Élève, 17 ans"
+        }
+      ]
+    },
+    "parentsCircle": {
+      "eyebrow": "Avec les familles",
+      "title": "Un programme qui rassemble aussi les parents",
+      "body": "Des moments d'échange et de partage entre parents, jeunes et intervenants. Parce que la confiance se construit ensemble, et qu'un bon entourage fait toute la différence.",
+      "points": [
+        "Rencontres parents-enfants",
+        "Spectacles et présentations",
+        "Communauté d'entraide"
+      ]
+    },
+    "admission": {
+      "eyebrow": "Rejoindre Mentou",
+      "title": "Un parcours sur mesure, en quatre étapes",
+      "body": "On prend le temps de rencontrer chaque jeune et chaque famille pour construire un accompagnement vraiment adapté.",
+      "steps": [
+        { "n": "01", "label": "Premier contact" },
+        { "n": "02", "label": "Rencontre d'échange" },
+        { "n": "03", "label": "Plan personnalisé" },
+        { "n": "04", "label": "Intégration en cohorte" }
+      ],
+      "cta": "Demander une entrevue"
+    }
+  },
+  "pillars": {
+    "title": "Les Sept Piliers",
+    "subtitle": "Chaque pilier développe une dimension essentielle du leadership."
+  },
+  "vision": {
+    "kicker": "Notre raison d'être",
+    "title": "L'école enseigne.",
+    "titleAccent": "Mentou forge.",
+    "subtitle": "Mentou n'est pas un soutien scolaire. C'est une école parallèle, intime et exigeante, qui prépare la prochaine génération de leaders québécois.",
+    "image": "/images/vision-hero.jpg",
+    "manifesto": {
+      "eyebrow": "Le constat",
+      "title": "Les jeunes d'aujourd'hui ont besoin d'autre chose",
+      "body": "L'école apprend à répondre. Mentou apprend à questionner. L'école valide une grille. Mentou révèle une voix. Nous croyons qu'au-delà des bulletins, ce qui distingue un futur leader, c'est sa capacité à se tenir debout, à penser par lui-même, et à transformer ses idées en actions concrètes.",
+      "quote": "Nous ne formons pas des élèves modèles. Nous accompagnons des jeunes qui veulent vivre une vie qui leur ressemble.",
+      "author": "Fondateur, Mentou"
+    },
+    "principles": {
+      "eyebrow": "Les principes",
+      "title": "Quatre convictions qui guident notre approche",
+      "items": [
+        { "n": "01", "title": "La confiance se construit", "body": "Personne ne naît leader. La confiance vient des petits combats gagnés contre soi-même, jour après jour." },
+        { "n": "02", "title": "L'environnement façonne", "body": "On devient ce qu'on côtoie. C'est pourquoi nous construisons un cercle de pairs ambitieux et bienveillants." },
+        { "n": "03", "title": "La discipline libère", "body": "Sans rigueur, le talent stagne. Avec elle, le potentiel se déploie pleinement." },
+        { "n": "04", "title": "Le mentorat change tout", "body": "Avoir quelqu'un qui croit en soi, qui voit plus loin que soi, c'est un cadeau qui transforme une trajectoire." }
+      ]
+    },
+    "method": {
+      "eyebrow": "La méthode",
+      "title": "Une pédagogie pensée comme un atelier",
+      "image": "/images/vision-method.jpg",
+      "steps": [
+        { "label": "Observer", "body": "Comprendre qui est le jeune, ce qu'il vit, ce qu'il rêve, ce qu'il évite." },
+        { "label": "Stimuler", "body": "Proposer des défis adaptés, ni trop faciles, ni écrasants, pour faire grandir." },
+        { "label": "Encadrer", "body": "Être présent dans la durée, célébrer les progrès, accompagner les chutes." },
+        { "label": "Libérer", "body": "Laisser le jeune voler de ses propres ailes une fois la confiance ancrée." }
+      ]
+    },
+    "founder": {
+      "eyebrow": "Le fondateur",
+      "title": "Un projet né d'une conviction profonde",
+      "body": "Mentou est né de l'observation d'un manque : trop de jeunes brillants, mais isolés. Trop de potentiels, mais sans cadre pour s'exprimer. Notre fondateur a voulu créer ce qu'il aurait aimé recevoir à 14 ans — un cercle d'adultes engagés, des pairs ambitieux, et une méthode rigoureuse pour grandir entier.",
+      "image": "/images/vision-founder.jpg"
+    },
+    "cta": {
+      "title": "Prêt à rejoindre l'aventure ?",
+      "body": "Échangeons sur le parcours de votre enfant.",
+      "label": "Demander une entrevue"
+    }
+  },
+  "admission": {
+    "kicker": "Rejoindre Mentou",
+    "title": "Une admission qui prend",
+    "titleAccent": "le temps de bien faire",
+    "subtitle": "Nous accueillons un nombre limité de jeunes chaque année pour garantir la qualité de l'accompagnement. Le processus se déroule sur quelques semaines, sans précipitation.",
+    "image": "/images/admission-hero.jpg",
+    "process": {
+      "eyebrow": "Le processus",
+      "title": "Quatre étapes, du premier contact à l'intégration",
+      "steps": [
+        {
+          "n": "01",
+          "label": "Premier contact",
+          "duration": "15 min",
+          "body": "Un appel téléphonique pour comprendre vos attentes, présenter le programme et vérifier que Mentou correspond à votre projet familial."
+        },
+        {
+          "n": "02",
+          "label": "Rencontre d'échange",
+          "duration": "1h",
+          "body": "Un entretien privé avec le jeune et ses parents. C'est le moment de poser toutes les questions et de sentir si le courant passe — dans les deux sens."
+        },
+        {
+          "n": "03",
+          "label": "Plan personnalisé",
+          "duration": "1 semaine",
+          "body": "Nous construisons un plan d'accompagnement sur mesure, basé sur les forces, les défis et les objectifs identifiés ensemble."
+        },
+        {
+          "n": "04",
+          "label": "Intégration en cohorte",
+          "duration": "Sur la durée",
+          "body": "Le jeune rejoint sa cohorte (Junior ou Senior) et commence son parcours dans les sept disciplines de Mentou."
+        }
+      ]
+    },
+    "eligibility": {
+      "eyebrow": "Pour qui ?",
+      "title": "Mentou s'adresse à des jeunes motivés et leurs familles",
+      "image": "/images/admission-meeting.jpg",
+      "criteria": [
+        "Jeunes de 12 à 22 ans, résidant au Québec",
+        "Famille engagée dans le parcours de son enfant",
+        "Volonté de grandir au-delà du strict cadre scolaire",
+        "Curiosité, ouverture, envie de se dépasser"
+      ],
+      "note": "Aucune sélection sur les notes. Nous cherchons l'envie, pas la perfection."
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Ce que les familles nous demandent souvent",
+      "items": [
+        {
+          "q": "Mentou remplace-t-il l'école ?",
+          "a": "Non. Mentou complète l'école. Notre programme se déroule en parallèle, généralement en fin de journée, le soir et le week-end."
+        },
+        {
+          "q": "Combien de jeunes par cohorte ?",
+          "a": "Nos cohortes sont volontairement réduites — entre 8 et 12 jeunes — pour garantir un suivi personnalisé et une vraie qualité d'interaction."
+        },
+        {
+          "q": "Quel est l'engagement attendu ?",
+          "a": "Un engagement annuel, avec environ 4 à 6 heures par semaine d'activités structurées. La régularité prime sur l'intensité."
+        },
+        {
+          "q": "Y a-t-il des frais ?",
+          "a": "Oui. Mentou est un programme privé. Les frais sont discutés lors de la rencontre d'échange et adaptés aux situations. Des bourses peuvent être attribuées."
+        },
+        {
+          "q": "Quand commencent les cohortes ?",
+          "a": "Nous accueillons les nouveaux jeunes en septembre principalement, avec quelques intégrations en cours d'année selon les places."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Commencer le processus",
+      "body": "Premier appel sans engagement. On se présente, on échange, on voit si l'aventure vous correspond.",
+      "label": "Demander une entrevue",
+      "secondary": "Nous écrire"
+    }
+  },
+  "gallery": {
+    "kicker": "L'univers Mentou",
+    "title": "Des instants,",
+    "titleAccent": "des regards, des élans",
+    "subtitle": "La galerie rassemble des moments forts du programme — apprentissages, créations, ateliers, scènes et conversations.",
+    "filters": {
+      "all": "Tout voir",
+      "etude": "Étude",
+      "lecture": "Lecture",
+      "parole": "Parole",
+      "scene": "Scène",
+      "danse": "Danse",
+      "musique": "Musique",
+      "portraits": "Portraits"
+    },
+    "items": [
+      { "src": "/images/gallery/g-4145190.jpg", "alt": "Concentration en étude", "category": "etude", "span": "tall" },
+      { "src": "/images/gallery/g-5212345.jpg", "alt": "Atelier tutorat en cohorte", "category": "etude", "span": "wide" },
+      { "src": "/images/gallery/g-1741230.jpg", "alt": "Lecture concentrée", "category": "lecture", "span": "tall" },
+      { "src": "/images/gallery/g-590493.jpg", "alt": "Page tournée", "category": "lecture", "span": "small" },
+      { "src": "/images/gallery/g-1112048.jpg", "alt": "Lecture du matin", "category": "lecture", "span": "wide" },
+      { "src": "/images/gallery/g-1181467.jpg", "alt": "Sélection de livres", "category": "lecture", "span": "small" },
+      { "src": "/images/gallery/g-3182746.jpg", "alt": "Causerie ouverte", "category": "parole", "span": "wide" },
+      { "src": "/images/gallery/g-3184432.jpg", "alt": "Discussion entre jeunes", "category": "parole", "span": "tall" },
+      { "src": "/images/gallery/g-3184639.jpg", "alt": "Échange en groupe", "category": "parole", "span": "small" },
+      { "src": "/images/gallery/g-8108061.jpg", "alt": "Atelier de scène", "category": "scene", "span": "tall" },
+      { "src": "/images/gallery/g-3771074.jpg", "alt": "Tutorat individuel", "category": "etude", "span": "small" },
+      { "src": "/images/gallery/g-1701208.jpg", "alt": "Mouvement de danse", "category": "danse", "span": "tall" },
+      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture et présence", "category": "danse", "span": "small" },
+      { "src": "/images/gallery/g-358010.jpg", "alt": "Pas et rythme", "category": "danse", "span": "wide" },
+      { "src": "/images/gallery/g-209948.jpg", "alt": "Performance scénique", "category": "danse", "span": "tall" },
+      { "src": "/images/gallery/g-4709822.jpg", "alt": "Pratique musicale", "category": "musique", "span": "wide" },
+      { "src": "/images/gallery/g-5212327.jpg", "alt": "Portrait d'élève", "category": "portraits", "span": "tall" },
+      { "src": "/images/gallery/g-8499613.jpg", "alt": "Regard mentorat", "category": "portraits", "span": "small" },
+      { "src": "/images/gallery/g-5212703.jpg", "alt": "Ambiance cohorte", "category": "portraits", "span": "wide" },
+      { "src": "/images/gallery/g-7942487.jpg", "alt": "Moment partagé", "category": "portraits", "span": "tall" }
+    ]
+  },
+  "contact": {
+    "kicker": "Prenons contact",
+    "title": "Échangeons sur",
+    "titleAccent": "l'avenir de votre enfant",
+    "subtitle": "Une question, une rencontre, une demande d'admission — nous lisons chaque message avec attention et répondons sous 48h.",
+    "image": "/images/contact-hero.jpg",
+    "form": {
+      "eyebrow": "Formulaire",
+      "title": "Demander une entrevue",
+      "intro": "Remplissez ce formulaire en quelques secondes. Nous vous recontactons rapidement pour fixer un premier échange téléphonique.",
+      "fields": {
+        "parentName": { "label": "Nom du parent", "placeholder": "Votre nom complet" },
+        "childName": { "label": "Nom du jeune", "placeholder": "Prénom et âge" },
+        "email": { "label": "Courriel", "placeholder": "votre@email.com" },
+        "phone": { "label": "Téléphone", "placeholder": "(514) 555-0142" },
+        "division": { "label": "Division d'intérêt", "options": ["Junior (12-16 ans)", "Senior (17-22 ans)", "Pas encore décidé"] },
+        "message": { "label": "Votre message", "placeholder": "Parlez-nous de votre enfant, de ses passions, de ce que vous cherchez…" }
+      },
+      "consent": "J'accepte d'être recontacté par Mentou concernant ma demande.",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours…",
+      "success": "Message reçu. Nous vous répondons sous 48h.",
+      "required": "Champ requis"
+    },
+    "info": {
+      "eyebrow": "Coordonnées",
+      "title": "Plusieurs façons de nous joindre",
+      "items": [
+        { "label": "Téléphone", "value": "1-514-555-0142", "href": "tel:+15145550142", "note": "Du lundi au vendredi, 9h–18h" },
+        { "label": "Courriel", "value": "bonjour@mentou.ca", "href": "mailto:bonjour@mentou.ca", "note": "Réponse sous 48h" },
+        { "label": "WhatsApp", "value": "+1 (438) 342-7730", "href": "https://wa.me/14383427730", "note": "Réponse rapide" },
+        { "label": "Adresse", "value": "Québec, Canada", "href": null, "note": "Rencontres sur rendez-vous" }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Avant d'écrire",
+      "title": "Vos questions, nos réponses rapides",
+      "items": [
+        { "q": "Combien de temps avant une réponse ?", "a": "Sous 48h ouvrées, généralement plus vite." },
+        { "q": "Est-ce gratuit de prendre rendez-vous ?", "a": "Oui. Le premier contact téléphonique et la rencontre d'échange sont sans engagement." },
+        { "q": "Puis-je venir avec mon enfant à la rencontre ?", "a": "Nous l'encourageons fortement. La rencontre se fait idéalement avec parents et jeune ensemble." }
+      ]
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "tagline": "Entreprise privée de développement de leadership.",
+    "address": "Québec, Canada",
+    "whatsapp": "+1 (438) 342-7730"
+  }
+}

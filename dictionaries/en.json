@@ -1,0 +1,403 @@
+{
+  "meta": {
+    "siteName": "Mentou",
+    "tagline": "The Pillars of Leaders"
+  },
+  "nav": {
+    "home": "Home",
+    "pillars": "The Program",
+    "vision": "Vision",
+    "admission": "Admission",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "cta": "Request an interview",
+    "phone": "1-514-555-0142"
+  },
+  "home": {
+    "hero": {
+      "kicker": "Private program · Québec",
+      "title": "Building the leaders",
+      "titleAccent": "of tomorrow",
+      "subtitle": "A private program helping young people aged 12 to 22 grow in confidence, discipline and leadership.",
+      "ageBadge": "12 – 22 yrs",
+      "ageLabel": "Junior & Senior cohorts",
+      "primaryCta": "Request an interview",
+      "secondaryCta": "Discover the program"
+    },
+    "manifesto": {
+      "eyebrow": "Our approach",
+      "lead": "S",
+      "body": "chools teach subjects. At Mentou, we teach young people how to become themselves. Tutoring, reading, expression, movement and mentorship come together in a single program designed to help every student find their voice, confidence and direction.",
+      "quote": "Much more than tutoring: a complete program to grow with assurance.",
+      "quoteAuthor": "The Mentou team"
+    },
+    "pillars": {
+      "eyebrow": "The program",
+      "title": "Seven disciplines, one shared thread",
+      "items": [
+        {
+          "roman": "I",
+          "title": "Academic Tutoring",
+          "lead": "Solid foundations",
+          "body": "Targeted academic support to do your best in high school and CEGEP, and prepare calmly for what comes next. Our tutors adapt each session to the student's pace and needs, with clear and measurable goals.",
+          "image": "/images/tutorat.jpeg",
+          "image2": "/images/tutorat1.jpeg",
+          "outcomes": ["Mastery of key subjects", "Effective study methods", "Confidence in class", "Solid college preparation"]
+        },
+        {
+          "roman": "II",
+          "title": "Strategic Reading",
+          "lead": "Read to understand",
+          "body": "A curated selection of meaningful books — finance, habits, strategy, communication — we read together and apply daily. Each book becomes a concrete tool to think differently and act more intelligently.",
+          "image": "/images/lecture.jpeg",
+          "image2": "/images/lecture1.jpeg",
+          "outcomes": ["Basic financial literacy", "Lasting reading habits", "Expanded vocabulary and reasoning", "Strategic thinking"]
+        },
+        {
+          "roman": "III",
+          "title": "Educational Debates",
+          "lead": "Find your voice",
+          "body": "Conversations and debates to grow general culture, critical thinking and the ease to express yourself. Students learn to defend their ideas, listen to others, and build solid arguments.",
+          "image": "/images/causerie.jpeg",
+          "image2": "/images/causerie2.jpeg",
+          "outcomes": ["Oral communication skills", "Structured arguments", "Active listening", "Intellectual curiosity"]
+        },
+        {
+          "roman": "IV",
+          "title": "The Art of Sketch",
+          "lead": "Dare to speak",
+          "body": "Improvisation and short scenes to gain confidence, settle your voice and become comfortable in front of others. Through play, students develop a natural presence and learn to feel at ease in all social situations.",
+          "image": "/images/causerie1.jpeg",
+          "image2": "/images/sketch2.jpeg",
+          "outcomes": ["Stage confidence", "Natural presence", "Improvisation skills", "Social stress management"]
+        },
+        {
+          "roman": "V",
+          "title": "Dance & Presence",
+          "lead": "Standing tall",
+          "body": "Working on posture, rhythm and body language to feel good in your skin and naturally inspire confidence. Dance teaches a fundamental truth: the body is the first vehicle of leadership — before any words.",
+          "image": "/images/danse.jpeg",
+          "image2": "/images/danse1.jpeg",
+          "outcomes": ["Confident posture and bearing", "Body awareness", "Rhythm and coordination", "Positive self-image"]
+        },
+        {
+          "roman": "VI",
+          "title": "Musical Mastery",
+          "lead": "Learning to focus",
+          "body": "Learning an instrument strengthens patience, listening and the ability to progress a little each day. Music teaches a fundamental truth: consistent discipline produces extraordinary results.",
+          "image": "/images/musique.jpeg",
+          "image2": "/images/musique1.jpeg",
+          "outcomes": ["Daily discipline", "Extended concentration", "Artistic sensibility", "Perseverance through challenge"]
+        },
+        {
+          "roman": "VII",
+          "title": "Mentorship & Culture",
+          "lead": "Surrounded with care",
+          "body": "Personal mentoring to clarify goals, and an opening to world cultures to grow with curiosity and respect. A mentor is someone who has already walked a path and helps you find your own.",
+          "image": "/images/mentorat.jpeg",
+          "image2": "/images/mentorat1.jpeg",
+          "outcomes": ["Clarity on life goals", "Strong peer network", "Cultural openness", "Long-term vision"]
+        }
+      ]
+    },
+    "transformation": {
+      "eyebrow": "The journey",
+      "title": "What changes for those who join Mentou",
+      "pairs": [
+        { "before": "Shy", "after": "Confident" },
+        { "before": "Passive", "after": "Engaged" },
+        { "before": "Scattered", "after": "Focused" },
+        { "before": "Good grades", "after": "Broader vision" },
+        { "before": "Hesitant", "after": "Self-assured" }
+      ]
+    },
+    "divisions": {
+      "eyebrow": "Two cohorts",
+      "title": "A path tailored to each stage",
+      "junior": {
+        "label": "Junior Cohort",
+        "ageRange": "12 — 16 yrs",
+        "headline": "Build confidence and find your rhythm",
+        "points": [
+          "Overcome shyness",
+          "Set healthy habits",
+          "Secure high school",
+          "Discover the stage arts"
+        ]
+      },
+      "senior": {
+        "label": "Senior Cohort",
+        "ageRange": "17 — 22 yrs",
+        "headline": "Shape your project and direction",
+        "points": [
+          "Aim for top R-Score",
+          "Practice negotiation",
+          "Pitch and strategy",
+          "A network of mentors"
+        ]
+      }
+    },
+    "testimonials": {
+      "eyebrow": "What they say",
+      "title": "What families share",
+      "items": [
+        {
+          "quote": "Within months, my son completely changed. He dares to speak up, he's curious about new things, he found his place. Mentou gave him a framework he didn't know he was looking for.",
+          "author": "Marie L.",
+          "role": "Mom of Léo, 14"
+        },
+        {
+          "quote": "The approach is rigorous yet deeply human. Both my teens go with pleasure and come back grown each week. That's rare and precious.",
+          "author": "Karim D.",
+          "role": "Dad of Yasmine and Adam"
+        },
+        {
+          "quote": "Before Mentou, I didn't dare speak up in class. Now, I lead a student project. The sketch exercises and debates truly unlocked something in me.",
+          "author": "Sophia",
+          "role": "Student, 17"
+        }
+      ]
+    },
+    "parentsCircle": {
+      "eyebrow": "With families",
+      "title": "A program that brings parents in, too",
+      "body": "Moments of sharing between parents, young people and mentors. Confidence is built together, and a supportive circle makes all the difference.",
+      "points": [
+        "Parent-child gatherings",
+        "Shows and presentations",
+        "Supportive community"
+      ]
+    },
+    "admission": {
+      "eyebrow": "Joining Mentou",
+      "title": "A tailored path, in four steps",
+      "body": "We take the time to meet every young person and every family to build support that truly fits.",
+      "steps": [
+        { "n": "01", "label": "First contact" },
+        { "n": "02", "label": "Conversation" },
+        { "n": "03", "label": "Personalized plan" },
+        { "n": "04", "label": "Cohort integration" }
+      ],
+      "cta": "Request an interview"
+    }
+  },
+  "pillars": {
+    "title": "The Seven Pillars",
+    "subtitle": "Each pillar develops an essential dimension of leadership."
+  },
+  "vision": {
+    "kicker": "Why we exist",
+    "title": "Schools teach.",
+    "titleAccent": "Mentou forges.",
+    "subtitle": "Mentou is not academic tutoring. It is a parallel school, intimate and demanding, that prepares the next generation of Québec leaders.",
+    "image": "/images/vision-hero.jpg",
+    "manifesto": {
+      "eyebrow": "The observation",
+      "title": "Today's youth need something more",
+      "body": "Schools teach you how to answer. Mentou teaches you how to question. Schools validate a grid. Mentou reveals a voice. We believe that beyond grades, what sets a future leader apart is the ability to stand tall, think independently, and turn ideas into action.",
+      "quote": "We don't train model students. We accompany young people who want to live a life that looks like them.",
+      "author": "Founder, Mentou"
+    },
+    "principles": {
+      "eyebrow": "The principles",
+      "title": "Four convictions guiding our approach",
+      "items": [
+        { "n": "01", "title": "Confidence is built", "body": "No one is born a leader. Confidence comes from small battles won against yourself, day after day." },
+        { "n": "02", "title": "Environment shapes us", "body": "We become who we surround ourselves with. That's why we build a circle of ambitious, kind peers." },
+        { "n": "03", "title": "Discipline frees", "body": "Without rigor, talent stalls. With it, potential fully unfolds." },
+        { "n": "04", "title": "Mentorship changes everything", "body": "Having someone who believes in you, who sees further than you do — that's a gift that transforms a path." }
+      ]
+    },
+    "method": {
+      "eyebrow": "The method",
+      "title": "A pedagogy designed like a workshop",
+      "image": "/images/vision-method.jpg",
+      "steps": [
+        { "label": "Observe", "body": "Understand who the young person is, what they live, what they dream, what they avoid." },
+        { "label": "Stimulate", "body": "Offer the right challenges — not too easy, not crushing — to help them grow." },
+        { "label": "Guide", "body": "Be present over time, celebrate progress, support setbacks." },
+        { "label": "Release", "body": "Let the young person fly on their own once confidence is anchored." }
+      ]
+    },
+    "founder": {
+      "eyebrow": "The founder",
+      "title": "A project born from deep conviction",
+      "body": "Mentou was born from noticing a gap: too many brilliant but isolated young people. Too much potential, no framework to express it. Our founder wanted to create what he would have loved to receive at 14 — a circle of engaged adults, ambitious peers, and a rigorous method to grow whole.",
+      "image": "/images/vision-founder.jpg"
+    },
+    "cta": {
+      "title": "Ready to join the journey?",
+      "body": "Let's talk about your child's path.",
+      "label": "Request an interview"
+    }
+  },
+  "admission": {
+    "kicker": "Join Mentou",
+    "title": "An admission that takes",
+    "titleAccent": "the time to do it right",
+    "subtitle": "We welcome a limited number of young people each year to guarantee the quality of our support. The process unfolds over a few weeks, without rushing.",
+    "image": "/images/admission-hero.jpg",
+    "process": {
+      "eyebrow": "The process",
+      "title": "Four steps, from first contact to integration",
+      "steps": [
+        {
+          "n": "01",
+          "label": "First contact",
+          "duration": "15 min",
+          "body": "A phone call to understand your expectations, introduce the program, and verify that Mentou aligns with your family's vision."
+        },
+        {
+          "n": "02",
+          "label": "Interview",
+          "duration": "1 hr",
+          "body": "A private meeting with the young person and parents. This is the moment to ask everything and feel if the fit is right — both ways."
+        },
+        {
+          "n": "03",
+          "label": "Custom plan",
+          "duration": "1 week",
+          "body": "We build a tailor-made support plan based on the strengths, challenges, and goals identified together."
+        },
+        {
+          "n": "04",
+          "label": "Cohort integration",
+          "duration": "Long-term",
+          "body": "The young person joins their cohort (Junior or Senior) and begins their journey through Mentou's seven disciplines."
+        }
+      ]
+    },
+    "eligibility": {
+      "eyebrow": "For whom?",
+      "title": "Mentou is for motivated young people and their families",
+      "image": "/images/admission-meeting.jpg",
+      "criteria": [
+        "Young people aged 12 to 22, living in Québec",
+        "Family engaged in their child's journey",
+        "Desire to grow beyond the strict academic frame",
+        "Curiosity, openness, eagerness to push limits"
+      ],
+      "note": "No selection on grades. We look for desire, not perfection."
+    },
+    "faq": {
+      "eyebrow": "Frequently asked",
+      "title": "What families often ask us",
+      "items": [
+        {
+          "q": "Does Mentou replace school?",
+          "a": "No. Mentou complements school. Our program runs in parallel, generally at the end of the day, evenings, and weekends."
+        },
+        {
+          "q": "How many young people per cohort?",
+          "a": "Our cohorts are deliberately small — between 8 and 12 — to guarantee personalized follow-up and true quality of interaction."
+        },
+        {
+          "q": "What is the expected commitment?",
+          "a": "An annual commitment, with about 4 to 6 hours per week of structured activities. Consistency matters more than intensity."
+        },
+        {
+          "q": "Are there fees?",
+          "a": "Yes. Mentou is a private program. Fees are discussed during the interview and adapted to circumstances. Scholarships may be awarded."
+        },
+        {
+          "q": "When do cohorts start?",
+          "a": "We welcome new members mainly in September, with a few mid-year admissions depending on availability."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start the process",
+      "body": "First call with no commitment. We introduce ourselves, we talk, we see if the journey is right for you.",
+      "label": "Request an interview",
+      "secondary": "Write to us"
+    }
+  },
+  "gallery": {
+    "kicker": "The Mentou universe",
+    "title": "Moments, looks,",
+    "titleAccent": "and quiet ambition",
+    "subtitle": "The gallery brings together meaningful moments from the program — learning, creation, workshops, stages, and conversations.",
+    "filters": {
+      "all": "Show all",
+      "etude": "Study",
+      "lecture": "Reading",
+      "parole": "Voice",
+      "scene": "Stage",
+      "danse": "Dance",
+      "musique": "Music",
+      "portraits": "Portraits"
+    },
+    "items": [
+      { "src": "/images/gallery/g-4145190.jpg", "alt": "Focused study", "category": "etude", "span": "tall" },
+      { "src": "/images/gallery/g-5212345.jpg", "alt": "Tutoring workshop", "category": "etude", "span": "wide" },
+      { "src": "/images/gallery/g-1741230.jpg", "alt": "Quiet reading", "category": "lecture", "span": "tall" },
+      { "src": "/images/gallery/g-590493.jpg", "alt": "Turning the page", "category": "lecture", "span": "small" },
+      { "src": "/images/gallery/g-1112048.jpg", "alt": "Morning reading", "category": "lecture", "span": "wide" },
+      { "src": "/images/gallery/g-1181467.jpg", "alt": "Curated books", "category": "lecture", "span": "small" },
+      { "src": "/images/gallery/g-3182746.jpg", "alt": "Open conversation", "category": "parole", "span": "wide" },
+      { "src": "/images/gallery/g-3184432.jpg", "alt": "Conversation among students", "category": "parole", "span": "tall" },
+      { "src": "/images/gallery/g-3184639.jpg", "alt": "Group exchange", "category": "parole", "span": "small" },
+      { "src": "/images/gallery/g-8108061.jpg", "alt": "Stage workshop", "category": "scene", "span": "tall" },
+      { "src": "/images/gallery/g-3771074.jpg", "alt": "One-on-one tutoring", "category": "etude", "span": "small" },
+      { "src": "/images/gallery/g-1701208.jpg", "alt": "Dance movement", "category": "danse", "span": "tall" },
+      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture and presence", "category": "danse", "span": "small" },
+      { "src": "/images/gallery/g-358010.jpg", "alt": "Steps and rhythm", "category": "danse", "span": "wide" },
+      { "src": "/images/gallery/g-209948.jpg", "alt": "Performance", "category": "danse", "span": "tall" },
+      { "src": "/images/gallery/g-4709822.jpg", "alt": "Music practice", "category": "musique", "span": "wide" },
+      { "src": "/images/gallery/g-5212327.jpg", "alt": "Student portrait", "category": "portraits", "span": "tall" },
+      { "src": "/images/gallery/g-8499613.jpg", "alt": "Mentor moment", "category": "portraits", "span": "small" },
+      { "src": "/images/gallery/g-5212703.jpg", "alt": "Cohort atmosphere", "category": "portraits", "span": "wide" },
+      { "src": "/images/gallery/g-7942487.jpg", "alt": "Shared moment", "category": "portraits", "span": "tall" }
+    ]
+  },
+  "contact": {
+    "kicker": "Let's get in touch",
+    "title": "Let's talk about",
+    "titleAccent": "your child's future",
+    "subtitle": "A question, a meeting, an admission request — we read every message carefully and reply within 48 hours.",
+    "image": "/images/contact-hero.jpg",
+    "form": {
+      "eyebrow": "Form",
+      "title": "Request an interview",
+      "intro": "Fill out this form in a few seconds. We'll get back to you quickly to schedule a first phone call.",
+      "fields": {
+        "parentName": { "label": "Parent's name", "placeholder": "Your full name" },
+        "childName": { "label": "Young person's name", "placeholder": "First name and age" },
+        "email": { "label": "Email", "placeholder": "your@email.com" },
+        "phone": { "label": "Phone", "placeholder": "(514) 555-0142" },
+        "division": { "label": "Division of interest", "options": ["Junior (12-16)", "Senior (17-22)", "Not decided yet"] },
+        "message": { "label": "Your message", "placeholder": "Tell us about your child, their passions, what you're looking for…" }
+      },
+      "consent": "I agree to be contacted by Mentou regarding my request.",
+      "submit": "Send my request",
+      "submitting": "Sending…",
+      "success": "Message received. We'll reply within 48 hours.",
+      "required": "Required field"
+    },
+    "info": {
+      "eyebrow": "Reach us",
+      "title": "Several ways to get in touch",
+      "items": [
+        { "label": "Phone", "value": "1-514-555-0142", "href": "tel:+15145550142", "note": "Monday to Friday, 9am–6pm" },
+        { "label": "Email", "value": "hello@mentou.ca", "href": "mailto:hello@mentou.ca", "note": "Reply within 48h" },
+        { "label": "WhatsApp", "value": "+1 (438) 342-7730", "href": "https://wa.me/14383427730", "note": "Quick reply" },
+        { "label": "Address", "value": "Québec, Canada", "href": null, "note": "Meetings by appointment" }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Before writing",
+      "title": "Your questions, our quick answers",
+      "items": [
+        { "q": "How long before a reply?", "a": "Within 48 business hours, usually much faster." },
+        { "q": "Is the meeting free?", "a": "Yes. The first phone call and the interview are at no cost or commitment." },
+        { "q": "Can I bring my child to the meeting?", "a": "We strongly encourage it. The meeting works best with parents and the young person together." }
+      ]
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Private leadership and personal development program.",
+    "address": "Québec, Canada",
+    "whatsapp": "+1 (438) 342-7730"
+  }
+}

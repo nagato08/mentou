@@ -1,0 +1,52 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Hero from "@/components/sections/Hero";
+import Manifesto from "@/components/sections/Manifesto";
+import PillarsList from "@/components/sections/PillarsList";
+import Transformation from "@/components/sections/Transformation";
+import Testimonials from "@/components/sections/Testimonials";
+import Divisions from "@/components/sections/Divisions";
+import ParentsCircle from "@/components/sections/ParentsCircle";
+import AdmissionCTA from "@/components/sections/AdmissionCTA";
+import { getDictionary, hasLocale, type Locale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  return buildMetadata({
+    lang,
+    path: "/",
+    title: `${dict.meta.siteName} — ${dict.meta.tagline}`,
+    description: dict.home.hero.subtitle,
+  });
+}
+
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang as Locale);
+  const typedLang = lang as Locale;
+
+  return (
+    <>
+      <Hero lang={typedLang} dict={dict} />
+      <Manifesto dict={dict} />
+      <PillarsList lang={typedLang} dict={dict} />
+      <Transformation dict={dict} />
+      <Testimonials dict={dict} />
+      <Divisions dict={dict} />
+      <ParentsCircle dict={dict} />
+      <AdmissionCTA lang={typedLang} dict={dict} />
+    </>
+  );
+}
