@@ -10,7 +10,7 @@
     "admission": "Admission",
     "gallery": "Gallery",
     "contact": "Contact",
-    "cta": "Request an interview",
+    "cta": "Schedule an interview",
     "phone": "+1 (438) 342-7730"
   },
   "home": {
@@ -19,9 +19,14 @@
       "title": "Building the leaders",
       "titleAccent": "of tomorrow",
       "subtitle": "A private program helping young people aged 12 to 22 grow in confidence, discipline and leadership.",
+      "highlights": [
+        "For ages 12–22",
+        "Confidence, discipline, leadership",
+        "Tutoring, mentorship, expression"
+      ],
       "ageBadge": "12 – 22 yrs",
       "ageLabel": "Junior & Senior cohorts",
-      "primaryCta": "Request an interview",
+      "primaryCta": "Schedule an interview",
       "secondaryCta": "Discover the program"
     },
     "manifesto": {
@@ -30,6 +35,29 @@
       "body": "chools teach subjects. At Mentou, we teach young people how to become themselves. Tutoring, reading, expression, movement and mentorship come together in a single program designed to help every student find their voice, confidence and direction.",
       "quote": "Much more than tutoring: a complete program to grow with assurance.",
       "quoteAuthor": "The Mentou team"
+    },
+    "whoItsFor": {
+      "eyebrow": "For whom?",
+      "title": "For young people who need structure to reveal themselves",
+      "body": "Mentou is for families who feel there is more to build than a report card: posture, voice, discipline, and direction.",
+      "items": [
+        {
+          "title": "The bright but reserved young person",
+          "body": "They understand quickly, but do not always dare to take their place, ask questions, or defend their ideas."
+        },
+        {
+          "title": "The teen who lacks structure",
+          "body": "They have potential, but need strong habits, a clear rhythm, and adults who hold the course with them."
+        },
+        {
+          "title": "The ambitious but scattered student",
+          "body": "They want to succeed, but must learn to prioritize, communicate, organize, and turn energy into progress."
+        },
+        {
+          "title": "The family looking for more than tutoring",
+          "body": "They want holistic support: academic, human, cultural, and personal, in a demanding and caring environment."
+        }
+      ]
     },
     "pillars": {
       "eyebrow": "The program",
@@ -42,6 +70,8 @@
           "body": "Targeted academic support to do your best in high school and CEGEP, and prepare calmly for what comes next. Our tutors adapt each session to the student's pace and needs, with clear and measurable goals.",
           "image": "/images/tutorat.jpeg",
           "image2": "/images/tutorat1.jpeg",
+          "practice": "Focused sessions around homework, exams, and study methods, with a clear goal for each meeting.",
+          "signals": ["Work submitted on time", "Grades followed without panic", "Methods reused independently"],
           "outcomes": ["Mastery of key subjects", "Effective study methods", "Confidence in class", "Solid college preparation"]
         },
         {
@@ -51,6 +81,8 @@
           "body": "A curated selection of meaningful books — finance, habits, strategy, communication — we read together and apply daily. Each book becomes a concrete tool to think differently and act more intelligently.",
           "image": "/images/lecture.jpeg",
           "image2": "/images/lecture1.jpeg",
+          "practice": "Guided reading, discussion of strong ideas, and concrete application in school, social, or family life.",
+          "signals": ["Clear chapter summary", "Ideas connected to daily life", "More precise vocabulary"],
           "outcomes": ["Basic financial literacy", "Lasting reading habits", "Expanded vocabulary and reasoning", "Strategic thinking"]
         },
         {
@@ -60,6 +92,8 @@
           "body": "Conversations and debates to grow general culture, critical thinking and the ease to express yourself. Students learn to defend their ideas, listen to others, and build solid arguments.",
           "image": "/images/causerie.jpeg",
           "image2": "/images/causerie2.jpeg",
+          "practice": "Debates, short position statements, and listening exercises to learn to think before answering.",
+          "signals": ["Better structured opinion", "Listening without interrupting", "More nuanced arguments"],
           "outcomes": ["Oral communication skills", "Structured arguments", "Active listening", "Intellectual curiosity"]
         },
         {
@@ -69,6 +103,8 @@
           "body": "Improvisation and short scenes to gain confidence, settle your voice and become comfortable in front of others. Through play, students develop a natural presence and learn to feel at ease in all social situations.",
           "image": "/images/causerie1.jpeg",
           "image2": "/images/sketch2.jpeg",
+          "practice": "Improvisations, short scenes, and voice exercises to become comfortable under the gaze of others through play.",
+          "signals": ["Steadier voice", "Less avoidance", "More assumed presence"],
           "outcomes": ["Stage confidence", "Natural presence", "Improvisation skills", "Social stress management"]
         },
         {
@@ -78,6 +114,8 @@
           "body": "Working on posture, rhythm and body language to feel good in your skin and naturally inspire confidence. Dance teaches a fundamental truth: the body is the first vehicle of leadership — before any words.",
           "image": "/images/danse.jpeg",
           "image2": "/images/danse1.jpeg",
+          "practice": "Work on rhythm, posture, and coordination to develop a more confident physical presence.",
+          "signals": ["More open posture", "Better coordination", "Stronger self-image"],
           "outcomes": ["Confident posture and bearing", "Body awareness", "Rhythm and coordination", "Positive self-image"]
         },
         {
@@ -87,6 +125,8 @@
           "body": "Learning an instrument strengthens patience, listening and the ability to progress a little each day. Music teaches a fundamental truth: consistent discipline produces extraordinary results.",
           "image": "/images/musique.jpeg",
           "image2": "/images/musique1.jpeg",
+          "practice": "Progressive work with an instrument or musical exercise to train focus, patience, and consistency.",
+          "signals": ["More regular practice", "Longer attention span", "Visible perseverance"],
           "outcomes": ["Daily discipline", "Extended concentration", "Artistic sensibility", "Perseverance through challenge"]
         },
         {
@@ -96,7 +136,36 @@
           "body": "Personal mentoring to clarify goals, and an opening to world cultures to grow with curiosity and respect. A mentor is someone who has already walked a path and helps you find your own.",
           "image": "/images/mentorat.jpeg",
           "image2": "/images/mentorat1.jpeg",
+          "practice": "Guided conversations, personal goals, and cultural discovery to help the young person name what they want to build.",
+          "signals": ["Clearer goals", "More thoughtful decisions", "Openness to others"],
           "outcomes": ["Clarity on life goals", "Strong peer network", "Cultural openness", "Long-term vision"]
+        }
+      ]
+    },
+    "programRhythm": {
+      "eyebrow": "In practice",
+      "title": "A week at Mentou",
+      "body": "The program combines academic work, expression, culture, and mentorship in a clear rhythm. Every activity serves a visible goal: learn better, speak better, stand taller, choose better.",
+      "facts": [
+        {
+          "label": "Rhythm",
+          "value": "4–6 hrs",
+          "note": "A weekly volume designed to progress without overwhelming school, family, and other commitments."
+        },
+        {
+          "label": "Cohorts",
+          "value": "8–12",
+          "note": "Intentionally small groups to keep support human and conversations meaningful."
+        },
+        {
+          "label": "Formats",
+          "value": "Workshops",
+          "note": "Tutoring, reading, public speaking, movement, music, and mentorship alternate according to the path."
+        },
+        {
+          "label": "Follow-up",
+          "value": "Parents",
+          "note": "Families stay involved through check-ins and concrete markers of the young person's progress."
         }
       ]
     },
@@ -178,12 +247,37 @@
         { "n": "03", "label": "Personalized plan" },
         { "n": "04", "label": "Cohort integration" }
       ],
-      "cta": "Request an interview"
+      "cta": "Schedule an interview",
+      "secondaryCta": "View the process",
+      "reassurance": "First call with no commitment · quick reply"
     }
   },
   "pillars": {
     "title": "The Seven Pillars",
-    "subtitle": "Each pillar develops an essential dimension of leadership."
+    "subtitle": "Each pillar develops an essential dimension of leadership.",
+    "practiceLabel": "In workshop",
+    "signalsLabel": "Signs of progress",
+    "outcomesLabel": "What the young person develops",
+    "engagement": {
+      "eyebrow": "Our commitment",
+      "title": "A demanding framework, never impersonal",
+      "body": "The pillars are not isolated activities. They form a guided path where each young person is observed, encouraged, and made responsible with consistency.",
+      "items": [
+        {
+          "title": "Track every progression",
+          "body": "We pay attention to small victories: speaking up, keeping a routine, repeating effort, making a more mature decision."
+        },
+        {
+          "title": "Hold a high standard",
+          "body": "Mentou encourages, but does not overprotect. Young people learn to honor commitments and stretch themselves without losing balance."
+        },
+        {
+          "title": "Involve the family",
+          "body": "Parents remain allies in the journey. They understand what is changing and how to support the young person outside sessions."
+        }
+      ],
+      "note": "The goal is not to fill a schedule. The goal is to build a trajectory."
+    }
   },
   "vision": {
     "kicker": "Why we exist",
@@ -222,13 +316,30 @@
     "founder": {
       "eyebrow": "The founder",
       "title": "A project born from deep conviction",
-      "body": "Mentou was born from noticing a gap: too many brilliant but isolated young people. Too much potential, no framework to express it. Our founder wanted to create what he would have loved to receive at 14 — a circle of engaged adults, ambitious peers, and a rigorous method to grow whole.",
-      "image": "/images/vision-founder.jpg"
+      "name": "Richard, founder of Mentou",
+      "role": "Mentor, framework builder, and guide for young talent",
+      "body": "Mentou was born from a simple observation: many young people have potential, but too few spaces to learn how to fully inhabit it. Richard wanted to create a place where grades matter, yes, but so do voice, posture, discipline, and vision.",
+      "journey": {
+        "title": "His journey",
+        "items": [
+          "Supporting young people through academic, personal, and social challenges.",
+          "Seeing the need for a framework more complete than classic tutoring.",
+          "Building a method that connects standards, culture, expression, and mentorship."
+        ]
+      },
+      "why": {
+        "title": "Why Mentou?",
+        "body": "Because a young person does not always lack ability. Sometimes they lack a circle, a rhythm, a steady adult voice, and a place where they can try, fall, begin again, and become stronger."
+      },
+      "quote": "I created Mentou to offer young people what I would have loved to receive earlier: a demanding, human framework, and adults who see beyond the report card.",
+      "signature": "Richard",
+      "image": "/images/vision-founder.jpg",
+      "imageAlt": "Portrait of Mentou's founder"
     },
     "cta": {
       "title": "Ready to join the journey?",
       "body": "Let's talk about your child's path.",
-      "label": "Request an interview"
+      "label": "Schedule an interview"
     }
   },
   "admission": {
@@ -267,6 +378,29 @@
         }
       ]
     },
+    "clarity": {
+      "eyebrow": "Before committing",
+      "title": "What you will know clearly",
+      "body": "Admission is designed both to inform you and to make sure Mentou is the right environment for your young person.",
+      "items": [
+        {
+          "title": "The recommended rhythm",
+          "body": "We clarify the activity volume, availability, and the best way to fit Mentou into the young person's week."
+        },
+        {
+          "title": "The path priorities",
+          "body": "Confidence, method, expression, discipline, or future plans: every plan begins with simple goals."
+        },
+        {
+          "title": "The parents' role",
+          "body": "You know how you will be informed, involved, and supported throughout the progression."
+        },
+        {
+          "title": "The practical terms",
+          "body": "Fees, calendar, available spots, and next cohort timing are presented before any decision."
+        }
+      ]
+    },
     "eligibility": {
       "eyebrow": "For whom?",
       "title": "Mentou is for motivated young people and their families",
@@ -277,7 +411,17 @@
         "Desire to grow beyond the strict academic frame",
         "Curiosity, openness, eagerness to push limits"
       ],
-      "note": "No selection on grades. We look for desire, not perfection."
+      "note": "No selection on grades. We look for desire, not perfection.",
+      "profiles": [
+        {
+          "title": "Junior · 12–16",
+          "body": "To build confidence, discipline, oral ease, and academic foundations at the right moment."
+        },
+        {
+          "title": "Senior · 17–22",
+          "body": "To clarify a project, gain autonomy, improve methods, and prepare for the next steps."
+        }
+      ]
     },
     "faq": {
       "eyebrow": "Frequently asked",
@@ -308,7 +452,7 @@
     "cta": {
       "title": "Start the process",
       "body": "First call with no commitment. We introduce ourselves, we talk, we see if the journey is right for you.",
-      "label": "Request an interview",
+      "label": "Schedule an interview",
       "secondary": "Write to us"
     }
   },
@@ -328,21 +472,21 @@
       "portraits": "Portraits"
     },
     "items": [
-      { "src": "/images/gallery/g-4145190.jpg", "alt": "Focused study", "category": "etude", "span": "tall" },
       { "src": "/images/gallery/g-5212345.jpg", "alt": "Tutoring workshop", "category": "etude", "span": "wide" },
-      { "src": "/images/gallery/g-1741230.jpg", "alt": "Quiet reading", "category": "lecture", "span": "tall" },
+      { "src": "/images/gallery/g-4145190.jpg", "alt": "Focused study", "category": "etude", "span": "tall" },
+      { "src": "/images/gallery/g-1112048.jpg", "alt": "Morning reading", "category": "lecture", "span": "tall" },
       { "src": "/images/gallery/g-590493.jpg", "alt": "Turning the page", "category": "lecture", "span": "small" },
-      { "src": "/images/gallery/g-1112048.jpg", "alt": "Morning reading", "category": "lecture", "span": "wide" },
-      { "src": "/images/gallery/g-1181467.jpg", "alt": "Curated books", "category": "lecture", "span": "small" },
       { "src": "/images/gallery/g-3182746.jpg", "alt": "Open conversation", "category": "parole", "span": "wide" },
+      { "src": "/images/gallery/g-1741230.jpg", "alt": "Quiet reading", "category": "lecture", "span": "small" },
       { "src": "/images/gallery/g-3184432.jpg", "alt": "Conversation among students", "category": "parole", "span": "tall" },
-      { "src": "/images/gallery/g-3184639.jpg", "alt": "Group exchange", "category": "parole", "span": "small" },
+      { "src": "/images/gallery/g-1181467.jpg", "alt": "Curated books", "category": "lecture", "span": "small" },
+      { "src": "/images/gallery/g-3184639.jpg", "alt": "Group exchange", "category": "parole", "span": "wide" },
       { "src": "/images/gallery/g-8108061.jpg", "alt": "Stage workshop", "category": "scene", "span": "tall" },
       { "src": "/images/gallery/g-3771074.jpg", "alt": "One-on-one tutoring", "category": "etude", "span": "small" },
       { "src": "/images/gallery/g-1701208.jpg", "alt": "Dance movement", "category": "danse", "span": "tall" },
-      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture and presence", "category": "danse", "span": "small" },
       { "src": "/images/gallery/g-358010.jpg", "alt": "Steps and rhythm", "category": "danse", "span": "wide" },
       { "src": "/images/gallery/g-209948.jpg", "alt": "Performance", "category": "danse", "span": "tall" },
+      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture and presence", "category": "danse", "span": "small" },
       { "src": "/images/gallery/g-4709822.jpg", "alt": "Music practice", "category": "musique", "span": "wide" },
       { "src": "/images/gallery/g-5212327.jpg", "alt": "Student portrait", "category": "portraits", "span": "tall" },
       { "src": "/images/gallery/g-8499613.jpg", "alt": "Mentor moment", "category": "portraits", "span": "small" },
@@ -358,13 +502,27 @@
     "image": "/images/contact-hero.jpg",
     "form": {
       "eyebrow": "Form",
-      "title": "Request an interview",
-      "intro": "Fill out this form in a few seconds. We'll get back to you quickly to schedule a first phone call.",
+      "title": "Schedule an interview",
+      "intro": "Fill out this form in a few seconds. We'll get back to you quickly through the channel that works best for you.",
+      "reassurance": [
+        "First call is free and without commitment",
+        "Reply within 48 business hours, often sooner",
+        "Phone, WhatsApp or email according to your preference"
+      ],
+      "nextSteps": {
+        "title": "After you send",
+        "items": [
+          "We read your request carefully",
+          "We suggest a time for a first call",
+          "You then decide whether you want to continue"
+        ]
+      },
       "fields": {
         "parentName": { "label": "Parent's name", "placeholder": "Your full name" },
         "childName": { "label": "Young person's name", "placeholder": "First name and age" },
         "email": { "label": "Email", "placeholder": "your@email.com" },
         "phone": { "label": "Phone", "placeholder": "(438) 342-7730" },
+        "preferredContact": { "label": "Preferred channel", "options": ["Phone", "WhatsApp", "Email", "No preference"] },
         "division": { "label": "Division of interest", "options": ["Junior (12-16)", "Senior (17-22)", "Not decided yet"] },
         "message": { "label": "Your message", "placeholder": "Tell us about your child, their passions, what you're looking for…" }
       },

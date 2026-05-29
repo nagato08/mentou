@@ -10,7 +10,7 @@
     "admission": "Admission",
     "gallery": "Galerie",
     "contact": "Contact",
-    "cta": "Demander une entrevue",
+    "cta": "Planifier une entrevue",
     "phone": "+1 (438) 342-7730"
   },
   "home": {
@@ -19,9 +19,14 @@
       "title": "Bâtir les leaders",
       "titleAccent": "de demain",
       "subtitle": "Un programme privé qui accompagne les jeunes de 12 à 22 ans dans le développement de leur confiance, de leur discipline et de leur leadership.",
+      "highlights": [
+        "Pour les 12–22 ans",
+        "Confiance, discipline, leadership",
+        "Tutorat, mentorat, expression"
+      ],
       "ageBadge": "12 – 22 ans",
       "ageLabel": "Cohortes Junior & Senior",
-      "primaryCta": "Demander une entrevue",
+      "primaryCta": "Planifier une entrevue",
       "secondaryCta": "Découvrir le programme"
     },
     "manifesto": {
@@ -30,6 +35,29 @@
       "body": " l'école, on apprend les matières. Chez Mentou, on apprend à devenir soi. Notre programme réunit tutorat, lecture, expression, mouvement et mentorat dans une même méthode pensée pour aider chaque jeune à révéler sa voix, sa confiance et sa direction.",
       "quote": "Bien plus qu'un soutien scolaire : un accompagnement complet pour grandir avec assurance.",
       "quoteAuthor": "L'équipe Mentou"
+    },
+    "whoItsFor": {
+      "eyebrow": "Pour qui ?",
+      "title": "Pour les jeunes qui ont besoin d'un cadre pour se révéler",
+      "body": "Mentou s'adresse aux familles qui sentent qu'il y a plus à construire qu'un bulletin : une posture, une voix, une discipline et une direction.",
+      "items": [
+        {
+          "title": "Le jeune brillant mais réservé",
+          "body": "Il comprend vite, mais n'ose pas toujours prendre sa place, poser des questions ou défendre ses idées."
+        },
+        {
+          "title": "L'ado qui manque de structure",
+          "body": "Il a du potentiel, mais a besoin d'habitudes solides, d'un rythme clair et d'adultes qui tiennent le cap avec lui."
+        },
+        {
+          "title": "L'étudiant ambitieux mais dispersé",
+          "body": "Il veut réussir, mais doit apprendre à prioriser, communiquer, s'organiser et transformer son énergie en progression."
+        },
+        {
+          "title": "La famille qui cherche plus qu'un tutorat",
+          "body": "Elle veut un accompagnement global : scolaire, humain, culturel et personnel, dans un environnement exigeant et bienveillant."
+        }
+      ]
     },
     "pillars": {
       "eyebrow": "Le programme",
@@ -42,6 +70,8 @@
           "body": "Accompagnement scolaire ciblé pour viser le meilleur au secondaire et au collégial, et préparer sereinement la suite des études. Nos tuteurs adaptent chaque séance au rythme et aux besoins du jeune, avec des objectifs clairs et mesurables.",
           "image": "/images/tutorat.jpeg",
           "image2": "/images/tutorat1.jpeg",
+          "practice": "Séances ciblées sur les devoirs, les examens et les méthodes d'étude, avec un objectif clair à chaque rencontre.",
+          "signals": ["Travail remis à temps", "Notes suivies sans panique", "Méthode réutilisable seul"],
           "outcomes": ["Maîtrise des matières clés", "Méthodes d'étude efficaces", "Confiance en classe", "Préparation collégiale solide"]
         },
         {
@@ -51,6 +81,8 @@
           "body": "Une sélection de livres marquants — finance, habitudes, stratégie, communication — qu'on lit ensemble et qu'on applique au quotidien. Chaque livre devient un outil concret pour penser autrement et agir plus intelligemment.",
           "image": "/images/lecture.jpeg",
           "image2": "/images/lecture1.jpeg",
+          "practice": "Lecture guidée, discussion des idées fortes et application concrète dans la vie scolaire, sociale ou familiale.",
+          "signals": ["Résumé clair d'un chapitre", "Idées reliées au quotidien", "Vocabulaire plus précis"],
           "outcomes": ["Culture financière de base", "Habitudes de lecture durables", "Vocabulaire et raisonnement élargis", "Pensée stratégique"]
         },
         {
@@ -60,6 +92,8 @@
           "body": "Des moments d'échange et de débat pour développer la culture générale, la pensée critique et l'aisance à s'exprimer. Le jeune apprend à défendre ses idées, à écouter l'autre et à construire une argumentation solide.",
           "image": "/images/causerie.jpeg",
           "image2": "/images/causerie2.jpeg",
+          "practice": "Débats, prises de position courtes et exercices d'écoute pour apprendre à penser avant de répondre.",
+          "signals": ["Opinion mieux structurée", "Écoute sans couper", "Arguments plus nuancés"],
           "outcomes": ["Aisance à l'oral", "Arguments structurés", "Écoute active", "Curiosité intellectuelle"]
         },
         {
@@ -69,6 +103,8 @@
           "body": "Improvisation et petites scènes pour gagner en confiance, poser sa voix et apprivoiser le regard des autres. À travers le jeu, le jeune développe une présence naturelle et apprend à être à l'aise dans toutes les situations sociales.",
           "image": "/images/causerie1.jpeg",
           "image2": "/images/sketch2.jpeg",
+          "practice": "Improvisations, scènes courtes et exercices de voix pour apprivoiser le regard des autres par le jeu.",
+          "signals": ["Voix plus posée", "Moins d'évitement", "Présence plus assumée"],
           "outcomes": ["Confiance sur scène", "Présence naturelle", "Maîtrise de l'improvisation", "Gestion du stress social"]
         },
         {
@@ -78,6 +114,8 @@
           "body": "Travailler la posture, le rythme et le langage du corps pour se sentir bien dans sa peau et inspirer naturellement confiance. La danse enseigne que le corps est le premier vecteur du leadership — avant même les mots.",
           "image": "/images/danse.jpeg",
           "image2": "/images/danse1.jpeg",
+          "practice": "Travail du rythme, de la posture et de la coordination pour développer une présence physique plus confiante.",
+          "signals": ["Posture plus ouverte", "Meilleure coordination", "Image de soi renforcée"],
           "outcomes": ["Posture et maintien assurés", "Conscience corporelle", "Rythme et coordination", "Image de soi positive"]
         },
         {
@@ -87,6 +125,8 @@
           "body": "L'apprentissage d'un instrument renforce la patience, l'écoute et la capacité à progresser un peu chaque jour. La musique apprend une vérité fondamentale : la discipline constante produit des résultats extraordinaires.",
           "image": "/images/musique.jpeg",
           "image2": "/images/musique1.jpeg",
+          "practice": "Apprentissage progressif d'un instrument ou d'un exercice musical pour entraîner concentration, patience et régularité.",
+          "signals": ["Pratique plus régulière", "Attention prolongée", "Persévérance visible"],
           "outcomes": ["Discipline quotidienne", "Concentration prolongée", "Sensibilité artistique", "Persévérance face à la difficulté"]
         },
         {
@@ -96,7 +136,36 @@
           "body": "Un accompagnement personnel pour clarifier ses objectifs, et une ouverture sur les cultures du monde pour grandir avec curiosité et respect. Un mentor, c'est quelqu'un qui a déjà tracé un chemin et qui aide à en trouver un, à soi.",
           "image": "/images/mentorat.jpeg",
           "image2": "/images/mentorat1.jpeg",
+          "practice": "Échanges guidés, objectifs personnels et découvertes culturelles pour aider le jeune à nommer ce qu'il veut construire.",
+          "signals": ["Objectifs plus clairs", "Décisions plus réfléchies", "Ouverture aux autres"],
           "outcomes": ["Clarté sur ses objectifs de vie", "Réseau de pairs solides", "Ouverture culturelle", "Vision à long terme"]
+        }
+      ]
+    },
+    "programRhythm": {
+      "eyebrow": "Concrètement",
+      "title": "Une semaine chez Mentou",
+      "body": "Le programme combine travail académique, expression, culture et mentorat dans un rythme clair. Chaque activité sert un objectif visible : mieux apprendre, mieux parler, mieux se tenir, mieux choisir.",
+      "facts": [
+        {
+          "label": "Rythme",
+          "value": "4–6 h",
+          "note": "Un volume hebdomadaire pensé pour progresser sans écraser l'école, la famille et les autres engagements."
+        },
+        {
+          "label": "Cohortes",
+          "value": "8–12",
+          "note": "Des groupes volontairement réduits pour garder un suivi humain et une vraie qualité d'échange."
+        },
+        {
+          "label": "Formats",
+          "value": "Ateliers",
+          "note": "Tutorat, lecture, prise de parole, mouvement, musique et mentorat alternent selon le parcours."
+        },
+        {
+          "label": "Suivi",
+          "value": "Parents",
+          "note": "Les familles restent impliquées avec des points d'échange et des repères concrets sur l'évolution du jeune."
         }
       ]
     },
@@ -178,12 +247,37 @@
         { "n": "03", "label": "Plan personnalisé" },
         { "n": "04", "label": "Intégration en cohorte" }
       ],
-      "cta": "Demander une entrevue"
+      "cta": "Planifier une entrevue",
+      "secondaryCta": "Voir le processus",
+      "reassurance": "Premier appel sans engagement · réponse rapide"
     }
   },
   "pillars": {
     "title": "Les Sept Piliers",
-    "subtitle": "Chaque pilier développe une dimension essentielle du leadership."
+    "subtitle": "Chaque pilier développe une dimension essentielle du leadership.",
+    "practiceLabel": "En atelier",
+    "signalsLabel": "Signes de progression",
+    "outcomesLabel": "Ce que le jeune développe",
+    "engagement": {
+      "eyebrow": "Notre engagement",
+      "title": "Un cadre exigeant, jamais impersonnel",
+      "body": "Les piliers ne sont pas des activités isolées. Ils forment un parcours suivi, où chaque jeune est observé, encouragé et responsabilisé avec constance.",
+      "items": [
+        {
+          "title": "Suivre chaque progression",
+          "body": "Nous portons attention aux petites victoires : une prise de parole, une routine tenue, un effort répété, une décision plus mature."
+        },
+        {
+          "title": "Tenir un niveau d'exigence",
+          "body": "Mentou encourage, mais ne surprotège pas. Le jeune apprend à respecter ses engagements et à se dépasser sans se perdre."
+        },
+        {
+          "title": "Impliquer la famille",
+          "body": "Les parents restent des alliés du parcours. Ils comprennent ce qui évolue et comment soutenir le jeune hors des séances."
+        }
+      ],
+      "note": "Le but n'est pas de remplir un horaire. Le but est de bâtir une trajectoire."
+    }
   },
   "vision": {
     "kicker": "Notre raison d'être",
@@ -222,13 +316,30 @@
     "founder": {
       "eyebrow": "Le fondateur",
       "title": "Un projet né d'une conviction profonde",
-      "body": "Mentou est né de l'observation d'un manque : trop de jeunes brillants, mais isolés. Trop de potentiels, mais sans cadre pour s'exprimer. Notre fondateur a voulu créer ce qu'il aurait aimé recevoir à 14 ans — un cercle d'adultes engagés, des pairs ambitieux, et une méthode rigoureuse pour grandir entier.",
-      "image": "/images/vision-founder.jpg"
+      "name": "Richard, fondateur de Mentou",
+      "role": "Mentor, bâtisseur de cadre et accompagnateur de jeunes talents",
+      "body": "Mentou est né d'une observation simple : beaucoup de jeunes ont du potentiel, mais trop peu d'espaces pour apprendre à l'habiter pleinement. Richard a voulu créer un lieu où l'on travaille les notes, oui, mais aussi la voix, la posture, la discipline et la vision.",
+      "journey": {
+        "title": "Son parcours",
+        "items": [
+          "Accompagner des jeunes dans leurs défis scolaires, personnels et sociaux.",
+          "Observer le besoin d'un cadre plus complet que le tutorat classique.",
+          "Construire une méthode qui relie exigence, culture, expression et mentorat."
+        ]
+      },
+      "why": {
+        "title": "Pourquoi Mentou ?",
+        "body": "Parce qu'un jeune ne manque pas toujours de capacité. Il lui manque parfois un cercle, un rythme, une parole adulte constante et un endroit où il peut essayer, tomber, recommencer et devenir plus solide."
+      },
+      "quote": "J'ai créé Mentou pour offrir aux jeunes ce que j'aurais aimé recevoir plus tôt : un cadre exigeant, humain, et des adultes qui voient plus loin que le bulletin.",
+      "signature": "Richard",
+      "image": "/images/vision-founder.jpg",
+      "imageAlt": "Portrait du fondateur de Mentou"
     },
     "cta": {
       "title": "Prêt à rejoindre l'aventure ?",
       "body": "Échangeons sur le parcours de votre enfant.",
-      "label": "Demander une entrevue"
+      "label": "Planifier une entrevue"
     }
   },
   "admission": {
@@ -267,6 +378,29 @@
         }
       ]
     },
+    "clarity": {
+      "eyebrow": "Avant de s'engager",
+      "title": "Ce que vous saurez clairement",
+      "body": "L'admission sert autant à vous informer qu'à nous assurer que Mentou est le bon cadre pour votre jeune.",
+      "items": [
+        {
+          "title": "Le rythme recommandé",
+          "body": "Nous précisons le volume d'activités, les disponibilités et la meilleure façon d'intégrer Mentou à la semaine du jeune."
+        },
+        {
+          "title": "Les priorités du parcours",
+          "body": "Confiance, méthode, expression, discipline ou projet d'avenir : chaque plan commence par des objectifs simples."
+        },
+        {
+          "title": "Le rôle des parents",
+          "body": "Vous savez comment vous serez informés, impliqués et accompagnés tout au long de la progression."
+        },
+        {
+          "title": "Les conditions pratiques",
+          "body": "Frais, calendrier, places disponibles et prochaine cohorte sont présentés avant toute décision."
+        }
+      ]
+    },
     "eligibility": {
       "eyebrow": "Pour qui ?",
       "title": "Mentou s'adresse à des jeunes motivés et leurs familles",
@@ -277,7 +411,17 @@
         "Volonté de grandir au-delà du strict cadre scolaire",
         "Curiosité, ouverture, envie de se dépasser"
       ],
-      "note": "Aucune sélection sur les notes. Nous cherchons l'envie, pas la perfection."
+      "note": "Aucune sélection sur les notes. Nous cherchons l'envie, pas la perfection.",
+      "profiles": [
+        {
+          "title": "Junior · 12–16 ans",
+          "body": "Pour installer la confiance, la discipline, l'aisance à l'oral et les bases scolaires au bon moment."
+        },
+        {
+          "title": "Senior · 17–22 ans",
+          "body": "Pour clarifier un projet, gagner en autonomie, améliorer la méthode et préparer les prochaines étapes."
+        }
+      ]
     },
     "faq": {
       "eyebrow": "Questions fréquentes",
@@ -308,7 +452,7 @@
     "cta": {
       "title": "Commencer le processus",
       "body": "Premier appel sans engagement. On se présente, on échange, on voit si l'aventure vous correspond.",
-      "label": "Demander une entrevue",
+      "label": "Planifier une entrevue",
       "secondary": "Nous écrire"
     }
   },
@@ -328,21 +472,21 @@
       "portraits": "Portraits"
     },
     "items": [
-      { "src": "/images/gallery/g-4145190.jpg", "alt": "Concentration en étude", "category": "etude", "span": "tall" },
       { "src": "/images/gallery/g-5212345.jpg", "alt": "Atelier tutorat en cohorte", "category": "etude", "span": "wide" },
-      { "src": "/images/gallery/g-1741230.jpg", "alt": "Lecture concentrée", "category": "lecture", "span": "tall" },
+      { "src": "/images/gallery/g-4145190.jpg", "alt": "Concentration en étude", "category": "etude", "span": "tall" },
+      { "src": "/images/gallery/g-1112048.jpg", "alt": "Lecture du matin", "category": "lecture", "span": "tall" },
       { "src": "/images/gallery/g-590493.jpg", "alt": "Page tournée", "category": "lecture", "span": "small" },
-      { "src": "/images/gallery/g-1112048.jpg", "alt": "Lecture du matin", "category": "lecture", "span": "wide" },
-      { "src": "/images/gallery/g-1181467.jpg", "alt": "Sélection de livres", "category": "lecture", "span": "small" },
       { "src": "/images/gallery/g-3182746.jpg", "alt": "Causerie ouverte", "category": "parole", "span": "wide" },
+      { "src": "/images/gallery/g-1741230.jpg", "alt": "Lecture concentrée", "category": "lecture", "span": "small" },
       { "src": "/images/gallery/g-3184432.jpg", "alt": "Discussion entre jeunes", "category": "parole", "span": "tall" },
-      { "src": "/images/gallery/g-3184639.jpg", "alt": "Échange en groupe", "category": "parole", "span": "small" },
+      { "src": "/images/gallery/g-1181467.jpg", "alt": "Sélection de livres", "category": "lecture", "span": "small" },
+      { "src": "/images/gallery/g-3184639.jpg", "alt": "Échange en groupe", "category": "parole", "span": "wide" },
       { "src": "/images/gallery/g-8108061.jpg", "alt": "Atelier de scène", "category": "scene", "span": "tall" },
       { "src": "/images/gallery/g-3771074.jpg", "alt": "Tutorat individuel", "category": "etude", "span": "small" },
       { "src": "/images/gallery/g-1701208.jpg", "alt": "Mouvement de danse", "category": "danse", "span": "tall" },
-      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture et présence", "category": "danse", "span": "small" },
       { "src": "/images/gallery/g-358010.jpg", "alt": "Pas et rythme", "category": "danse", "span": "wide" },
       { "src": "/images/gallery/g-209948.jpg", "alt": "Performance scénique", "category": "danse", "span": "tall" },
+      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture et présence", "category": "danse", "span": "small" },
       { "src": "/images/gallery/g-4709822.jpg", "alt": "Pratique musicale", "category": "musique", "span": "wide" },
       { "src": "/images/gallery/g-5212327.jpg", "alt": "Portrait d'élève", "category": "portraits", "span": "tall" },
       { "src": "/images/gallery/g-8499613.jpg", "alt": "Regard mentorat", "category": "portraits", "span": "small" },
@@ -358,13 +502,27 @@
     "image": "/images/contact-hero.jpg",
     "form": {
       "eyebrow": "Formulaire",
-      "title": "Demander une entrevue",
-      "intro": "Remplissez ce formulaire en quelques secondes. Nous vous recontactons rapidement pour fixer un premier échange téléphonique.",
+      "title": "Planifier une entrevue",
+      "intro": "Remplissez ce formulaire en quelques secondes. Nous vous recontactons rapidement selon le canal qui vous convient le mieux.",
+      "reassurance": [
+        "Premier appel gratuit et sans engagement",
+        "Réponse sous 48h ouvrées, souvent plus vite",
+        "Téléphone, WhatsApp ou courriel selon votre préférence"
+      ],
+      "nextSteps": {
+        "title": "Après l'envoi",
+        "items": [
+          "Nous lisons votre demande avec attention",
+          "Nous proposons un créneau pour un premier appel",
+          "Vous décidez ensuite si vous souhaitez poursuivre"
+        ]
+      },
       "fields": {
         "parentName": { "label": "Nom du parent", "placeholder": "Votre nom complet" },
         "childName": { "label": "Nom du jeune", "placeholder": "Prénom et âge" },
         "email": { "label": "Courriel", "placeholder": "votre@email.com" },
         "phone": { "label": "Téléphone", "placeholder": "(438) 342-7730" },
+        "preferredContact": { "label": "Canal préféré", "options": ["Téléphone", "WhatsApp", "Courriel", "Aucune préférence"] },
         "division": { "label": "Division d'intérêt", "options": ["Junior (12-16 ans)", "Senior (17-22 ans)", "Pas encore décidé"] },
         "message": { "label": "Votre message", "placeholder": "Parlez-nous de votre enfant, de ses passions, de ce que vous cherchez…" }
       },
