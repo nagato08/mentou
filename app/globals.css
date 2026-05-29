@@ -34,7 +34,12 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scrollbar-gutter: stable;
+}
+
+@media (min-width: 768px) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 [data-scroll-behavior="smooth"] {
