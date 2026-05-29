@@ -31,15 +31,11 @@
 }
 
 html {
+  background: var(--mentou-ink);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@media (min-width: 768px) {
-  html {
-    scrollbar-gutter: stable;
-  }
+  scrollbar-gutter: stable;
 }
 
 [data-scroll-behavior="smooth"] {
@@ -53,6 +49,7 @@ body {
   font-weight: 300;
   line-height: 1.65;
   position: relative;
+  overflow-x: clip;
 }
 
 ::selection {
