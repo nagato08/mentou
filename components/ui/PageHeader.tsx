@@ -20,7 +20,7 @@ export default function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <section className="relative min-h-[65vh] flex items-end border-b border-bone/10 overflow-hidden bg-ink">
+    <section className="relative min-h-[80vh] flex items-end border-b border-bone/10 overflow-hidden bg-ink">
       {image && (
         <>
           <Image
