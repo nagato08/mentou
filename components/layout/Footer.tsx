@@ -13,7 +13,7 @@ export default function Footer({ lang, dict }: FooterProps) {
 
   return (
     <footer className="border-t border-bone/10 bg-ink text-bone/70">
-      <Container size="wide" as="div" className="py-12 px-3 md:px-6">
+      <Container size="wide" as="div" className="pt-20 pb-12 px-3 md:px-6">
         {/* Main grid: Brand + Navigation + Pillars + Contact */}
         <div className="grid gap-12 md:grid-cols-6">
           {/* Brand section */}
