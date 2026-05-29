@@ -64,7 +64,7 @@ export default function NavbarClient({
           <Link
             href={base}
             onClick={close}
-            className="font-display text-2xl tracking-wide text-bone hover:text-gold transition-colors"
+            className="font-display text-lg sm:text-xl md:text-2xl tracking-wide text-bone hover:text-gold transition-colors"
           >
             {siteName}
             <span className="ml-2 text-gold">·</span>
@@ -117,7 +117,7 @@ export default function NavbarClient({
               aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((v) => !v)}
-              className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1"
             >
               <span
                 className={`block h-px w-6 bg-bone transition-all duration-300 origin-center ${
@@ -148,7 +148,7 @@ export default function NavbarClient({
       >
         <nav
           aria-label="Menu mobile"
-          className="flex flex-col px-6 py-10 gap-0 border-t border-bone/10"
+          className="flex flex-col px-4 sm:px-6 py-6 sm:py-10 gap-0 border-t border-bone/10"
         >
           {items.map((item, i) => {
             const isActive = pathname === item.href || (item.href !== base && pathname.startsWith(item.href));
@@ -158,7 +158,7 @@ export default function NavbarClient({
                 href={item.href}
                 onClick={close}
                 aria-current={isActive ? "page" : undefined}
-                className={`flex items-center justify-between py-5 border-b border-bone/10 font-display text-3xl transition-colors duration-300 ${isActive ? "text-gold" : "text-bone hover:text-gold"}`}
+                className={`flex items-center justify-between py-4 sm:py-5 border-b border-bone/10 font-display text-lg sm:text-2xl transition-colors duration-300 ${isActive ? "text-gold" : "text-bone hover:text-gold"}`}
                 style={{ transitionDelay: menuOpen ? `${i * 60}ms` : "0ms" }}
               >
                 {item.label}
@@ -168,7 +168,7 @@ export default function NavbarClient({
           })}
         </nav>
 
-        <div className="px-6 mt-auto pb-12 flex flex-col gap-6">
+        <div className="px-4 sm:px-6 mt-auto pb-8 sm:pb-12 flex flex-col gap-4 sm:gap-5">
           {/* Lang switcher mobile */}
           <div className="flex items-center gap-3 border-t border-bone/10 pt-6">
             {locales.map((loc, i) => (
