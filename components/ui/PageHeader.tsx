@@ -36,14 +36,14 @@ export default function PageHeader({
           <div aria-hidden className="absolute inset-0 bg-linear-to-r from-ink/70 via-transparent to-transparent" />
         </>
       )}
-      <Container size="wide" className="relative pb-16 md:pb-20 pt-32 md:pt-40 flex flex-col gap-6">
+      <Container size="wide" className="relative pb-16 md:pb-20 pt-32 md:pt-40 flex flex-col gap-6" data-gsap="fade-up">
         {kicker && (
           <div className="flex items-center gap-4">
             <span className="block h-px w-10 bg-gold" />
             <span className="eyebrow">{kicker}</span>
           </div>
         )}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-bone max-w-4xl">
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-bone max-w-4xl" data-gsap="fade-left">
           {title}
           {titleAccent && (
             <span className="block font-italic-display text-gold/95">
