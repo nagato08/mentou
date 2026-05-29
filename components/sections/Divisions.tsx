@@ -21,7 +21,7 @@ function DivisionCard({
   return (
     <article className="relative overflow-hidden border hairline group">
       {/* Image */}
-      <div className="relative aspect-4/5 md:aspect-3/4 lg:aspect-4/5 min-h-[520px]">
+      <div className="relative aspect-4/5 md:aspect-3/4 lg:aspect-4/5 min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
         <Image
           src={image}
           alt={imageAlt}
@@ -32,15 +32,15 @@ function DivisionCard({
         <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/60 to-ink/20" />
 
         {/* Content overlay */}
-        <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
-          <div className="flex items-center justify-between mb-6">
-            <span className="text-[0.65rem] uppercase tracking-[0.35em] text-gold">
+        <div className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-end">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-5 sm:mb-6">
+            <span className="text-[0.65rem] uppercase tracking-[0.24em] sm:tracking-[0.35em] text-gold">
               {label}
             </span>
             <span className="font-display text-xl text-bone">{ageRange}</span>
           </div>
 
-          <h3 className="font-display text-3xl md:text-4xl leading-tight text-bone mb-8">
+          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-bone mb-6 md:mb-8">
             {headline}
           </h3>
 
@@ -50,7 +50,7 @@ function DivisionCard({
             {points.map((p, i) => (
               <li
                 key={i}
-                className="flex gap-4 items-baseline text-bone/85 text-sm md:text-base"
+                className="flex gap-3 sm:gap-4 items-baseline text-bone/85 text-sm md:text-base"
               >
                 <span className="font-mono text-[0.65rem] text-gold/70 tabular-nums">
                   {String(i + 1).padStart(2, "0")}
@@ -69,9 +69,9 @@ export default function Divisions({ dict }: DivisionsProps) {
   const t = dict.home.divisions;
 
   return (
-    <section className="relative section-y border-b hairline bg-ink">
+    <section className="relative section-y-home border-b hairline bg-ink">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-12 gap-8 mb-16 md:mb-20 items-end" data-gsap="fade-up">
+        <div className="grid grid-cols-12 gap-8 mb-10 md:mb-12 items-end" data-gsap="fade-up">
           <div className="col-span-12 md:col-span-4">
             <div className="flex items-center gap-3">
               <span className="block h-px w-8 bg-gold" />

@@ -41,6 +41,19 @@ export default function AdmissionEligibility({ dict }: Props) {
             <p className="font-italic-display text-lg md:text-xl text-burgundy mt-4 border-l border-gold pl-5">
               {t.note}
             </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-ink/10">
+              {t.profiles.map((profile) => (
+                <div key={profile.title} className="bg-paper p-5">
+                  <h3 className="font-display text-xl text-ink">
+                    {profile.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink/60">
+                    {profile.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Image */}

@@ -7,9 +7,9 @@ export default function Testimonials({ dict }: Props) {
   const t = dict.home.testimonials;
 
   return (
-    <section className="relative section-y border-b border-bone/10 bg-paper text-ink overflow-hidden">
+    <section className="relative section-y-home border-b border-bone/10 bg-paper text-ink overflow-hidden">
       <Container size="wide">
-        <div className="grid grid-cols-12 gap-8 mb-12 md:mb-16 items-end" data-gsap="fade-up">
+        <div className="grid grid-cols-12 gap-8 mb-10 md:mb-12 items-end" data-gsap="fade-up">
           <div className="col-span-12 md:col-span-4">
             <div className="flex items-center gap-3">
               <span className="block h-px w-8 bg-burgundy" />

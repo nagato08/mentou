@@ -8,10 +8,10 @@ export default function PillarsList({ lang, dict }: PillarsListProps) {
   const t = dict.home.pillars;
 
   return (
-    <section className="relative section-y border-b hairline bg-ink overflow-hidden">
+    <section className="relative section-y-home border-b hairline bg-ink overflow-hidden">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-12 lg:px-20">
         {/* Header */}
-        <div className="grid grid-cols-12 gap-8 mb-16 md:mb-24 items-end" data-gsap="fade-up">
+        <div className="grid grid-cols-12 gap-8 mb-10 md:mb-14 items-end" data-gsap="fade-up">
           <div className="col-span-12 md:col-span-4">
             <div className="flex items-center gap-3">
               <span className="block h-px w-8 bg-gold" />
@@ -36,7 +36,7 @@ export default function PillarsList({ lang, dict }: PillarsListProps) {
               <Link
                 key={p.roman}
                 href={`/${lang}/piliers#pilier-${p.roman}`}
-                className={`group relative bg-ink border border-bone/10 p-6 md:p-10 flex flex-col gap-5 hover:bg-night/40 transition-colors duration-500 ${colSpan}`}
+                className={`group relative bg-ink border border-bone/10 p-5 sm:p-6 md:p-10 flex flex-col gap-5 hover:bg-night/40 transition-colors duration-500 ${colSpan}`}
               >
                 {/* Image */}
                 <div className="relative w-full overflow-hidden aspect-4/3">
@@ -55,7 +55,7 @@ export default function PillarsList({ lang, dict }: PillarsListProps) {
 
                 {/* Texte */}
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-display text-2xl md:text-3xl text-bone group-hover:text-gold transition-colors duration-500">
+                  <h3 className="font-display text-2xl md:text-3xl leading-tight text-bone group-hover:text-gold transition-colors duration-500">
                     {p.title}
                   </h3>
                   <span className="font-italic-display text-base md:text-lg text-gold/80">
@@ -68,7 +68,7 @@ export default function PillarsList({ lang, dict }: PillarsListProps) {
 
                 <span
                   aria-hidden
-                  className="mt-auto inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.3em] text-bone/40 group-hover:text-gold transition-colors"
+                  className="mt-auto inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.22em] sm:tracking-[0.3em] text-bone/40 group-hover:text-gold transition-colors"
                 >
                   En savoir plus
                   <span className="transition-transform duration-500 group-hover:translate-x-1">

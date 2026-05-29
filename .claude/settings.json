@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m 'Increase PageHeader height: 65vh → 80vh *)"
+    ]
+  }
+}

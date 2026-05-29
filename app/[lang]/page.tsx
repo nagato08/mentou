@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
+import WhoItsFor from "@/components/sections/WhoItsFor";
 import PillarsList from "@/components/sections/PillarsList";
+import ProgramRhythm from "@/components/sections/ProgramRhythm";
 import Transformation from "@/components/sections/Transformation";
 import Testimonials from "@/components/sections/Testimonials";
 import Divisions from "@/components/sections/Divisions";
@@ -45,7 +47,9 @@ export default async function HomePage({
     <>
       <Hero lang={typedLang} dict={dict} />
       <Manifesto dict={dict} />
+      <WhoItsFor dict={dict} />
       <PillarsList lang={typedLang} dict={dict} />
+      <ProgramRhythm dict={dict} />
       <Transformation dict={dict} />
       <Testimonials dict={dict} />
       <Divisions dict={dict} />

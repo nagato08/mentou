@@ -7,7 +7,7 @@ export default function Manifesto({ dict }: ManifestoProps) {
   const t = dict.home.manifesto;
 
   return (
-    <section className="relative section-y border-b hairline bg-ink">
+    <section className="relative section-y-home border-b hairline bg-ink">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Image */}
