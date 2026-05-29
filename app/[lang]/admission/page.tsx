@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import AdmissionProcess from "@/components/sections/AdmissionProcess";
+import AdmissionClarity from "@/components/sections/AdmissionClarity";
 import AdmissionEligibility from "@/components/sections/AdmissionEligibility";
 import AdmissionFaq from "@/components/sections/AdmissionFaq";
-import CtaPanel from "@/components/sections/CtaPanel";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 
@@ -48,19 +48,12 @@ export default async function AdmissionPage({
         image={a.image}
       />
       <AdmissionProcess dict={dict} />
+      <AdmissionClarity dict={dict} />
       <AdmissionEligibility dict={dict} />
       <AdmissionFaq
         eyebrow={a.faq.eyebrow}
         title={a.faq.title}
         items={a.faq.items}
-      />
-      <CtaPanel
-        title={a.cta.title}
-        body={a.cta.body}
-        primaryLabel={a.cta.label}
-        primaryHref={`/${lang}/contact`}
-        secondaryLabel={a.cta.secondary}
-        secondaryHref={`/${lang}/contact`}
       />
     </>
   );
