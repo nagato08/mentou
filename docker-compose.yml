@@ -1,0 +1,11 @@
+services:
+  web:
+    image: ${WEB_IMAGE:-site-vitrine:latest}
+    container_name: site-vitrine
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
