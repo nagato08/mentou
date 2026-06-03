@@ -7,8 +7,14 @@ import "../globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import GsapAnimations from "@/components/layout/GsapAnimations";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/seo";
+import {
+  organizationSchema,
+  localBusinessSchema,
+  websiteSchema,
+} from "@/lib/jsonld";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -67,6 +73,13 @@ export default async function LangLayout({
       className={`${cormorant.variable} ${manrope.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-ink text-bone antialiased">
+        <JsonLd
+          data={[
+            organizationSchema(lang as Locale),
+            websiteSchema(lang as Locale),
+            localBusinessSchema(lang as Locale),
+          ]}
+        />
         <Navbar lang={lang as Locale} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer lang={lang as Locale} dict={dict} />

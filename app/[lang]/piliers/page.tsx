@@ -4,8 +4,10 @@ import Link from "next/link";
 
 import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE_URL } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -39,6 +41,21 @@ export default async function PillarsPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: dict.nav.home, url: `${SITE_URL}/${lang}` },
+            { name: dict.nav.pillars, url: `${SITE_URL}/${lang}/piliers` },
+          ]),
+          ...items.map((p) =>
+            serviceSchema(lang as Locale, {
+              name: p.title,
+              description: p.body,
+              image: p.image,
+            })
+          ),
+        ]}
+      />
       {/* Page Hero */}
       <section className="relative min-h-[76svh] md:min-h-[80vh] flex items-end border-b border-bone/10 overflow-hidden bg-ink">
         <Image

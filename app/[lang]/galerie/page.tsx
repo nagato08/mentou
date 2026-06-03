@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import GalleryGrid from "@/components/sections/GalleryGrid";
 import CtaPanel from "@/components/sections/CtaPanel";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE_URL } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -38,6 +40,12 @@ export default async function GalleryPage({
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: dict.nav.home, url: `${SITE_URL}/${lang}` },
+          { name: dict.nav.gallery, url: `${SITE_URL}/${lang}/galerie` },
+        ])}
+      />
       <PageHeader
         kicker={g.kicker}
         title={g.title}

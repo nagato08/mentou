@@ -6,8 +6,10 @@ import VisionPrinciples from "@/components/sections/VisionPrinciples";
 import VisionMethod from "@/components/sections/VisionMethod";
 import VisionFounder from "@/components/sections/VisionFounder";
 import CtaPanel from "@/components/sections/CtaPanel";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE_URL } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -41,6 +43,12 @@ export default async function VisionPage({
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: dict.nav.home, url: `${SITE_URL}/${lang}` },
+          { name: dict.nav.vision, url: `${SITE_URL}/${lang}/vision` },
+        ])}
+      />
       <PageHeader
         kicker={v.kicker}
         title={v.title}

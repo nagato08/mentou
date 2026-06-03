@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import ContactSplit from "@/components/sections/ContactSplit";
 import AdmissionFaq from "@/components/sections/AdmissionFaq";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE_URL } from "@/lib/seo";
+import { faqSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -38,6 +40,15 @@ export default async function ContactPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          faqSchema(c.faq.items),
+          breadcrumbSchema([
+            { name: dict.nav.home, url: `${SITE_URL}/${lang}` },
+            { name: dict.nav.contact, url: `${SITE_URL}/${lang}/contact` },
+          ]),
+        ]}
+      />
       <PageHeader
         kicker={c.kicker}
         title={c.title}
