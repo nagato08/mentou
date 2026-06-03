@@ -6,7 +6,7 @@ import "../globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import GsapAnimations from "@/components/layout/GsapAnimations";
+import GsapAnimations from "@/components/layout/GsapAnimationsLazy";
 import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/seo";
@@ -19,15 +19,18 @@ import {
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
+  preload: true,
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
   display: "swap",
+  preload: true,
 });
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
