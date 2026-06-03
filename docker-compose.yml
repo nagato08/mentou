@@ -1,8 +1,10 @@
 services:
   web:
-    image: ${WEB_IMAGE:-site-vitrine:latest}
+    image: ${WEB_IMAGE:-ghcr.io/nagato08/mentou:latest}
     container_name: site-vitrine
     restart: unless-stopped
+    environment:
+      CONTACT_EMAIL: ${CONTACT_EMAIL}
     networks:
       - web
 
