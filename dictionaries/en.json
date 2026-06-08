@@ -401,6 +401,34 @@
         }
       ]
     },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Transparent investment",
+      "items": [
+        {
+          "period": "Per week",
+          "price": 150,
+          "description": "Full access to all 7 pillars per week",
+          "secondary": "Best for: trial or short-term commitment",
+          "featured": false
+        },
+        {
+          "period": "Per month",
+          "price": 500,
+          "description": "Unlimited access to all pillars",
+          "secondary": "Best for: serious commitment and savings",
+          "featured": true
+        }
+      ],
+      "paymentMethods": {
+        "label": "Accepted payment methods",
+        "methods": [
+          "Credit card (Visa, Mastercard, Amex)",
+          "PayPal",
+          "On-site"
+        ]
+      }
+    },
     "eligibility": {
       "eyebrow": "For whom?",
       "title": "Mentou is for motivated young people and their families",

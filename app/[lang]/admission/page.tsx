@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import AdmissionProcess from "@/components/sections/AdmissionProcess";
 import AdmissionClarity from "@/components/sections/AdmissionClarity";
+import PricingSection from "@/components/sections/PricingSection";
 import AdmissionEligibility from "@/components/sections/AdmissionEligibility";
 import AdmissionFaq from "@/components/sections/AdmissionFaq";
 import JsonLd from "@/components/seo/JsonLd";
@@ -60,6 +61,12 @@ export default async function AdmissionPage({
       />
       <AdmissionProcess dict={dict} />
       <AdmissionClarity dict={dict} />
+      <PricingSection
+        eyebrow={a.pricing.eyebrow}
+        title={a.pricing.title}
+        items={a.pricing.items}
+        paymentMethods={a.pricing.paymentMethods}
+      />
       <AdmissionEligibility dict={dict} />
       <AdmissionFaq
         eyebrow={a.faq.eyebrow}

@@ -401,6 +401,34 @@
         }
       ]
     },
+    "pricing": {
+      "eyebrow": "Tarification",
+      "title": "Investissement transparent",
+      "items": [
+        {
+          "period": "Par semaine",
+          "price": 150,
+          "description": "Accès complet aux 7 piliers par semaine",
+          "secondary": "Idéal pour : essai ou engagement court terme",
+          "featured": false
+        },
+        {
+          "period": "Par mois",
+          "price": 500,
+          "description": "Accès illimité à tous les piliers",
+          "secondary": "Idéal pour : engagement sérieux et économies",
+          "featured": true
+        }
+      ],
+      "paymentMethods": {
+        "label": "Modes de paiement acceptés",
+        "methods": [
+          "Carte de crédit (Visa, Mastercard, Amex)",
+          "PayPal",
+          "Sur place"
+        ]
+      }
+    },
     "eligibility": {
       "eyebrow": "Pour qui ?",
       "title": "Mentou s'adresse à des jeunes motivés et leurs familles",
