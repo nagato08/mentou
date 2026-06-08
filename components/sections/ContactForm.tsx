@@ -33,7 +33,7 @@ export default function ContactForm({ dict }: { dict: FormDict }) {
   const [status, setStatus] = useState<Status>("idle");
   const f = dict.fields;
   const WHATSAPP_NUMBER = "14383427730";
-  const EMAIL = "bonjour@mentou.ca";
+  const EMAIL = "admission@mentou.ca";
 
   const formatMessage = (formData: FormData): string => {
     const parentName = formData.get("parentName") || "";

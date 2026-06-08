@@ -537,7 +537,7 @@
       "title": "Several ways to get in touch",
       "items": [
         { "label": "Phone", "value": "+1 (438) 342-7730", "href": "tel:+14383427730", "note": "Monday to Friday, 9am–6pm" },
-        { "label": "Email", "value": "hello@mentou.ca", "href": "mailto:hello@mentou.ca", "note": "Reply within 48h" },
+        { "label": "Email", "value": "admission@mentou.ca", "href": "mailto:admission@mentou.ca", "note": "Reply within 48h" },
         { "label": "WhatsApp", "value": "+1 (438) 342-7730", "href": "https://wa.me/14383427730", "note": "Quick reply" },
         { "label": "Address", "value": "Québec, Canada", "href": null, "note": "Meetings by appointment" }
       ]
