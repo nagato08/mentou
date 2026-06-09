@@ -68,8 +68,8 @@ export default function PricingSection({
                 {/* Badge */}
                 {item.featured && (
                   <div className="inline-flex items-center justify-center gap-2 mb-6 mx-auto">
-                    <div className="w-2 h-2 rounded-full bg-burgundy" />
-                    <span className="text-xs font-semibold uppercase tracking-widest text-burgundy">
+                    <div className="w-2 h-2 rounded-full bg-bone" />
+                    <span className="text-xs font-semibold uppercase tracking-widest text-bone">
                       Meilleure valeur
                     </span>
                   </div>
