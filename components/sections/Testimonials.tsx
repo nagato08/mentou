@@ -35,6 +35,14 @@ export default function Testimonials({ dict }: TestimonialsProps) {
               className="p-8 bg-ink/50 border border-bone/10 rounded"
               style={{ animationDelay: `${i * 100}ms` }}
             >
+              {/* Rating */}
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(item.rating)].map((_, s) => (
+                  <span key={s} className="text-gold text-sm">
+                    ★
+                  </span>
+                ))}
+              </div>
               <blockquote className="mb-6">
                 <p className="text-bone leading-relaxed italic">
                   &quot;{item.quote}&quot;

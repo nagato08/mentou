@@ -214,17 +214,20 @@
         {
           "quote": "En quelques mois, mon fils a complètement changé. Il ose s'exprimer, il s'intéresse à de nouvelles choses, il a trouvé sa place. Mentou lui a donné un cadre qu'il ne savait pas qu'il cherchait.",
           "author": "Marie L.",
-          "role": "Maman de Léo, 14 ans"
+          "role": "Maman de Léo, 14 ans",
+          "rating": 4
         },
         {
           "quote": "L'approche est rigoureuse mais profondément humaine. Mes deux ados y vont avec plaisir et reviennent grandis chaque semaine. C'est rare et précieux.",
           "author": "Karim D.",
-          "role": "Papa de Yasmine et Adam"
+          "role": "Papa de Yasmine et Adam",
+          "rating": 4
         },
         {
           "quote": "Avant Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch et les causeries m'ont vraiment débloqué.",
           "author": "Sophia",
-          "role": "Élève, 17 ans"
+          "role": "Élève, 17 ans",
+          "rating": 5
         }
       ]
     },

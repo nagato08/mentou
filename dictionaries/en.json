@@ -214,17 +214,20 @@
         {
           "quote": "Within months, my son completely changed. He dares to speak up, he's curious about new things, he found his place. Mentou gave him a framework he didn't know he was looking for.",
           "author": "Marie L.",
-          "role": "Mom of Léo, 14"
+          "role": "Mom of Léo, 14",
+          "rating": 4
         },
         {
           "quote": "The approach is rigorous yet deeply human. Both my teens go with pleasure and come back grown each week. That's rare and precious.",
           "author": "Karim D.",
-          "role": "Dad of Yasmine and Adam"
+          "role": "Dad of Yasmine and Adam",
+          "rating": 4
         },
         {
           "quote": "Before Mentou, I didn't dare speak up in class. Now, I lead a student project. The sketch exercises and debates truly unlocked something in me.",
           "author": "Sophia",
-          "role": "Student, 17"
+          "role": "Student, 17",
+          "rating": 5
         }
       ]
     },
