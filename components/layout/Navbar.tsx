@@ -20,7 +20,6 @@ export default function Navbar({ lang, dict }: NavbarProps) {
   return (
     <NavbarClient
       lang={lang}
-      siteName={dict.meta.siteName}
       ctaLabel={dict.nav.cta}
       phoneLabel={dict.nav.phone}
       whatsappLabel={dict.footer.whatsapp}

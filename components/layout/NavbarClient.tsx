@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n-config";
 import Container from "./Container";
@@ -15,7 +16,6 @@ type NavItem = {
 
 type NavbarClientProps = {
   lang: Locale;
-  siteName: string;
   ctaLabel: string;
   phoneLabel: string;
   whatsappLabel: string;
@@ -25,7 +25,6 @@ type NavbarClientProps = {
 
 export default function NavbarClient({
   lang,
-  siteName,
   ctaLabel,
   phoneLabel,
   whatsappLabel,
@@ -97,10 +96,16 @@ export default function NavbarClient({
           <Link
             href={base}
             onClick={close}
-            className="shrink-0 font-display text-lg tracking-wide text-bone transition-colors hover:text-gold sm:text-xl md:text-2xl"
+            className="shrink-0 flex items-center"
           >
-            {siteName}
-            <span className="ml-2 text-gold">·</span>
+            <Image
+              src="/logo-remove.png"
+              alt="Mentou"
+              width={40}
+              height={40}
+              className="h-8 w-auto sm:h-10 md:h-12"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

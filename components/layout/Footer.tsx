@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import Container from "./Container";
 
@@ -18,8 +19,15 @@ export default function Footer({ lang, dict }: FooterProps) {
         <div className="grid gap-12 md:grid-cols-6">
           {/* Brand section */}
           <div className="md:col-span-2">
-            <Link href={base} className="font-display text-3xl text-bone">
-              {dict.meta.siteName}
+            <Link href={base}>
+              <Image
+                src="/logo-remove.png"
+                alt="Mentou"
+                width={60}
+                height={60}
+                className="h-12 w-auto"
+                priority
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-bone/60">
               {dict.footer.tagline}
