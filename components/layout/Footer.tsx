@@ -96,7 +96,7 @@ export default function Footer({ lang, dict }: FooterProps) {
         {/* Footer bottom */}
         <div className="mt-16 flex flex-col gap-2 border-t border-bone/10 pt-8 text-xs text-bone/40 md:flex-row md:justify-between">
           <span>
-            © {year} {dict.meta.siteName}. {dict.footer.rights}
+            © {year} {dict.meta.companyName}. {dict.footer.rights}
           </span>
           <span className="uppercase tracking-[0.25em]">{dict.meta.tagline}</span>
         </div>

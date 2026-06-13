@@ -1,6 +1,7 @@
 {
   "meta": {
     "siteName": "Mentou",
+    "companyName": "Groupe Mentou Inc",
     "tagline": "Les Piliers des Leaders"
   },
   "nav": {
@@ -149,7 +150,7 @@
       "facts": [
         {
           "label": "Rythme",
-          "value": "4–6 h",
+          "value": "12–15 h",
           "note": "Un volume hebdomadaire pensé pour progresser sans écraser l'école, la famille et les autres engagements."
         },
         {

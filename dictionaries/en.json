@@ -1,6 +1,7 @@
 {
   "meta": {
     "siteName": "Mentou",
+    "companyName": "Groupe Mentou Inc",
     "tagline": "The Pillars of Leaders"
   },
   "nav": {
@@ -149,7 +150,7 @@
       "facts": [
         {
           "label": "Rhythm",
-          "value": "4–6 hrs",
+          "value": "12–15 hrs",
           "note": "A weekly volume designed to progress without overwhelming school, family, and other commitments."
         },
         {
