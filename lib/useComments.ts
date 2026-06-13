@@ -71,19 +71,19 @@ export function useComments() {
       approved: false,
       createdAt: new Date().toISOString(),
     };
-    setComments([newComment, ...comments]);
+    setComments((prev) => [newComment, ...prev]);
   };
 
   const toggleApprove = (id: string) => {
-    setComments(
-      comments.map((c) =>
+    setComments((prev) =>
+      prev.map((c) =>
         c.id === id ? { ...c, approved: !c.approved } : c
       )
     );
   };
 
   const deleteComment = (id: string) => {
-    setComments(comments.filter((c) => c.id !== id));
+    setComments((prev) => prev.filter((c) => c.id !== id));
   };
 
   const approvedComments = comments.filter((c) => c.approved);
