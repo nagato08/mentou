@@ -6,7 +6,6 @@ import WhoItsFor from "@/components/sections/WhoItsFor";
 import PillarsList from "@/components/sections/PillarsList";
 import ProgramRhythm from "@/components/sections/ProgramRhythm";
 import Transformation from "@/components/sections/Transformation";
-import Testimonials from "@/components/sections/Testimonials";
 import CommentsSection from "@/components/sections/CommentsSection";
 import Divisions from "@/components/sections/Divisions";
 import ParentsCircle from "@/components/sections/ParentsCircle";
@@ -52,10 +51,9 @@ export default async function HomePage({
       <PillarsList lang={typedLang} dict={dict} />
       <ProgramRhythm dict={dict} />
       <Transformation dict={dict} />
-      <Testimonials dict={dict} />
       <CommentsSection
-        eyebrow="Laissez votre avis"
-        title="Commentaires de la communauté"
+        eyebrow={dict.home.testimonials.eyebrow}
+        title={dict.home.testimonials.title}
       />
       <Divisions dict={dict} />
       <ParentsCircle dict={dict} />
