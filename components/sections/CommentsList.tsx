@@ -1,15 +1,25 @@
 "use client";
 
+import { useState } from "react";
 import type { Comment } from "@/lib/useComments";
 
 type CommentsListProps = {
   comments: Comment[];
+  initialVisible?: number;
 };
 
-export default function CommentsList({ comments }: CommentsListProps) {
+export default function CommentsList({
+  comments,
+  initialVisible = 3,
+}: CommentsListProps) {
+  const [showAll, setShowAll] = useState(false);
+
+  const visible = showAll ? comments : comments.slice(0, initialVisible);
+  const hasMore = comments.length > initialVisible;
+
   return (
     <div className="space-y-6">
-      {comments.map((comment) => (
+      {visible.map((comment) => (
         <div
           key={comment.id}
           className="p-6 bg-ink/50 border border-bone/10 rounded"
@@ -40,6 +50,19 @@ export default function CommentsList({ comments }: CommentsListProps) {
           </p>
         </div>
       ))}
+
+      {/* Show more / less */}
+      {hasMore && (
+        <button
+          type="button"
+          onClick={() => setShowAll(!showAll)}
+          className="w-full py-3 text-sm uppercase tracking-widest text-gold border border-gold/30 rounded hover:bg-gold/10 transition-colors"
+        >
+          {showAll
+            ? "Voir moins"
+            : `Voir tous les commentaires (${comments.length})`}
+        </button>
+      )}
     </div>
   );
 }

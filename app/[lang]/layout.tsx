@@ -74,6 +74,7 @@ export default async function LangLayout({
       lang={lang}
       data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${manrope.variable}`}
+      suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col bg-ink text-bone antialiased">
         <JsonLd
