@@ -37,7 +37,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
             >
               <blockquote className="mb-6">
                 <p className="text-bone leading-relaxed italic">
-                  "{item.quote}"
+                  &quot;{item.quote}&quot;
                 </p>
               </blockquote>
               <footer>

@@ -11,6 +11,33 @@ export type Comment = {
 
 const STORAGE_KEY = "mentou_comments";
 
+const DEFAULT_COMMENTS: Comment[] = [
+  {
+    id: "default-1",
+    name: "Marie L.",
+    message: "En quelques mois, mon fils a complètement changé. Il ose s'exprimer, il s'intéresse à de nouvelles choses, il a trouvé sa place.",
+    rating: 5,
+    approved: true,
+    createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "default-2",
+    name: "Karim D.",
+    message: "L'approche est rigoureuse mais profondément humaine. Mes deux ados y vont avec plaisir et reviennent grandis chaque semaine.",
+    rating: 5,
+    approved: true,
+    createdAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "default-3",
+    name: "Sophia",
+    message: "Avant Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch m'ont vraiment débloqué.",
+    rating: 4,
+    approved: true,
+    createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+];
+
 export function useComments() {
   const [comments, setComments] = useState<Comment[]>([]);
   const [mounted, setMounted] = useState(false);
@@ -18,7 +45,13 @@ export function useComments() {
   // Load from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    setComments(stored ? JSON.parse(stored) : []);
+    if (stored) {
+      setComments(JSON.parse(stored));
+    } else {
+      // Initialize with defaults on first load
+      setComments(DEFAULT_COMMENTS);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_COMMENTS));
+    }
     setMounted(true);
   }, []);
 

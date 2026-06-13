@@ -7,17 +7,6 @@ type CommentsListProps = {
 };
 
 export default function CommentsList({ comments }: CommentsListProps) {
-  if (comments.length === 0) {
-    return (
-      <div className="text-center py-12">
-        <p className="text-bone/60">
-          Aucun commentaire pour le moment. Soyez le premier à partager votre
-          expérience!
-        </p>
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-6">
       {comments.map((comment) => (
