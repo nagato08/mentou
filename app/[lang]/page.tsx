@@ -7,6 +7,7 @@ import PillarsList from "@/components/sections/PillarsList";
 import ProgramRhythm from "@/components/sections/ProgramRhythm";
 import Transformation from "@/components/sections/Transformation";
 import Testimonials from "@/components/sections/Testimonials";
+import CommentsSection from "@/components/sections/CommentsSection";
 import Divisions from "@/components/sections/Divisions";
 import ParentsCircle from "@/components/sections/ParentsCircle";
 import AdmissionCTA from "@/components/sections/AdmissionCTA";
@@ -52,6 +53,10 @@ export default async function HomePage({
       <ProgramRhythm dict={dict} />
       <Transformation dict={dict} />
       <Testimonials dict={dict} />
+      <CommentsSection
+        eyebrow="Laissez votre avis"
+        title="Commentaires de la communauté"
+      />
       <Divisions dict={dict} />
       <ParentsCircle dict={dict} />
       <AdmissionCTA lang={typedLang} dict={dict} />
