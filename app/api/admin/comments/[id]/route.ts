@@ -19,11 +19,11 @@ export async function PATCH(
   try {
     const { id } = await params;
     const { approved } = await req.json();
-    const db = getDb();
-    db.prepare("UPDATE comments SET approved = ? WHERE id = ?").run(
-      approved ? 1 : 0,
-      id
-    );
+    const db = await getDb();
+    await db.execute({
+      sql: "UPDATE comments SET approved = ? WHERE id = ?",
+      args: [approved ? 1 : 0, id],
+    });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("PATCH /api/admin/comments/[id]", err);
@@ -40,8 +40,8 @@ export async function DELETE(
   }
   try {
     const { id } = await params;
-    const db = getDb();
-    db.prepare("DELETE FROM comments WHERE id = ?").run(id);
+    const db = await getDb();
+    await db.execute({ sql: "DELETE FROM comments WHERE id = ?", args: [id] });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("DELETE /api/admin/comments/[id]", err);

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { getDb, dbRowToComment } from "@/lib/db";
+import { getDb, rowToComment } from "@/lib/db";
 
 export const runtime = "nodejs";
 
@@ -14,11 +14,11 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   try {
-    const db = getDb();
-    const rows = db
-      .prepare("SELECT * FROM comments ORDER BY created_at DESC")
-      .all() as Record<string, unknown>[];
-    return NextResponse.json(rows.map(dbRowToComment));
+    const db = await getDb();
+    const { rows } = await db.execute(
+      "SELECT * FROM comments ORDER BY created_at DESC"
+    );
+    return NextResponse.json(rows.map(rowToComment));
   } catch (err) {
     console.error("GET /api/admin/comments", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });

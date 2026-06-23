@@ -1,13 +1,8 @@
-import Database from "better-sqlite3";
+import { createClient, type Client } from "@libsql/client";
 import path from "path";
 import type { Comment } from "./useComments";
 
-const DB_PATH =
-  process.env.DB_PATH ?? path.join(process.cwd(), "data", "comments.db");
-
-let _db: Database.Database | null = null;
-
-const DEFAULT_COMMENTS: Omit<Comment, never>[] = [
+const DEFAULT_COMMENTS: Comment[] = [
   {
     id: "default-1",
     name: "Marie L.",
@@ -37,15 +32,21 @@ const DEFAULT_COMMENTS: Omit<Comment, never>[] = [
   },
 ];
 
-export function getDb(): Database.Database {
-  if (_db) return _db;
+let _client: Client | null = null;
+let _initialized = false;
 
-  const { mkdirSync } = require("fs");
-  mkdirSync(path.dirname(DB_PATH), { recursive: true });
+export async function getDb(): Promise<Client> {
+  if (_client && _initialized) return _client;
 
-  _db = new Database(DB_PATH);
-  _db.pragma("journal_mode = WAL");
-  _db.exec(`
+  const dbPath =
+    process.env.DB_PATH ?? path.join(process.cwd(), "data", "comments.db");
+
+  const { mkdirSync } = await import("fs");
+  mkdirSync(path.dirname(dbPath), { recursive: true });
+
+  _client = createClient({ url: `file:${dbPath}` });
+
+  await _client.execute(`
     CREATE TABLE IF NOT EXISTS comments (
       id TEXT PRIMARY KEY,
       name TEXT NOT NULL,
@@ -53,31 +54,29 @@ export function getDb(): Database.Database {
       rating INTEGER NOT NULL DEFAULT 5,
       approved INTEGER NOT NULL DEFAULT 0,
       created_at TEXT NOT NULL
-    );
+    )
   `);
 
-  const { n } = _db
-    .prepare("SELECT COUNT(*) as n FROM comments")
-    .get() as { n: number };
-
-  if (n === 0) {
-    const insert = _db.prepare(
-      "INSERT INTO comments (id, name, message, rating, approved, created_at) VALUES (?, ?, ?, ?, ?, ?)"
-    );
+  const { rows } = await _client.execute("SELECT COUNT(*) as n FROM comments");
+  if ((rows[0].n as number) === 0) {
     for (const c of DEFAULT_COMMENTS) {
-      insert.run(c.id, c.name, c.message, c.rating, c.approved ? 1 : 0, c.createdAt);
+      await _client.execute({
+        sql: "INSERT INTO comments (id, name, message, rating, approved, created_at) VALUES (?, ?, ?, ?, ?, ?)",
+        args: [c.id, c.name, c.message, c.rating, c.approved ? 1 : 0, c.createdAt],
+      });
     }
   }
 
-  return _db;
+  _initialized = true;
+  return _client;
 }
 
-export function dbRowToComment(row: Record<string, unknown>): Comment {
+export function rowToComment(row: Record<string, unknown>): Comment {
   return {
     id: row.id as string,
     name: row.name as string,
     message: row.message as string,
-    rating: row.rating as number,
+    rating: Number(row.rating),
     approved: Boolean(row.approved),
     createdAt: row.created_at as string,
   };
