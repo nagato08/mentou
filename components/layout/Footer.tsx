@@ -22,7 +22,7 @@ export default function Footer({ lang, dict }: FooterProps) {
             <Link href={base}>
               <Image
                 src="/logo-remove.png"
-                alt="Mentou"
+                alt="Groupe Mentou"
                 width={60}
                 height={60}
                 className="h-12 w-auto"

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "siteName": "Mentou",
+    "siteName": "Groupe Mentou",
     "companyName": "Groupe Mentou Inc",
     "tagline": "The Pillars of Leaders"
   },
@@ -12,7 +12,8 @@
     "gallery": "Gallery",
     "contact": "Contact",
     "cta": "Schedule an interview",
-    "phone": "+1 (438) 342-7730"
+    "phone": "+1 (438) 342-7730",
+    "events": "Events"
   },
   "home": {
     "hero": {
@@ -33,14 +34,14 @@
     "manifesto": {
       "eyebrow": "Our approach",
       "lead": "S",
-      "body": "chools teach subjects. At Mentou, we teach young people how to become themselves. Tutoring, reading, expression, movement and mentorship come together in a single program designed to help every student find their voice, confidence and direction.",
+      "body": "chools teach subjects. At Groupe Mentou, we teach young people how to become themselves. Tutoring, reading, expression, movement and mentorship come together in a single program designed to help every student find their voice, confidence and direction.",
       "quote": "Much more than tutoring: a complete program to grow with assurance.",
-      "quoteAuthor": "The Mentou team"
+      "quoteAuthor": "The Groupe Mentou team"
     },
     "whoItsFor": {
       "eyebrow": "For whom?",
       "title": "For young people who need structure to reveal themselves",
-      "body": "Mentou is for families who feel there is more to build than a report card: posture, voice, discipline, and direction.",
+      "body": "Groupe Mentou is for families who feel there is more to build than a report card: posture, voice, discipline, and direction.",
       "items": [
         {
           "title": "The bright but reserved young person",
@@ -72,8 +73,17 @@
           "image": "/images/tutorat.jpeg",
           "image2": "/images/tutorat1.jpeg",
           "practice": "Focused sessions around homework, exams, and study methods, with a clear goal for each meeting.",
-          "signals": ["Work submitted on time", "Grades followed without panic", "Methods reused independently"],
-          "outcomes": ["Mastery of key subjects", "Effective study methods", "Confidence in class", "Solid college preparation"]
+          "signals": [
+            "Work submitted on time",
+            "Grades followed without panic",
+            "Methods reused independently"
+          ],
+          "outcomes": [
+            "Mastery of key subjects",
+            "Effective study methods",
+            "Confidence in class",
+            "Solid college preparation"
+          ]
         },
         {
           "roman": "II",
@@ -83,8 +93,17 @@
           "image": "/images/lecture.jpeg",
           "image2": "/images/lecture1.jpeg",
           "practice": "Guided reading, discussion of strong ideas, and concrete application in school, social, or family life.",
-          "signals": ["Clear chapter summary", "Ideas connected to daily life", "More precise vocabulary"],
-          "outcomes": ["Basic financial literacy", "Lasting reading habits", "Expanded vocabulary and reasoning", "Strategic thinking"]
+          "signals": [
+            "Clear chapter summary",
+            "Ideas connected to daily life",
+            "More precise vocabulary"
+          ],
+          "outcomes": [
+            "Basic financial literacy",
+            "Lasting reading habits",
+            "Expanded vocabulary and reasoning",
+            "Strategic thinking"
+          ]
         },
         {
           "roman": "III",
@@ -94,8 +113,17 @@
           "image": "/images/causerie.jpeg",
           "image2": "/images/causerie2.jpeg",
           "practice": "Debates, short position statements, and listening exercises to learn to think before answering.",
-          "signals": ["Better structured opinion", "Listening without interrupting", "More nuanced arguments"],
-          "outcomes": ["Oral communication skills", "Structured arguments", "Active listening", "Intellectual curiosity"]
+          "signals": [
+            "Better structured opinion",
+            "Listening without interrupting",
+            "More nuanced arguments"
+          ],
+          "outcomes": [
+            "Oral communication skills",
+            "Structured arguments",
+            "Active listening",
+            "Intellectual curiosity"
+          ]
         },
         {
           "roman": "IV",
@@ -105,8 +133,17 @@
           "image": "/images/causerie1.jpeg",
           "image2": "/images/sketch2.jpeg",
           "practice": "Improvisations, short scenes, and voice exercises to become comfortable under the gaze of others through play.",
-          "signals": ["Steadier voice", "Less avoidance", "More assumed presence"],
-          "outcomes": ["Stage confidence", "Natural presence", "Improvisation skills", "Social stress management"]
+          "signals": [
+            "Steadier voice",
+            "Less avoidance",
+            "More assumed presence"
+          ],
+          "outcomes": [
+            "Stage confidence",
+            "Natural presence",
+            "Improvisation skills",
+            "Social stress management"
+          ]
         },
         {
           "roman": "V",
@@ -116,8 +153,17 @@
           "image": "/images/danse.jpeg",
           "image2": "/images/danse1.jpeg",
           "practice": "Work on rhythm, posture, and coordination to develop a more confident physical presence.",
-          "signals": ["More open posture", "Better coordination", "Stronger self-image"],
-          "outcomes": ["Confident posture and bearing", "Body awareness", "Rhythm and coordination", "Positive self-image"]
+          "signals": [
+            "More open posture",
+            "Better coordination",
+            "Stronger self-image"
+          ],
+          "outcomes": [
+            "Confident posture and bearing",
+            "Body awareness",
+            "Rhythm and coordination",
+            "Positive self-image"
+          ]
         },
         {
           "roman": "VI",
@@ -127,8 +173,17 @@
           "image": "/images/musique.jpeg",
           "image2": "/images/musique1.jpeg",
           "practice": "Progressive work with an instrument or musical exercise to train focus, patience, and consistency.",
-          "signals": ["More regular practice", "Longer attention span", "Visible perseverance"],
-          "outcomes": ["Daily discipline", "Extended concentration", "Artistic sensibility", "Perseverance through challenge"]
+          "signals": [
+            "More regular practice",
+            "Longer attention span",
+            "Visible perseverance"
+          ],
+          "outcomes": [
+            "Daily discipline",
+            "Extended concentration",
+            "Artistic sensibility",
+            "Perseverance through challenge"
+          ]
         },
         {
           "roman": "VII",
@@ -138,14 +193,23 @@
           "image": "/images/mentorat.jpeg",
           "image2": "/images/mentorat1.jpeg",
           "practice": "Guided conversations, personal goals, and cultural discovery to help the young person name what they want to build.",
-          "signals": ["Clearer goals", "More thoughtful decisions", "Openness to others"],
-          "outcomes": ["Clarity on life goals", "Strong peer network", "Cultural openness", "Long-term vision"]
+          "signals": [
+            "Clearer goals",
+            "More thoughtful decisions",
+            "Openness to others"
+          ],
+          "outcomes": [
+            "Clarity on life goals",
+            "Strong peer network",
+            "Cultural openness",
+            "Long-term vision"
+          ]
         }
       ]
     },
     "programRhythm": {
       "eyebrow": "In practice",
-      "title": "A week at Mentou",
+      "title": "A week at Groupe Mentou",
       "body": "The program combines academic work, expression, culture, and mentorship in a clear rhythm. Every activity serves a visible goal: learn better, speak better, stand taller, choose better.",
       "facts": [
         {
@@ -172,13 +236,28 @@
     },
     "transformation": {
       "eyebrow": "The journey",
-      "title": "What changes for those who join Mentou",
+      "title": "What changes for those who join Groupe Mentou",
       "pairs": [
-        { "before": "Shy", "after": "Confident" },
-        { "before": "Passive", "after": "Engaged" },
-        { "before": "Scattered", "after": "Focused" },
-        { "before": "Good grades", "after": "Broader vision" },
-        { "before": "Hesitant", "after": "Self-assured" }
+        {
+          "before": "Shy",
+          "after": "Confident"
+        },
+        {
+          "before": "Passive",
+          "after": "Engaged"
+        },
+        {
+          "before": "Scattered",
+          "after": "Focused"
+        },
+        {
+          "before": "Good grades",
+          "after": "Broader vision"
+        },
+        {
+          "before": "Hesitant",
+          "after": "Self-assured"
+        }
       ]
     },
     "divisions": {
@@ -212,7 +291,7 @@
       "title": "What families share",
       "items": [
         {
-          "quote": "Within months, my son completely changed. He dares to speak up, he's curious about new things, he found his place. Mentou gave him a framework he didn't know he was looking for.",
+          "quote": "Within months, my son completely changed. He dares to speak up, he's curious about new things, he found his place. Groupe Mentou gave him a framework he didn't know he was looking for.",
           "author": "Marie L.",
           "role": "Mom of Léo, 14",
           "rating": 4
@@ -224,7 +303,7 @@
           "rating": 4
         },
         {
-          "quote": "Before Mentou, I didn't dare speak up in class. Now, I lead a student project. The sketch exercises and debates truly unlocked something in me.",
+          "quote": "Before Groupe Mentou, I didn't dare speak up in class. Now, I lead a student project. The sketch exercises and debates truly unlocked something in me.",
           "author": "Sophia",
           "role": "Student, 17",
           "rating": 5
@@ -242,18 +321,62 @@
       ]
     },
     "admission": {
-      "eyebrow": "Joining Mentou",
+      "eyebrow": "Joining Groupe Mentou",
       "title": "A tailored path, in four steps",
       "body": "We take the time to meet every young person and every family to build support that truly fits.",
       "steps": [
-        { "n": "01", "label": "First contact" },
-        { "n": "02", "label": "Conversation" },
-        { "n": "03", "label": "Personalized plan" },
-        { "n": "04", "label": "Cohort integration" }
+        {
+          "n": "01",
+          "label": "First contact"
+        },
+        {
+          "n": "02",
+          "label": "Conversation"
+        },
+        {
+          "n": "03",
+          "label": "Personalized plan"
+        },
+        {
+          "n": "04",
+          "label": "Cohort integration"
+        }
       ],
       "cta": "Schedule an interview",
       "secondaryCta": "View the process",
       "reassurance": "First call with no commitment · quick reply"
+    },
+    "espritGroupe": {
+      "eyebrow": "The Group's Pillars",
+      "title": "Excellence,",
+      "titleAccent": "our heritage.",
+      "pillars": [
+        {
+          "index": "01",
+          "title": "Leadership & Educational Excellence",
+          "body": "Rigorous mentorship to forge strategic minds and an unquenchable thirst for learning."
+        },
+        {
+          "index": "02",
+          "title": "Personal Development & Knowledge",
+          "body": "Awakening the mind through the reading and discussion of landmark books. We cultivate critical thinking, eloquence and self-knowledge."
+        },
+        {
+          "index": "03",
+          "title": "Cultural Heritage & Prestige",
+          "body": "Reclaiming our identity through high-calibre creative projects and the celebration of our traditional textiles. We wear our heritage as a banner of distinction."
+        },
+        {
+          "index": "04",
+          "title": "Events & Solidarity",
+          "body": "Our strength manifests in action. Through our Prestige Galas, sports tournaments and community gatherings, we celebrate our vitality and create spaces of shared excellence."
+        }
+      ],
+      "esprit": {
+        "eyebrow": "Group Spirit",
+        "body": "Here, elegance is a posture and ambition an obligation. We do not merely succeed; we build ourselves with rigour and pride.",
+        "quote": "Leaders are not born — they are forged by honouring what came before them."
+      }
     }
   },
   "pillars": {
@@ -273,7 +396,7 @@
         },
         {
           "title": "Hold a high standard",
-          "body": "Mentou encourages, but does not overprotect. Young people learn to honor commitments and stretch themselves without losing balance."
+          "body": "Groupe Mentou encourages, but does not overprotect. Young people learn to honor commitments and stretch themselves without losing balance."
         },
         {
           "title": "Involve the family",
@@ -286,24 +409,40 @@
   "vision": {
     "kicker": "Why we exist",
     "title": "Schools teach.",
-    "titleAccent": "Mentou forges.",
-    "subtitle": "Mentou is not academic tutoring. It is a parallel school, intimate and demanding, that prepares the next generation of Québec leaders.",
+    "titleAccent": "Groupe Mentou forges.",
+    "subtitle": "Groupe Mentou is not academic tutoring. It is a parallel school, intimate and demanding, that prepares the next generation of Québec leaders.",
     "image": "/images/vision-hero.jpg",
     "manifesto": {
       "eyebrow": "The observation",
       "title": "Today's youth need something more",
-      "body": "Schools teach you how to answer. Mentou teaches you how to question. Schools validate a grid. Mentou reveals a voice. We believe that beyond grades, what sets a future leader apart is the ability to stand tall, think independently, and turn ideas into action.",
+      "body": "Schools teach you how to answer. Groupe Mentou teaches you how to question. Schools validate a grid. Groupe Mentou reveals a voice. We believe that beyond grades, what sets a future leader apart is the ability to stand tall, think independently, and turn ideas into action.",
       "quote": "We don't train model students. We accompany young people who want to live a life that looks like them.",
-      "author": "Founder, Mentou"
+      "author": "Founder, Groupe Mentou"
     },
     "principles": {
       "eyebrow": "The principles",
       "title": "Four convictions guiding our approach",
       "items": [
-        { "n": "01", "title": "Confidence is built", "body": "No one is born a leader. Confidence comes from small battles won against yourself, day after day." },
-        { "n": "02", "title": "Environment shapes us", "body": "We become who we surround ourselves with. That's why we build a circle of ambitious, kind peers." },
-        { "n": "03", "title": "Discipline frees", "body": "Without rigor, talent stalls. With it, potential fully unfolds." },
-        { "n": "04", "title": "Mentorship changes everything", "body": "Having someone who believes in you, who sees further than you do — that's a gift that transforms a path." }
+        {
+          "n": "01",
+          "title": "Confidence is built",
+          "body": "No one is born a leader. Confidence comes from small battles won against yourself, day after day."
+        },
+        {
+          "n": "02",
+          "title": "Environment shapes us",
+          "body": "We become who we surround ourselves with. That's why we build a circle of ambitious, kind peers."
+        },
+        {
+          "n": "03",
+          "title": "Discipline frees",
+          "body": "Without rigor, talent stalls. With it, potential fully unfolds."
+        },
+        {
+          "n": "04",
+          "title": "Mentorship changes everything",
+          "body": "Having someone who believes in you, who sees further than you do — that's a gift that transforms a path."
+        }
       ]
     },
     "method": {
@@ -311,18 +450,30 @@
       "title": "A pedagogy designed like a workshop",
       "image": "/images/vision-method.jpg",
       "steps": [
-        { "label": "Observe", "body": "Understand who the young person is, what they live, what they dream, what they avoid." },
-        { "label": "Stimulate", "body": "Offer the right challenges — not too easy, not crushing — to help them grow." },
-        { "label": "Guide", "body": "Be present over time, celebrate progress, support setbacks." },
-        { "label": "Release", "body": "Let the young person fly on their own once confidence is anchored." }
+        {
+          "label": "Observe",
+          "body": "Understand who the young person is, what they live, what they dream, what they avoid."
+        },
+        {
+          "label": "Stimulate",
+          "body": "Offer the right challenges — not too easy, not crushing — to help them grow."
+        },
+        {
+          "label": "Guide",
+          "body": "Be present over time, celebrate progress, support setbacks."
+        },
+        {
+          "label": "Release",
+          "body": "Let the young person fly on their own once confidence is anchored."
+        }
       ]
     },
     "founder": {
       "eyebrow": "The founder",
       "title": "A project born from deep conviction",
-      "name": "Richard, founder of Mentou",
+      "name": "Richard, founder of Groupe Mentou",
       "role": "Mentor, framework builder, and guide for young talent",
-      "body": "Mentou was born from a simple observation: many young people have potential, but too few spaces to learn how to fully inhabit it. Richard wanted to create a place where grades matter, yes, but so do voice, posture, discipline, and vision.",
+      "body": "Groupe Mentou was born from a simple observation: many young people have potential, but too few spaces to learn how to fully inhabit it. Richard wanted to create a place where grades matter, yes, but so do voice, posture, discipline, and vision.",
       "journey": {
         "title": "His journey",
         "items": [
@@ -332,13 +483,13 @@
         ]
       },
       "why": {
-        "title": "Why Mentou?",
+        "title": "Why Groupe Mentou?",
         "body": "Because a young person does not always lack ability. Sometimes they lack a circle, a rhythm, a steady adult voice, and a place where they can try, fall, begin again, and become stronger."
       },
-      "quote": "I created Mentou to offer young people what I would have loved to receive earlier: a demanding, human framework, and adults who see beyond the report card.",
+      "quote": "I created Groupe Mentou to offer young people what I would have loved to receive earlier: a demanding, human framework, and adults who see beyond the report card.",
       "signature": "Richard",
-      "image": "/images/vision-founder.jpg",
-      "imageAlt": "Portrait of Mentou's founder"
+      "image": "/images/vision-pdg.jpg",
+      "imageAlt": "Portrait of Groupe Mentou's founder"
     },
     "cta": {
       "title": "Ready to join the journey?",
@@ -347,7 +498,7 @@
     }
   },
   "admission": {
-    "kicker": "Join Mentou",
+    "kicker": "Join Groupe Mentou",
     "title": "An admission that takes",
     "titleAccent": "the time to do it right",
     "subtitle": "We welcome a limited number of young people each year to guarantee the quality of our support. The process unfolds over a few weeks, without rushing.",
@@ -360,7 +511,7 @@
           "n": "01",
           "label": "First contact",
           "duration": "15 min",
-          "body": "A phone call to understand your expectations, introduce the program, and verify that Mentou aligns with your family's vision."
+          "body": "A phone call to understand your expectations, introduce the program, and verify that Groupe Mentou aligns with your family's vision."
         },
         {
           "n": "02",
@@ -378,18 +529,18 @@
           "n": "04",
           "label": "Cohort integration",
           "duration": "Long-term",
-          "body": "The young person joins their cohort (Junior or Senior) and begins their journey through Mentou's seven disciplines."
+          "body": "The young person joins their cohort (Junior or Senior) and begins their journey through Groupe Mentou's seven disciplines."
         }
       ]
     },
     "clarity": {
       "eyebrow": "Before committing",
       "title": "What you will know clearly",
-      "body": "Admission is designed both to inform you and to make sure Mentou is the right environment for your young person.",
+      "body": "Admission is designed both to inform you and to make sure Groupe Mentou is the right environment for your young person.",
       "items": [
         {
           "title": "The recommended rhythm",
-          "body": "We clarify the activity volume, availability, and the best way to fit Mentou into the young person's week."
+          "body": "We clarify the activity volume, availability, and the best way to fit Groupe Mentou into the young person's week."
         },
         {
           "title": "The path priorities",
@@ -435,7 +586,7 @@
     },
     "eligibility": {
       "eyebrow": "For whom?",
-      "title": "Mentou is for motivated young people and their families",
+      "title": "Groupe Mentou is for motivated young people and their families",
       "image": "/images/admission-meeting.jpg",
       "criteria": [
         "Young people aged 12 to 22, living in Québec",
@@ -460,8 +611,8 @@
       "title": "What families often ask us",
       "items": [
         {
-          "q": "Does Mentou replace school?",
-          "a": "No. Mentou complements school. Our program runs in parallel, generally at the end of the day, evenings, and weekends."
+          "q": "Does Groupe Mentou replace school?",
+          "a": "No. Groupe Mentou complements school. Our program runs in parallel, generally at the end of the day, evenings, and weekends."
         },
         {
           "q": "How many young people per cohort?",
@@ -473,7 +624,7 @@
         },
         {
           "q": "Are there fees?",
-          "a": "Yes. Mentou is a private program. Fees are discussed during the interview and adapted to circumstances. Scholarships may be awarded."
+          "a": "Yes. Groupe Mentou is a private program. Fees are discussed during the interview and adapted to circumstances. Scholarships may be awarded."
         },
         {
           "q": "When do cohorts start?",
@@ -489,7 +640,7 @@
     }
   },
   "gallery": {
-    "kicker": "The Mentou universe",
+    "kicker": "The Groupe Mentou universe",
     "title": "Moments, looks,",
     "titleAccent": "and quiet ambition",
     "subtitle": "The gallery brings together meaningful moments from the program — learning, creation, workshops, stages, and conversations.",
@@ -504,26 +655,126 @@
       "portraits": "Portraits"
     },
     "items": [
-      { "src": "/images/gallery/g-5212345.jpg", "alt": "Tutoring workshop", "category": "etude", "span": "small" },
-      { "src": "/images/gallery/g-4145190.jpg", "alt": "Focused study", "category": "etude", "span": "small" },
-      { "src": "/images/gallery/g-1112048.jpg", "alt": "Morning reading", "category": "lecture", "span": "small" },
-      { "src": "/images/gallery/g-590493.jpg", "alt": "Turning the page", "category": "lecture", "span": "small" },
-      { "src": "/images/gallery/g-3182746.jpg", "alt": "Open conversation", "category": "parole", "span": "small" },
-      { "src": "/images/gallery/g-1741230.jpg", "alt": "Quiet reading", "category": "lecture", "span": "small" },
-      { "src": "/images/gallery/g-3184432.jpg", "alt": "Conversation among students", "category": "parole", "span": "small" },
-      { "src": "/images/gallery/g-1181467.jpg", "alt": "Curated books", "category": "lecture", "span": "small" },
-      { "src": "/images/gallery/g-3184639.jpg", "alt": "Group exchange", "category": "parole", "span": "small" },
-      { "src": "/images/gallery/g-8108061.jpg", "alt": "Stage workshop", "category": "scene", "span": "small" },
-      { "src": "/images/gallery/g-3771074.jpg", "alt": "One-on-one tutoring", "category": "etude", "span": "small" },
-      { "src": "/images/gallery/g-1701208.jpg", "alt": "Dance movement", "category": "danse", "span": "small" },
-      { "src": "/images/gallery/g-358010.jpg", "alt": "Steps and rhythm", "category": "danse", "span": "small" },
-      { "src": "/images/gallery/g-209948.jpg", "alt": "Performance", "category": "danse", "span": "small" },
-      { "src": "/images/gallery/g-1701202.jpg", "alt": "Posture and presence", "category": "danse", "span": "small" },
-      { "src": "/images/gallery/g-4709822.jpg", "alt": "Music practice", "category": "musique", "span": "small" },
-      { "src": "/images/gallery/g-5212327.jpg", "alt": "Student portrait", "category": "portraits", "span": "small" },
-      { "src": "/images/gallery/g-8499613.jpg", "alt": "Mentor moment", "category": "portraits", "span": "small" },
-      { "src": "/images/gallery/g-5212703.jpg", "alt": "Cohort atmosphere", "category": "portraits", "span": "small" },
-      { "src": "/images/gallery/g-7942487.jpg", "alt": "Shared moment", "category": "portraits", "span": "small" }
+      {
+        "src": "/images/gallery/g-5212345.jpg",
+        "alt": "Tutoring workshop",
+        "category": "etude",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-4145190.jpg",
+        "alt": "Focused study",
+        "category": "etude",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-1112048.jpg",
+        "alt": "Morning reading",
+        "category": "lecture",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-590493.jpg",
+        "alt": "Turning the page",
+        "category": "lecture",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-3182746.jpg",
+        "alt": "Open conversation",
+        "category": "parole",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-1741230.jpg",
+        "alt": "Quiet reading",
+        "category": "lecture",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-3184432.jpg",
+        "alt": "Conversation among students",
+        "category": "parole",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-1181467.jpg",
+        "alt": "Curated books",
+        "category": "lecture",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-3184639.jpg",
+        "alt": "Group exchange",
+        "category": "parole",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-8108061.jpg",
+        "alt": "Stage workshop",
+        "category": "scene",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-3771074.jpg",
+        "alt": "One-on-one tutoring",
+        "category": "etude",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-1701208.jpg",
+        "alt": "Dance movement",
+        "category": "danse",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-358010.jpg",
+        "alt": "Steps and rhythm",
+        "category": "danse",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-209948.jpg",
+        "alt": "Performance",
+        "category": "danse",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-1701202.jpg",
+        "alt": "Posture and presence",
+        "category": "danse",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-4709822.jpg",
+        "alt": "Music practice",
+        "category": "musique",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-5212327.jpg",
+        "alt": "Student portrait",
+        "category": "portraits",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-8499613.jpg",
+        "alt": "Mentor moment",
+        "category": "portraits",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-5212703.jpg",
+        "alt": "Cohort atmosphere",
+        "category": "portraits",
+        "span": "small"
+      },
+      {
+        "src": "/images/gallery/g-7942487.jpg",
+        "alt": "Shared moment",
+        "category": "portraits",
+        "span": "small"
+      }
     ]
   },
   "contact": {
@@ -550,15 +801,45 @@
         ]
       },
       "fields": {
-        "parentName": { "label": "Parent's name", "placeholder": "Your full name" },
-        "childName": { "label": "Young person's name", "placeholder": "First name and age" },
-        "email": { "label": "Email", "placeholder": "your@email.com" },
-        "phone": { "label": "Phone", "placeholder": "(438) 342-7730" },
-        "preferredContact": { "label": "Preferred channel", "options": ["Phone", "WhatsApp", "Email", "No preference"] },
-        "division": { "label": "Division of interest", "options": ["Junior (12-16)", "Senior (17-22)", "Not decided yet"] },
-        "message": { "label": "Your message", "placeholder": "Tell us about your child, their passions, what you're looking for…" }
+        "parentName": {
+          "label": "Parent's name",
+          "placeholder": "Your full name"
+        },
+        "childName": {
+          "label": "Young person's name",
+          "placeholder": "First name and age"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your@email.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "(438) 342-7730"
+        },
+        "preferredContact": {
+          "label": "Preferred channel",
+          "options": [
+            "Phone",
+            "WhatsApp",
+            "Email",
+            "No preference"
+          ]
+        },
+        "division": {
+          "label": "Division of interest",
+          "options": [
+            "Junior (12-16)",
+            "Senior (17-22)",
+            "Not decided yet"
+          ]
+        },
+        "message": {
+          "label": "Your message",
+          "placeholder": "Tell us about your child, their passions, what you're looking for…"
+        }
       },
-      "consent": "I agree to be contacted by Mentou regarding my request.",
+      "consent": "I agree to be contacted by Groupe Mentou regarding my request.",
       "submit": "Send my request",
       "submitting": "Sending…",
       "success": "Message received. We'll reply within 48 hours.",
@@ -568,19 +849,48 @@
       "eyebrow": "Reach us",
       "title": "Several ways to get in touch",
       "items": [
-        { "label": "Phone", "value": "+1 (438) 342-7730", "href": "tel:+14383427730", "note": "Monday to Friday, 9am–6pm" },
-        { "label": "Email", "value": "admission@mentou.ca", "href": "mailto:admission@mentou.ca", "note": "Reply within 48h" },
-        { "label": "WhatsApp", "value": "+1 (438) 342-7730", "href": "https://wa.me/14383427730", "note": "Quick reply" },
-        { "label": "Address", "value": "Québec, Canada", "href": null, "note": "Meetings by appointment" }
+        {
+          "label": "Phone",
+          "value": "+1 (438) 342-7730",
+          "href": "tel:+14383427730",
+          "note": "Monday to Friday, 9am–6pm"
+        },
+        {
+          "label": "Email",
+          "value": "admission@mentou.ca",
+          "href": "mailto:admission@mentou.ca",
+          "note": "Reply within 48h"
+        },
+        {
+          "label": "WhatsApp",
+          "value": "+1 (438) 342-7730",
+          "href": "https://wa.me/14383427730",
+          "note": "Quick reply"
+        },
+        {
+          "label": "Address",
+          "value": "Québec, Canada",
+          "href": null,
+          "note": "Meetings by appointment"
+        }
       ]
     },
     "faq": {
       "eyebrow": "Before writing",
       "title": "Your questions, our quick answers",
       "items": [
-        { "q": "How long before a reply?", "a": "Within 48 business hours, usually much faster." },
-        { "q": "Is the meeting free?", "a": "Yes. The first phone call and the interview are at no cost or commitment." },
-        { "q": "Can I bring my child to the meeting?", "a": "We strongly encourage it. The meeting works best with parents and the young person together." }
+        {
+          "q": "How long before a reply?",
+          "a": "Within 48 business hours, usually much faster."
+        },
+        {
+          "q": "Is the meeting free?",
+          "a": "Yes. The first phone call and the interview are at no cost or commitment."
+        },
+        {
+          "q": "Can I bring my child to the meeting?",
+          "a": "We strongly encourage it. The meeting works best with parents and the young person together."
+        }
       ]
     }
   },
@@ -589,5 +899,56 @@
     "tagline": "Private leadership and personal development program.",
     "address": "Québec, Canada",
     "whatsapp": "+1 (438) 342-7730"
+  },
+  "events": {
+    "kicker": "Groupe Mentou Inc.",
+    "title": "The Arena of",
+    "titleAccent": "Excellence",
+    "subtitle": "Within Groupe Mentou Inc., sport is not only played on the field — it is lived as a discipline of life. Our events are theatres where strategy, perseverance and respect converge.",
+    "image": "/images/vision-hero.jpg",
+    "poles": {
+      "eyebrow": "Our fields of action",
+      "title": "Three arenas,",
+      "titleAccent": "one standard.",
+      "items": [
+        {
+          "index": "01",
+          "title": "Leagues & Competitions",
+          "lead": "High Intensity",
+          "body": "We organise structured leagues that demand the best from every participant. Whether football or basketball, each match is an opportunity to test strategic thinking and strengthen team spirit."
+        },
+        {
+          "index": "02",
+          "title": "The Prestige Gala",
+          "lead": "The peak of our calendar",
+          "body": "This exclusive event celebrates excellence in every form. It is the meeting point where sport, leadership and cultural heritage converge in one exceptional evening."
+        },
+        {
+          "index": "03",
+          "title": "Solidarity & Engagement",
+          "lead": "Community",
+          "body": "Our gatherings are vectors of social cohesion, building bridges between generations and proudly anchoring our heritage at the heart of our city."
+        }
+      ]
+    },
+    "conduite": {
+      "eyebrow": "Posture & Code of Conduct",
+      "title": "Elegance is a posture,",
+      "titleAccent": "discipline, an obligation.",
+      "body": "Participation in our events implies full adherence to our values. On the field and at our galas, every member of Groupe Mentou embodies the excellence they seek to achieve.",
+      "values": [
+        "Absolute respect for opponents, officials and spectators",
+        "Punctuality and impeccable presentation at all times",
+        "Team spirit placed above personal ambition",
+        "Worthy representation of Groupe Mentou's heritage"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Join the arena",
+      "title": "Register for the next session",
+      "body": "Limited spots. Each cohort is carefully assembled to ensure an environment of excellence.",
+      "button": "Schedule an interview",
+      "href": "/admission"
+    }
   }
 }

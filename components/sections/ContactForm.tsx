@@ -63,7 +63,7 @@ export default function ContactForm({ dict }: { dict: FormDict }) {
       const waText = encodeURIComponent(messageText);
       window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
     } else {
-      const subject = encodeURIComponent("Demande d'admission Mentou");
+      const subject = encodeURIComponent("Demande d'admission Groupe Mentou");
       const body = encodeURIComponent(messageText);
       window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     }

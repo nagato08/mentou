@@ -40,7 +40,7 @@ export function buildMetadata({
       locale: lang === "fr" ? "fr_CA" : "en_CA",
       alternateLocale: lang === "fr" ? "en_CA" : "fr_CA",
       url,
-      siteName: "Mentou",
+      siteName: "Groupe Mentou",
       title,
       description,
       images: [{ url: image, width: 1200, height: 630, alt: title }],

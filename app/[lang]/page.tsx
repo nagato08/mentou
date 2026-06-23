@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
+import EspritGroupe from "@/components/sections/EspritGroupe";
 import WhoItsFor from "@/components/sections/WhoItsFor";
 import PillarsList from "@/components/sections/PillarsList";
 import ProgramRhythm from "@/components/sections/ProgramRhythm";
@@ -47,6 +48,7 @@ export default async function HomePage({
     <>
       <Hero lang={typedLang} dict={dict} />
       <Manifesto dict={dict} />
+      <EspritGroupe dict={dict} />
       <WhoItsFor dict={dict} />
       <PillarsList lang={typedLang} dict={dict} />
       <ProgramRhythm dict={dict} />

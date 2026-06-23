@@ -12,6 +12,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
     { href: base, label: dict.nav.home },
     { href: `${base}/piliers`, label: dict.nav.pillars },
     { href: `${base}/vision`, label: dict.nav.vision },
+    { href: `${base}/evenements`, label: dict.nav.events },
     { href: `${base}/admission`, label: dict.nav.admission },
     { href: `${base}/galerie`, label: dict.nav.gallery },
     { href: `${base}/contact`, label: dict.nav.contact },

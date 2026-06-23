@@ -6,7 +6,7 @@ const EMAIL = "admission@mentou.ca";
 const WHATSAPP = "+14383427730";
 
 /**
- * Organization schema - identifies Mentou as a business entity
+ * Organization schema - identifies Groupe Mentou as a business entity
  * Used globally on every page
  */
 export function organizationSchema(lang: Locale) {
@@ -14,8 +14,8 @@ export function organizationSchema(lang: Locale) {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "@id": `${SITE_URL}/#organization`,
-    name: "Mentou",
-    alternateName: "Mentou - Les Piliers des Leaders",
+    name: "Groupe Mentou",
+    alternateName: "Groupe Mentou - Les Piliers des Leaders",
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
@@ -63,7 +63,7 @@ export function localBusinessSchema(lang: Locale) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#localbusiness`,
-    name: "Mentou",
+    name: "Groupe Mentou",
     image: `${SITE_URL}/images/og-default.jpg`,
     url: SITE_URL,
     telephone: PHONE,
@@ -103,7 +103,7 @@ export function websiteSchema(lang: Locale) {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: "Mentou",
+    name: "Groupe Mentou",
     inLanguage: lang === "fr" ? "fr-CA" : "en-CA",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };

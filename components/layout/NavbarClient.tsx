@@ -100,7 +100,7 @@ export default function NavbarClient({
           >
             <Image
               src="/logo-remove.png"
-              alt="Mentou"
+              alt="Groupe Mentou"
               width={40}
               height={40}
               className="h-8 w-auto sm:h-10 md:h-12"

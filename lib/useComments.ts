@@ -31,7 +31,7 @@ const DEFAULT_COMMENTS: Comment[] = [
   {
     id: "default-3",
     name: "Sophia",
-    message: "Avant Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch m'ont vraiment débloqué.",
+    message: "Avant Groupe Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch m'ont vraiment débloqué.",
     rating: 4,
     approved: true,
     createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),

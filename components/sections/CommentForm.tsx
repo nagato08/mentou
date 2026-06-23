@@ -97,7 +97,7 @@ export default function CommentForm({
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Partagez votre expérience avec Mentou..."
+            placeholder="Partagez votre expérience avec Groupe Mentou..."
             rows={4}
             className="w-full px-4 py-3 bg-ink/50 border border-bone/10 rounded text-bone placeholder:text-bone/40 focus:outline-none focus:border-gold/50 transition-colors resize-none"
             required
