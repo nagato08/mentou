@@ -12,7 +12,7 @@ function DivisionCard({
   imageAlt,
 }: {
   label: string;
-  ageRange: string;
+  ageRange?: string;
   headline: string;
   points: string[];
   image: string;
@@ -37,7 +37,7 @@ function DivisionCard({
             <span className="text-[0.65rem] uppercase tracking-[0.24em] sm:tracking-[0.35em] text-gold">
               {label}
             </span>
-            <span className="font-display text-xl text-bone">{ageRange}</span>
+            {ageRange && <span className="font-display text-xl text-bone">{ageRange}</span>}
           </div>
 
           <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-bone mb-6 md:mb-8">
@@ -89,7 +89,7 @@ export default function Divisions({ dict }: DivisionsProps) {
           <div data-gsap="fade-left">
             <DivisionCard
               label={t.junior.label}
-              ageRange={t.junior.ageRange}
+              ageRange={undefined}
               headline={t.junior.headline}
               points={t.junior.points}
               image="/images/junior.jpg"
@@ -99,7 +99,7 @@ export default function Divisions({ dict }: DivisionsProps) {
           <div data-gsap="fade-right">
             <DivisionCard
               label={t.senior.label}
-              ageRange={t.senior.ageRange}
+              ageRange={undefined}
               headline={t.senior.headline}
               points={t.senior.points}
               image="/images/senior.jpg"

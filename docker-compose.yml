@@ -5,8 +5,16 @@ services:
     restart: unless-stopped
     environment:
       CONTACT_EMAIL: ${CONTACT_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      ADMIN_SECRET: ${ADMIN_SECRET}
+      DB_PATH: /app/data/comments.db
+    volumes:
+      - comments_data:/app/data
     networks:
       - web
+
+volumes:
+  comments_data:
 
 networks:
   web:

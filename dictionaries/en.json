@@ -20,14 +20,13 @@
       "kicker": "Private program · Québec",
       "title": "Building the leaders",
       "titleAccent": "of tomorrow",
-      "subtitle": "A private program helping young people aged 12 to 22 grow in confidence, discipline and leadership.",
+      "subtitle": "A private program that guides young people in developing their confidence, discipline and leadership.",
       "highlights": [
-        "For ages 12–22",
         "Confidence, discipline, leadership",
         "Tutoring, mentorship, expression"
       ],
-      "ageBadge": "12 – 22 yrs",
-      "ageLabel": "Junior & Senior cohorts",
+      "ageBadge": "Québec",
+      "ageLabel": "Private program",
       "primaryCta": "Schedule an interview",
       "secondaryCta": "Discover the program"
     },
@@ -265,7 +264,6 @@
       "title": "A path tailored to each stage",
       "junior": {
         "label": "Junior Cohort",
-        "ageRange": "12 — 16 yrs",
         "headline": "Build confidence and find your rhythm",
         "points": [
           "Overcome shyness",
@@ -276,7 +274,6 @@
       },
       "senior": {
         "label": "Senior Cohort",
-        "ageRange": "17 — 22 yrs",
         "headline": "Shape your project and direction",
         "points": [
           "Aim for top R-Score",
@@ -589,7 +586,7 @@
       "title": "Groupe Mentou is for motivated young people and their families",
       "image": "/images/admission-meeting.jpg",
       "criteria": [
-        "Young people aged 12 to 22, living in Québec",
+        "Young people residing in Québec",
         "Family engaged in their child's journey",
         "Desire to grow beyond the strict academic frame",
         "Curiosity, openness, eagerness to push limits"
@@ -597,11 +594,11 @@
       "note": "No selection on grades. We look for desire, not perfection.",
       "profiles": [
         {
-          "title": "Junior · 12–16",
+          "title": "Junior Cohort",
           "body": "To build confidence, discipline, oral ease, and academic foundations at the right moment."
         },
         {
-          "title": "Senior · 17–22",
+          "title": "Senior Cohort",
           "body": "To clarify a project, gain autonomy, improve methods, and prepare for the next steps."
         }
       ]
@@ -829,8 +826,8 @@
         "division": {
           "label": "Division of interest",
           "options": [
-            "Junior (12-16)",
-            "Senior (17-22)",
+            "Junior",
+            "Senior",
             "Not decided yet"
           ]
         },

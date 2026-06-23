@@ -20,14 +20,13 @@
       "kicker": "Programme privé · Québec",
       "title": "Bâtir les leaders",
       "titleAccent": "de demain",
-      "subtitle": "Un programme privé qui accompagne les jeunes de 12 à 22 ans dans le développement de leur confiance, de leur discipline et de leur leadership.",
+      "subtitle": "Un programme privé qui accompagne les jeunes dans le développement de leur confiance, de leur discipline et de leur leadership.",
       "highlights": [
-        "Pour les 12–22 ans",
         "Confiance, discipline, leadership",
         "Tutorat, mentorat, expression"
       ],
-      "ageBadge": "12 – 22 ans",
-      "ageLabel": "Cohortes Junior & Senior",
+      "ageBadge": "Québec",
+      "ageLabel": "Programme privé",
       "primaryCta": "Planifier une entrevue",
       "secondaryCta": "Découvrir le programme"
     },
@@ -265,7 +264,6 @@
       "title": "Un parcours adapté à chaque étape",
       "junior": {
         "label": "Cohorte Junior",
-        "ageRange": "12 — 16 ans",
         "headline": "Prendre confiance et trouver son rythme",
         "points": [
           "Vaincre la timidité",
@@ -276,7 +274,6 @@
       },
       "senior": {
         "label": "Cohorte Senior",
-        "ageRange": "17 — 22 ans",
         "headline": "Construire son projet et sa direction",
         "points": [
           "Maximiser la Cote R",
@@ -589,7 +586,7 @@
       "title": "Groupe Mentou s'adresse à des jeunes motivés et leurs familles",
       "image": "/images/admission-meeting.jpg",
       "criteria": [
-        "Jeunes de 12 à 22 ans, résidant au Québec",
+        "Jeunes résidant au Québec",
         "Famille engagée dans le parcours de son enfant",
         "Volonté de grandir au-delà du strict cadre scolaire",
         "Curiosité, ouverture, envie de se dépasser"
@@ -597,11 +594,11 @@
       "note": "Aucune sélection sur les notes. Nous cherchons l'envie, pas la perfection.",
       "profiles": [
         {
-          "title": "Junior · 12–16 ans",
+          "title": "Cohorte Junior",
           "body": "Pour installer la confiance, la discipline, l'aisance à l'oral et les bases scolaires au bon moment."
         },
         {
-          "title": "Senior · 17–22 ans",
+          "title": "Cohorte Senior",
           "body": "Pour clarifier un projet, gagner en autonomie, améliorer la méthode et préparer les prochaines étapes."
         }
       ]
@@ -829,8 +826,8 @@
         "division": {
           "label": "Division d'intérêt",
           "options": [
-            "Junior (12-16 ans)",
-            "Senior (17-22 ans)",
+            "Junior",
+            "Senior",
             "Pas encore décidé"
           ]
         },
