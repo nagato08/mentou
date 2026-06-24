@@ -21,6 +21,8 @@ export function useComments() {
   }, []);
 
   useEffect(() => {
+    // setState runs after the awaited fetch — async, not a synchronous cascade.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchApproved().finally(() => setMounted(true));
   }, [fetchApproved]);
 

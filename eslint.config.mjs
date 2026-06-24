@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Skill packages vendored into the repo — not part of the site.
+    "agent-skills/**",
   ]),
 ]);
 

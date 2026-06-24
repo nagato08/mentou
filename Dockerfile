@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 # =========================================
 # STAGE 1 — Dépendances
 # =========================================
@@ -10,7 +12,7 @@ RUN npm config set fetch-retries 5 \
   && npm config set fetch-timeout 300000
 
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN --mount=type=cache,target=/root/.npm npm ci
 
 # =========================================
 # STAGE 2 — Build
@@ -28,7 +30,8 @@ ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 ENV NEXT_PUBLIC_GA_ID=$NEXT_PUBLIC_GA_ID
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN npm run build
+# Cache .next/cache → compilateur Next incrémental entre builds
+RUN --mount=type=cache,target=/app/.next/cache npm run build
 
 # =========================================
 # STAGE 3 — Runner (image minimale)

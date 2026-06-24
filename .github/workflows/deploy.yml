@@ -10,7 +10,8 @@ env:
 
 jobs:
   # ───────────────────────────────
-  # 1. Qualité : lint + build check
+  # 1. Qualité : lint + typecheck (gate rapide)
+  #    Le build réel est validé dans le stage Docker.
   # ───────────────────────────────
   quality:
     runs-on: ubuntu-latest
@@ -24,11 +25,11 @@ jobs:
 
       - run: npm ci
 
-      - name: Build check
-        run: npm run build
-        env:
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npx tsc --noEmit
 
   # ───────────────────────────────
   # 2. Build + push image vers GHCR
