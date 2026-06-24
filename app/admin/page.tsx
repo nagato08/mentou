@@ -73,6 +73,10 @@ export default function AdminPage() {
       setPassword("");
       setAuthError("");
       await fetchComments();
+    } else if (res.status === 500) {
+      setAuthError(
+        "Configuration serveur manquante (ADMIN_SECRET). Contactez l'administrateur."
+      );
     } else {
       setAuthError("Mot de passe incorrect.");
     }
