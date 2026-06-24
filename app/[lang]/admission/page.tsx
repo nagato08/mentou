@@ -61,12 +61,14 @@ export default async function AdmissionPage({
       />
       <AdmissionProcess dict={dict} />
       <AdmissionClarity dict={dict} />
-      {/* <PricingSection
+      <PricingSection
+        lang={lang as Locale}
+        cta={a.pricing.cta}
         eyebrow={a.pricing.eyebrow}
         title={a.pricing.title}
         items={a.pricing.items}
         paymentMethods={a.pricing.paymentMethods}
-      /> */}
+      />
       <AdmissionEligibility dict={dict} />
       <AdmissionFaq
         eyebrow={a.faq.eyebrow}

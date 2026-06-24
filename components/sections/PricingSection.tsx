@@ -1,11 +1,17 @@
+import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
+
 type PricingItem = {
   period: string;
   price: number;
   description: string;
   featured?: boolean;
+  offer?: string;
 };
 
 type Props = {
+  lang: Locale;
+  cta: string;
   eyebrow: string;
   title: string;
   items: PricingItem[];
@@ -16,6 +22,8 @@ type Props = {
 };
 
 export default function PricingSection({
+  lang,
+  cta,
   eyebrow,
   title,
   items,
@@ -89,9 +97,24 @@ export default function PricingSection({
                 </div>
 
                 {/* Description */}
-                <p className="text-base text-bone leading-relaxed">
+                <p className="text-base text-bone leading-relaxed mb-8">
                   {item.description}
                 </p>
+
+                {/* CTA */}
+                {item.offer && (
+                  <Link
+                    href={`/${lang}/inscription?offre=${item.offer}`}
+                    className={`mt-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm uppercase tracking-[0.2em] font-semibold transition-colors ${
+                      item.featured
+                        ? "bg-gold text-ink hover:bg-gold-soft"
+                        : "border border-gold/40 text-gold hover:bg-gold/10"
+                    }`}
+                  >
+                    {cta}
+                    <span aria-hidden>→</span>
+                  </Link>
+                )}
               </div>
             </div>
           ))}

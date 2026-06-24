@@ -562,14 +562,16 @@
           "price": 150,
           "description": "Full access to all 7 pillars per week",
           "secondary": "Best for: trial or short-term commitment",
-          "featured": false
+          "featured": false,
+          "offer": "weekly"
         },
         {
           "period": "Per month",
           "price": 500,
           "description": "Full access to all 7 pillars for one month",
           "secondary": "Best for: serious commitment and savings",
-          "featured": true
+          "featured": true,
+          "offer": "monthly"
         }
       ],
       "paymentMethods": {
@@ -579,7 +581,8 @@
           "PayPal",
           "On-site"
         ]
-      }
+      },
+      "cta": "Choose this offer"
     },
     "eligibility": {
       "eyebrow": "For whom?",
@@ -946,6 +949,66 @@
       "body": "Limited spots. Each cohort is carefully assembled to ensure an environment of excellence.",
       "button": "Schedule an interview",
       "href": "/admission"
+    }
+  },
+  "registration": {
+    "kicker": "Registration",
+    "title": "Reserve your",
+    "titleAccent": "child's place",
+    "subtitle": "A few details to best prepare their integration. Secure payment is handled in the next step via Stripe.",
+    "offerLabel": "Selected offer",
+    "offers": {
+      "weekly": "$150 / week",
+      "monthly": "$500 / month"
+    },
+    "sections": {
+      "parent": "Parent / Guardian",
+      "child": "The young person",
+      "address": "Address",
+      "extra": "To support you better"
+    },
+    "fields": {
+      "parentName": "Parent's full name",
+      "parentEmail": "Email",
+      "parentPhone": "Phone",
+      "childName": "Young person's full name",
+      "childAge": "Young person's age",
+      "childSchool": "Current school (optional)",
+      "address": "Address (street and number)",
+      "city": "City",
+      "postalCode": "Postal code",
+      "province": "Province",
+      "availability": "Availability (evenings, weekends…)",
+      "expectations": "Your expectations for your child",
+      "suggestions": "Questions or suggestions (optional)"
+    },
+    "placeholders": {
+      "parentName": "Your full name",
+      "parentEmail": "your@email.com",
+      "parentPhone": "(438) 000-0000",
+      "childName": "Full name",
+      "childAge": "e.g. 14",
+      "childSchool": "School name",
+      "address": "123 Example St",
+      "city": "Québec",
+      "postalCode": "G1A 1A1",
+      "province": "Québec",
+      "availability": "e.g. Tuesday evenings and Saturday mornings",
+      "expectations": "What you'd like them to develop…",
+      "suggestions": "Anything you'd like to share"
+    },
+    "consent": "I agree to be contacted by Groupe Mentou and authorize the recurring payment for the selected offer.",
+    "submit": "Proceed to secure payment",
+    "submitting": "Redirecting to payment…",
+    "error": "An error occurred. Please try again or contact us.",
+    "canceled": "Payment canceled. You can try again whenever you like.",
+    "required": "Required field",
+    "thanks": {
+      "kicker": "Registration confirmed",
+      "title": "Thank you and welcome",
+      "titleAccent": "to Groupe Mentou",
+      "body": "Your payment has been recorded. You will receive a confirmation email. Our team will contact you shortly with next steps.",
+      "cta": "Back to home"
     }
   }
 }

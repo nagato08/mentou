@@ -2,8 +2,11 @@
 
 import { useState, useEffect, useCallback } from "react";
 import type { Comment } from "@/lib/useComments";
+import type { Registration } from "@/lib/registration";
+import { OFFER_LABELS } from "@/lib/registration";
 
 type Tab = "pending" | "approved";
+type View = "comments" | "registrations";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -39,19 +42,27 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
   const [comments, setComments] = useState<Comment[]>([]);
+  const [registrations, setRegistrations] = useState<Registration[]>([]);
+  const [view, setView] = useState<View>("comments");
   const [tab, setTab] = useState<Tab>("pending");
   const [loading, setLoading] = useState(false);
   const [busyId, setBusyId] = useState<string | null>(null);
+
+  const fetchRegistrations = useCallback(async () => {
+    const res = await fetch("/api/admin/registrations");
+    if (res.ok) setRegistrations(await res.json());
+  }, []);
 
   const fetchComments = useCallback(async () => {
     const res = await fetch("/api/admin/comments");
     if (res.ok) {
       setComments(await res.json());
       setLoggedIn(true);
+      void fetchRegistrations();
     } else if (res.status === 401) {
       setLoggedIn(false);
     }
-  }, []);
+  }, [fetchRegistrations]);
 
   // Restore session on mount (cookie may still be valid).
   // setState runs after the awaited fetch — async, not a synchronous cascade.
@@ -214,14 +225,37 @@ export default function AdminPage() {
             <h1 className="font-display text-lg leading-none">Modération</h1>
           </div>
         </div>
-        <button
-          onClick={logout}
-          className="text-[0.65rem] uppercase tracking-[0.25em] text-bone/40 hover:text-bone border border-bone/10 hover:border-bone/30 px-4 py-2 transition-colors"
-        >
-          Déconnexion
-        </button>
+        <div className="flex items-center gap-2">
+          {/* View switcher */}
+          <div className="flex border border-bone/10">
+            {(["comments", "registrations"] as View[]).map((v) => (
+              <button
+                key={v}
+                onClick={() => setView(v)}
+                className={`px-4 py-2 text-[0.6rem] uppercase tracking-[0.2em] transition-colors ${
+                  view === v
+                    ? "bg-gold text-ink font-semibold"
+                    : "text-bone/40 hover:text-bone"
+                }`}
+              >
+                {v === "comments"
+                  ? "Avis"
+                  : `Inscriptions${registrations.length ? ` (${registrations.length})` : ""}`}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={logout}
+            className="text-[0.65rem] uppercase tracking-[0.25em] text-bone/40 hover:text-bone border border-bone/10 hover:border-bone/30 px-4 py-2 transition-colors"
+          >
+            Déconnexion
+          </button>
+        </div>
       </header>
 
+      {view === "registrations" ? (
+        <RegistrationsView registrations={registrations} />
+      ) : (
       <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
         {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-bone/10 border border-bone/10">
@@ -354,6 +388,115 @@ export default function AdminPage() {
           ))}
         </div>
       </div>
+      )}
     </main>
+  );
+}
+
+function RegistrationsView({
+  registrations,
+}: {
+  registrations: Registration[];
+}) {
+  const paid = registrations.filter((r) => r.status === "paid");
+  const pending = registrations.filter((r) => r.status === "pending");
+  const canceled = registrations.filter((r) => r.status === "canceled");
+
+  const statusStyle: Record<Registration["status"], string> = {
+    paid: "bg-gold/10 text-gold",
+    pending: "bg-bone/10 text-bone/50",
+    canceled: "bg-red-400/10 text-red-400",
+  };
+  const statusLabel: Record<Registration["status"], string> = {
+    paid: "Payé",
+    pending: "En attente",
+    canceled: "Annulé",
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
+      {/* Stats */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-bone/10 border border-bone/10">
+        <StatCard label="Total" value={registrations.length} />
+        <StatCard label="Payées" value={paid.length} />
+        <StatCard label="En attente" value={pending.length} />
+        <StatCard label="Annulées" value={canceled.length} />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        {registrations.length === 0 && (
+          <div className="border border-dashed border-bone/15 py-16 text-center">
+            <p className="text-bone/40 text-sm">Aucune inscription pour le moment.</p>
+          </div>
+        )}
+
+        {registrations.map((r) => (
+          <article
+            key={r.id}
+            className="border border-bone/10 bg-night/20 p-5 md:p-6 flex flex-col gap-4"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className="font-semibold text-bone">
+                  {r.childName}{" "}
+                  <span className="text-bone/40 font-normal">· {r.childAge} ans</span>
+                </p>
+                <p className="text-xs text-bone/40 mt-0.5">
+                  Parent : {r.parentName} ·{" "}
+                  {new Date(r.createdAt).toLocaleDateString("fr-FR", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+              <div className="flex flex-col items-end gap-1 shrink-0">
+                <span
+                  className={`text-[0.55rem] uppercase tracking-[0.2em] px-2.5 py-1 ${statusStyle[r.status]}`}
+                >
+                  {statusLabel[r.status]}
+                </span>
+                <span className="text-[0.6rem] text-bone/40">
+                  {OFFER_LABELS[r.offer]}
+                </span>
+              </div>
+            </div>
+
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm border-t border-bone/10 pt-4">
+              <Detail label="Courriel" value={r.parentEmail} />
+              <Detail label="Téléphone" value={r.parentPhone} />
+              <Detail label="École" value={r.childSchool} />
+              <Detail
+                label="Adresse"
+                value={`${r.address}, ${r.city} ${r.postalCode}, ${r.province}`}
+              />
+              <Detail label="Disponibilités" value={r.availability} />
+              <Detail label="Attentes" value={r.expectations} full />
+              <Detail label="Suggestions" value={r.suggestions} full />
+            </dl>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Detail({
+  label,
+  value,
+  full,
+}: {
+  label: string;
+  value: string;
+  full?: boolean;
+}) {
+  if (!value) return null;
+  return (
+    <div className={full ? "sm:col-span-2" : ""}>
+      <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-bone/40">
+        {label}
+      </dt>
+      <dd className="text-bone/75">{value}</dd>
+    </div>
   );
 }

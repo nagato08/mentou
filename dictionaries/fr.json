@@ -562,14 +562,16 @@
           "price": 150,
           "description": "Accès complet aux 7 piliers par semaine",
           "secondary": "Idéal pour : essai ou engagement court terme",
-          "featured": false
+          "featured": false,
+          "offer": "weekly"
         },
         {
           "period": "Par mois",
           "price": 500,
           "description": "Accès complet aux 7 piliers pour un mois",
           "secondary": "Idéal pour : engagement sérieux et économies",
-          "featured": true
+          "featured": true,
+          "offer": "monthly"
         }
       ],
       "paymentMethods": {
@@ -579,7 +581,8 @@
           "PayPal",
           "Sur place"
         ]
-      }
+      },
+      "cta": "Choisir cette offre"
     },
     "eligibility": {
       "eyebrow": "Pour qui ?",
@@ -946,6 +949,66 @@
       "body": "Places limitées. Chaque cohorte est composée avec soin pour garantir un environnement d'excellence.",
       "button": "Planifier une entrevue",
       "href": "/admission"
+    }
+  },
+  "registration": {
+    "kicker": "Inscription",
+    "title": "Réservez la place de",
+    "titleAccent": "votre enfant",
+    "subtitle": "Quelques informations pour préparer au mieux son intégration. Le paiement sécurisé se fait à l'étape suivante via Stripe.",
+    "offerLabel": "Offre choisie",
+    "offers": {
+      "weekly": "150 $ / semaine",
+      "monthly": "500 $ / mois"
+    },
+    "sections": {
+      "parent": "Parent / Tuteur",
+      "child": "Le jeune",
+      "address": "Adresse",
+      "extra": "Pour mieux vous accompagner"
+    },
+    "fields": {
+      "parentName": "Nom complet du parent",
+      "parentEmail": "Courriel",
+      "parentPhone": "Téléphone",
+      "childName": "Prénom et nom du jeune",
+      "childAge": "Âge du jeune",
+      "childSchool": "École actuelle (optionnel)",
+      "address": "Adresse (rue et numéro)",
+      "city": "Ville",
+      "postalCode": "Code postal",
+      "province": "Province",
+      "availability": "Disponibilités (soirs, week-ends…)",
+      "expectations": "Vos attentes pour votre enfant",
+      "suggestions": "Questions ou suggestions (optionnel)"
+    },
+    "placeholders": {
+      "parentName": "Votre nom complet",
+      "parentEmail": "votre@email.com",
+      "parentPhone": "(438) 000-0000",
+      "childName": "Prénom et nom",
+      "childAge": "Ex. 14",
+      "childSchool": "Nom de l'établissement",
+      "address": "123 rue Exemple",
+      "city": "Québec",
+      "postalCode": "G1A 1A1",
+      "province": "Québec",
+      "availability": "Ex. mardis soir et samedis matin",
+      "expectations": "Ce que vous souhaitez qu'il développe…",
+      "suggestions": "Tout ce que vous voulez nous partager"
+    },
+    "consent": "J'accepte d'être recontacté par Groupe Mentou et j'autorise le paiement récurrent de l'offre choisie.",
+    "submit": "Procéder au paiement sécurisé",
+    "submitting": "Redirection vers le paiement…",
+    "error": "Une erreur est survenue. Réessayez ou contactez-nous.",
+    "canceled": "Paiement annulé. Vous pouvez réessayer quand vous le souhaitez.",
+    "required": "Champ requis",
+    "thanks": {
+      "kicker": "Inscription confirmée",
+      "title": "Merci et bienvenue",
+      "titleAccent": "au Groupe Mentou",
+      "body": "Votre paiement a bien été enregistré. Vous recevrez un courriel de confirmation. Notre équipe vous contactera sous peu pour les prochaines étapes.",
+      "cta": "Retour à l'accueil"
     }
   }
 }
