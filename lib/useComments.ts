@@ -16,7 +16,7 @@ export function useComments() {
   const [mounted, setMounted] = useState(false);
 
   const fetchApproved = useCallback(async () => {
-    const res = await fetch("/api/comments");
+    const res = await fetch("/api/comments", { cache: "no-store" });
     if (res.ok) setApprovedComments(await res.json());
   }, []);
 
@@ -32,6 +32,8 @@ export function useComments() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, message, rating }),
     });
+    // Auto-approuvé → re-fetch pour afficher immédiatement.
+    await fetchApproved();
   };
 
   return { approvedComments, addComment, mounted };
