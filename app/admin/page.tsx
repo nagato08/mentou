@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Comment } from "@/lib/useComments";
 import type { Registration } from "@/lib/registration";
-import { OFFER_LABELS } from "@/lib/registration";
+import { OFFER_LABELS, isEventOffer } from "@/lib/registration";
 
 type Tab = "pending" | "approved";
 type View = "comments" | "registrations";
@@ -430,52 +430,67 @@ function RegistrationsView({
           </div>
         )}
 
-        {registrations.map((r) => (
-          <article
-            key={r.id}
-            className="border border-bone/10 bg-night/20 p-5 md:p-6 flex flex-col gap-4"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
-                <p className="font-semibold text-bone">
-                  {r.childName}{" "}
-                  <span className="text-bone/40 font-normal">· {r.childAge} ans</span>
-                </p>
-                <p className="text-xs text-bone/40 mt-0.5">
-                  Parent : {r.parentName} ·{" "}
-                  {new Date(r.createdAt).toLocaleDateString("fr-FR", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </p>
+        {registrations.map((r) => {
+          const isEvent = isEventOffer(r.offer);
+          const dateStr = new Date(r.createdAt).toLocaleDateString("fr-FR", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          });
+          return (
+            <article
+              key={r.id}
+              className="border border-bone/10 bg-night/20 p-5 md:p-6 flex flex-col gap-4"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  {isEvent ? (
+                    <p className="font-semibold text-bone">{r.parentName}</p>
+                  ) : (
+                    <p className="font-semibold text-bone">
+                      {r.childName}{" "}
+                      <span className="text-bone/40 font-normal">
+                        · {r.childAge} ans
+                      </span>
+                    </p>
+                  )}
+                  <p className="text-xs text-bone/40 mt-0.5">
+                    {isEvent ? "Tournoi" : `Parent : ${r.parentName}`} · {dateStr}
+                  </p>
+                </div>
+                <div className="flex flex-col items-end gap-1 shrink-0">
+                  <span
+                    className={`text-[0.55rem] uppercase tracking-[0.2em] px-2.5 py-1 ${statusStyle[r.status]}`}
+                  >
+                    {statusLabel[r.status]}
+                  </span>
+                  <span className="text-[0.6rem] text-bone/40">
+                    {OFFER_LABELS[r.offer]}
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col items-end gap-1 shrink-0">
-                <span
-                  className={`text-[0.55rem] uppercase tracking-[0.2em] px-2.5 py-1 ${statusStyle[r.status]}`}
-                >
-                  {statusLabel[r.status]}
-                </span>
-                <span className="text-[0.6rem] text-bone/40">
-                  {OFFER_LABELS[r.offer]}
-                </span>
-              </div>
-            </div>
 
-            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm border-t border-bone/10 pt-4">
-              <Detail label="Courriel" value={r.parentEmail} />
-              <Detail label="Téléphone" value={r.parentPhone} />
-              <Detail label="École" value={r.childSchool} />
-              <Detail
-                label="Adresse"
-                value={`${r.address}, ${r.city} ${r.postalCode}, ${r.province}`}
-              />
-              <Detail label="Disponibilités" value={r.availability} />
-              <Detail label="Attentes" value={r.expectations} full />
-              <Detail label="Suggestions" value={r.suggestions} full />
-            </dl>
-          </article>
-        ))}
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm border-t border-bone/10 pt-4">
+                <Detail label="Courriel" value={r.parentEmail} />
+                <Detail label="Téléphone" value={r.parentPhone} />
+                {isEvent ? (
+                  <Detail label="Nation / Équipe" value={r.expectations} />
+                ) : (
+                  <>
+                    <Detail label="École" value={r.childSchool} />
+                    <Detail
+                      label="Adresse"
+                      value={`${r.address}, ${r.city} ${r.postalCode}, ${r.province}`}
+                    />
+                    <Detail label="Disponibilités" value={r.availability} />
+                    <Detail label="Attentes" value={r.expectations} full />
+                    <Detail label="Suggestions" value={r.suggestions} full />
+                  </>
+                )}
+              </dl>
+            </article>
+          );
+        })}
       </div>
     </div>
   );

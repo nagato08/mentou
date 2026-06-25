@@ -49,6 +49,9 @@ export default function Footer({ lang, dict }: FooterProps) {
             <Link href={`${base}/vision`} className="hover:text-gold transition-colors">
               {dict.nav.vision}
             </Link>
+            <Link href={`${base}/evenements`} className="hover:text-gold transition-colors">
+              {dict.nav.events}
+            </Link>
             <Link href={`${base}/admission`} className="hover:text-gold transition-colors">
               {dict.nav.admission}
             </Link>

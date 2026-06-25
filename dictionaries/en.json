@@ -637,6 +637,39 @@
       "body": "First call with no commitment. We introduce ourselves, we talk, we see if the journey is right for you.",
       "label": "Schedule an interview",
       "secondary": "Write to us"
+    },
+    "eventPricing": {
+      "eyebrow": "African Nations Tournament",
+      "title": "Tournament",
+      "titleAccent": "pricing",
+      "subtitle": "Saturday, July 18, 2026 · One field, many nations, one pride.",
+      "cta": "Register",
+      "items": [
+        {
+          "offer": "event-player",
+          "role": "Player",
+          "price": 90,
+          "description": "Participation in the football tournament.",
+          "perks": [
+            "Match jersey",
+            "Trophy + chalet trip for the winning team",
+            "All expenses paid"
+          ],
+          "featured": true
+        },
+        {
+          "offer": "event-spectator",
+          "role": "Spectator",
+          "price": 55,
+          "description": "Access to the tournament day.",
+          "perks": [
+            "Day admission",
+            "Drink included",
+            "Atmosphere and entertainment"
+          ],
+          "featured": false
+        }
+      ]
     }
   },
   "gallery": {
@@ -949,37 +982,98 @@
       "body": "Limited spots. Each cohort is carefully assembled to ensure an environment of excellence.",
       "button": "Schedule an interview",
       "href": "/admission"
+    },
+    "list": {
+      "eyebrow": "Programming",
+      "title": "Our",
+      "titleAccent": "gatherings",
+      "statusOpen": "Registration open",
+      "statusSoon": "Coming soon",
+      "statusTbd": "To be revealed",
+      "detailsLabel": "At a glance",
+      "items": [
+        {
+          "id": "football",
+          "image": "/images/event-football.jpg",
+          "category": "Sports tournament",
+          "title": "African Nations Tournament",
+          "tagline": "One field · Many nations · One pride",
+          "status": "open",
+          "date": "Saturday, July 18, 2026",
+          "meta": [
+            "$90 / player",
+            "Sports complex",
+            "Trophy + all-expenses-paid chalet trip",
+            "Spectators: $55 (drink included)"
+          ],
+          "cta": "Register for the tournament",
+          "featured": true
+        },
+        {
+          "id": "basket",
+          "image": "/images/event-basket.jpg",
+          "category": "Sports tournament",
+          "title": "Basketball Tournament",
+          "tagline": "Strategy and intensity on the court",
+          "status": "soon",
+          "date": "Date coming soon",
+          "meta": [],
+          "featured": false
+        },
+        {
+          "id": "soiree",
+          "image": "/images/event-soiree.jpg",
+          "category": "Gathering",
+          "title": "Group Evenings",
+          "tagline": "Moments of celebration and togetherness",
+          "status": "tbd",
+          "date": "Programming in preparation",
+          "meta": [],
+          "featured": false
+        },
+        {
+          "id": "gaming",
+          "image": "/images/event-gaming.jpg",
+          "category": "Competition",
+          "title": "Gaming Contest",
+          "tagline": "Excellence is played controller in hand too",
+          "status": "soon",
+          "date": "Date coming soon",
+          "meta": [],
+          "featured": false
+        }
+      ]
     }
   },
   "registration": {
     "kicker": "Registration",
-    "title": "Reserve your",
-    "titleAccent": "child's place",
-    "subtitle": "A few details to best prepare their integration. Secure payment is handled in the next step via Stripe.",
+    "title": "Reserve your place",
+    "titleAccent": "in the program",
+    "subtitle": "A few details to best prepare the program onboarding. Secure payment is handled in the next step via Stripe.",
     "offerLabel": "Selected offer",
     "offers": {
       "weekly": "$150 / week",
       "monthly": "$500 / month"
     },
     "sections": {
-      "parent": "Parent / Guardian",
-      "child": "The young person",
+      "parent": "Main contact",
+      "child": "Participant (optional)",
       "address": "Address",
       "extra": "To support you better"
     },
     "fields": {
-      "parentName": "Parent's full name",
+      "parentName": "Contact's full name",
       "parentEmail": "Email",
       "parentPhone": "Phone",
-      "childName": "Young person's full name",
-      "childAge": "Young person's age",
-      "childSchool": "Current school (optional)",
+      "childName": "Participant's full name (optional)",
+      "childAge": "Participant's age (optional)",
+      "childSchool": "Current school or institution (optional)",
       "address": "Address (street and number)",
       "city": "City",
       "postalCode": "Postal code",
       "province": "Province",
       "availability": "Availability (evenings, weekends…)",
-      "expectations": "Your expectations for your child",
+      "expectations": "Your expectations for the program",
       "suggestions": "Questions or suggestions (optional)"
     },
     "placeholders": {
@@ -994,7 +1088,7 @@
       "postalCode": "G1A 1A1",
       "province": "Québec",
       "availability": "e.g. Tuesday evenings and Saturday mornings",
-      "expectations": "What you'd like them to develop…",
+      "expectations": "What you'd like to develop or see progress…",
       "suggestions": "Anything you'd like to share"
     },
     "consent": "I agree to be contacted by Groupe Mentou and authorize the recurring payment for the selected offer.",
@@ -1009,6 +1103,34 @@
       "titleAccent": "to Groupe Mentou",
       "body": "Your payment has been recorded. You will receive a confirmation email. Our team will contact you shortly with next steps.",
       "cta": "Back to home"
+    },
+    "event": {
+      "offerLabels": {
+        "event-player": "Tournament — Player · $90",
+        "event-spectator": "Tournament — Spectator · $55"
+      },
+      "sectionPlayer": "Player registration",
+      "sectionSpectator": "Spectator ticket",
+      "fields": {
+        "name": "Full name",
+        "email": "Email",
+        "phone": "Phone",
+        "nation": "Nation / Team represented"
+      },
+      "placeholders": {
+        "name": "First and last name",
+        "email": "your@email.com",
+        "phone": "(438) 000-0000",
+        "nation": "e.g. Senegal, Ivory Coast…"
+      },
+      "consent": "I accept the participation terms and authorize the payment.",
+      "submit": "Proceed to payment",
+      "header": {
+        "kicker": "Tournament registration",
+        "title": "Join",
+        "titleAccent": "the arena",
+        "subtitle": "A few details, then secure payment is handled in the next step via Stripe."
+      }
     }
   }
 }

@@ -637,6 +637,39 @@
       "body": "Premier appel sans engagement. On se présente, on échange, on voit si l'aventure vous correspond.",
       "label": "Planifier une entrevue",
       "secondary": "Nous écrire"
+    },
+    "eventPricing": {
+      "eyebrow": "Tournoi des Nations Africaines",
+      "title": "Tarifs du",
+      "titleAccent": "tournoi",
+      "subtitle": "Samedi 18 juillet 2026 · Un terrain, plusieurs nations, une seule fierté.",
+      "cta": "S'inscrire",
+      "items": [
+        {
+          "offer": "event-player",
+          "role": "Joueur",
+          "price": 90,
+          "description": "Participation au tournoi de football.",
+          "perks": [
+            "Maillot de match",
+            "Trophée + voyage en chalet pour l'équipe gagnante",
+            "Tous frais payés"
+          ],
+          "featured": true
+        },
+        {
+          "offer": "event-spectator",
+          "role": "Spectateur",
+          "price": 55,
+          "description": "Accès à la journée de tournoi.",
+          "perks": [
+            "Entrée à la journée",
+            "Boisson comprise",
+            "Ambiance et animations"
+          ],
+          "featured": false
+        }
+      ]
     }
   },
   "gallery": {
@@ -949,37 +982,98 @@
       "body": "Places limitées. Chaque cohorte est composée avec soin pour garantir un environnement d'excellence.",
       "button": "Planifier une entrevue",
       "href": "/admission"
+    },
+    "list": {
+      "eyebrow": "Programmation",
+      "title": "Nos",
+      "titleAccent": "rendez-vous",
+      "statusOpen": "Inscriptions ouvertes",
+      "statusSoon": "À venir",
+      "statusTbd": "Bientôt dévoilé",
+      "detailsLabel": "En bref",
+      "items": [
+        {
+          "id": "football",
+          "image": "/images/event-football.jpg",
+          "category": "Tournoi sportif",
+          "title": "Tournoi des Nations Africaines",
+          "tagline": "Un terrain · Plusieurs nations · Une seule fierté",
+          "status": "open",
+          "date": "Samedi 18 juillet 2026",
+          "meta": [
+            "90 $ / joueur",
+            "Complexe sportif",
+            "Trophée + voyage en chalet, tous frais payés",
+            "Spectateurs : 55 $ (boisson comprise)"
+          ],
+          "cta": "S'inscrire au tournoi",
+          "featured": true
+        },
+        {
+          "id": "basket",
+          "image": "/images/event-basket.jpg",
+          "category": "Tournoi sportif",
+          "title": "Tournoi de Basketball",
+          "tagline": "La stratégie et l'intensité sur le parquet",
+          "status": "soon",
+          "date": "Date à venir",
+          "meta": [],
+          "featured": false
+        },
+        {
+          "id": "soiree",
+          "image": "/images/event-soiree.jpg",
+          "category": "Rassemblement",
+          "title": "Soirées du Groupe",
+          "tagline": "Des moments de célébration et de cohésion",
+          "status": "tbd",
+          "date": "Programmation en préparation",
+          "meta": [],
+          "featured": false
+        },
+        {
+          "id": "gaming",
+          "image": "/images/event-gaming.jpg",
+          "category": "Compétition",
+          "title": "Concours Gaming",
+          "tagline": "L'excellence se joue aussi manette en main",
+          "status": "soon",
+          "date": "Date à venir",
+          "meta": [],
+          "featured": false
+        }
+      ]
     }
   },
   "registration": {
     "kicker": "Inscription",
-    "title": "Réservez la place de",
-    "titleAccent": "votre enfant",
-    "subtitle": "Quelques informations pour préparer au mieux son intégration. Le paiement sécurisé se fait à l'étape suivante via Stripe.",
+    "title": "Réservez votre place",
+    "titleAccent": "au programme",
+    "subtitle": "Quelques informations pour préparer au mieux l'intégration au programme. Le paiement sécurisé se fait à l'étape suivante via Stripe.",
     "offerLabel": "Offre choisie",
     "offers": {
       "weekly": "150 $ / semaine",
       "monthly": "500 $ / mois"
     },
     "sections": {
-      "parent": "Parent / Tuteur",
-      "child": "Le jeune",
+      "parent": "Contact principal",
+      "child": "Participant (optionnel)",
       "address": "Adresse",
       "extra": "Pour mieux vous accompagner"
     },
     "fields": {
-      "parentName": "Nom complet du parent",
+      "parentName": "Nom complet du contact",
       "parentEmail": "Courriel",
       "parentPhone": "Téléphone",
-      "childName": "Prénom et nom du jeune",
-      "childAge": "Âge du jeune",
-      "childSchool": "École actuelle (optionnel)",
+      "childName": "Prénom et nom du participant (optionnel)",
+      "childAge": "Âge du participant (optionnel)",
+      "childSchool": "École ou établissement actuel (optionnel)",
       "address": "Adresse (rue et numéro)",
       "city": "Ville",
       "postalCode": "Code postal",
       "province": "Province",
       "availability": "Disponibilités (soirs, week-ends…)",
-      "expectations": "Vos attentes pour votre enfant",
+      "expectations": "Vos attentes pour le programme",
       "suggestions": "Questions ou suggestions (optionnel)"
     },
     "placeholders": {
@@ -994,7 +1088,7 @@
       "postalCode": "G1A 1A1",
       "province": "Québec",
       "availability": "Ex. mardis soir et samedis matin",
-      "expectations": "Ce que vous souhaitez qu'il développe…",
+      "expectations": "Ce que vous souhaitez développer ou voir progresser…",
       "suggestions": "Tout ce que vous voulez nous partager"
     },
     "consent": "J'accepte d'être recontacté par Groupe Mentou et j'autorise le paiement récurrent de l'offre choisie.",
@@ -1009,6 +1103,34 @@
       "titleAccent": "au Groupe Mentou",
       "body": "Votre paiement a bien été enregistré. Vous recevrez un courriel de confirmation. Notre équipe vous contactera sous peu pour les prochaines étapes.",
       "cta": "Retour à l'accueil"
+    },
+    "event": {
+      "offerLabels": {
+        "event-player": "Tournoi — Joueur · 90 $",
+        "event-spectator": "Tournoi — Spectateur · 55 $"
+      },
+      "sectionPlayer": "Inscription joueur",
+      "sectionSpectator": "Billet spectateur",
+      "fields": {
+        "name": "Nom complet",
+        "email": "Courriel",
+        "phone": "Téléphone",
+        "nation": "Nation / Équipe représentée"
+      },
+      "placeholders": {
+        "name": "Prénom et nom",
+        "email": "votre@email.com",
+        "phone": "(438) 000-0000",
+        "nation": "Ex. Sénégal, Côte d'Ivoire…"
+      },
+      "consent": "J'accepte les conditions de participation et autorise le paiement.",
+      "submit": "Procéder au paiement",
+      "header": {
+        "kicker": "Inscription au tournoi",
+        "title": "Rejoignez",
+        "titleAccent": "l'arène",
+        "subtitle": "Quelques informations, puis le paiement sécurisé se fait à l'étape suivante via Stripe."
+      }
     }
   }
 }

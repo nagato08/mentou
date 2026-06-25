@@ -8,7 +8,14 @@ const key = process.env.STRIPE_SECRET_KEY;
 export const stripe = key ? new Stripe(key) : null;
 
 export function priceIdFor(offer: Offer): string | undefined {
-  return offer === "weekly"
-    ? process.env.STRIPE_PRICE_WEEKLY
-    : process.env.STRIPE_PRICE_MONTHLY;
+  switch (offer) {
+    case "weekly":
+      return process.env.STRIPE_PRICE_WEEKLY;
+    case "monthly":
+      return process.env.STRIPE_PRICE_MONTHLY;
+    case "event-player":
+      return process.env.STRIPE_PRICE_EVENT_PLAYER;
+    case "event-spectator":
+      return process.env.STRIPE_PRICE_EVENT_SPECTATOR;
+  }
 }

@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
+import type Stripe from "stripe";
 import { getDb } from "@/lib/db";
 import { stripe, priceIdFor } from "@/lib/stripe";
-import { isOffer, type RegistrationInput } from "@/lib/registration";
+import {
+  isOffer,
+  isEventOffer,
+  type RegistrationInput,
+} from "@/lib/registration";
 import { SITE_URL } from "@/lib/seo";
 
 export const runtime = "nodejs";
@@ -26,13 +31,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Offre invalide" }, { status: 400 });
     }
 
-    const priceId = priceIdFor(offer);
-    if (!priceId) {
-      return NextResponse.json(
-        { error: "Tarif non configuré" },
-        { status: 503 }
-      );
-    }
+    const isEvent = isEventOffer(offer);
 
     const input: RegistrationInput = {
       parentName: str(body.parentName),
@@ -51,18 +50,18 @@ export async function POST(req: Request) {
       suggestions: str(body.suggestions),
     };
 
-    // Champs requis minimaux
-    const required = [
-      input.parentName,
-      input.parentEmail,
-      input.parentPhone,
-      input.childName,
-      input.childAge,
-      input.address,
-      input.city,
-      input.postalCode,
-      input.province,
-    ];
+    // Validation selon le type d'offre.
+    const required = isEvent
+      ? [input.parentName, input.parentEmail, input.parentPhone]
+      : [
+          input.parentName,
+          input.parentEmail,
+          input.parentPhone,
+          input.address,
+          input.city,
+          input.postalCode,
+          input.province,
+        ];
     if (required.some((v) => !v)) {
       return NextResponse.json({ error: "Champs requis manquants" }, { status: 400 });
     }
@@ -95,15 +94,41 @@ export async function POST(req: Request) {
       ],
     });
 
-    const session = await stripe.checkout.sessions.create({
-      mode: "subscription",
-      line_items: [{ price: priceId, quantity: 1 }],
+    // Construire les line_items + mode selon le type d'offre.
+    let sessionParams: Stripe.Checkout.SessionCreateParams;
+    const common = {
       customer_email: input.parentEmail,
       client_reference_id: id,
       metadata: { registrationId: id },
       success_url: `${SITE_URL}/fr/inscription/merci?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE_URL}/fr/inscription?offre=${offer}&annule=1`,
-    });
+    };
+
+    if (isEvent) {
+      // Paiement unique (billet/joueur) via les Price IDs Stripe de test.
+      const priceId = priceIdFor(offer);
+      if (!priceId) {
+        return NextResponse.json({ error: "Tarif événement non configuré" }, { status: 503 });
+      }
+      sessionParams = {
+        ...common,
+        mode: "payment",
+        line_items: [{ price: priceId, quantity: 1 }],
+      };
+    } else {
+      // Abonnement récurrent (programme).
+      const priceId = priceIdFor(offer);
+      if (!priceId) {
+        return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
+      }
+      sessionParams = {
+        ...common,
+        mode: "subscription",
+        line_items: [{ price: priceId, quantity: 1 }],
+      };
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
 
     await db.execute({
       sql: "UPDATE registrations SET stripe_session_id = ? WHERE id = ?",

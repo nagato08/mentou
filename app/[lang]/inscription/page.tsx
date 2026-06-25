@@ -4,7 +4,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import InscriptionForm from "@/components/sections/InscriptionForm";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { isOffer } from "@/lib/registration";
+import { isOffer, isEventOffer } from "@/lib/registration";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -44,14 +44,16 @@ export default async function InscriptionPage({
 
   const dict = await getDictionary(lang as Locale);
   const t = dict.registration;
+  // Header dédié pour les inscriptions au tournoi (pas un enfant).
+  const header = isEventOffer(offre) ? t.event.header : t;
 
   return (
     <>
       <PageHeader
-        kicker={t.kicker}
-        title={t.title}
-        titleAccent={t.titleAccent}
-        subtitle={t.subtitle}
+        kicker={header.kicker}
+        title={header.title}
+        titleAccent={header.titleAccent}
+        subtitle={header.subtitle}
       />
       <InscriptionForm dict={dict} offer={offre} canceled={annule === "1"} />
     </>
