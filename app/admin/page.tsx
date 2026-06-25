@@ -7,6 +7,7 @@ import { OFFER_LABELS, isEventOffer } from "@/lib/registration";
 
 type Tab = "pending" | "approved";
 type View = "comments" | "registrations";
+type RegistrationFilter = "program" | "players" | "spectators";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -398,9 +399,29 @@ function RegistrationsView({
 }: {
   registrations: Registration[];
 }) {
-  const paid = registrations.filter((r) => r.status === "paid");
-  const pending = registrations.filter((r) => r.status === "pending");
-  const canceled = registrations.filter((r) => r.status === "canceled");
+  const [filter, setFilter] = useState<RegistrationFilter>("program");
+
+  const program = registrations.filter(
+    (r) => r.offer === "weekly" || r.offer === "monthly"
+  );
+  const players = registrations.filter((r) => r.offer === "event-player");
+  const spectators = registrations.filter((r) => r.offer === "event-spectator");
+  const filtered =
+    filter === "program" ? program : filter === "players" ? players : spectators;
+
+  const paid = filtered.filter((r) => r.status === "paid");
+  const pending = filtered.filter((r) => r.status === "pending");
+  const canceled = filtered.filter((r) => r.status === "canceled");
+
+  const filters: {
+    key: RegistrationFilter;
+    label: string;
+    count: number;
+  }[] = [
+    { key: "program", label: "Piliers", count: program.length },
+    { key: "players", label: "Joueurs", count: players.length },
+    { key: "spectators", label: "Spectateurs", count: spectators.length },
+  ];
 
   const statusStyle: Record<Registration["status"], string> = {
     paid: "bg-gold/10 text-gold",
@@ -417,21 +438,51 @@ function RegistrationsView({
     <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-bone/10 border border-bone/10">
-        <StatCard label="Total" value={registrations.length} />
+        <StatCard label="Total" value={filtered.length} />
         <StatCard label="Payées" value={paid.length} />
         <StatCard label="En attente" value={pending.length} />
         <StatCard label="Annulées" value={canceled.length} />
       </div>
 
+      <div className="flex flex-wrap gap-2 border-b border-bone/10 pb-4">
+        {filters.map((item) => {
+          const active = filter === item.key;
+          return (
+            <button
+              key={item.key}
+              type="button"
+              onClick={() => setFilter(item.key)}
+              className={`inline-flex items-center gap-2 px-4 py-2 text-[0.65rem] uppercase tracking-[0.2em] transition-colors ${
+                active
+                  ? "bg-gold text-ink font-semibold"
+                  : "border border-bone/10 text-bone/45 hover:border-bone/25 hover:text-bone"
+              }`}
+            >
+              {item.label}
+              <span
+                className={`tabular-nums ${
+                  active ? "text-ink/70" : "text-bone/35"
+                }`}
+              >
+                {item.count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
       <div className="flex flex-col gap-4">
-        {registrations.length === 0 && (
+        {filtered.length === 0 && (
           <div className="border border-dashed border-bone/15 py-16 text-center">
-            <p className="text-bone/40 text-sm">Aucune inscription pour le moment.</p>
+            <p className="text-bone/40 text-sm">
+              Aucune inscription dans ce filtre pour le moment.
+            </p>
           </div>
         )}
 
-        {registrations.map((r) => {
+        {filtered.map((r) => {
           const isEvent = isEventOffer(r.offer);
+          const participant = r.childName || r.parentName;
           const dateStr = new Date(r.createdAt).toLocaleDateString("fr-FR", {
             day: "2-digit",
             month: "short",
@@ -448,10 +499,13 @@ function RegistrationsView({
                     <p className="font-semibold text-bone">{r.parentName}</p>
                   ) : (
                     <p className="font-semibold text-bone">
-                      {r.childName}{" "}
-                      <span className="text-bone/40 font-normal">
-                        · {r.childAge} ans
-                      </span>
+                      {participant}
+                      {r.childAge && (
+                        <span className="text-bone/40 font-normal">
+                          {" "}
+                          · {r.childAge} ans
+                        </span>
+                      )}
                     </p>
                   )}
                   <p className="text-xs text-bone/40 mt-0.5">

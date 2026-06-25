@@ -991,6 +991,12 @@
       "statusSoon": "À venir",
       "statusTbd": "Bientôt dévoilé",
       "detailsLabel": "En bref",
+      "poster": {
+        "eyebrow": "Affiche officielle",
+        "title": "Tournoi des Nations Africaines",
+        "cta": "S'inscrire au tournoi",
+        "zoom": "Voir l'affiche en grand"
+      },
       "items": [
         {
           "id": "football",

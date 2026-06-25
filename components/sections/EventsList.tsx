@@ -114,6 +114,46 @@ export default function EventsList({ dict, lang }: Props) {
           </div>
         )}
 
+        {/* Official tournament poster */}
+        {featured && (
+          <div className="mb-12" data-gsap="fade-up">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block h-px w-8 bg-gold" />
+              <span className="text-[0.65rem] uppercase tracking-[0.35em] text-gold">
+                {t.poster.eyebrow}
+              </span>
+            </div>
+            <div className="relative w-full border border-bone/10 overflow-hidden">
+              <Image
+                src="/images/event.jpg"
+                alt={t.poster.title}
+                width={1200}
+                height={1600}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Link
+                href={`/${lang}/inscription?offre=event-player`}
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-ink font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gold-soft transition-colors"
+              >
+                {t.poster.cta}
+                <span aria-hidden>→</span>
+              </Link>
+              <a
+                href="/images/event.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-bone/20 text-bone/70 font-semibold text-sm uppercase tracking-[0.2em] hover:border-gold hover:text-bone transition-colors"
+              >
+                {t.poster.zoom}
+                <span aria-hidden>↗</span>
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* Other events grid */}
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"

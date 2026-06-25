@@ -991,6 +991,12 @@
       "statusSoon": "Coming soon",
       "statusTbd": "To be revealed",
       "detailsLabel": "At a glance",
+      "poster": {
+        "eyebrow": "Official poster",
+        "title": "African Nations Tournament",
+        "cta": "Register for the tournament",
+        "zoom": "View full poster"
+      },
       "items": [
         {
           "id": "football",
