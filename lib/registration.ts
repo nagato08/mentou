@@ -1,6 +1,6 @@
 // Type partagé (client + serveur) — aucune dépendance serveur ici.
 
-export type Offer = "weekly" | "monthly" | "event-player" | "event-spectator";
+export type Offer = "weekly" | "monthly" | "daily" | "event-player" | "event-spectator";
 
 export type OfferCategory = "program" | "event";
 
@@ -34,6 +34,7 @@ export type Registration = RegistrationInput & {
 export const ALL_OFFERS: Offer[] = [
   "weekly",
   "monthly",
+  "daily",
   "event-player",
   "event-spectator",
 ];
@@ -41,6 +42,7 @@ export const ALL_OFFERS: Offer[] = [
 export const OFFER_LABELS: Record<Offer, string> = {
   weekly: "150 $ / semaine",
   monthly: "500 $ / mois",
+  daily: "75 $ / jour",
   "event-player": "Tournoi — Joueur (90 $)",
   "event-spectator": "Tournoi — Spectateur (55 $)",
 };

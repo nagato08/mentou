@@ -32,6 +32,7 @@ export async function POST(req: Request) {
     }
 
     const isEvent = isEventOffer(offer);
+    const isOneTime = isEvent || offer === "daily";
 
     const input: RegistrationInput = {
       parentName: str(body.parentName),
@@ -104,11 +105,10 @@ export async function POST(req: Request) {
       cancel_url: `${SITE_URL}/fr/inscription?offre=${offer}&annule=1`,
     };
 
-    if (isEvent) {
-      // Paiement unique (billet/joueur) via les Price IDs Stripe de test.
+    if (isOneTime) {
       const priceId = priceIdFor(offer);
       if (!priceId) {
-        return NextResponse.json({ error: "Tarif événement non configuré" }, { status: 503 });
+        return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
       }
       sessionParams = {
         ...common,

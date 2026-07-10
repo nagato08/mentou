@@ -51,13 +51,11 @@ export default function PricingSection({
         </div>
 
         {/* Pricing Cards - Centered Grid */}
-        <div className="w-full max-w-5xl px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="w-full max-w-6xl px-4 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {items.map((item, i) => (
             <div
               key={item.period}
-              className={`relative flex flex-col p-0 overflow-hidden transition-all duration-300 ${
-                item.featured ? "lg:scale-105 lg:shadow-2xl" : ""
-              }`}
+              className={`relative flex flex-col p-0 overflow-hidden transition-all duration-300`}
               style={{ animationDelay: `${i * 100}ms` }}
             >
               {/* Accent Bar */}

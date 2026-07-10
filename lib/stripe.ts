@@ -13,6 +13,8 @@ export function priceIdFor(offer: Offer): string | undefined {
       return process.env.STRIPE_PRICE_WEEKLY;
     case "monthly":
       return process.env.STRIPE_PRICE_MONTHLY;
+    case "daily":
+      return process.env.STRIPE_PRICE_DAILY;
     case "event-player":
       return process.env.STRIPE_PRICE_EVENT_PLAYER;
     case "event-spectator":

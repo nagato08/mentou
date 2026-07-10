@@ -558,6 +558,14 @@
       "title": "Investissement transparent",
       "items": [
         {
+          "period": "Par jour",
+          "price": 75,
+          "description": "Accès complet aux 7 piliers pour une journée",
+          "secondary": "Idéal pour : découverte ou journée ponctuelle",
+          "featured": false,
+          "offer": "daily"
+        },
+        {
           "period": "Par semaine",
           "price": 150,
           "description": "Accès complet aux 7 piliers par semaine",
@@ -1059,7 +1067,8 @@
     "offerLabel": "Offre choisie",
     "offers": {
       "weekly": "150 $ / semaine",
-      "monthly": "500 $ / mois"
+      "monthly": "500 $ / mois",
+      "daily": "75 $ / jour"
     },
     "sections": {
       "parent": "Contact principal",

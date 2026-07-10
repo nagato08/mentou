@@ -558,6 +558,14 @@
       "title": "Transparent investment",
       "items": [
         {
+          "period": "Per day",
+          "price": 75,
+          "description": "Full access to all 7 pillars for one day",
+          "secondary": "Best for: discovery or one-off session",
+          "featured": false,
+          "offer": "daily"
+        },
+        {
           "period": "Per week",
           "price": 150,
           "description": "Full access to all 7 pillars per week",
@@ -1059,7 +1067,8 @@
     "offerLabel": "Selected offer",
     "offers": {
       "weekly": "$150 / week",
-      "monthly": "$500 / month"
+      "monthly": "$500 / month",
+      "daily": "$75 / day"
     },
     "sections": {
       "parent": "Main contact",
