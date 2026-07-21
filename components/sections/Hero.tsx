@@ -15,7 +15,7 @@ export default function Hero({ lang, dict }: HeroProps) {
     <section className="relative min-h-[100svh] md:min-h-[92vh] flex items-end overflow-hidden border-b hairline">
       {/* Background image */}
       <Image
-        src="/images/hero_acceuil1.jpeg"
+        src="/images/hero-accueil-2026.jpeg"
         alt=""
         fill
         priority
