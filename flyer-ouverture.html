@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flyer — Lancement Officiel · Groupe Mentou Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0b0b0c;
+    --night:#0f1b2d;
+    --night-2:#132339;
+    --bone:#f4efe6;
+    --gold:#b8924a;
+    --gold-soft:#d4b574;
+    --gold-line:rgba(184,146,74,.32);
+    --display:"Cormorant Garamond", Georgia, serif;
+    --body:"Manrope", system-ui, sans-serif;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    font-family:var(--body);
+    background:#1a1d22;
+    background-image:radial-gradient(circle at 50% 0%, #23262d 0%, #131519 60%, #0d0e11 100%);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:24px;
+    padding:40px 16px 80px;
+    color:var(--bone);
+  }
+
+  /* ---------- Toolbar (écran seulement) ---------- */
+  .toolbar{
+    display:flex; gap:12px; align-items:center;
+    font-size:13px; letter-spacing:.02em; color:#c9c4ba;
+  }
+  .toolbar button{
+    font-family:var(--body); font-weight:600; font-size:12px;
+    letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink); background:var(--gold-soft);
+    border:0; padding:11px 20px; border-radius:2px; cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .toolbar button:hover{ background:var(--gold); transform:translateY(-1px); }
+  .toolbar .hint{ opacity:.6; }
+
+  /* ---------- Canvas du flyer ---------- */
+  .flyer{
+    position:relative;
+    width:1080px;
+    height:1620px;
+    background:
+      radial-gradient(ellipse 90% 55% at 50% -8%, rgba(212,181,116,.14) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 45% at 50% 108%, rgba(184,146,74,.10) 0%, transparent 55%),
+      linear-gradient(168deg, var(--night) 0%, #0c1626 46%, var(--ink) 100%);
+    color:var(--bone);
+    overflow:hidden;
+    box-shadow:0 40px 120px rgba(0,0,0,.6);
+    transform-origin:top center;
+  }
+
+  /* Photo d'ambiance en fond (bleed haut, fondu vers nuit) */
+  .photo{
+    position:absolute; inset:0 0 auto 0; z-index:0;
+    height:640px;
+    background:url("public/flyer/hero-crowd.jpg") center 52% / cover no-repeat;
+  }
+  .photo::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,181,116,.22) 0%, transparent 60%),
+      linear-gradient(180deg,
+        rgba(11,22,38,.38) 0%,
+        rgba(12,22,38,.55) 30%,
+        rgba(12,22,38,.86) 57%,
+        var(--night) 80%,
+        var(--ink) 100%);
+  }
+
+  /* Grain / texture */
+  .flyer::after{
+    content:"";
+    position:absolute; inset:0; pointer-events:none;
+    opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* Cadre or intérieur */
+  .frame{
+    position:absolute; inset:34px;
+    border:1px solid var(--gold-line);
+    pointer-events:none;
+  }
+  .corner{
+    position:absolute; width:46px; height:46px; pointer-events:none;
+    border-color:var(--gold);
+  }
+  .corner.tl{ top:20px; left:20px; border-top:2px solid; border-left:2px solid; }
+  .corner.tr{ top:20px; right:20px; border-top:2px solid; border-right:2px solid; }
+  .corner.bl{ bottom:20px; left:20px; border-bottom:2px solid; border-left:2px solid; }
+  .corner.br{ bottom:20px; right:20px; border-bottom:2px solid; border-right:2px solid; }
+
+  .inner{
+    position:relative; z-index:2;
+    height:100%;
+    padding:56px 84px 60px;
+    display:flex; flex-direction:column;
+  }
+
+  /* ---------- En-tête ---------- */
+  .brand{ text-align:center; }
+  .brand .logo{
+    display:block; width:118px; height:auto; margin:0 auto 22px;
+    filter:drop-shadow(0 10px 26px rgba(0,0,0,.55)) drop-shadow(0 0 20px rgba(212,181,116,.28));
+  }
+  .brand .eyebrow{
+    display:inline-flex; align-items:center; gap:14px;
+    font-family:var(--body); font-weight:700;
+    font-size:18px; letter-spacing:.42em; text-transform:uppercase;
+    color:var(--gold-soft);
+  }
+  .brand .eyebrow::before,
+  .brand .eyebrow::after{
+    content:""; width:40px; height:1px; background:var(--gold);
+  }
+  .brand .tagline{
+    margin:14px auto 0; max-width:660px;
+    font-family:var(--display); font-style:italic; font-weight:500;
+    font-size:26px; line-height:1.4; color:rgba(244,239,230,.82);
+  }
+
+  /* ---------- Titre principal ---------- */
+  .hero{ text-align:center; margin-top:18px; }
+  .hero .ribbon{
+    display:inline-block;
+    font-family:var(--body); font-weight:600;
+    font-size:16px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--gold-soft);
+    padding:9px 22px; margin-bottom:14px;
+    border:1px solid var(--gold-line);
+    border-radius:2px;
+  }
+  .hero h1{
+    font-family:var(--display); font-weight:700;
+    font-size:116px; line-height:.88; letter-spacing:-.01em;
+    color:var(--bone);
+    text-transform:uppercase;
+    text-shadow:0 2px 40px rgba(212,181,116,.18);
+  }
+  .hero h1 em{
+    display:block; font-style:italic; font-weight:600;
+    color:var(--gold-soft);
+    background:linear-gradient(180deg, var(--gold-soft) 0%, var(--gold) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .hero .sub{
+    margin-top:14px;
+    font-family:var(--display); font-weight:500;
+    font-size:34px; letter-spacing:.01em; color:var(--bone);
+  }
+  .hero .sub .spark{ color:var(--gold); }
+
+  /* ---------- Infos pratiques ---------- */
+  .facts{
+    margin-top:18px;
+    display:grid; grid-template-columns:repeat(2,1fr);
+    gap:2px 0;
+    border:1px solid var(--gold-line);
+    background:rgba(184,146,74,.05);
+  }
+  .fact{
+    display:flex; align-items:center; gap:16px;
+    padding:16px 26px;
+    border-bottom:1px solid var(--gold-line);
+  }
+  .fact:nth-child(1){ border-right:1px solid var(--gold-line); }
+  .fact:last-child{ border-bottom:0; }
+  .fact.full{ grid-column:1 / -1; justify-content:center; text-align:center; border-right:0; }
+  .fact svg{ width:26px; height:26px; flex:none; stroke:var(--gold); }
+  .fact .k{
+    font-family:var(--body); font-weight:700; font-size:11px;
+    letter-spacing:.2em; text-transform:uppercase; color:rgba(244,239,230,.5);
+  }
+  .fact .v{
+    font-family:var(--display); font-weight:600; font-size:25px;
+    line-height:1.15; color:var(--bone);
+  }
+  .fact .v small{ font-family:var(--body); font-weight:500; font-size:15px; color:var(--gold-soft); }
+  .fact .txt{ display:flex; flex-direction:column; gap:3px; }
+
+  /* ---------- Timeline ---------- */
+  .program{ margin-top:18px; flex:1; }
+  .program-head{
+    display:flex; align-items:center; gap:18px; margin-bottom:18px;
+  }
+  .program-head h2{
+    font-family:var(--display); font-weight:600; font-style:italic;
+    font-size:40px; color:var(--bone); white-space:nowrap;
+  }
+  .program-head h2 span{ color:var(--gold); }
+  .program-head .rule{ flex:1; height:1px; background:var(--gold-line); }
+
+  .timeline{ position:relative; padding-left:6px; }
+  .timeline::before{
+    content:""; position:absolute; left:31px; top:8px; bottom:8px;
+    width:1px; background:linear-gradient(180deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent);
+  }
+  .slot{
+    position:relative; display:grid;
+    grid-template-columns:64px 118px 1fr; align-items:start;
+    gap:0 22px; padding:6px 0;
+  }
+  .node{
+    position:relative; z-index:2;
+    width:64px; height:64px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--night-2);
+    border:1px solid var(--gold-line);
+    box-shadow:0 0 0 6px var(--ink);
+  }
+  .node svg{ width:28px; height:28px; stroke:var(--gold-soft); fill:none; }
+  .time{
+    font-family:var(--display); font-weight:700; font-size:34px;
+    color:var(--gold-soft); line-height:1.9; letter-spacing:.01em;
+  }
+  .slot-body{ padding-top:8px; }
+  .slot-body .t{
+    font-family:var(--display); font-weight:600; font-size:27px;
+    color:var(--bone); line-height:1.1;
+  }
+  .slot-body .d{
+    font-family:var(--body); font-weight:400; font-size:16px;
+    color:rgba(244,239,230,.62); line-height:1.4; margin-top:4px;
+  }
+  .slot-body .d b{ color:var(--gold-soft); font-weight:600; }
+
+  /* ---------- Pied de page ---------- */
+  .foot{
+    margin-top:16px; padding-top:22px;
+    border-top:1px solid var(--gold-line);
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .foot .cta .free{
+    font-family:var(--display); font-style:italic; font-weight:600;
+    font-size:30px; color:var(--gold-soft); line-height:1;
+  }
+  .foot .cta .note{
+    font-family:var(--body); font-weight:500; font-size:15px;
+    color:rgba(244,239,230,.6); margin-top:6px;
+  }
+  .foot .links{ text-align:right; display:flex; flex-direction:column; gap:9px; }
+  .foot .links a, .foot .links span{
+    display:inline-flex; align-items:center; gap:10px; justify-content:flex-end;
+    font-family:var(--body); font-weight:600; font-size:17px;
+    color:var(--bone); text-decoration:none;
+  }
+  .foot .links svg{ width:18px; height:18px; stroke:var(--gold); }
+  .foot .links .site{ color:var(--gold-soft); letter-spacing:.04em; }
+
+  /* Placeholders à compléter */
+  .todo{ color:var(--gold-soft); border-bottom:1px dashed var(--gold); }
+
+  /* ---------- Mode export image (#export dans l'URL) ---------- */
+  body.export{ padding:0; margin:0; gap:0; display:block; background:transparent; }
+  body.export .toolbar{ display:none; }
+  body.export .flyer{ box-shadow:none; }
+
+  /* ---------- Impression : tient exactement sur 1 page A4 ---------- */
+  @media print{
+    @page{ size:A4 portrait; margin:0; }
+    html, body{ margin:0; padding:0; background:var(--ink); display:block; }
+    .toolbar{ display:none; }
+    /* zoom = 297mm / hauteur flyer (1620px≈428.6mm) → hauteur = 297mm pile */
+    .flyer{ box-shadow:none; margin:0 auto; zoom:0.6929; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar no-print">
+    <button onclick="window.print()">Imprimer / PDF</button>
+    <span class="hint">Format 1080 × 1620 px · remplace les champs <span style="color:var(--gold-soft)">soulignés</span> avant diffusion</span>
+  </div>
+
+  <div class="flyer" id="flyer">
+    <div class="photo"></div>
+    <div class="frame"></div>
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+
+    <div class="inner">
+
+      <!-- EN-TÊTE -->
+      <header class="brand">
+        <img class="logo" src="public/logo-remove.png" alt="Logo Groupe Mentou" />
+        <div class="eyebrow">Groupe Mentou Inc.</div>
+        <p class="tagline">L'écosystème dédié au leadership, au développement<br />et à l'avenir de notre jeunesse.</p>
+      </header>
+
+      <!-- TITRE -->
+      <section class="hero">
+        <span class="ribbon">Journée Portes Ouvertes</span>
+        <h1>Lancement<em>Officiel</em></h1>
+        <p class="sub"><span class="spark">✦</span>&nbsp; Ouverture spéciale &amp; célébration &nbsp;<span class="spark">✦</span></p>
+      </section>
+
+      <!-- INFOS PRATIQUES -->
+      <section class="facts">
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+          <div class="txt"><span class="k">Date</span><span class="v">20 juillet 2026</span></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+          <div class="txt"><span class="k">Heure</span><span class="v">Dès 16h00</span></div>
+        </div>
+        <div class="fact full">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <div class="txt"><span class="k">Lieu</span><span class="v">1765 Boul. Taschereau, Longueuil, QC</span></div>
+        </div>
+      </section>
+
+      <!-- PROGRAMME -->
+      <section class="program">
+        <div class="program-head">
+          <h2>Le programme de la <span>journée</span></h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="timeline">
+          <!-- 16h00 -->
+          <div class="slot">
+            <div class="node">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+            </div>
+            <div class="time">16h00</div>
+            <div class="slot-body">
+              <div class="t">Accueil &amp; Ambiance</div>
+              <div class="d">Animation dynamique et sélection musicale pour lancer les festivités.</div>
+            </div>
+          </div>
+
+          <!-- 16h30 -->
+          <div class="slot">
+            <div class="node">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.8 2 4.5 5 4.5 8.5 0 2-.8 3.7-2 5l-2.5 2.5L9.5 16c-1.2-1.3-2-3-2-5 0-3.5 1.7-6.5 4.5-8.5Z"/><circle cx="12" cy="10" r="1.6"/><path d="M9.5 18.5 7 21M14.5 18.5 17 21"/></svg>
+            </div>
+            <div class="time">16h30</div>
+            <div class="slot-body">
+              <div class="t">Le Grand Lancement</div>
+              <div class="d">Présentation exclusive de nos différents ateliers par <b>Grâce</b> et <b>Enzo</b>.</div>
+            </div>
+          </div>
+
+          <!-- 17h15 -->
+          <div class="slot">
+            <div class="node">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h7v5.5H4zM13 5.5h7v5.5h-7zM4 13h7v5.5H4zM13 13h4.5v4.5H13z"/><path d="M17.5 15.5H22M19.75 13.2v4.6"/></svg>
+            </div>
+            <div class="time">17h15</div>
+            <div class="slot-body">
+              <div class="t">Brise-glace Spécial Jeunes</div>
+              <div class="d">Grand jeu et quiz de culture générale pour connecter et s'amuser.</div>
+            </div>
+          </div>
+
+          <!-- 18h00 -->
+          <div class="slot">
+            <div class="node">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h12v8H8l-3 3v-3H3Z"/><path d="M18 9.5h3v8h-2v3l-3-3h-4"/></svg>
+            </div>
+            <div class="time">18h00</div>
+            <div class="slot-body">
+              <div class="t">Échange &amp; Débat Public</div>
+              <div class="d">Discussion ouverte et partages inspirants autour de la culture et du développement personnel.</div>
+            </div>
+          </div>
+
+          <!-- 18h45 -->
+          <div class="slot">
+            <div class="node">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6"/></svg>
+            </div>
+            <div class="time">18h45</div>
+            <div class="slot-body">
+              <div class="t">Divertissement &amp; Fun</div>
+              <div class="d">Place au show ! Sortez vos talents pour notre concours de karaoké et de danse.</div>
+            </div>
+          </div>
+
+          <!-- 20h00 -->
+          <div class="slot">
+            <div class="node">
+              <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M9.5 19V6M15 19v-6M20.5 19V4"/><path d="M3 21h18"/></svg>
+            </div>
+            <div class="time">20h00</div>
+            <div class="slot-body">
+              <div class="t">Volet Éducation</div>
+              <div class="d">Session exclusive sur l'éducation financière animée par <b>Arturo</b>, conseiller financier.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PIED DE PAGE -->
+      <footer class="foot">
+        <div class="cta">
+          <div class="free">Entrée libre — venez nombreux !</div>
+          <div class="note">Célébrez avec nous le début d'une belle aventure.</div>
+        </div>
+        <div class="links">
+          <a class="site" href="https://mentou.ca">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
+            mentou.ca
+          </a>
+          <a href="mailto:admission@mentou.ca">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+            admission@mentou.ca
+          </a>
+          <a href="tel:+14383427730">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 4.5L7.5 10a12 12 0 0 0 6 6l1.5-2 4.5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+            (438) 342-7730
+          </a>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>if(location.hash==='#export')document.body.classList.add('export');</script>
+</body>
+</html>

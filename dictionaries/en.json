@@ -947,6 +947,26 @@
     "titleAccent": "Excellence",
     "subtitle": "Within Groupe Mentou Inc., sport is not only played on the field — it is lived as a discipline of life. Our events are theatres where strategy, perseverance and respect converge.",
     "image": "/images/vision-hero.jpg",
+    "recap": {
+      "eyebrow": "Launch night · July 21, 2026",
+      "title": "A look back at our",
+      "titleAccent": "launch night",
+      "subtitle": "A packed room, laughter, talent and a lot of pride: thank you to everyone who celebrated the very first chapter of Groupe Mentou with us.",
+      "featuredLabel": "The night in motion",
+      "featuredCaption": "The highlights of our very first evening, condensed into a few minutes.",
+      "highlights": [
+        "Welcome, atmosphere and music",
+        "Workshops and vision reveal",
+        "Talents, quiz and shared moments"
+      ],
+      "galleryLabel": "Memories",
+      "play": "Play video",
+      "close": "Close",
+      "prev": "Previous",
+      "next": "Next",
+      "photoAlt": "Launch night photo",
+      "videoAlt": "Launch night video"
+    },
     "poles": {
       "eyebrow": "Our fields of action",
       "title": "Three arenas,",
@@ -1013,7 +1033,7 @@
           "title": "African Nations Tournament",
           "tagline": "One field · Many nations · One pride",
           "status": "open",
-          "date": "Saturday, July 18, 2026",
+          "date": "Coming soon",
           "meta": [
             "$90 / player",
             "Sports complex",

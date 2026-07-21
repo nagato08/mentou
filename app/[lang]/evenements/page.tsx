@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
+import SoireeLancement from "@/components/sections/SoireeLancement";
 import EventsList from "@/components/sections/EventsList";
 import EventsPoles from "@/components/sections/EventsPoles";
 import EventsCodeConduite from "@/components/sections/EventsCodeConduite";
@@ -58,6 +59,7 @@ export default async function EvenementsPage({
         subtitle={e.subtitle}
         image={e.image}
       />
+      <SoireeLancement dict={dict} />
       <EventsList dict={dict} lang={typedLang} />
       <EventsPoles dict={dict} />
       <EventsCodeConduite dict={dict} lang={typedLang} />

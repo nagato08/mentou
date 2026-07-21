@@ -947,6 +947,26 @@
     "titleAccent": "l'Excellence",
     "subtitle": "Au sein du Groupe Mentou Inc., le sport ne se joue pas seulement sur le terrain ; il se vit comme une discipline de vie. Nos événements sont des théâtres où se rencontrent la stratégie, la persévérance et le respect.",
     "image": "/images/vision-hero.jpg",
+    "recap": {
+      "eyebrow": "Soirée de lancement · 21 juillet 2026",
+      "title": "Retour sur notre",
+      "titleAccent": "soirée de lancement",
+      "subtitle": "Une salle comble, des rires, des talents et beaucoup de fierté : merci à toutes celles et ceux qui ont célébré avec nous le tout premier chapitre du Groupe Mentou.",
+      "featuredLabel": "Le film de la soirée",
+      "featuredCaption": "Les temps forts de notre toute première soirée, condensés en quelques minutes.",
+      "highlights": [
+        "Accueil, ambiance et musique",
+        "Présentation des ateliers et de la vision",
+        "Talents, quiz et moments de partage"
+      ],
+      "galleryLabel": "Souvenirs",
+      "play": "Lire la vidéo",
+      "close": "Fermer",
+      "prev": "Précédent",
+      "next": "Suivant",
+      "photoAlt": "Photo de la soirée de lancement",
+      "videoAlt": "Vidéo de la soirée de lancement"
+    },
     "poles": {
       "eyebrow": "Nos pôles d'action",
       "title": "Trois arènes,",
@@ -1013,7 +1033,7 @@
           "title": "Tournoi des Nations Africaines",
           "tagline": "Un terrain · Plusieurs nations · Une seule fierté",
           "status": "open",
-          "date": "Samedi 18 juillet 2026",
+          "date": "À venir",
           "meta": [
             "90 $ / joueur",
             "Complexe sportif",
