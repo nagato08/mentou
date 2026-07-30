@@ -2,6 +2,7 @@ import { createClient, type Client } from "@libsql/client";
 import path from "path";
 import type { Comment } from "./useComments";
 import type { Registration, RegistrationStatus } from "./registration";
+import type { TutorApplication } from "./tutor";
 
 const DEFAULT_COMMENTS: Comment[] = [
   {
@@ -82,6 +83,21 @@ export async function getDb(): Promise<Client> {
     )
   `);
 
+  await _client.execute(`
+    CREATE TABLE IF NOT EXISTS tutor_applications (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      phone TEXT NOT NULL,
+      slots TEXT NOT NULL DEFAULT '[]',
+      levels TEXT NOT NULL DEFAULT '[]',
+      subjects TEXT NOT NULL DEFAULT '[]',
+      other_subjects TEXT,
+      message TEXT,
+      created_at TEXT NOT NULL
+    )
+  `);
+
   const { rows } = await _client.execute("SELECT COUNT(*) as n FROM comments");
   if ((rows[0].n as number) === 0) {
     for (const c of DEFAULT_COMMENTS) {
@@ -127,6 +143,33 @@ export function rowToRegistration(row: Record<string, unknown>): Registration {
     status: row.status as RegistrationStatus,
     stripeSessionId: (row.stripe_session_id as string) ?? null,
     stripeSubscriptionId: (row.stripe_subscription_id as string) ?? null,
+    createdAt: row.created_at as string,
+  };
+}
+
+function parseIds(value: unknown): string[] {
+  if (typeof value !== "string") return [];
+  try {
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed.map(String) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function rowToTutorApplication(
+  row: Record<string, unknown>
+): TutorApplication {
+  return {
+    id: row.id as string,
+    name: row.name as string,
+    email: row.email as string,
+    phone: row.phone as string,
+    slots: parseIds(row.slots),
+    levels: parseIds(row.levels),
+    subjects: parseIds(row.subjects),
+    otherSubjects: (row.other_subjects as string) ?? "",
+    message: (row.message as string) ?? "",
     createdAt: row.created_at as string,
   };
 }

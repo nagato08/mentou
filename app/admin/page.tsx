@@ -4,9 +4,11 @@ import { useState, useEffect, useCallback } from "react";
 import type { Comment } from "@/lib/useComments";
 import type { Registration } from "@/lib/registration";
 import { OFFER_LABELS, isEventOffer } from "@/lib/registration";
+import type { TutorApplication } from "@/lib/tutor";
+import { slotLabels, levelLabels, subjectLabels } from "@/lib/tutor";
 
 type Tab = "pending" | "approved";
-type View = "comments" | "registrations";
+type View = "comments" | "registrations" | "tutors";
 type RegistrationFilter = "program" | "players" | "spectators";
 
 function Stars({ rating }: { rating: number }) {
@@ -44,6 +46,7 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState("");
   const [comments, setComments] = useState<Comment[]>([]);
   const [registrations, setRegistrations] = useState<Registration[]>([]);
+  const [tutors, setTutors] = useState<TutorApplication[]>([]);
   const [view, setView] = useState<View>("comments");
   const [tab, setTab] = useState<Tab>("pending");
   const [loading, setLoading] = useState(false);
@@ -54,16 +57,22 @@ export default function AdminPage() {
     if (res.ok) setRegistrations(await res.json());
   }, []);
 
+  const fetchTutors = useCallback(async () => {
+    const res = await fetch("/api/admin/tutors");
+    if (res.ok) setTutors(await res.json());
+  }, []);
+
   const fetchComments = useCallback(async () => {
     const res = await fetch("/api/admin/comments");
     if (res.ok) {
       setComments(await res.json());
       setLoggedIn(true);
       void fetchRegistrations();
+      void fetchTutors();
     } else if (res.status === 401) {
       setLoggedIn(false);
     }
-  }, [fetchRegistrations]);
+  }, [fetchRegistrations, fetchTutors]);
 
   // Restore session on mount (cookie may still be valid).
   // setState runs after the awaited fetch — async, not a synchronous cascade.
@@ -229,7 +238,7 @@ export default function AdminPage() {
         <div className="flex items-center gap-2">
           {/* View switcher */}
           <div className="flex border border-bone/10">
-            {(["comments", "registrations"] as View[]).map((v) => (
+            {(["comments", "registrations", "tutors"] as View[]).map((v) => (
               <button
                 key={v}
                 onClick={() => setView(v)}
@@ -241,7 +250,9 @@ export default function AdminPage() {
               >
                 {v === "comments"
                   ? "Avis"
-                  : `Inscriptions${registrations.length ? ` (${registrations.length})` : ""}`}
+                  : v === "registrations"
+                    ? `Inscriptions${registrations.length ? ` (${registrations.length})` : ""}`
+                    : `Tuteurs${tutors.length ? ` (${tutors.length})` : ""}`}
               </button>
             ))}
           </div>
@@ -256,6 +267,8 @@ export default function AdminPage() {
 
       {view === "registrations" ? (
         <RegistrationsView registrations={registrations} />
+      ) : view === "tutors" ? (
+        <TutorsView tutors={tutors} />
       ) : (
       <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
         {/* Stats */}
@@ -546,6 +559,95 @@ function RegistrationsView({
           );
         })}
       </div>
+    </div>
+  );
+}
+
+function TutorsView({ tutors }: { tutors: TutorApplication[] }) {
+  return (
+    <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
+      <div className="grid grid-cols-2 gap-px bg-bone/10 border border-bone/10">
+        <StatCard label="Candidatures" value={tutors.length} />
+        <StatCard
+          label="Dernière"
+          value={
+            tutors[0]
+              ? new Date(tutors[0].createdAt).toLocaleDateString("fr-FR", {
+                  day: "2-digit",
+                  month: "short",
+                })
+              : "—"
+          }
+        />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        {tutors.length === 0 && (
+          <div className="border border-dashed border-bone/15 py-16 text-center">
+            <p className="text-bone/40 text-sm">
+              Aucune candidature tuteur pour le moment.
+            </p>
+          </div>
+        )}
+
+        {tutors.map((t) => {
+          const dateStr = new Date(t.createdAt).toLocaleDateString("fr-FR", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          });
+          return (
+            <article
+              key={t.id}
+              className="border border-bone/10 bg-night/20 p-5 md:p-6 flex flex-col gap-4"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <p className="font-semibold text-bone">{t.name}</p>
+                  <p className="text-xs text-bone/40 mt-0.5">
+                    <a href={`mailto:${t.email}`} className="hover:text-gold">
+                      {t.email}
+                    </a>{" "}
+                    · {t.phone}
+                  </p>
+                </div>
+                <span className="text-[0.6rem] text-bone/40 shrink-0">
+                  {dateStr}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 text-sm border-t border-bone/10 pt-4">
+                <ChipList label="Disponibilités" items={slotLabels(t.slots)} />
+                <ChipList label="Niveaux" items={levelLabels(t.levels)} />
+                <ChipList label="Matières" items={subjectLabels(t.subjects)} />
+                <Detail label="Autres matières" value={t.otherSubjects} full />
+                <Detail label="Message" value={t.message} full />
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ChipList({ label, items }: { label: string; items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <div>
+      <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-bone/40 mb-1.5">
+        {label}
+      </dt>
+      <dd className="flex flex-wrap gap-1.5">
+        {items.map((i) => (
+          <span
+            key={i}
+            className="text-[0.7rem] px-2.5 py-1 border border-gold/25 text-bone/80 bg-gold/5"
+          >
+            {i}
+          </span>
+        ))}
+      </dd>
     </div>
   );
 }

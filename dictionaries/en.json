@@ -697,8 +697,8 @@
     },
     "items": [
       {
-        "src": "/images/gallery/g-5212345.jpg",
-        "alt": "Tutoring workshop",
+        "src": "/images_galerie/tutorat.jpeg",
+        "alt": "Tutoring session",
         "category": "etude",
         "span": "small"
       },
@@ -709,10 +709,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-1112048.jpg",
-        "alt": "Morning reading",
+        "src": "/images_galerie/lecture.jpeg",
+        "alt": "Reading time",
         "category": "lecture",
-        "span": "small"
+        "span": "tall"
       },
       {
         "src": "/images/gallery/g-590493.jpg",
@@ -721,10 +721,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-3182746.jpg",
+        "src": "/images_galerie/causerie.jpeg",
         "alt": "Open conversation",
         "category": "parole",
-        "span": "small"
+        "span": "tall"
       },
       {
         "src": "/images/gallery/g-1741230.jpg",
@@ -733,8 +733,8 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-3184432.jpg",
-        "alt": "Conversation among students",
+        "src": "/images_galerie/image3.jpg",
+        "alt": "Group exchange",
         "category": "parole",
         "span": "small"
       },
@@ -751,10 +751,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-8108061.jpg",
-        "alt": "Stage workshop",
+        "src": "/images_galerie/image.jpg",
+        "alt": "Together on stage",
         "category": "scene",
-        "span": "small"
+        "span": "wide"
       },
       {
         "src": "/images/gallery/g-3771074.jpg",
@@ -763,10 +763,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-1701208.jpg",
-        "alt": "Dance movement",
+        "src": "/images_galerie/danse.jpeg",
+        "alt": "Energy in motion",
         "category": "danse",
-        "span": "small"
+        "span": "tall"
       },
       {
         "src": "/images/gallery/g-358010.jpg",
@@ -787,20 +787,20 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-4709822.jpg",
+        "src": "/images_galerie/musique.jpeg",
         "alt": "Music practice",
         "category": "musique",
-        "span": "small"
+        "span": "tall"
       },
       {
-        "src": "/images/gallery/g-5212327.jpg",
-        "alt": "Student portrait",
+        "src": "/images_galerie/image1.jpg",
+        "alt": "A look ahead",
         "category": "portraits",
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-8499613.jpg",
-        "alt": "Mentor moment",
+        "src": "/images_galerie/image2.jpg",
+        "alt": "Cohort smile",
         "category": "portraits",
         "span": "small"
       },
@@ -817,6 +817,50 @@
         "span": "small"
       }
     ]
+  },
+  "tutor": {
+    "eyebrow": "Join the team",
+    "title": "Become a",
+    "titleAccent": "tutor",
+    "intro": "Do you love guiding young people toward success? Join our team of tutors. Please fill out this form honestly — it helps us match each tutor with the right students.",
+    "identityTitle": "Your details",
+    "name": "Full name",
+    "namePh": "First and last name",
+    "email": "Email",
+    "emailPh": "you@email.com",
+    "phone": "Phone",
+    "phonePh": "(438) 000-0000",
+    "slotsTitle": "Your tutoring availability (school year)",
+    "slotsHint": "Only check the slots when you are genuinely and reliably available.",
+    "levelsTitle": "School levels you master",
+    "levelsHint": "Only check the levels you are comfortable teaching rigorously and independently.",
+    "subjectsTitle": "Subjects you master",
+    "subjectsHint": "Only check the ones you can teach rigorously and independently.",
+    "otherLabel": "Other subjects you master",
+    "otherPh": "Specify here (optional)",
+    "messageLabel": "Message (optional)",
+    "messagePh": "Experience, motivation, details…",
+    "consent": "I confirm the information provided is accurate and agree to be contacted by Groupe Mentou.",
+    "submit": "Submit my application",
+    "submitting": "Sending…",
+    "error": "Something went wrong. Please try again.",
+    "errorEmpty": "Please check at least one option in each required section.",
+    "successTitle": "Application sent!",
+    "success": "Thank you! We received your application and will get back to you soon.",
+    "popup": {
+      "eyebrow": "Recruiting",
+      "title": "Want to become a tutor?",
+      "body": "Groupe Mentou is recruiting passionate tutors to guide young people toward success. Share your availability and subjects in just a few clicks.",
+      "cta": "Apply now",
+      "dismiss": "Later"
+    },
+    "cta": {
+      "eyebrow": "Recruiting",
+      "title": "Share your knowledge,",
+      "titleAccent": "become a tutor",
+      "body": "Join a team that puts excellence and people at the heart of mentoring. It only takes a few minutes to apply.",
+      "button": "Become a tutor"
+    }
   },
   "contact": {
     "kicker": "Let's get in touch",

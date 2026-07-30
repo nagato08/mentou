@@ -697,8 +697,8 @@
     },
     "items": [
       {
-        "src": "/images/gallery/g-5212345.jpg",
-        "alt": "Atelier tutorat en cohorte",
+        "src": "/images_galerie/tutorat.jpeg",
+        "alt": "Séance de tutorat",
         "category": "etude",
         "span": "small"
       },
@@ -709,10 +709,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-1112048.jpg",
-        "alt": "Lecture du matin",
+        "src": "/images_galerie/lecture.jpeg",
+        "alt": "Temps de lecture",
         "category": "lecture",
-        "span": "small"
+        "span": "tall"
       },
       {
         "src": "/images/gallery/g-590493.jpg",
@@ -721,10 +721,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-3182746.jpg",
+        "src": "/images_galerie/causerie.jpeg",
         "alt": "Causerie ouverte",
         "category": "parole",
-        "span": "small"
+        "span": "tall"
       },
       {
         "src": "/images/gallery/g-1741230.jpg",
@@ -733,8 +733,8 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-3184432.jpg",
-        "alt": "Discussion entre jeunes",
+        "src": "/images_galerie/image3.jpg",
+        "alt": "Échange en groupe",
         "category": "parole",
         "span": "small"
       },
@@ -751,10 +751,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-8108061.jpg",
-        "alt": "Atelier de scène",
+        "src": "/images_galerie/image.jpg",
+        "alt": "Sur scène ensemble",
         "category": "scene",
-        "span": "small"
+        "span": "wide"
       },
       {
         "src": "/images/gallery/g-3771074.jpg",
@@ -763,10 +763,10 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-1701208.jpg",
-        "alt": "Mouvement de danse",
+        "src": "/images_galerie/danse.jpeg",
+        "alt": "Énergie en mouvement",
         "category": "danse",
-        "span": "small"
+        "span": "tall"
       },
       {
         "src": "/images/gallery/g-358010.jpg",
@@ -787,20 +787,20 @@
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-4709822.jpg",
+        "src": "/images_galerie/musique.jpeg",
         "alt": "Pratique musicale",
         "category": "musique",
-        "span": "small"
+        "span": "tall"
       },
       {
-        "src": "/images/gallery/g-5212327.jpg",
-        "alt": "Portrait d'élève",
+        "src": "/images_galerie/image1.jpg",
+        "alt": "Regard d'avenir",
         "category": "portraits",
         "span": "small"
       },
       {
-        "src": "/images/gallery/g-8499613.jpg",
-        "alt": "Regard mentorat",
+        "src": "/images_galerie/image2.jpg",
+        "alt": "Sourire de cohorte",
         "category": "portraits",
         "span": "small"
       },
@@ -817,6 +817,50 @@
         "span": "small"
       }
     ]
+  },
+  "tutor": {
+    "eyebrow": "Rejoindre l'équipe",
+    "title": "Devenez",
+    "titleAccent": "tuteur",
+    "intro": "Vous aimez transmettre et accompagner les jeunes vers la réussite ? Rejoignez notre équipe de tuteurs. Remplissez ce formulaire avec honnêteté : il nous aide à jumeler chaque tuteur aux bons élèves.",
+    "identityTitle": "Vos coordonnées",
+    "name": "Nom complet",
+    "namePh": "Prénom et nom",
+    "email": "Courriel",
+    "emailPh": "votre@email.com",
+    "phone": "Téléphone",
+    "phonePh": "(438) 000-0000",
+    "slotsTitle": "Vos disponibilités pour le tutorat (année scolaire)",
+    "slotsHint": "Cochez uniquement les cases où vous êtes réellement disponible de façon stable.",
+    "levelsTitle": "Niveaux scolaires que vous maîtrisez",
+    "levelsHint": "Cochez uniquement les niveaux que vous êtes à l'aise d'enseigner de façon rigoureuse et autonome.",
+    "subjectsTitle": "Matières que vous maîtrisez",
+    "subjectsHint": "Cochez uniquement celles que vous pouvez enseigner de façon rigoureuse et autonome.",
+    "otherLabel": "Autres matières que vous maîtrisez",
+    "otherPh": "Précisez ici (facultatif)",
+    "messageLabel": "Message (facultatif)",
+    "messagePh": "Expérience, motivation, précisions…",
+    "consent": "Je confirme que les informations fournies sont exactes et j'accepte d'être recontacté(e) par le Groupe Mentou.",
+    "submit": "Envoyer ma candidature",
+    "submitting": "Envoi…",
+    "error": "Une erreur est survenue. Réessayez.",
+    "errorEmpty": "Cochez au moins une option dans chaque section obligatoire.",
+    "successTitle": "Candidature envoyée !",
+    "success": "Merci ! Nous avons bien reçu votre candidature et vous recontacterons prochainement.",
+    "popup": {
+      "eyebrow": "Recrutement",
+      "title": "Envie de devenir tuteur ?",
+      "body": "Le Groupe Mentou recrute des tuteurs passionnés pour accompagner les jeunes vers la réussite. Partagez vos disponibilités et vos matières en quelques clics.",
+      "cta": "Postuler maintenant",
+      "dismiss": "Plus tard"
+    },
+    "cta": {
+      "eyebrow": "Recrutement",
+      "title": "Transmettez votre savoir,",
+      "titleAccent": "devenez tuteur",
+      "body": "Rejoignez une équipe qui place l'excellence et l'humain au cœur de l'accompagnement. Quelques minutes suffisent pour postuler.",
+      "button": "Devenir tuteur"
+    }
   },
   "contact": {
     "kicker": "Prenons contact",
