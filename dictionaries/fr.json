@@ -13,7 +13,8 @@
     "contact": "Contact",
     "cta": "Planifier une entrevue",
     "phone": "+1 (438) 342-7730",
-    "events": "Événements"
+    "events": "Événements",
+    "backToTop": "Revenir en haut de la page"
   },
   "home": {
     "hero": {
@@ -29,6 +30,13 @@
       "ageLabel": "Programme privé",
       "primaryCta": "Planifier une entrevue",
       "secondaryCta": "Découvrir le programme"
+    },
+    "tutorPopup": {
+      "eyebrow": "Tutorat",
+      "title": "Besoin d'un tuteur pour votre enfant ?",
+      "body": "Nos tuteurs accompagnent les jeunes du primaire au cégep, avec rigueur et bienveillance. Découvrez nos formules et nos tarifs.",
+      "cta": "Voir les tarifs",
+      "dismiss": "Plus tard"
     },
     "manifesto": {
       "eyebrow": "Notre approche",
@@ -650,8 +658,11 @@
       "eyebrow": "Tournoi des Nations Africaines",
       "title": "Tarifs du",
       "titleAccent": "tournoi",
-      "subtitle": "Samedi 18 juillet 2026 · Un terrain, plusieurs nations, une seule fierté.",
+      "subtitle": "Un terrain, plusieurs nations, une seule fierté. La date et le lieu seront annoncés prochainement.",
       "cta": "S'inscrire",
+      "ctaClosed": "Inscriptions bientôt ouvertes",
+      "closedNotice": "Les inscriptions au tournoi ne sont pas encore ouvertes. Les tarifs ci-dessous sont confirmés — écrivez-nous pour être prévenu dès l'ouverture.",
+      "closedCta": "Être prévenu de l'ouverture",
       "items": [
         {
           "offer": "event-player",
@@ -817,50 +828,6 @@
         "span": "small"
       }
     ]
-  },
-  "tutor": {
-    "eyebrow": "Rejoindre l'équipe",
-    "title": "Devenez",
-    "titleAccent": "tuteur",
-    "intro": "Vous aimez transmettre et accompagner les jeunes vers la réussite ? Rejoignez notre équipe de tuteurs. Remplissez ce formulaire avec honnêteté : il nous aide à jumeler chaque tuteur aux bons élèves.",
-    "identityTitle": "Vos coordonnées",
-    "name": "Nom complet",
-    "namePh": "Prénom et nom",
-    "email": "Courriel",
-    "emailPh": "votre@email.com",
-    "phone": "Téléphone",
-    "phonePh": "(438) 000-0000",
-    "slotsTitle": "Vos disponibilités pour le tutorat (année scolaire)",
-    "slotsHint": "Cochez uniquement les cases où vous êtes réellement disponible de façon stable.",
-    "levelsTitle": "Niveaux scolaires que vous maîtrisez",
-    "levelsHint": "Cochez uniquement les niveaux que vous êtes à l'aise d'enseigner de façon rigoureuse et autonome.",
-    "subjectsTitle": "Matières que vous maîtrisez",
-    "subjectsHint": "Cochez uniquement celles que vous pouvez enseigner de façon rigoureuse et autonome.",
-    "otherLabel": "Autres matières que vous maîtrisez",
-    "otherPh": "Précisez ici (facultatif)",
-    "messageLabel": "Message (facultatif)",
-    "messagePh": "Expérience, motivation, précisions…",
-    "consent": "Je confirme que les informations fournies sont exactes et j'accepte d'être recontacté(e) par le Groupe Mentou.",
-    "submit": "Envoyer ma candidature",
-    "submitting": "Envoi…",
-    "error": "Une erreur est survenue. Réessayez.",
-    "errorEmpty": "Cochez au moins une option dans chaque section obligatoire.",
-    "successTitle": "Candidature envoyée !",
-    "success": "Merci ! Nous avons bien reçu votre candidature et vous recontacterons prochainement.",
-    "popup": {
-      "eyebrow": "Recrutement",
-      "title": "Envie de devenir tuteur ?",
-      "body": "Le Groupe Mentou recrute des tuteurs passionnés pour accompagner les jeunes vers la réussite. Partagez vos disponibilités et vos matières en quelques clics.",
-      "cta": "Postuler maintenant",
-      "dismiss": "Plus tard"
-    },
-    "cta": {
-      "eyebrow": "Recrutement",
-      "title": "Transmettez votre savoir,",
-      "titleAccent": "devenez tuteur",
-      "body": "Rejoignez une équipe qui place l'excellence et l'humain au cœur de l'accompagnement. Quelques minutes suffisent pour postuler.",
-      "button": "Devenir tuteur"
-    }
   },
   "contact": {
     "kicker": "Prenons contact",
@@ -1060,6 +1027,7 @@
       "title": "Nos",
       "titleAccent": "rendez-vous",
       "statusOpen": "Inscriptions ouvertes",
+      "statusPending": "Inscriptions bientôt ouvertes",
       "statusSoon": "À venir",
       "statusTbd": "Bientôt dévoilé",
       "detailsLabel": "En bref",
@@ -1076,15 +1044,16 @@
           "category": "Tournoi sportif",
           "title": "Tournoi des Nations Africaines",
           "tagline": "Un terrain · Plusieurs nations · Une seule fierté",
-          "status": "open",
-          "date": "À venir",
+          "status": "pending",
+          "date": "Date à confirmer",
           "meta": [
             "90 $ / joueur",
             "Complexe sportif",
             "Trophée + voyage en chalet, tous frais payés",
             "Spectateurs : 55 $ (boisson comprise)"
           ],
-          "cta": "S'inscrire au tournoi",
+          "note": "Les inscriptions ne sont pas encore ouvertes. La date et le lieu seront annoncés prochainement.",
+          "cta": "",
           "featured": true
         },
         {
@@ -1119,6 +1088,17 @@
           "date": "Date à venir",
           "meta": [],
           "featured": false
+        },
+        {
+          "id": "karaoke",
+          "image": "/images/event-karaoke.jpg",
+          "category": "Soirée musicale",
+          "title": "Soirée Karaoké",
+          "tagline": "Un micro, une scène, et le courage de se lancer",
+          "status": "soon",
+          "date": "Date à venir",
+          "meta": [],
+          "featured": false
         }
       ]
     }
@@ -1139,6 +1119,14 @@
       "child": "Participant (optionnel)",
       "address": "Adresse",
       "extra": "Pour mieux vous accompagner"
+    },
+    "tutoring": {
+      "title": "Besoins en tutorat",
+      "levelLabel": "Niveau scolaire de l'élève",
+      "subjectsLabel": "Matières souhaitées",
+      "subjectsHint": "Cochez les matières pour lesquelles vous souhaitez du tutorat.",
+      "otherLabel": "Autre matière",
+      "otherPh": "Précisez une matière non listée (optionnel)"
     },
     "fields": {
       "parentName": "Nom complet du contact",

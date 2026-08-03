@@ -9,7 +9,7 @@ type Props = { dict: Dictionary; lang: Locale };
 const STORAGE_KEY = "mentou_tutor_popup_dismissed";
 
 export default function TutorPopup({ dict, lang }: Props) {
-  const t = dict.tutor.popup;
+  const t = dict.home.tutorPopup;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ export default function TutorPopup({ dict, lang }: Props) {
       dismissed = false;
     }
     if (dismissed) return;
-    // Petit délai pour ne pas gêner l'arrivée sur le site.
     const id = window.setTimeout(() => setOpen(true), 1200);
     return () => window.clearTimeout(id);
   }, []);
@@ -38,7 +37,6 @@ export default function TutorPopup({ dict, lang }: Props) {
 
   return (
     <div className="fixed inset-0 z-[120] flex items-end sm:items-center justify-center p-4 sm:p-6">
-      {/* Backdrop */}
       <button
         type="button"
         aria-label={t.dismiss}
@@ -46,7 +44,6 @@ export default function TutorPopup({ dict, lang }: Props) {
         className="absolute inset-0 bg-ink/70 backdrop-blur-sm"
       />
 
-      {/* Card */}
       <div
         role="dialog"
         aria-modal="true"
@@ -76,7 +73,7 @@ export default function TutorPopup({ dict, lang }: Props) {
 
         <div className="mt-7 flex flex-col sm:flex-row gap-3">
           <Link
-            href={`/${lang}/admission#devenir-tuteur`}
+            href={`/${lang}/admission#tarifs`}
             onClick={close}
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gold text-ink font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gold-soft transition-colors"
           >

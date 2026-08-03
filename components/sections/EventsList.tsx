@@ -9,10 +9,14 @@ function StatusBadge({
   labels,
 }: {
   status: string;
-  labels: { open: string; soon: string; tbd: string };
+  labels: { open: string; pending: string; soon: string; tbd: string };
 }) {
   const map: Record<string, { text: string; cls: string }> = {
     open: { text: labels.open, cls: "bg-gold text-ink" },
+    pending: {
+      text: labels.pending,
+      cls: "bg-ink/70 text-gold border border-gold/40 backdrop-blur-sm",
+    },
     soon: { text: labels.soon, cls: "bg-bone/10 text-bone/70 border border-bone/20" },
     tbd: { text: labels.tbd, cls: "bg-bone/10 text-bone/70 border border-bone/20" },
   };
@@ -31,7 +35,12 @@ function StatusBadge({
 
 export default function EventsList({ dict, lang }: Props) {
   const t = dict.events.list;
-  const labels = { open: t.statusOpen, soon: t.statusSoon, tbd: t.statusTbd };
+  const labels = {
+    open: t.statusOpen,
+    pending: t.statusPending,
+    soon: t.statusSoon,
+    tbd: t.statusTbd,
+  };
   const featured = t.items.find((e) => e.featured);
   const rest = t.items.filter((e) => !e.featured);
 
@@ -101,7 +110,7 @@ export default function EventsList({ dict, lang }: Props) {
                 </ul>
               )}
 
-              {featured.cta && (
+              {featured.cta ? (
                 <Link
                   href={`/${lang}/admission#tournoi`}
                   className="mt-2 inline-flex items-center justify-center gap-2 self-start px-7 py-3.5 bg-gold text-ink font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gold-soft transition-colors"
@@ -109,6 +118,12 @@ export default function EventsList({ dict, lang }: Props) {
                   {featured.cta}
                   <span aria-hidden>→</span>
                 </Link>
+              ) : (
+                featured.note && (
+                  <p className="mt-2 flex items-start gap-3 border-l-2 border-gold/40 pl-4 text-sm text-bone/55 leading-relaxed">
+                    {featured.note}
+                  </p>
+                )
               )}
             </div>
           </div>

@@ -21,6 +21,9 @@ export type RegistrationInput = {
   availability: string;
   expectations: string;
   suggestions: string;
+  studentLevel: string; // id de niveau (voir lib/tutor)
+  subjects: string[]; // ids de matières souhaitées
+  otherSubject: string; // matière libre
 };
 
 export type Registration = RegistrationInput & {
@@ -38,6 +41,14 @@ export const ALL_OFFERS: Offer[] = [
   "event-player",
   "event-spectator",
 ];
+
+/**
+ * Inscriptions au tournoi (offres `event-*`) : fermées tant que la date
+ * n'est pas confirmée. Passer à `true` pour rouvrir — cela réactive
+ * d'un coup les boutons de la page Admission, le formulaire /inscription
+ * et la route /api/checkout.
+ */
+export const EVENT_REGISTRATION_OPEN = false;
 
 export const OFFER_LABELS: Record<Offer, string> = {
   weekly: "150 $ / semaine",

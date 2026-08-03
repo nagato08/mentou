@@ -31,7 +31,8 @@ export default function PricingSection({
 }: Props) {
   return (
     <section
-      className="border-t border-bone/10 py-16 md:py-20 lg:py-24"
+      id="tarifs"
+      className="scroll-mt-24 border-t border-bone/10 py-16 md:py-20 lg:py-24"
       data-gsap="fade-up"
     >
       <div className="flex flex-col items-center">

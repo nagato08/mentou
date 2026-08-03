@@ -5,8 +5,10 @@ import { stripe, priceIdFor } from "@/lib/stripe";
 import {
   isOffer,
   isEventOffer,
+  EVENT_REGISTRATION_OPEN,
   type RegistrationInput,
 } from "@/lib/registration";
+import { isLevel, sanitizeSubjects } from "@/lib/tutor";
 import { SITE_URL } from "@/lib/seo";
 
 export const runtime = "nodejs";
@@ -32,6 +34,16 @@ export async function POST(req: Request) {
     }
 
     const isEvent = isEventOffer(offer);
+
+    // Garde serveur : aucun paiement tournoi tant que les inscriptions
+    // ne sont pas ouvertes, même si un lien direct est rejoué.
+    if (isEvent && !EVENT_REGISTRATION_OPEN) {
+      return NextResponse.json(
+        { error: "Les inscriptions au tournoi ne sont pas encore ouvertes." },
+        { status: 403 }
+      );
+    }
+
     const isOneTime = isEvent || offer === "daily";
 
     const input: RegistrationInput = {
@@ -49,6 +61,9 @@ export async function POST(req: Request) {
       availability: str(body.availability),
       expectations: str(body.expectations),
       suggestions: str(body.suggestions),
+      studentLevel: isLevel(body.studentLevel) ? body.studentLevel : "",
+      subjects: sanitizeSubjects(body.subjects),
+      otherSubject: str(body.otherSubject),
     };
 
     // Validation selon le type d'offre.
@@ -73,8 +88,8 @@ export async function POST(req: Request) {
       sql: `INSERT INTO registrations
         (id, parent_name, parent_email, parent_phone, child_name, child_age, child_school,
          address, city, postal_code, province, offer, availability, expectations, suggestions,
-         status, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
+         student_level, subjects, other_subject, status, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
       args: [
         id,
         input.parentName,
@@ -91,6 +106,9 @@ export async function POST(req: Request) {
         input.availability,
         input.expectations,
         input.suggestions,
+        input.studentLevel,
+        JSON.stringify(input.subjects),
+        input.otherSubject,
         new Date().toISOString(),
       ],
     });

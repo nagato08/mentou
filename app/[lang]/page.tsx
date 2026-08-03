@@ -10,7 +10,6 @@ import Transformation from "@/components/sections/Transformation";
 import CommentsSection from "@/components/sections/CommentsSection";
 import Divisions from "@/components/sections/Divisions";
 import ParentsCircle from "@/components/sections/ParentsCircle";
-import TutorCTA from "@/components/sections/TutorCTA";
 import TutorPopup from "@/components/sections/TutorPopup";
 import AdmissionCTA from "@/components/sections/AdmissionCTA";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
@@ -62,7 +61,6 @@ export default async function HomePage({
       />
       <Divisions dict={dict} />
       <ParentsCircle dict={dict} />
-      <TutorCTA dict={dict} lang={typedLang} />
       <AdmissionCTA lang={typedLang} dict={dict} />
     </>
   );

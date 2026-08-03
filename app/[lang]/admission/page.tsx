@@ -6,7 +6,6 @@ import AdmissionClarity from "@/components/sections/AdmissionClarity";
 import PricingSection from "@/components/sections/PricingSection";
 import EventPricingSection from "@/components/sections/EventPricingSection";
 import AdmissionEligibility from "@/components/sections/AdmissionEligibility";
-import TutorForm from "@/components/sections/TutorForm";
 import AdmissionFaq from "@/components/sections/AdmissionFaq";
 import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
@@ -73,7 +72,6 @@ export default async function AdmissionPage({
       />
       <EventPricingSection dict={dict} lang={lang as Locale} />
       <AdmissionEligibility dict={dict} />
-      <TutorForm dict={dict} />
       <AdmissionFaq
         eyebrow={a.faq.eyebrow}
         title={a.faq.title}

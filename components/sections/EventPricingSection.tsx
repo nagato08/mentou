@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
+import { EVENT_REGISTRATION_OPEN } from "@/lib/registration";
 
 type Props = { dict: Dictionary; lang: Locale };
 
 export default function EventPricingSection({ dict, lang }: Props) {
   const t = dict.admission.eventPricing;
+  const open = EVENT_REGISTRATION_OPEN;
 
   return (
     <section
@@ -39,6 +41,25 @@ export default function EventPricingSection({ dict, lang }: Props) {
             </em>
           </h2>
           <p className="max-w-xl text-bone/55 leading-relaxed">{t.subtitle}</p>
+
+          {!open && (
+            <p
+              role="status"
+              className="max-w-xl border border-gold/30 bg-gold/5 px-6 py-4 text-sm text-bone/70 leading-relaxed"
+            >
+              {t.closedNotice}
+            </p>
+          )}
+
+          {!open && (
+            <Link
+              href={`/${lang}/contact`}
+              className="inline-flex items-center gap-2 border border-gold/40 px-6 py-3 text-sm uppercase tracking-[0.2em] font-semibold text-gold hover:bg-gold/10 transition-colors"
+            >
+              {t.closedCta}
+              <span aria-hidden>→</span>
+            </Link>
+          )}
         </div>
 
         {/* Cards */}
@@ -81,17 +102,23 @@ export default function EventPricingSection({ dict, lang }: Props) {
                 ))}
               </ul>
 
-              <Link
-                href={`/${lang}/inscription?offre=${item.offer}`}
-                className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm uppercase tracking-[0.2em] font-semibold transition-colors ${
-                  item.featured
-                    ? "bg-gold text-ink hover:bg-gold-soft"
-                    : "border border-gold/40 text-gold hover:bg-gold/10"
-                }`}
-              >
-                {t.cta}
-                <span aria-hidden>→</span>
-              </Link>
+              {open ? (
+                <Link
+                  href={`/${lang}/inscription?offre=${item.offer}`}
+                  className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm uppercase tracking-[0.2em] font-semibold transition-colors ${
+                    item.featured
+                      ? "bg-gold text-ink hover:bg-gold-soft"
+                      : "border border-gold/40 text-gold hover:bg-gold/10"
+                  }`}
+                >
+                  {t.cta}
+                  <span aria-hidden>→</span>
+                </Link>
+              ) : (
+                <span className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm uppercase tracking-[0.2em] font-semibold border border-bone/15 text-bone/40 cursor-not-allowed">
+                  {t.ctaClosed}
+                </span>
+              )}
             </div>
           ))}
         </div>

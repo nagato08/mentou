@@ -4,7 +4,11 @@ import PageHeader from "@/components/ui/PageHeader";
 import InscriptionForm from "@/components/sections/InscriptionForm";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { isOffer, isEventOffer } from "@/lib/registration";
+import {
+  isOffer,
+  isEventOffer,
+  EVENT_REGISTRATION_OPEN,
+} from "@/lib/registration";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -40,6 +44,12 @@ export default async function InscriptionPage({
   // Offre invalide ou absente → retour aux tarifs.
   if (!isOffer(offre)) {
     redirect(`/${lang}/admission`);
+  }
+
+  // Inscriptions au tournoi fermées → renvoi vers la section tarifs,
+  // qui affiche l'avis d'attente.
+  if (isEventOffer(offre) && !EVENT_REGISTRATION_OPEN) {
+    redirect(`/${lang}/admission#tournoi`);
   }
 
   const dict = await getDictionary(lang as Locale);

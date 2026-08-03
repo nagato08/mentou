@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
 import { type Offer, isEventOffer } from "@/lib/registration";
+import { TUTOR_LEVELS, TUTOR_SUBJECTS } from "@/lib/tutor";
 
 type Props = {
   dict: Dictionary;
@@ -80,6 +81,18 @@ export default function InscriptionForm({ dict, offer, canceled }: Props) {
   const [form, setForm] = useState(initial);
   // État event (formulaire minimal)
   const [ev, setEv] = useState({ name: "", email: "", phone: "", nation: "" });
+  // Niveau + matières souhaités (programme)
+  const [studentLevel, setStudentLevel] = useState("");
+  const [subjects, setSubjects] = useState<Set<string>>(new Set());
+  const [otherSubject, setOtherSubject] = useState("");
+
+  const toggleSubject = (id: string) =>
+    setSubjects((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
 
   const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -117,7 +130,13 @@ export default function InscriptionForm({ dict, offer, canceled }: Props) {
           expectations: isPlayer ? ev.nation : "",
           suggestions: "",
         }
-      : { ...form, offer };
+      : {
+          ...form,
+          offer,
+          studentLevel,
+          subjects: [...subjects],
+          otherSubject,
+        };
 
     try {
       const res = await fetch("/api/checkout", {
@@ -252,6 +271,91 @@ export default function InscriptionForm({ dict, offer, canceled }: Props) {
                   {field("childName", { full: true, required: false })}
                   {field("childAge", { required: false })}
                   {field("childSchool", { required: false })}
+                </div>
+              </fieldset>
+
+              <fieldset className="flex flex-col gap-5">
+                <legend className="font-display text-xl text-bone mb-2">
+                  {t.tutoring.title}
+                </legend>
+
+                {/* Niveau de l'élève (choix unique) */}
+                <div>
+                  <span className={labelCls}>{t.tutoring.levelLabel}</span>
+                  <div className="flex flex-wrap gap-2.5">
+                    {TUTOR_LEVELS.map((l) => {
+                      const active = studentLevel === l.id;
+                      return (
+                        <button
+                          key={l.id}
+                          type="button"
+                          onClick={() => setStudentLevel(active ? "" : l.id)}
+                          className={`px-3.5 py-2.5 border text-sm transition-colors ${
+                            active
+                              ? "border-gold bg-gold/10 text-bone"
+                              : "border-bone/15 text-bone/60 hover:border-bone/35"
+                          }`}
+                        >
+                          {l.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Matières souhaitées (multi) */}
+                <div>
+                  <span className={labelCls}>{t.tutoring.subjectsLabel}</span>
+                  <p className="text-xs text-bone/40 mb-3 -mt-1">
+                    {t.tutoring.subjectsHint}
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {TUTOR_SUBJECTS.map((s) => {
+                      const active = subjects.has(s.id);
+                      return (
+                        <label
+                          key={s.id}
+                          className={`flex items-center gap-2.5 px-3.5 py-2.5 border cursor-pointer select-none text-sm transition-colors ${
+                            active
+                              ? "border-gold bg-gold/10 text-bone"
+                              : "border-bone/15 text-bone/60 hover:border-bone/35"
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={active}
+                            onChange={() => toggleSubject(s.id)}
+                            className="sr-only"
+                          />
+                          <span
+                            aria-hidden
+                            className={`grid h-4 w-4 shrink-0 place-items-center border ${
+                              active ? "border-gold bg-gold text-ink" : "border-bone/30"
+                            }`}
+                          >
+                            {active && (
+                              <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5L20 6" /></svg>
+                            )}
+                          </span>
+                          {s.label}
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Autre matière */}
+                <div>
+                  <label htmlFor="otherSubject" className={labelCls}>
+                    {t.tutoring.otherLabel}
+                  </label>
+                  <input
+                    id="otherSubject"
+                    value={otherSubject}
+                    onChange={(e) => setOtherSubject(e.target.value)}
+                    placeholder={t.tutoring.otherPh}
+                    className={inputCls}
+                  />
                 </div>
               </fieldset>
 

@@ -13,7 +13,8 @@
     "contact": "Contact",
     "cta": "Schedule an interview",
     "phone": "+1 (438) 342-7730",
-    "events": "Events"
+    "events": "Events",
+    "backToTop": "Back to top"
   },
   "home": {
     "hero": {
@@ -29,6 +30,13 @@
       "ageLabel": "Private program",
       "primaryCta": "Schedule an interview",
       "secondaryCta": "Discover the program"
+    },
+    "tutorPopup": {
+      "eyebrow": "Tutoring",
+      "title": "Need a tutor for your child?",
+      "body": "Our tutors support students from elementary to CEGEP, with rigor and care. Discover our plans and pricing.",
+      "cta": "See pricing",
+      "dismiss": "Later"
     },
     "manifesto": {
       "eyebrow": "Our approach",
@@ -650,8 +658,11 @@
       "eyebrow": "African Nations Tournament",
       "title": "Tournament",
       "titleAccent": "pricing",
-      "subtitle": "Saturday, July 18, 2026 · One field, many nations, one pride.",
+      "subtitle": "One field, many nations, one pride. The date and venue will be announced shortly.",
       "cta": "Register",
+      "ctaClosed": "Registration opening soon",
+      "closedNotice": "Tournament registration is not open yet. The prices below are confirmed — write to us to be notified as soon as it opens.",
+      "closedCta": "Get notified when it opens",
       "items": [
         {
           "offer": "event-player",
@@ -817,50 +828,6 @@
         "span": "small"
       }
     ]
-  },
-  "tutor": {
-    "eyebrow": "Join the team",
-    "title": "Become a",
-    "titleAccent": "tutor",
-    "intro": "Do you love guiding young people toward success? Join our team of tutors. Please fill out this form honestly — it helps us match each tutor with the right students.",
-    "identityTitle": "Your details",
-    "name": "Full name",
-    "namePh": "First and last name",
-    "email": "Email",
-    "emailPh": "you@email.com",
-    "phone": "Phone",
-    "phonePh": "(438) 000-0000",
-    "slotsTitle": "Your tutoring availability (school year)",
-    "slotsHint": "Only check the slots when you are genuinely and reliably available.",
-    "levelsTitle": "School levels you master",
-    "levelsHint": "Only check the levels you are comfortable teaching rigorously and independently.",
-    "subjectsTitle": "Subjects you master",
-    "subjectsHint": "Only check the ones you can teach rigorously and independently.",
-    "otherLabel": "Other subjects you master",
-    "otherPh": "Specify here (optional)",
-    "messageLabel": "Message (optional)",
-    "messagePh": "Experience, motivation, details…",
-    "consent": "I confirm the information provided is accurate and agree to be contacted by Groupe Mentou.",
-    "submit": "Submit my application",
-    "submitting": "Sending…",
-    "error": "Something went wrong. Please try again.",
-    "errorEmpty": "Please check at least one option in each required section.",
-    "successTitle": "Application sent!",
-    "success": "Thank you! We received your application and will get back to you soon.",
-    "popup": {
-      "eyebrow": "Recruiting",
-      "title": "Want to become a tutor?",
-      "body": "Groupe Mentou is recruiting passionate tutors to guide young people toward success. Share your availability and subjects in just a few clicks.",
-      "cta": "Apply now",
-      "dismiss": "Later"
-    },
-    "cta": {
-      "eyebrow": "Recruiting",
-      "title": "Share your knowledge,",
-      "titleAccent": "become a tutor",
-      "body": "Join a team that puts excellence and people at the heart of mentoring. It only takes a few minutes to apply.",
-      "button": "Become a tutor"
-    }
   },
   "contact": {
     "kicker": "Let's get in touch",
@@ -1060,6 +1027,7 @@
       "title": "Our",
       "titleAccent": "gatherings",
       "statusOpen": "Registration open",
+      "statusPending": "Registration opening soon",
       "statusSoon": "Coming soon",
       "statusTbd": "To be revealed",
       "detailsLabel": "At a glance",
@@ -1076,15 +1044,16 @@
           "category": "Sports tournament",
           "title": "African Nations Tournament",
           "tagline": "One field · Many nations · One pride",
-          "status": "open",
-          "date": "Coming soon",
+          "status": "pending",
+          "date": "Date to be confirmed",
           "meta": [
             "$90 / player",
             "Sports complex",
             "Trophy + all-expenses-paid chalet trip",
             "Spectators: $55 (drink included)"
           ],
-          "cta": "Register for the tournament",
+          "note": "Registration is not open yet. The date and venue will be announced shortly.",
+          "cta": "",
           "featured": true
         },
         {
@@ -1119,6 +1088,17 @@
           "date": "Date coming soon",
           "meta": [],
           "featured": false
+        },
+        {
+          "id": "karaoke",
+          "image": "/images/event-karaoke.jpg",
+          "category": "Music night",
+          "title": "Karaoke Night",
+          "tagline": "One mic, one stage, and the courage to step up",
+          "status": "soon",
+          "date": "Date coming soon",
+          "meta": [],
+          "featured": false
         }
       ]
     }
@@ -1139,6 +1119,14 @@
       "child": "Participant (optional)",
       "address": "Address",
       "extra": "To support you better"
+    },
+    "tutoring": {
+      "title": "Tutoring needs",
+      "levelLabel": "Student's school level",
+      "subjectsLabel": "Desired subjects",
+      "subjectsHint": "Check the subjects you'd like tutoring for.",
+      "otherLabel": "Other subject",
+      "otherPh": "Specify a subject not listed (optional)"
     },
     "fields": {
       "parentName": "Contact's full name",
