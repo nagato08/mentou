@@ -113,40 +113,37 @@ export async function POST(req: Request) {
       ],
     });
 
+    // Taux de taxe fixes (TPS 5 % + TVQ 9,975 %) — IDs Stripe (txr_...) via env.
+    // Ex: STRIPE_TAX_RATES="txr_gst,txr_qst"
+    const taxRates = (process.env.STRIPE_TAX_RATES ?? "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const lineItem = {
+      price: priceIdFor(offer) as string,
+      quantity: 1,
+      ...(taxRates.length ? { tax_rates: taxRates } : {}),
+    };
+
     // Construire les line_items + mode selon le type d'offre.
     let sessionParams: Stripe.Checkout.SessionCreateParams;
     const common = {
       customer_email: input.parentEmail,
       client_reference_id: id,
       metadata: { registrationId: id },
-      // Calcul automatique TPS/TVQ par Stripe Tax selon l'adresse saisie au paiement.
-      automatic_tax: { enabled: true },
-      billing_address_collection: "required" as const,
       success_url: `${SITE_URL}/fr/inscription/merci?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE_URL}/fr/inscription?offre=${offer}&annule=1`,
     };
 
+    if (!priceIdFor(offer)) {
+      return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
+    }
+
     if (isOneTime) {
-      const priceId = priceIdFor(offer);
-      if (!priceId) {
-        return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
-      }
-      sessionParams = {
-        ...common,
-        mode: "payment",
-        line_items: [{ price: priceId, quantity: 1 }],
-      };
+      sessionParams = { ...common, mode: "payment", line_items: [lineItem] };
     } else {
       // Abonnement récurrent (programme).
-      const priceId = priceIdFor(offer);
-      if (!priceId) {
-        return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
-      }
-      sessionParams = {
-        ...common,
-        mode: "subscription",
-        line_items: [{ price: priceId, quantity: 1 }],
-      };
+      sessionParams = { ...common, mode: "subscription", line_items: [lineItem] };
     }
 
     const session = await stripe.checkout.sessions.create(sessionParams);
