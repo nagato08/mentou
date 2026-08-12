@@ -119,6 +119,9 @@ export async function POST(req: Request) {
       customer_email: input.parentEmail,
       client_reference_id: id,
       metadata: { registrationId: id },
+      // Calcul automatique TPS/TVQ par Stripe Tax selon l'adresse saisie au paiement.
+      automatic_tax: { enabled: true },
+      billing_address_collection: "required" as const,
       success_url: `${SITE_URL}/fr/inscription/merci?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE_URL}/fr/inscription?offre=${offer}&annule=1`,
     };

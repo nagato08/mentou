@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flyer — Potentiel &amp; organisation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f3ede2;
+    --paper-2:#ece4d5;
+    --ink:#161b22;
+    --night:#0f1b2d;
+    --gold:#a8813a;
+    --gold-deep:#8a6a2e;
+    --muted:#5c5850;
+    --display:"Cormorant Garamond", Georgia, serif;
+    --body:"Manrope", system-ui, sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family:var(--body); background:#2a2c30;
+    min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    gap:22px; padding:36px 16px 70px; color:var(--ink);
+  }
+  .toolbar{ display:flex; gap:12px; align-items:center; font-size:13px; color:#c9c4ba; }
+  .toolbar button{
+    font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color:#fff; background:var(--gold-deep);
+    border:0; padding:11px 20px; border-radius:2px; cursor:pointer;
+  }
+  .toolbar .hint{ opacity:.6; }
+
+  .flyer{
+    position:relative; width:1080px; height:1350px; background:var(--paper);
+    color:var(--ink); overflow:hidden; box-shadow:0 40px 120px rgba(0,0,0,.5);
+  }
+  /* grain papier */
+  .flyer::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
+  }
+  /* barre latérale nuit */
+  .rail{ position:absolute; top:0; left:0; width:14px; height:100%; background:var(--night); z-index:2; }
+
+  .inner{ position:relative; z-index:3; height:100%; padding:66px 74px 0 88px; display:flex; flex-direction:column; }
+
+  /* header */
+  .head{ display:flex; align-items:center; justify-content:space-between; }
+  .head .brand{ display:flex; align-items:center; gap:12px; }
+  .head .brand .dot{ width:34px; height:34px; background:var(--night); border-radius:50%; display:grid; place-items:center; }
+  .head .brand .dot span{ font-family:var(--display); font-weight:700; color:var(--gold); font-size:20px; line-height:1; }
+  .head .brand b{ font-family:var(--body); font-weight:700; font-size:13px; letter-spacing:.28em; text-transform:uppercase; color:var(--ink); }
+  .head .tag{ font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold-deep); }
+
+  /* eyebrow */
+  .eyebrow{ margin-top:52px; display:flex; align-items:center; gap:14px; }
+  .eyebrow span{ font-family:var(--body); font-weight:700; font-size:13px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold-deep); }
+  .eyebrow .bar{ width:44px; height:2px; background:var(--gold); }
+
+  /* citation hero */
+  .quote{ position:relative; margin-top:26px; }
+  .quote .mark{ font-family:var(--display); font-weight:700; font-size:150px; line-height:.6; color:var(--gold); opacity:.9; height:70px; display:block; }
+  .quote h1{
+    font-family:var(--display); font-weight:600; font-style:italic;
+    font-size:74px; line-height:1.08; color:var(--ink); letter-spacing:-.005em;
+    margin-top:6px; max-width:15ch;
+  }
+  .quote .src{ margin-top:18px; font-family:var(--body); font-weight:500; font-size:16px; color:var(--muted); }
+  .quote .src b{ color:var(--ink); font-weight:700; }
+
+  /* photo */
+  .shot{ position:relative; margin-top:36px; height:300px; overflow:hidden; border:1px solid rgba(22,27,34,.12); }
+  .shot img{ width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+  .shot .cap{
+    position:absolute; left:0; bottom:0; background:var(--night); color:var(--paper);
+    font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    padding:9px 16px;
+  }
+
+  /* points numérotés */
+  .points{ margin-top:34px; display:flex; flex-direction:column; gap:18px; }
+  .point{ display:flex; gap:20px; align-items:baseline; }
+  .point .num{ font-family:var(--display); font-weight:700; font-size:34px; color:var(--gold); line-height:1; min-width:52px; }
+  .point p{ font-family:var(--body); font-weight:500; font-size:21px; line-height:1.4; color:var(--ink); }
+  .point p b{ font-weight:800; }
+
+  .close{ margin-top:26px; font-family:var(--display); font-style:italic; font-size:25px; color:var(--muted); line-height:1.35; }
+
+  /* footer CTA nuit */
+  .foot{
+    position:absolute; left:0; right:0; bottom:0; background:var(--night); color:var(--paper);
+    padding:26px 74px 26px 88px; display:flex; align-items:center; justify-content:space-between; z-index:3;
+  }
+  .foot .l .k{ font-family:var(--body); font-weight:700; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); }
+  .foot .l .v{ font-family:var(--display); font-weight:600; font-size:30px; color:var(--paper); line-height:1.1; margin-top:3px; }
+  .foot .r{ text-align:right; }
+  .foot .r .site{ font-family:var(--display); font-weight:700; font-size:26px; color:var(--gold); }
+  .foot .r .ph{ font-family:var(--body); font-weight:500; font-size:14px; color:rgba(244,239,230,.7); margin-top:2px; }
+
+  /* export / print */
+  body.export{ padding:0; margin:0; gap:0; display:block; background:transparent; }
+  body.export .toolbar{ display:none; }
+  body.export .flyer{ box-shadow:none; }
+  @media print{
+    @page{ size:A4 portrait; margin:0; }
+    html,body{ margin:0; padding:0; background:var(--paper); display:block; }
+    .toolbar{ display:none; }
+    .flyer{ box-shadow:none; margin:0 auto; zoom:0.734; }
+  }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <button onclick="window.print()">Imprimer / PDF</button>
+    <span class="hint">Format 1080 × 1350 px (post réseaux)</span>
+  </div>
+
+  <div class="flyer" id="flyer">
+    <div class="rail"></div>
+
+    <div class="inner">
+      <div class="head">
+        <div class="brand">
+          <span class="dot"><span>M</span></span>
+          <b>Groupe Mentou</b>
+        </div>
+        <span class="tag">Longueuil · Rive-Sud</span>
+      </div>
+
+      <div class="eyebrow"><span class="bar"></span><span>Parlons vrai</span></div>
+
+      <div class="quote">
+        <span class="mark">“</span>
+        <h1>Il a du potentiel, mais il ne s'organise pas.</h1>
+        <p class="src">— Une phrase que <b>tant de parents</b> nous confient à Longueuil.</p>
+      </div>
+
+      <div class="shot">
+        <img src="public/flyer/organisation-desk.jpg" alt="Bureau d'étude organisé" />
+        <span class="cap">Le cadre change tout</span>
+      </div>
+
+      <div class="points">
+        <div class="point">
+          <span class="num">01</span>
+          <p><b>Plan personnalisé</b>, sur mesure dès la première semaine.</p>
+        </div>
+        <div class="point">
+          <span class="num">02</span>
+          <p><b>Cohortes réduites</b> (8 à 12 jeunes) pour un encadrement rigoureux.</p>
+        </div>
+        <div class="point">
+          <span class="num">03</span>
+          <p><b>Synergie</b> : discipline sportive, lecture stratégique, rigueur académique.</p>
+        </div>
+      </div>
+
+      <p class="close">On redonne le goût de la structure — sans jamais écraser sa personnalité.</p>
+    </div>
+
+    <div class="foot">
+      <div class="l">
+        <div class="k">Appel gratuit · sans engagement</div>
+        <div class="v">Discutons-en · 15 minutes</div>
+      </div>
+      <div class="r">
+        <div class="site">mentou.ca</div>
+        <div class="ph">+1 (438) 342-7730</div>
+      </div>
+    </div>
+  </div>
+
+  <script>if(location.hash==='#export')document.body.classList.add('export');</script>
+</body>
+</html>
