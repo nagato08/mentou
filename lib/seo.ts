@@ -17,7 +17,7 @@ export function buildMetadata({
   path,
   title,
   description,
-  image = "/images/og-default.jpg",
+  image = "/flyer/nouveau-logo.jpeg",
 }: BuildMetadataInput): Metadata {
   const url = `${SITE_URL}/${lang}${path === "/" ? "" : path}`;
   const altLang = lang === "fr" ? "en" : "fr";

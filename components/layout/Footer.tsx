@@ -21,11 +21,11 @@ export default function Footer({ lang, dict }: FooterProps) {
           <div className="md:col-span-2">
             <Link href={base}>
               <Image
-                src="/logo-remove.png"
+                src="/flyer/nouveau-logo.jpeg"
                 alt="Groupe Mentou"
-                width={60}
-                height={60}
-                className="h-12 w-auto"
+                width={64}
+                height={64}
+                className="h-16 w-16 rounded-full object-cover"
                 priority
               />
             </Link>

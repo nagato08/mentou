@@ -99,11 +99,11 @@ export default function NavbarClient({
             className="shrink-0 flex items-center"
           >
             <Image
-              src="/logo-remove.png"
+              src="/flyer/nouveau-logo.jpeg"
               alt="Groupe Mentou"
-              width={40}
-              height={40}
-              className="h-8 w-auto sm:h-10 md:h-12"
+              width={48}
+              height={48}
+              className="h-9 w-9 rounded-full object-cover sm:h-11 sm:w-11 md:h-12 md:w-12"
               priority
             />
           </Link>
