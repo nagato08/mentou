@@ -39,7 +39,13 @@
     },
     "subjects": {
       "label": "Popular subjects",
-      "items": ["Math", "Physics", "Chemistry", "Science", "French"]
+      "items": [
+        "Math",
+        "Physics",
+        "Chemistry",
+        "Science",
+        "French"
+      ]
     },
     "signs": {
       "eyebrow": "Signs to watch for",
@@ -358,7 +364,7 @@
   },
   "comments": {
     "leave": "Leave a review",
-    "close": "Close the form",
+    "close": "Close",
     "formTitle": "Share your experience",
     "listTitle": "Family reviews",
     "name": "Your name",
@@ -369,9 +375,11 @@
     "submit": "Send my review",
     "success": "Thank you! Your review has been published.",
     "moderation": "Reviews are published right away. The team may remove inappropriate reviews.",
-    "more": "See more reviews",
-    "less": "See less",
-    "outOf": "out of 5"
+    "outOf": "out of 5",
+    "prev": "Previous reviews",
+    "next": "Next reviews",
+    "seeGoogle": "See on Google",
+    "summary": "average rating"
   },
   "notFound": {
     "title": "Page not found",
@@ -382,9 +390,23 @@
     "about": "Mentou Academy offers private tutoring from high school to CEGEP, at home, at our centre and online, with personal development coaching.",
     "navTitle": "Navigation",
     "servicesTitle": "Services",
-    "services": ["In-person tutoring", "Online tutoring", "Homework help", "Exam preparation", "Personal development"],
+    "services": [
+      "In-person tutoring",
+      "Online tutoring",
+      "Homework help",
+      "Exam preparation",
+      "Personal development"
+    ],
     "contactTitle": "Contact",
     "rights": "All rights reserved.",
     "area": "Québec, Canada"
+  },
+  "trust": {
+    "reviews": "family reviews",
+    "noReviews": "Family reviews",
+    "google": "on Google",
+    "students": "students supported",
+    "hoursShort": "Mon-Fri 9 a.m.-9 p.m., Sat-Sun 8 a.m.-6 p.m.",
+    "googleReviews": "reviews on Google"
   }
 }

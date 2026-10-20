@@ -5,6 +5,8 @@ import PageHeader from "@/components/ui/PageHeader";
 import ContactForm from "@/components/forms/ContactForm";
 import Icon, { type IconName } from "@/components/ui/Icon";
 import JsonLd from "@/components/seo/JsonLd";
+import OpeningHours from "@/components/ui/OpeningHours";
+import { getContent } from "@/lib/content";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata, SITE_URL } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/jsonld";
@@ -57,6 +59,7 @@ export default async function ContactPage({
       />
       <PageHeader kicker={c.kicker} title={c.title} subtitle={c.subtitle} />
       <Container size="wide" className="grid items-start gap-8 pb-20 lg:grid-cols-[22rem_1fr]">
+        <div className="flex flex-col gap-4">
         <ul className="flex flex-col gap-4">
           {channels.map((ch) => {
             const body = (
@@ -88,6 +91,10 @@ export default async function ContactPage({
             );
           })}
         </ul>
+          <div className="rounded-2xl border border-line bg-white p-5 shadow-card">
+            <OpeningHours labels={getContent(lang as Locale).labels} />
+          </div>
+        </div>
 
         <div className="rounded-3xl border border-line bg-white p-6 shadow-card md:p-10">
           <h2 className="mb-6 text-2xl font-extrabold text-ink">{c.form.title}</h2>

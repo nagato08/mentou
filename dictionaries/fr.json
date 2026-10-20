@@ -39,7 +39,13 @@
     },
     "subjects": {
       "label": "Matières populaires",
-      "items": ["Mathématiques", "Physique", "Chimie", "Sciences", "Français"]
+      "items": [
+        "Mathématiques",
+        "Physique",
+        "Chimie",
+        "Sciences",
+        "Français"
+      ]
     },
     "signs": {
       "eyebrow": "Les signes qui ne trompent pas",
@@ -358,7 +364,7 @@
   },
   "comments": {
     "leave": "Laisser un avis",
-    "close": "Fermer le formulaire",
+    "close": "Fermer",
     "formTitle": "Partagez votre expérience",
     "listTitle": "Avis des familles",
     "name": "Votre nom",
@@ -369,9 +375,11 @@
     "submit": "Envoyer mon avis",
     "success": "Merci ! Votre avis a bien été publié.",
     "moderation": "Les avis sont publiés immédiatement. L'équipe peut retirer un avis inapproprié.",
-    "more": "Voir plus d'avis",
-    "less": "Voir moins",
-    "outOf": "sur 5"
+    "outOf": "sur 5",
+    "prev": "Avis précédents",
+    "next": "Avis suivants",
+    "seeGoogle": "Voir sur Google",
+    "summary": "note moyenne"
   },
   "notFound": {
     "title": "Page introuvable",
@@ -382,9 +390,23 @@
     "about": "Mentou Academy offre du tutorat privé du secondaire au cégep, à domicile, au centre et en ligne, avec un accompagnement en développement personnel.",
     "navTitle": "Navigation",
     "servicesTitle": "Services",
-    "services": ["Tutorat en présentiel", "Tutorat en ligne", "Aide aux devoirs", "Préparation aux examens", "Développement personnel"],
+    "services": [
+      "Tutorat en présentiel",
+      "Tutorat en ligne",
+      "Aide aux devoirs",
+      "Préparation aux examens",
+      "Développement personnel"
+    ],
     "contactTitle": "Contact",
     "rights": "Tous droits réservés.",
     "area": "Québec, Canada"
+  },
+  "trust": {
+    "reviews": "avis de familles",
+    "noReviews": "Avis des familles",
+    "google": "sur Google",
+    "students": "élèves accompagnés",
+    "hoursShort": "Lun-ven 9 h à 21 h, sam-dim 8 h à 18 h",
+    "googleReviews": "avis sur Google"
   }
 }

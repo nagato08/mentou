@@ -3,10 +3,11 @@ import type { Block, SiteContent } from "@/content/types";
 import Container from "@/components/layout/Container";
 import Icon from "@/components/ui/Icon";
 import { buttonClass } from "@/components/ui/Button";
+import OpeningHours from "@/components/ui/OpeningHours";
 
 type Labels = SiteContent["labels"];
 
-const MAP_QUERY = "1765 boulevard Taschereau, QC";
+const MAP_QUERY = "Groupe Mentou, 1765 boulevard Taschereau, Longueuil, QC J4K 5A2";
 
 function Heading({ title, intro, center = false }: { title: string; intro?: string; center?: boolean }) {
   return (
@@ -235,6 +236,9 @@ function MapBlock({ block, labels }: { block: Extract<Block, { type: "map" }>; l
         <h2 className="text-3xl font-extrabold leading-tight">{block.title}</h2>
         <p className="text-lg font-bold text-accent">{labels.centerAddress}</p>
         <p className="leading-relaxed text-white/80">{block.body}</p>
+        <div className="rounded-2xl bg-white/10 p-4">
+          <OpeningHours labels={labels} tone="dark" />
+        </div>
         <a
           href={`https://www.google.com/maps/search/?api=1&query=${q}`}
           target="_blank"
@@ -277,6 +281,37 @@ function Nearby({ block }: { block: Extract<Block, { type: "nearby" }> }) {
   );
 }
 
+function Fit({ block }: { block: Extract<Block, { type: "fit" }> }) {
+  const col = (title: string, items: string[], ok: boolean) => (
+    <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-6 md:p-7">
+      <h3 className={`text-lg font-extrabold ${ok ? "text-success" : "text-danger"}`}>{title}</h3>
+      <ul className="flex flex-col gap-3">
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-3 text-ink">
+            <Icon
+              name={ok ? "check" : "close"}
+              strokeWidth={2.5}
+              className={`mt-1 h-4 w-4 shrink-0 ${ok ? "text-success" : "text-danger"}`}
+            />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+  return (
+    <div className="bg-sky">
+      <Container className="py-14 md:py-20">
+        <h2 className="text-center text-3xl font-extrabold text-ink md:text-4xl" data-reveal="up">{block.title}</h2>
+        <div className="mx-auto mt-10 grid max-w-4xl items-start gap-4 md:grid-cols-2" data-reveal="stagger">
+          {col(block.yesTitle, block.yes, true)}
+          {col(block.noTitle, block.no, false)}
+        </div>
+      </Container>
+    </div>
+  );
+}
+
 function Text({ block }: { block: Extract<Block, { type: "text" }> }) {
   return (
     <Container size="narrow" data-reveal="up">
@@ -308,6 +343,8 @@ function renderBlock(block: Block, labels: Labels) {
       return <MapBlock block={block} labels={labels} />;
     case "nearby":
       return <Nearby block={block} />;
+    case "fit":
+      return <Fit block={block} />;
     case "text":
       return <Text block={block} />;
   }
@@ -318,7 +355,7 @@ export default function Blocks({ blocks, labels }: { blocks: Block[]; labels: La
   return (
     <>
       {blocks.map((block, i) =>
-        block.type === "statement" ? (
+        block.type === "statement" || block.type === "fit" ? (
           <section key={i}>{renderBlock(block, labels)}</section>
         ) : (
           <section key={i} className="py-12 md:py-16">

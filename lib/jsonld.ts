@@ -1,5 +1,6 @@
 import { SITE_URL } from "./seo";
 import type { Locale } from "./i18n-config";
+import { OPENING_HOURS } from "./contact";
 
 const PHONE = "+1-438-342-7730";
 const EMAIL = "info@mentou.ca";
@@ -72,17 +73,17 @@ export function localBusinessSchema(lang: Locale) {
     address: {
       "@type": "PostalAddress",
       streetAddress: "1765, boulevard Taschereau",
+      addressLocality: "Longueuil",
+      postalCode: "J4K 5A2",
       addressRegion: "QC",
       addressCountry: "CA",
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-    ],
+    openingHoursSpecification: OPENING_HOURS.map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: h.days,
+      opens: h.opens,
+      closes: h.closes,
+    })),
     areaServed: ["Longueuil", "Brossard", "Candiac", "Saint-Constant", "Montérégie"].map((name) => ({
       "@type": "City",
       name,

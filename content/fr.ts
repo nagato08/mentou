@@ -1,6 +1,6 @@
 import type { SiteContent } from "./types";
 
-const CENTER = "1765, boulevard Taschereau";
+const CENTER = "1765, boulevard Taschereau, Longueuil";
 const TAX = "Taxes (TPS et TVQ) en sus, ajoutées au paiement en ligne.";
 
 const fr: SiteContent = {
@@ -29,6 +29,12 @@ const fr: SiteContent = {
     regionsHomeBody: "Tutorat à domicile et à notre centre à Longueuil, Brossard, Candiac, Saint-Constant et partout en Montérégie. En ligne partout au Québec.",
     monteregie: "Toute la Montérégie",
     breadcrumbHome: "Accueil",
+    hoursTitle: "Heures d'ouverture",
+    hoursWeekdays: "Lundi au vendredi",
+    hoursWeekend: "Samedi et dimanche",
+    hoursWeekdaysTime: "9 h à 21 h",
+    hoursWeekendTime: "8 h à 18 h",
+    open7: "Ouvert 7 jours sur 7",
   },
 
   hubs: {
@@ -97,14 +103,21 @@ const fr: SiteContent = {
           ],
         },
         {
-          type: "checklist",
-          tone: "ok",
-          title: "Pour qui ?",
-          items: [
-            "L'élève dont les notes baissent ou qui a échoué une étape",
-            "L'élève qui vise le profil enrichi ou un programme sélectif",
-            "L'étudiant au cégep qui bloque sur un cours de sciences ou de français",
-            "Le parent qui veut un suivi régulier plutôt qu'une aide de dernière minute",
+          type: "fit",
+          title: "C'est pour vous, ou pas",
+          yesTitle: "C'est pour vous si",
+          yes: [
+            "Les notes de votre enfant baissent et le retard s'accumule d'une étape à l'autre.",
+            "Il vise le profil enrichi, un programme contingenté au cégep ou la réussite des examens du ministère.",
+            "Il a déjà essayé de s'organiser seul, mais le plan n'a pas tenu deux semaines.",
+            "Vous cherchez un suivi régulier, pas une aide de dernière minute la veille d'un examen.",
+            "Vous voulez qu'il progresse dans ses notes, mais aussi en confiance et en autonomie.",
+          ],
+          noTitle: "Ce n'est pas pour vous si",
+          no: [
+            "Vous cherchez quelqu'un qui fait les devoirs à sa place.",
+            "Vous voulez seulement les réponses, sans qu'il comprenne la méthode.",
+            "Votre enfant n'est pas prêt à s'investir pendant les séances.",
           ],
         },
       ],

@@ -4,6 +4,7 @@ import { COLLECTION_PATH, getContent, type Collection } from "@/lib/content";
 import Container from "./Container";
 import Logo from "./Logo";
 import Icon from "@/components/ui/Icon";
+import OpeningHours from "@/components/ui/OpeningHours";
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL_INFO, EMAIL_CONTACT } from "@/lib/contact";
 
 type FooterProps = {
@@ -72,6 +73,9 @@ export default function Footer({ lang, dict }: FooterProps) {
             <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
             {c.labels.centerAddress}
           </p>
+          <div className="mt-2 border-t border-line pt-4">
+            <OpeningHours labels={c.labels} />
+          </div>
         </div>
       </Container>
 
