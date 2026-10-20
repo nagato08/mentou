@@ -115,5 +115,11 @@ export type SiteContent = {
     regionsHomeBody: string;
     monteregie: string;
     breadcrumbHome: string;
+    hoursTitle: string;
+    hoursWeekdays: string;
+    hoursWeekend: string;
+    hoursWeekdaysTime: string;
+    hoursWeekendTime: string;
+    open7: string;
   };
 };

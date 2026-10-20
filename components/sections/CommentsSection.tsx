@@ -24,7 +24,7 @@ export default function CommentsSection({
   const [formOpen, setFormOpen] = useState(false);
 
   return (
-    <section className="section">
+    <section id="avis" className="section">
       <Container>
         <SectionHeading eyebrow={eyebrow} title={title} />
 

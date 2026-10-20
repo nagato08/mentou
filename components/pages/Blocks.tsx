@@ -3,6 +3,7 @@ import type { Block, SiteContent } from "@/content/types";
 import Container from "@/components/layout/Container";
 import Icon from "@/components/ui/Icon";
 import { buttonClass } from "@/components/ui/Button";
+import OpeningHours from "@/components/ui/OpeningHours";
 
 type Labels = SiteContent["labels"];
 
@@ -235,6 +236,9 @@ function MapBlock({ block, labels }: { block: Extract<Block, { type: "map" }>; l
         <h2 className="text-3xl font-extrabold leading-tight">{block.title}</h2>
         <p className="text-lg font-bold text-accent">{labels.centerAddress}</p>
         <p className="leading-relaxed text-white/80">{block.body}</p>
+        <div className="rounded-2xl bg-white/10 p-4">
+          <OpeningHours labels={labels} tone="dark" />
+        </div>
         <a
           href={`https://www.google.com/maps/search/?api=1&query=${q}`}
           target="_blank"

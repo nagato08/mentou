@@ -29,6 +29,12 @@ const fr: SiteContent = {
     regionsHomeBody: "Tutorat à domicile et à notre centre à Longueuil, Brossard, Candiac, Saint-Constant et partout en Montérégie. En ligne partout au Québec.",
     monteregie: "Toute la Montérégie",
     breadcrumbHome: "Accueil",
+    hoursTitle: "Heures d'ouverture",
+    hoursWeekdays: "Lundi au vendredi",
+    hoursWeekend: "Samedi et dimanche",
+    hoursWeekdaysTime: "9 h à 21 h",
+    hoursWeekendTime: "8 h à 18 h",
+    open7: "Ouvert 7 jours sur 7",
   },
 
   hubs: {

@@ -29,6 +29,12 @@ const en: SiteContent = {
     regionsHomeBody: "In-home and in-centre tutoring in Longueuil, Brossard, Candiac, Saint-Constant and throughout Montérégie. Online everywhere in Québec.",
     monteregie: "All of Montérégie",
     breadcrumbHome: "Home",
+    hoursTitle: "Opening hours",
+    hoursWeekdays: "Monday to Friday",
+    hoursWeekend: "Saturday and Sunday",
+    hoursWeekdaysTime: "9 a.m. to 9 p.m.",
+    hoursWeekendTime: "8 a.m. to 6 p.m.",
+    open7: "Open 7 days a week",
   },
 
   hubs: {
