@@ -1,6 +1,6 @@
 import type { SiteContent } from "./types";
 
-const CENTER = "1765 Taschereau Boulevard";
+const CENTER = "1765 Taschereau Boulevard, Longueuil";
 const TAX = "Taxes (GST and QST) extra, added at online checkout.";
 
 const en: SiteContent = {

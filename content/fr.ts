@@ -1,6 +1,6 @@
 import type { SiteContent } from "./types";
 
-const CENTER = "1765, boulevard Taschereau";
+const CENTER = "1765, boulevard Taschereau, Longueuil";
 const TAX = "Taxes (TPS et TVQ) en sus, ajoutées au paiement en ligne.";
 
 const fr: SiteContent = {

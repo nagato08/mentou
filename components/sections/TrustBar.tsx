@@ -35,13 +35,15 @@ export default function TrustBar({ labels, lang }: { labels: Labels; lang: "fr" 
     };
   }, []);
 
-  const fmt = (n: number) => n.toLocaleString(lang === "fr" ? "fr-CA" : "en-CA", { maximumFractionDigits: 1 });
+  const fmt = (n: number) => n.toLocaleString(lang === "fr" ? "fr-CA" : "en-CA", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const g = GOOGLE_PROFILE;
 
   const items: { icon: "star" | "users" | "clock"; strong: string; text: string; href?: string }[] = [];
-  if (g.rating !== null && g.reviewCount !== null) {
-    items.push({ icon: "star", strong: `${fmt(g.rating)}/5`, text: `${g.reviewCount} ${labels.reviews} ${labels.google}`, href: g.url ?? undefined });
-  } else if (stats) {
+  if (g.rating !== null) {
+    const count = g.reviewCount !== null ? `${g.reviewCount} ${labels.reviews} ` : "";
+    items.push({ icon: "star", strong: `${fmt(g.rating)}/5`, text: `${count}${labels.google}`, href: g.url ?? undefined });
+  }
+  if (stats) {
     items.push({ icon: "star", strong: `${fmt(stats.avg)}/5`, text: `${stats.count} ${labels.reviews}`, href: "#avis" });
   }
   if (g.studentsCount !== null) {
@@ -66,7 +68,7 @@ export default function TrustBar({ labels, lang }: { labels: Labels; lang: "fr" 
               </>
             );
             return (
-              <li key={it.strong} className="flex justify-center px-6 py-2">
+              <li key={`${it.strong}-${it.text}`} className="flex justify-center px-6 py-2">
                 {it.href ? (
                   <a href={it.href} className="flex items-center gap-3 hover:opacity-80" {...(it.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                     {body}

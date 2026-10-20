@@ -7,7 +7,7 @@ import OpeningHours from "@/components/ui/OpeningHours";
 
 type Labels = SiteContent["labels"];
 
-const MAP_QUERY = "1765 boulevard Taschereau, QC";
+const MAP_QUERY = "Groupe Mentou, 1765 boulevard Taschereau, Longueuil, QC J4K 5A2";
 
 function Heading({ title, intro, center = false }: { title: string; intro?: string; center?: boolean }) {
   return (

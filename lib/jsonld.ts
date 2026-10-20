@@ -73,6 +73,8 @@ export function localBusinessSchema(lang: Locale) {
     address: {
       "@type": "PostalAddress",
       streetAddress: "1765, boulevard Taschereau",
+      addressLocality: "Longueuil",
+      postalCode: "J4K 5A2",
       addressRegion: "QC",
       addressCountry: "CA",
     },
