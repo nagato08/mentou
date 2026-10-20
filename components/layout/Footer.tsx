@@ -1,109 +1,88 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Dictionary, Locale } from "@/lib/i18n";
+import { COLLECTION_PATH, getContent, type Collection } from "@/lib/content";
 import Container from "./Container";
+import Logo from "./Logo";
+import Icon from "@/components/ui/Icon";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL_INFO, EMAIL_CONTACT } from "@/lib/contact";
 
 type FooterProps = {
   lang: Locale;
   dict: Dictionary;
 };
 
+const LINK = "text-slate transition-colors hover:text-primary";
+
 export default function Footer({ lang, dict }: FooterProps) {
   const base = `/${lang}`;
   const year = new Date().getFullYear();
+  const c = getContent(lang);
+
+  const column = (collection: Collection, title: string) => (
+    <nav aria-label={title} className="flex flex-col gap-3 text-sm">
+      <h2 className="text-sm font-bold text-ink">
+        <Link href={`${base}/${COLLECTION_PATH[collection]}`} className="hover:text-primary">
+          {title}
+        </Link>
+      </h2>
+      {c[collection].map((p) => (
+        <Link key={p.slug} href={`${base}/${COLLECTION_PATH[collection]}/${p.slug}`} className={LINK}>
+          {p.label}
+        </Link>
+      ))}
+    </nav>
+  );
 
   return (
-    <footer className="border-t border-bone/10 bg-ink text-bone/70">
-      <Container size="wide" as="div" className="pt-20 pb-12 px-3 md:px-6">
-        {/* Main grid: Brand + Navigation + Pillars + Contact */}
-        <div className="grid gap-12 md:grid-cols-6">
-          {/* Brand section */}
-          <div className="md:col-span-2">
-            <Link href={base}>
-              <Image
-                src="/flyer/nouveau-logo.jpeg"
-                alt="Groupe Mentou"
-                width={64}
-                height={64}
-                className="h-16 w-16 rounded-full object-cover"
-                priority
-              />
-            </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-bone/60">
-              {dict.footer.tagline}
-            </p>
-            <p className="mt-6 text-xs uppercase tracking-[0.25em] text-gold">
-              {dict.footer.address}
-            </p>
-          </div>
-
-          {/* Navigation links */}
-          <nav aria-label="Navigation" className="flex flex-col gap-3 text-sm">
-            <span className="eyebrow text-gold/90">Navigation</span>
-            <Link href={base} className="hover:text-gold transition-colors">
-              {dict.nav.home}
-            </Link>
-            <Link href={`${base}/piliers`} className="hover:text-gold transition-colors">
-              {dict.nav.pillars}
-            </Link>
-            <Link href={`${base}/vision`} className="hover:text-gold transition-colors">
-              {dict.nav.vision}
-            </Link>
-            <Link href={`${base}/evenements`} className="hover:text-gold transition-colors">
-              {dict.nav.events}
-            </Link>
-            <Link href={`${base}/admission`} className="hover:text-gold transition-colors">
-              {dict.nav.admission}
-            </Link>
-            <Link href={`${base}/galerie`} className="hover:text-gold transition-colors">
-              {dict.nav.gallery}
-            </Link>
-            <Link href={`${base}/contact`} className="hover:text-gold transition-colors">
-              {dict.nav.contact}
-            </Link>
-          </nav>
-
-          {/* The 7 Pillars */}
-          <nav aria-label="Les 7 Piliers" className="flex flex-col gap-3 text-sm">
-            <span className="eyebrow text-gold/90">Piliers</span>
-            {dict.home.pillars.items.map((pillar, i) => (
-              <div key={i} className="text-bone/70 hover:text-gold transition-colors cursor-default">
-                {pillar.title}
-              </div>
-            ))}
-          </nav>
-
-          {/* Contact section */}
-          <div className="flex flex-col gap-3 text-sm">
-            <span className="eyebrow text-gold/90">{dict.nav.contact}</span>
-            <Link
-              href="mailto:admission@mentou.ca"
-              className="hover:text-gold transition-colors text-xs"
-            >
-              admission@mentou.ca
-            </Link>
-            <div className="mt-2">
-              <p className="text-xs uppercase tracking-[0.25em] text-gold/80 mb-2">WhatsApp</p>
-              <Link
-                href={`https://wa.me/14383427730`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block font-medium text-bone hover:text-gold transition-colors"
-              >
-                {dict.footer.whatsapp}
-              </Link>
-            </div>
+    <footer className="border-t border-line bg-paper">
+      <Container size="wide" className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
+          <Link href={base} aria-label={dict.meta.siteName}>
+            <Logo name={dict.meta.siteName} size="lg" />
+          </Link>
+          <p className="max-w-xs text-sm leading-relaxed text-slate">{dict.footer.about}</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <Link href={`${base}/tarifs`} className={LINK}>{c.labels.pricing}</Link>
+            <Link href={`${base}/a-propos`} className={LINK}>{c.labels.about}</Link>
+            <Link href={`${base}/demander-un-tuteur`} className={LINK}>{dict.nav.cta}</Link>
           </div>
         </div>
 
-        {/* Footer bottom */}
-        <div className="mt-16 flex flex-col gap-2 border-t border-bone/10 pt-8 text-xs text-bone/40 md:flex-row md:justify-between">
-          <span>
-            © {year} {dict.meta.companyName}. {dict.footer.rights}
-          </span>
-          <span className="uppercase tracking-[0.25em]">{dict.meta.tagline}</span>
+        {column("services", c.labels.services)}
+        {column("subjects", c.labels.subjects)}
+        {column("regions", c.labels.regions)}
+
+        <div className="flex flex-col gap-3 text-sm">
+          <h2 className="text-sm font-bold text-ink">
+            <Link href={`${base}/contact`} className="hover:text-primary">{dict.footer.contactTitle}</Link>
+          </h2>
+          <a href={PHONE_TEL} className={`flex items-center gap-2.5 ${LINK}`}>
+            <Icon name="phone" className="h-4 w-4 shrink-0 text-primary" />
+            {PHONE_DISPLAY}
+          </a>
+          <a href={`mailto:${EMAIL_INFO}`} className={`flex items-center gap-2.5 ${LINK}`}>
+            <Icon name="mail" className="h-4 w-4 shrink-0 text-primary" />
+            {EMAIL_INFO}
+          </a>
+          <a href={`mailto:${EMAIL_CONTACT}`} className={`flex items-center gap-2.5 ${LINK}`}>
+            <Icon name="mail" className="h-4 w-4 shrink-0 text-primary" />
+            {EMAIL_CONTACT}
+          </a>
+          <p className="flex items-start gap-2.5 text-slate">
+            <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            {c.labels.centerAddress}
+          </p>
         </div>
       </Container>
+
+      <div className="border-t border-line">
+        <Container size="wide" className="flex flex-col gap-2 py-6 text-xs text-muted md:flex-row md:justify-between">
+          <span>
+            © {year} {dict.meta.companyName} · {dict.meta.siteName}. {dict.footer.rights}
+          </span>
+          <span>mentou.ca</span>
+        </Container>
+      </div>
     </footer>
   );
 }

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "@/components/sections/Hero";
-import Manifesto from "@/components/sections/Manifesto";
-import EspritGroupe from "@/components/sections/EspritGroupe";
-import WhoItsFor from "@/components/sections/WhoItsFor";
-import PillarsList from "@/components/sections/PillarsList";
-import ProgramRhythm from "@/components/sections/ProgramRhythm";
-import Transformation from "@/components/sections/Transformation";
+import Signs from "@/components/sections/Signs";
+import Services from "@/components/sections/Services";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Pricing from "@/components/sections/Pricing";
+import WhyUs from "@/components/sections/WhyUs";
+import Regions from "@/components/sections/Regions";
 import CommentsSection from "@/components/sections/CommentsSection";
-import Divisions from "@/components/sections/Divisions";
-import ParentsCircle from "@/components/sections/ParentsCircle";
-import TutorPopup from "@/components/sections/TutorPopup";
-import AdmissionCTA from "@/components/sections/AdmissionCTA";
+import Faq from "@/components/sections/Faq";
+import FinalCta from "@/components/sections/FinalCta";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
+import { faqSchema } from "@/lib/jsonld";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -30,8 +30,8 @@ export async function generateMetadata({
   return buildMetadata({
     lang,
     path: "/",
-    title: `${dict.meta.siteName} — ${dict.meta.tagline}`,
-    description: dict.home.hero.subtitle,
+    title: `${dict.meta.siteName} | ${dict.meta.tagline}`,
+    description: dict.meta.description,
   });
 }
 
@@ -42,26 +42,27 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = await getDictionary(lang as Locale);
   const typedLang = lang as Locale;
+  const dict = await getDictionary(typedLang);
 
   return (
     <>
-      <TutorPopup dict={dict} lang={typedLang} />
+      <JsonLd data={faqSchema(dict.home.faq.items)} />
       <Hero lang={typedLang} dict={dict} />
-      <Manifesto dict={dict} />
-      <EspritGroupe dict={dict} />
-      <WhoItsFor dict={dict} />
-      <PillarsList lang={typedLang} dict={dict} />
-      <ProgramRhythm dict={dict} />
-      <Transformation dict={dict} />
+      <Signs dict={dict} />
+      <Services lang={typedLang} dict={dict} />
+      <HowItWorks lang={typedLang} dict={dict} />
+      <Pricing lang={typedLang} dict={dict} />
+      <Regions lang={typedLang} />
+      <WhyUs dict={dict} />
       <CommentsSection
         eyebrow={dict.home.testimonials.eyebrow}
         title={dict.home.testimonials.title}
+        labels={dict.comments}
+        dateLocale={typedLang === "fr" ? "fr-CA" : "en-CA"}
       />
-      <Divisions dict={dict} />
-      <ParentsCircle dict={dict} />
-      <AdmissionCTA lang={typedLang} dict={dict} />
+      <Faq dict={dict} />
+      <FinalCta lang={typedLang} dict={dict} />
     </>
   );
 }

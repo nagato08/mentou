@@ -1,0 +1,743 @@
+import type { SiteContent } from "./types";
+
+const CENTER = "1765 Taschereau Boulevard";
+const TAX = "Taxes (GST and QST) extra, added at online checkout.";
+
+const en: SiteContent = {
+  labels: {
+    services: "Services",
+    subjects: "Subjects",
+    regions: "Areas",
+    pricing: "Pricing",
+    about: "About",
+    seeAll: "See all",
+    learnMore: "Learn more",
+    faqTitle: "Frequently asked questions",
+    otherServices: "Our other services",
+    otherSubjects: "Other subjects",
+    otherRegions: "Other areas served",
+    ctaTitle: "Ready to get started?",
+    ctaBody: "Choose your plan and book your hours online. We will then contact you to schedule the sessions.",
+    ctaButton: "Request a tutor",
+    center: "Our centre",
+    centerAddress: CENTER,
+    centerBody: "In-person sessions take place at your home or at our centre on Taschereau Boulevard.",
+    directions: "Directions",
+    mapTitle: "Map of the Mentou Academy centre",
+    examples: "Booking examples",
+    regionsHome: "Serving the South Shore",
+    regionsHomeBody: "In-home and in-centre tutoring in Longueuil, Brossard, Candiac, Saint-Constant and throughout Montérégie. Online everywhere in Québec.",
+    monteregie: "All of Montérégie",
+    breadcrumbHome: "Home",
+  },
+
+  hubs: {
+    services: {
+      metaTitle: "Our tutoring services",
+      metaDescription: "Academic tutoring, personal development, in-home, in-centre or online tutoring, and preparation for ministry exams and the EUF.",
+      kicker: "Services",
+      title: "Complete support, from subjects to confidence",
+      intro: "Choose the service that fits your child's needs. All of our services can be combined.",
+    },
+    subjects: {
+      metaTitle: "Subjects taught in high school and CEGEP",
+      metaDescription: "Tutoring in math, science, physics, chemistry, programming and French, from Secondary 1 to CEGEP, regular and enriched profiles.",
+      kicker: "Subjects",
+      title: "The subjects we teach",
+      intro: "From Secondary 1 to 5, regular and enriched profiles, up to CEGEP science and French courses.",
+    },
+    regions: {
+      metaTitle: "Tutoring on the South Shore and in Montérégie",
+      metaDescription: "In-home and in-centre tutoring in Longueuil, Brossard, Candiac, Saint-Constant and throughout Montérégie. Online tutoring everywhere in Québec.",
+      kicker: "Areas served",
+      title: "Tutoring on the South Shore and throughout Montérégie",
+      intro: "Our tutors come to your home on the South Shore and welcome students at our centre. For the rest of Québec, online tutoring is available.",
+    },
+    pricing: {
+      metaTitle: "Tutoring pricing",
+      metaDescription: "Monthly plan at $500 (12 h per week in person), in-person tutoring at $45 per hour and online tutoring at $30 per hour.",
+      kicker: "Pricing",
+      title: "Clear pricing, no surprises",
+      intro: "Three simple plans. Hours are booked and paid for securely online.",
+    },
+  },
+
+  services: [
+    {
+      slug: "tutorat-scolaire",
+      label: "Academic tutoring",
+      summary: "Personalized support in the subjects where your child needs help.",
+      metaTitle: "Academic tutoring for high school and CEGEP",
+      metaDescription: "Personalized academic tutoring from Secondary 1 to CEGEP: homework help, understanding concepts, catch-up and study methods.",
+      kicker: "Services",
+      title: "Personalized academic tutoring",
+      intro: "A tutor who follows your child's curriculum, fills the gaps and helps them take back control of their grades.",
+      image: "/images/site/service-tutorat-scolaire.jpg",
+      imageAlt: "Student working on a laptop with notes",
+      blocks: [
+        {
+          type: "steps",
+          title: "What a session looks like",
+          intro: "Every session follows the same thread, so the student knows where they are going.",
+          steps: [
+            { title: "Review the week", body: "What was covered in class, homework due, upcoming tests." },
+            { title: "Tackle what's blocking", body: "The tutor explains it differently, with examples, until it clicks." },
+            { title: "Guided practice", body: "The student practises while the tutor corrects the method, not just the answer." },
+            { title: "Plan what's next", body: "The student leaves with two or three clear goals for the next session." },
+          ],
+        },
+        {
+          type: "levels",
+          title: "From Secondary 1 to CEGEP",
+          intro: "We follow the Québec curriculum, in regular and enriched profiles.",
+          groups: [
+            { title: "Secondary 1 to 5", items: ["Math", "Science", "Physics", "Programming", "French", "Ministry exams"] },
+            { title: "CEGEP", items: ["Differential and integral calculus", "Linear algebra", "Mechanics", "General chemistry", "Cell biology", "French 101 to 103"] },
+          ],
+        },
+        {
+          type: "checklist",
+          tone: "ok",
+          title: "Who is it for?",
+          items: [
+            "Students whose grades are slipping or who failed a term",
+            "Students aiming for the enriched profile or a selective program",
+            "CEGEP students stuck on a science or French course",
+            "Parents who want regular support rather than last-minute help",
+          ],
+        },
+      ],
+      faq: [
+        { q: "How many sessions before we see progress?", a: "It depends on the student and their gaps. Regular weekly support usually gives the best results. The monthly plan (12 hours per week) is designed for that." },
+        { q: "Does the tutor follow the school curriculum?", a: "Yes. The tutor works from the concepts seen in class, your child's homework and upcoming tests." },
+      ],
+    },
+    {
+      slug: "developpement-personnel",
+      label: "Personal development",
+      summary: "Confidence, discipline and leadership to succeed at school and beyond.",
+      metaTitle: "Personal development for teens",
+      metaDescription: "Personal development coaching for young people: self-confidence, discipline, organization, public speaking and leadership.",
+      kicker: "Services",
+      title: "Confidence, discipline, leadership",
+      intro: "Good grades are not enough. We also help young people believe in themselves, get organized and find their place.",
+      image: "/images/site/service-developpement.jpg",
+      imageAlt: "Facilitator presenting to an attentive group",
+      blocks: [
+        {
+          type: "statement",
+          text: "A student who believes in themselves asks more questions, keeps going longer and learns better.",
+          body: "That is why personal development is part of every Mentou Academy program.",
+        },
+        {
+          type: "features",
+          title: "Four skills, built during sessions",
+          image: "/images/site/service-developpement-groupe.jpg",
+          imageAlt: "Group of young people in discussion",
+          items: [
+            { icon: "heart", title: "Self-confidence", body: "Daring to answer, daring to be wrong, recognizing progress." },
+            { icon: "calendar", title: "Discipline", body: "A realistic study schedule, and the consistency to stick to it." },
+            { icon: "chat", title: "Public speaking", body: "Speaking clearly in class, in presentations, in interviews." },
+            { icon: "target", title: "Leadership", body: "Setting goals, taking responsibility, bringing others along." },
+          ],
+        },
+        {
+          type: "checklist",
+          tone: "warn",
+          title: "Sound like your child?",
+          items: [
+            "They get discouraged quickly or say they are \"not good\"",
+            "They leave everything to the last minute",
+            "They don't dare ask questions or speak up in class",
+            "They have the ability, but not the motivation",
+          ],
+        },
+      ],
+      faq: [
+        { q: "Is personal development offered separately?", a: "It is built into our support, especially in the monthly plan, which combines tutoring and personal development. Tell us about your needs and we will adapt the sessions." },
+        { q: "From what age?", a: "We support high school and CEGEP students." },
+      ],
+    },
+    {
+      slug: "tutorat-a-domicile",
+      label: "In-home and in-centre",
+      summary: "In-person sessions at your home or at our centre on Taschereau Boulevard.",
+      metaTitle: "In-home tutoring on the South Shore",
+      metaDescription: "In-person tutoring at home in Longueuil, Brossard, Candiac, Saint-Constant and Montérégie, or at our centre at 1765 Taschereau Boulevard.",
+      kicker: "Services",
+      title: "In-person tutoring, at home or at our centre",
+      intro: "A tutor by your child's side. The ideal format for students who need structure and consistency.",
+      image: "/images/site/service-domicile.jpg",
+      imageAlt: "Mother helping her child with homework at home",
+      blocks: [
+        {
+          type: "compare",
+          title: "Two ways to meet in person",
+          intro: "Same tutor, same rate. Pick the place that makes life easier.",
+          columns: [
+            {
+              title: "At home",
+              icon: "home",
+              tag: "South Shore and Montérégie",
+              items: ["The tutor comes to you at the agreed time", "No travel for your child", "They work in their usual environment"],
+            },
+            {
+              title: "At our centre",
+              icon: "school",
+              tag: "Taschereau Boulevard",
+              featured: true,
+              items: ["A calm space designed for studying", "Fewer distractions than at home", "Ideal to separate school from home"],
+            },
+          ],
+        },
+        {
+          type: "price",
+          title: "What it costs",
+          body: "Pay by the hour or choose the monthly plan for intensive support.",
+          offers: [
+            { label: "By the hour", value: "$45", detail: "As many hours as you choose" },
+            { label: "Monthly plan", value: "$500", detail: "12 hours per week, billed monthly" },
+          ],
+          examples: [
+            { label: "4 hours", value: "$180" },
+            { label: "8 hours", value: "$360" },
+            { label: "12 hours", value: "$540" },
+          ],
+          note: TAX,
+        },
+        {
+          type: "map",
+          title: "The Mentou Academy centre",
+          body: "Centre sessions are scheduled with you at first contact. We then confirm the schedule and access details.",
+        },
+      ],
+      faq: [
+        { q: "My address is outside these cities. Is it possible?", a: "We cover all of Montérégie. Enter your address in the form and we will confirm the options. Online tutoring is available everywhere in Québec." },
+        { q: "Can we alternate between home and the centre?", a: "Yes. The rate is the same; you choose the location when scheduling sessions." },
+      ],
+    },
+    {
+      slug: "tutorat-en-ligne",
+      label: "Online tutoring",
+      summary: "Video sessions anywhere in Québec, at $30 per hour.",
+      metaTitle: "Online tutoring everywhere in Québec",
+      metaDescription: "Online video tutoring for high school and CEGEP, anywhere in Québec, at $30 per hour.",
+      kicker: "Services",
+      title: "Online tutoring, everywhere in Québec",
+      intro: "The same support as in person, with no travel and more flexible hours. At $30 per hour.",
+      image: "/images/site/service-en-ligne.jpg",
+      imageAlt: "Student attending an online session on a laptop",
+      blocks: [
+        {
+          type: "checklist",
+          tone: "ok",
+          title: "What you need",
+          intro: "Nothing complicated. If your child can make a video call, they can join a session.",
+          items: [
+            "A computer or tablet with a camera and microphone",
+            "A stable internet connection",
+            "A quiet spot during the session",
+            "Their notebooks, homework or exam to work on",
+          ],
+        },
+        {
+          type: "compare",
+          title: "Online or in person?",
+          columns: [
+            {
+              title: "Online",
+              icon: "laptop",
+              tag: "$30/h",
+              featured: true,
+              items: ["Everywhere in Québec", "More flexible hours", "Ideal from Secondary 3 and at CEGEP"],
+            },
+            {
+              title: "In person",
+              icon: "home",
+              tag: "$45/h",
+              items: ["At home or at our South Shore centre", "More structure for students who fall behind", "Monthly plan available ($500)"],
+            },
+          ],
+        },
+        {
+          type: "price",
+          title: "How much it costs",
+          offers: [{ label: "Online, by the hour", value: "$30", detail: "As many hours as you choose" }],
+          examples: [
+            { label: "5 hours", value: "$150" },
+            { label: "10 hours", value: "$300" },
+            { label: "20 hours", value: "$600" },
+          ],
+          note: TAX,
+        },
+      ],
+      faq: [
+        { q: "Is online tutoring as effective?", a: "For most students, yes, especially from Secondary 3 and at CEGEP. For students who struggle to focus, we recommend in-person sessions." },
+        { q: "How does the first session work?", a: "After you book, we contact you to set the schedule and send you the session link." },
+      ],
+    },
+    {
+      slug: "preparation-examens",
+      label: "Exam preparation",
+      summary: "Ministry exams in Secondary 4 and 5 and the uniform French exam at CEGEP.",
+      metaTitle: "Ministry exam and EUF preparation",
+      metaDescription: "Preparation for Secondary 4 and 5 ministry exams, regular and enriched profiles, and for the uniform French exam (EUF) at CEGEP.",
+      kicker: "Services",
+      title: "Ministry exam and EUF preparation",
+      intro: "Year-end exams weigh heavily in the final grade. Targeted preparation makes all the difference.",
+      image: "/images/site/service-examens.jpg",
+      imageAlt: "Smiling graduate on graduation day",
+      blocks: [
+        {
+          type: "compare",
+          title: "Two exams, two kinds of preparation",
+          columns: [
+            {
+              title: "Ministry exams",
+              icon: "school",
+              tag: "Secondary 4 and 5",
+              items: ["Regular and enriched profiles", "Review of the year's key concepts", "Timed exam-style exercises"],
+            },
+            {
+              title: "Uniform French exam",
+              icon: "book",
+              tag: "CEGEP",
+              featured: true,
+              items: ["Required to obtain the DEC", "Critical essay analysis and structure", "Language quality and proofreading"],
+            },
+          ],
+        },
+        {
+          type: "steps",
+          title: "The countdown",
+          intro: "The earlier you start, the less stressful the last week.",
+          steps: [
+            { title: "Eight weeks before", body: "Assessment: we identify solid concepts and those to rework." },
+            { title: "Six weeks before", body: "Review by topic, starting with the most important gaps." },
+            { title: "Three weeks before", body: "Practice exams in real conditions, corrected with the student." },
+            { title: "The last week", body: "Targeted review, time and stress management. No new material." },
+          ],
+        },
+      ],
+      faq: [
+        { q: "Less than a month left. Is it too late?", a: "No. We adapt the plan to the time left and focus on what earns the most points." },
+        { q: "How many hours should we plan?", a: "It depends on the gaps. The monthly plan (12 hours per week) suits intensive preparation; a few targeted hours are enough for a review." },
+      ],
+    },
+  ],
+
+  subjects: [
+    {
+      slug: "mathematiques",
+      label: "Math",
+      summary: "From Secondary 1 to integral calculus, regular and enriched profiles.",
+      metaTitle: "Math tutor, high school and CEGEP",
+      metaDescription: "Math tutoring from Secondary 1 to 5 (regular and enriched), ministry exams, differential and integral calculus, linear algebra, probability and statistics.",
+      kicker: "Subjects",
+      title: "Math tutoring",
+      intro: "Math is the subject where gaps build up fastest. A tutor spots and fills them before they block what comes next.",
+      image: "/images/site/matiere-mathematiques.jpg",
+      imageAlt: "Math exercise notebook and pen",
+      blocks: [
+        {
+          type: "levels",
+          title: "What we cover",
+          groups: [
+            { title: "Secondary 1 to 5", items: ["Regular profile", "Enriched profile", "Secondary 4 and 5 ministry exams"] },
+            { title: "CEGEP", items: ["Differential calculus", "Integral calculus", "Linear algebra", "Probability and statistics"] },
+          ],
+        },
+        {
+          type: "text",
+          title: "Moving to the enriched profile",
+          body: "The enriched profile requires more abstraction and rigour. We work on advanced concepts and problem-solving methods so the student keeps up from the start of the year.",
+        },
+      ],
+      faq: [
+        { q: "My child has had gaps since Secondary 1. Where do we start?", a: "With an assessment of the basics. The tutor rebuilds missing concepts while following what is covered in class, so the student doesn't fall behind." },
+      ],
+    },
+    {
+      slug: "sciences",
+      label: "Science",
+      summary: "High school science, regular and enriched, and cell biology at CEGEP.",
+      metaTitle: "Science tutor, high school and CEGEP",
+      metaDescription: "Science tutoring from Secondary 1 to 5, regular and enriched profiles, ministry exam preparation and cell biology at CEGEP.",
+      kicker: "Subjects",
+      title: "Science tutoring",
+      intro: "Understanding rather than memorizing: we help students connect theory, labs and problems.",
+      image: "/images/site/matiere-sciences.jpg",
+      imageAlt: "DNA double helix model",
+      blocks: [
+        {
+          type: "levels",
+          title: "What we cover",
+          groups: [
+            { title: "Secondary 1 to 5", items: ["Regular profile", "Enriched profile", "Ministry exams"] },
+            { title: "CEGEP", items: ["Cell biology"] },
+          ],
+        },
+        {
+          type: "text",
+          title: "Lab reports",
+          body: "We help students understand the scientific method and structure their reports: hypothesis, protocol, results, analysis. Without doing the work for them.",
+        },
+      ],
+      faq: [
+        { q: "Cell biology is hard to memorize. How do you help?", a: "With diagrams, links between processes and lots of exam-style questions, rather than pure memorization." },
+      ],
+    },
+    {
+      slug: "physique",
+      label: "Physics",
+      summary: "High school physics and CEGEP natural science physics courses.",
+      metaTitle: "Physics tutor, high school and CEGEP",
+      metaDescription: "Physics tutoring in high school and CEGEP: mechanics, electricity and magnetism, waves and modern physics.",
+      kicker: "Subjects",
+      title: "Physics tutoring",
+      intro: "Physics requires both solid math foundations and a good understanding of phenomena. We work on both.",
+      image: "/images/site/matiere-physique.jpg",
+      imageAlt: "Rocket launch at dusk",
+      blocks: [
+        {
+          type: "levels",
+          title: "What we cover",
+          groups: [
+            { title: "High school", items: ["Physics"] },
+            { title: "CEGEP", items: ["Mechanics", "Electricity and magnetism", "Waves and modern physics"] },
+          ],
+        },
+        {
+          type: "steps",
+          title: "A method for every problem",
+          steps: [
+            { title: "Understand the situation", body: "Draw a diagram, identify what you are looking for and what you know." },
+            { title: "Pick the right principle", body: "Which law applies, and why." },
+            { title: "Solve and check", body: "The calculations, then the units and the order of magnitude of the result." },
+          ],
+        },
+      ],
+      faq: [
+        { q: "My child is good at math but struggles with physics. Why?", a: "Physics requires translating a concrete problem into equations. It is a skill that can be learned, with a clear method." },
+      ],
+    },
+    {
+      slug: "chimie",
+      label: "Chemistry",
+      summary: "General chemistry and solution chemistry at CEGEP.",
+      metaTitle: "Chemistry tutor at CEGEP",
+      metaDescription: "Chemistry tutoring at CEGEP: general chemistry and solution chemistry, in person on the South Shore or online.",
+      kicker: "Subjects",
+      title: "Chemistry tutoring",
+      intro: "Stoichiometry, equilibria, solutions: we help students master natural science chemistry courses.",
+      image: "/images/site/matiere-chimie.jpg",
+      imageAlt: "Student doing calculations with a calculator",
+      blocks: [
+        {
+          type: "levels",
+          title: "What we cover",
+          groups: [{ title: "CEGEP", items: ["General chemistry", "Solution chemistry"] }],
+        },
+        {
+          type: "text",
+          title: "Our approach",
+          body: "We go back to basic concepts when needed, then practise many exam-style exercises to build speed and confidence.",
+        },
+      ],
+      faq: [
+        { q: "Do you offer high school chemistry?", a: "Our chemistry offering targets CEGEP. For high school, see our science and physics services, or tell us about your needs." },
+      ],
+    },
+    {
+      slug: "programmation",
+      label: "Programming",
+      summary: "High school programming and programming in science at CEGEP.",
+      metaTitle: "Programming tutor, high school and CEGEP",
+      metaDescription: "Programming tutoring for high school students and the CEGEP programming in science course.",
+      kicker: "Subjects",
+      title: "Programming tutoring",
+      intro: "Learning to think like a programmer: break down a problem, write clear code and find your own bugs.",
+      image: "/images/site/matiere-programmation.jpg",
+      imageAlt: "Hands on a keyboard in front of code",
+      blocks: [
+        {
+          type: "levels",
+          title: "What we cover",
+          groups: [
+            { title: "High school", items: ["Programming"] },
+            { title: "CEGEP", items: ["Programming in science"] },
+          ],
+        },
+        {
+          type: "text",
+          title: "Starting from scratch, stress-free",
+          body: "No experience needed. We start from the student's level and move forward step by step, using their own exercises and assignments.",
+        },
+      ],
+      faq: [],
+    },
+    {
+      slug: "francais",
+      label: "French",
+      summary: "High school French, CEGEP French 101, 102 and 103, and EUF preparation.",
+      metaTitle: "French tutor, high school and CEGEP",
+      metaDescription: "French tutoring from Secondary 1 to 5, ministry exams, CEGEP French 101, 102, 103 and uniform French exam preparation.",
+      kicker: "Subjects",
+      title: "French tutoring",
+      intro: "Reading, writing, grammar, analysis: French affects every subject. We help students express themselves clearly and confidently.",
+      image: "/images/site/matiere-francais.jpg",
+      imageAlt: "Open book, pen and coffee on a desk",
+      blocks: [
+        {
+          type: "levels",
+          title: "What we cover",
+          groups: [
+            { title: "Secondary 1 to 5", items: ["Reading and writing", "Grammar and spelling", "Ministry exams"] },
+            { title: "CEGEP", items: ["French 101", "French 102", "French 103", "EUF preparation"] },
+          ],
+        },
+        {
+          type: "text",
+          title: "The uniform French exam",
+          body: "The EUF is required to obtain the college diploma (DEC). We work on the critical essay: understanding the texts, outlining, argumentation and language quality.",
+        },
+      ],
+      faq: [],
+    },
+  ],
+
+  regions: [
+    {
+      slug: "longueuil",
+      label: "Longueuil",
+      summary: "In-home tutoring in every borough, and sessions at our centre.",
+      metaTitle: "Tutor in Longueuil, high school and CEGEP",
+      metaDescription: "In-home tutoring in Le Vieux-Longueuil, Saint-Hubert and Greenfield Park, and at our centre at 1765 Taschereau Boulevard. High school and CEGEP.",
+      kicker: "Areas",
+      title: "Tutoring in Longueuil",
+      intro: "From Le Vieux-Longueuil to Saint-Hubert, our tutors come to your home. You can also visit our Taschereau Boulevard centre.",
+      image: "/images/site/region-longueuil.jpg",
+      imageAlt: "Parents supporting their child at home",
+      hero: "panel",
+      facts: [
+        { icon: "home", label: "In-home", value: "All three boroughs" },
+        { icon: "pin", label: "At the centre", value: CENTER },
+        { icon: "laptop", label: "Online", value: "$30 per hour" },
+      ],
+      blocks: [
+        {
+          type: "chips",
+          title: "All over Longueuil",
+          body: "In-home tutoring is offered in all three of the city's boroughs.",
+          chips: ["Le Vieux-Longueuil", "Saint-Hubert", "Greenfield Park"],
+        },
+        {
+          type: "map",
+          title: "Your centre on the South Shore",
+          body: "Our centre is located on Taschereau Boulevard, the main artery linking Longueuil to the rest of the South Shore.",
+        },
+        {
+          type: "nearby",
+          title: "For local students",
+          intro: "We support students from Longueuil schools and students at the city's CEGEP.",
+          places: [
+            { name: "Longueuil high schools", note: "Math and science (regular and enriched), physics, French, ministry exams." },
+            { name: "Cégep Édouard-Montpetit", note: "Calculus, linear algebra, mechanics, chemistry, cell biology, French 101 to 103 and EUF." },
+          ],
+        },
+      ],
+      faq: [
+        { q: "How much is an in-home tutor in Longueuil?", a: "$45 per hour, or $500 per month with the monthly plan of 12 hours per week. Taxes extra." },
+      ],
+    },
+    {
+      slug: "brossard",
+      label: "Brossard",
+      summary: "A tutor at home or at our centre, on Taschereau Boulevard.",
+      metaTitle: "Tutor in Brossard, high school and CEGEP",
+      metaDescription: "In-home tutoring in Brossard and at our centre on Taschereau Boulevard. Math, science, physics, French, ministry exams and CEGEP.",
+      kicker: "Areas",
+      title: "Tutoring in Brossard",
+      intro: "Taschereau Boulevard runs through Brossard, and our centre is on that same boulevard. Our tutors also come to your home.",
+      image: "/images/site/region-brossard.jpg",
+      imageAlt: "Father helping his son with homework",
+      hero: "panel",
+      facts: [
+        { icon: "school", label: "At the centre", value: CENTER },
+        { icon: "home", label: "In-home", value: "All over Brossard" },
+        { icon: "clock", label: "Intensive plan", value: "12 h per week, $500/month" },
+      ],
+      blocks: [
+        {
+          type: "compare",
+          title: "In Brossard, you have a choice",
+          columns: [
+            {
+              title: "At the centre",
+              icon: "school",
+              tag: "On Taschereau Boulevard",
+              featured: true,
+              items: ["A calm space without home distractions", "Convenient right after school", "$45 per hour or monthly plan"],
+            },
+            {
+              title: "At home",
+              icon: "home",
+              tag: "All over Brossard",
+              items: ["The tutor comes to you", "No travel for your child", "Same rate as the centre"],
+            },
+          ],
+        },
+        {
+          type: "steps",
+          title: "Secondary 4 and 5: exam year",
+          intro: "We prepare Brossard students for ministry exams, in regular and enriched profiles.",
+          steps: [
+            { title: "From the fall", body: "Consolidate the current year's concepts at the class's pace." },
+            { title: "After the holidays", body: "Spot weak points and rework them one by one." },
+            { title: "In the spring", body: "Timed practice exams and detailed corrections." },
+          ],
+        },
+      ],
+      faq: [
+        { q: "My child is at CEGEP. Can you help?", a: "Yes: calculus, linear algebra, mechanics, electricity and magnetism, chemistry, cell biology, French 101 to 103 and EUF preparation." },
+      ],
+    },
+    {
+      slug: "candiac",
+      label: "Candiac",
+      summary: "The tutor comes to you, in Candiac and neighbouring towns.",
+      metaTitle: "In-home tutor in Candiac, high school and CEGEP",
+      metaDescription: "In-home tutoring in Candiac, La Prairie, Delson and Saint-Philippe for high school and CEGEP. Online tutoring also available.",
+      kicker: "Areas",
+      title: "In-home tutoring in Candiac",
+      intro: "In Candiac, the tutor does the travelling. Your child studies at home, at a time that suits you.",
+      image: "/images/site/region-candiac.jpg",
+      imageAlt: "Family reading together at home",
+      hero: "panel",
+      facts: [
+        { icon: "home", label: "Main format", value: "In-home tutoring" },
+        { icon: "laptop", label: "For more flexibility", value: "Online, $30 per hour" },
+        { icon: "pin", label: "Nearby towns", value: "La Prairie, Delson, Saint-Philippe" },
+      ],
+      blocks: [
+        {
+          type: "steps",
+          title: "How in-home tutoring works",
+          steps: [
+            { title: "Book online", body: "Plan, number of hours, subjects and address: it's all in the form." },
+            { title: "We call you", body: "Together we set the days and times that work for your family." },
+            { title: "The tutor arrives", body: "They bring their method; your child gets their notebooks and homework ready." },
+            { title: "You stay informed", body: "Regular updates tell you about progress and what to work on." },
+          ],
+        },
+        {
+          type: "chips",
+          title: "Candiac and surroundings",
+          body: "We also travel to neighbouring towns.",
+          chips: ["Candiac", "La Prairie", "Delson", "Saint-Philippe"],
+        },
+      ],
+      faq: [
+        { q: "How much is an in-home tutor in Candiac?", a: "$45 per hour, or $500 per month with the monthly plan of 12 hours per week. Taxes extra." },
+        { q: "Can we come to the centre from Candiac?", a: "Yes, our centre at 1765 Taschereau Boulevard also welcomes you, at the same rate." },
+      ],
+    },
+    {
+      slug: "saint-constant",
+      label: "Saint-Constant",
+      summary: "In-home and online combined, to fit your family's rhythm.",
+      metaTitle: "Tutor in Saint-Constant, high school and CEGEP",
+      metaDescription: "In-home and online tutoring in Saint-Constant, Sainte-Catherine, Delson and Saint-Mathieu for high school and CEGEP.",
+      kicker: "Areas",
+      title: "Tutoring in Saint-Constant",
+      intro: "At home when possible, online when the schedule is packed. In Saint-Constant, many families combine both.",
+      image: "/images/site/region-saint-constant.jpg",
+      imageAlt: "Family gathered in the living room",
+      hero: "panel",
+      facts: [
+        { icon: "home", label: "In-home", value: "$45 per hour" },
+        { icon: "laptop", label: "Online", value: "$30 per hour" },
+        { icon: "pin", label: "Nearby towns", value: "Sainte-Catherine, Delson, Saint-Mathieu" },
+      ],
+      blocks: [
+        {
+          type: "compare",
+          title: "Combine in-home and online",
+          intro: "Book both types of hours depending on the week.",
+          columns: [
+            {
+              title: "At home",
+              icon: "home",
+              tag: "$45/h",
+              items: ["For difficult concepts and major reviews", "The tutor comes to you", "More structure to keep the pace"],
+            },
+            {
+              title: "Online",
+              icon: "laptop",
+              tag: "$30/h",
+              featured: true,
+              items: ["For the week's homework and questions", "No travel", "More affordable for regular support"],
+            },
+          ],
+        },
+        {
+          type: "price",
+          title: "Example of a combined month",
+          body: "One hour at home and one hour online per week, for four weeks.",
+          offers: [
+            { label: "4 hours at home", value: "$180", detail: "4 × $45" },
+            { label: "4 hours online", value: "$120", detail: "4 × $30" },
+          ],
+          note: `Total of $300 for 8 hours. ${TAX}`,
+        },
+        {
+          type: "chips",
+          title: "Saint-Constant and surroundings",
+          chips: ["Saint-Constant", "Sainte-Catherine", "Delson", "Saint-Mathieu"],
+        },
+      ],
+      faq: [
+        { q: "Are both types of hours booked together?", a: "Each plan is booked separately in the form. Mention in the \"details\" field that you want to combine both." },
+      ],
+    },
+  ],
+
+  about: {
+    slug: "a-propos",
+    label: "About",
+    summary: "Who we are and how we support students.",
+    metaTitle: "About Mentou Academy",
+    metaDescription: "Mentou Academy supports high school and CEGEP students with academic tutoring and personal development, on the South Shore and online.",
+    kicker: "About",
+    title: "Helping students succeed, and grow",
+    intro: "Mentou Academy was born from a conviction: a student who regains confidence also improves their grades.",
+    image: "/images/site/about.jpg",
+    imageAlt: "Students working in a library",
+    blocks: [
+      {
+        type: "statement",
+        text: "Our mission: every student understands their subjects, becomes more independent and builds the confidence that will serve them for life.",
+      },
+      {
+        type: "features",
+        title: "How we work",
+        image: "/images/site/about-travail.jpg",
+        imageAlt: "Student in a work session",
+        items: [
+          { icon: "users", title: "Thoughtful matching", body: "The tutor is chosen for the student's level, subjects and personality." },
+          { icon: "book", title: "The school curriculum", body: "We work on what is covered in class, not a parallel program." },
+          { icon: "spark", title: "Personal development", body: "Confidence, discipline and leadership are part of every session." },
+          { icon: "chat", title: "Parents kept informed", body: "Regular updates on progress and what to work on." },
+        ],
+      },
+      {
+        type: "map",
+        title: "Where to find us",
+        body: "Our centre welcomes students by appointment. We also offer in-home tutoring in Longueuil, Brossard, Candiac, Saint-Constant and throughout Montérégie, and online tutoring everywhere in Québec.",
+      },
+    ],
+    faq: [],
+  },
+};
+
+export default en;

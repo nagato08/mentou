@@ -1,122 +1,120 @@
 "use client";
 
 import { useState } from "react";
+import Icon from "@/components/ui/Icon";
 
-type CommentFormProps = {
-  onSubmit: (name: string, message: string, rating: number) => void;
-  isLoading?: boolean;
+export type CommentLabels = {
+  leave: string;
+  close: string;
+  formTitle: string;
+  listTitle: string;
+  name: string;
+  namePh: string;
+  rating: string;
+  message: string;
+  messagePh: string;
+  submit: string;
+  success: string;
+  moderation: string;
+  more: string;
+  less: string;
+  outOf: string;
 };
 
-export default function CommentForm({
-  onSubmit,
-  isLoading = false,
-}: CommentFormProps) {
+type CommentFormProps = {
+  onSubmit: (name: string, message: string, rating: number) => void | Promise<void>;
+  labels: CommentLabels;
+};
+
+const INPUT =
+  "w-full rounded-xl border border-line bg-white px-4 py-3 text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15";
+
+export default function CommentForm({ onSubmit, labels }: CommentFormProps) {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [rating, setRating] = useState<number>(5);
+  const [rating, setRating] = useState(5);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
-
-    onSubmit(name, message, rating);
+    await onSubmit(name, message, rating);
     setName("");
     setMessage("");
     setRating(5);
     setSubmitted(true);
-
-    // Hide success message after 3s
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => setSubmitted(false), 4000);
   };
 
-  const ratingOptions = [2, 3, 4, 5];
-
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto">
-      {/* Success Message */}
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       {submitted && (
-        <div className="mb-6 p-4 bg-gold/20 border border-gold/50 rounded text-bone text-sm">
-          ✓ Votre commentaire a été reçu. Il sera affiché après modération.
-        </div>
+        <p role="status" className="flex items-center gap-2 rounded-xl bg-success/10 px-4 py-3 text-sm font-semibold text-success">
+          <Icon name="check" className="h-4 w-4" strokeWidth={3} />
+          {labels.success}
+        </p>
       )}
 
-      <div className="space-y-5">
-        {/* Name */}
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm uppercase tracking-widest text-bone/60 mb-2"
-          >
-            Votre nom
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Prénom Nom"
-            className="w-full px-4 py-3 bg-ink/50 border border-bone/10 rounded text-bone placeholder:text-bone/40 focus:outline-none focus:border-gold/50 transition-colors"
-            required
-          />
-        </div>
-
-        {/* Rating */}
-        <div>
-          <label className="block text-sm uppercase tracking-widest text-bone/60 mb-3">
-            Votre évaluation
-          </label>
-          <div className="flex gap-3">
-            {ratingOptions.map((star) => (
-              <button
-                key={star}
-                type="button"
-                onClick={() => setRating(star)}
-                className={`px-4 py-2 rounded border transition-all ${
-                  rating === star
-                    ? "bg-gold text-ink border-gold"
-                    : "bg-ink/50 text-bone/60 border-bone/10 hover:border-gold/50"
-                }`}
-              >
-                <span className="font-semibold">{star}</span>
-                <span className="text-xs ml-1">★</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Message */}
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm uppercase tracking-widest text-bone/60 mb-2"
-          >
-            Votre commentaire
-          </label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Partagez votre expérience avec Groupe Mentou..."
-            rows={4}
-            className="w-full px-4 py-3 bg-ink/50 border border-bone/10 rounded text-bone placeholder:text-bone/40 focus:outline-none focus:border-gold/50 transition-colors resize-none"
-            required
-          />
-        </div>
-
-        {/* Submit */}
-        <button
-          type="submit"
-          disabled={isLoading || !name.trim() || !message.trim()}
-          className="w-full md:w-auto px-6 py-3 bg-gold text-ink font-semibold rounded transition-all hover:bg-gold/90 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Envoyer mon commentaire
-        </button>
+      <div>
+        <label htmlFor="comment-name" className="mb-1.5 block text-sm font-semibold text-ink">
+          {labels.name}
+        </label>
+        <input
+          id="comment-name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder={labels.namePh}
+          className={INPUT}
+          required
+          maxLength={80}
+        />
       </div>
 
-      <p className="mt-4 text-xs text-bone/40">
-        Les commentaires sont modérés avant publication.
-      </p>
+      <fieldset>
+        <legend className="mb-1.5 text-sm font-semibold text-ink">{labels.rating}</legend>
+        <div className="flex gap-1">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              type="button"
+              onClick={() => setRating(star)}
+              aria-label={`${star} ${labels.outOf}`}
+              aria-pressed={rating === star}
+              className={`grid h-11 w-11 place-items-center rounded-lg transition-colors hover:bg-accent-soft ${
+                star <= rating ? "text-accent" : "text-line"
+              }`}
+            >
+              <Icon name="star" className="h-7 w-7" filled strokeWidth={1} />
+            </button>
+          ))}
+        </div>
+      </fieldset>
+
+      <div>
+        <label htmlFor="comment-message" className="mb-1.5 block text-sm font-semibold text-ink">
+          {labels.message}
+        </label>
+        <textarea
+          id="comment-message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder={labels.messagePh}
+          rows={4}
+          className={`${INPUT} resize-none`}
+          required
+          maxLength={1000}
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={!name.trim() || !message.trim()}
+        className="min-h-12 rounded-full bg-primary px-6 font-semibold text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        {labels.submit}
+      </button>
+      <p className="text-xs text-muted">{labels.moderation}</p>
     </form>
   );
 }

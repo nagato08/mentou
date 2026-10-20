@@ -1,5 +1,6 @@
 import type { Dictionary, Locale } from "@/lib/i18n";
-import NavbarClient from "./NavbarClient";
+import { COLLECTION_PATH, getContent, type Collection } from "@/lib/content";
+import NavbarClient, { type NavItem } from "./NavbarClient";
 
 type NavbarProps = {
   lang: Locale;
@@ -8,24 +9,41 @@ type NavbarProps = {
 
 export default function Navbar({ lang, dict }: NavbarProps) {
   const base = `/${lang}`;
-  const items = [
-    { href: base, label: dict.nav.home },
-    { href: `${base}/piliers`, label: dict.nav.pillars },
-    { href: `${base}/vision`, label: dict.nav.vision },
-    { href: `${base}/evenements`, label: dict.nav.events },
-    { href: `${base}/admission`, label: dict.nav.admission },
-    { href: `${base}/galerie`, label: dict.nav.gallery },
+  const c = getContent(lang);
+
+  const group = (collection: Collection, label: string): NavItem => {
+    const hubHref = `${base}/${COLLECTION_PATH[collection]}`;
+    return {
+      href: hubHref,
+      label,
+      children: [
+        ...c[collection].map((p) => ({ href: `${hubHref}/${p.slug}`, label: p.label })),
+        { href: hubHref, label: c.labels.seeAll },
+      ],
+    };
+  };
+
+  const items: NavItem[] = [
+    group("services", c.labels.services),
+    group("subjects", c.labels.subjects),
+    group("regions", c.labels.regions),
+    { href: `${base}/tarifs`, label: c.labels.pricing },
+    { href: `${base}/a-propos`, label: c.labels.about },
     { href: `${base}/contact`, label: dict.nav.contact },
   ];
 
   return (
     <NavbarClient
       lang={lang}
-      ctaLabel={dict.nav.cta}
-      phoneLabel={dict.nav.phone}
-      whatsappLabel={dict.footer.whatsapp}
       items={items}
-      admissionHref={`${base}/contact`}
+      announcement={dict.announcement}
+      labels={{
+        cta: dict.nav.cta,
+        phone: dict.nav.phone,
+        menuOpen: dict.nav.menuOpen,
+        menuClose: dict.nav.menuClose,
+        siteName: dict.meta.siteName,
+      }}
     />
   );
 }

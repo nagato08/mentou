@@ -1,1203 +1,390 @@
 {
   "meta": {
-    "siteName": "Groupe Mentou",
-    "companyName": "Groupe Mentou Inc",
-    "tagline": "Les Piliers des Leaders"
+    "siteName": "Mentou Academy",
+    "companyName": "Groupe Mentou Inc.",
+    "tagline": "Tutorat et développement personnel au Québec",
+    "description": "Tutorat privé du secondaire au cégep, à domicile et à notre centre sur la Rive-Sud (Longueuil, Brossard, Candiac, Saint-Constant) ou en ligne, avec un accompagnement en confiance, discipline et leadership."
   },
   "nav": {
     "home": "Accueil",
-    "pillars": "Les Piliers",
-    "vision": "Vision",
-    "admission": "Admission",
-    "gallery": "Galerie",
+    "services": "Services",
+    "howItWorks": "Fonctionnement",
+    "pricing": "Tarifs",
+    "faq": "FAQ",
     "contact": "Contact",
-    "cta": "Planifier une entrevue",
+    "cta": "Demander un tuteur",
     "phone": "+1 (438) 342-7730",
-    "events": "Événements",
-    "backToTop": "Revenir en haut de la page"
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu",
+    "backToTop": "Revenir en haut de la page",
+    "skipToContent": "Aller au contenu"
   },
+  "announcement": "Tutorat à domicile, au centre et en ligne, du secondaire au cégep, sur la Rive-Sud.",
   "home": {
     "hero": {
-      "kicker": "Programme privé · Québec",
-      "title": "Bâtir les leaders",
-      "titleAccent": "de demain",
-      "subtitle": "Un programme privé qui accompagne les jeunes dans le développement de leur confiance, de leur discipline et de leur leadership.",
-      "highlights": [
-        "Confiance, discipline, leadership",
-        "Tutorat, mentorat, expression"
-      ],
-      "ageBadge": "Québec",
-      "ageLabel": "Programme privé",
-      "primaryCta": "Planifier une entrevue",
-      "secondaryCta": "Découvrir le programme"
-    },
-    "tutorPopup": {
-      "eyebrow": "Tutorat",
-      "title": "Besoin d'un tuteur pour votre enfant ?",
-      "body": "Nos tuteurs accompagnent les jeunes du primaire au cégep, avec rigueur et bienveillance. Découvrez nos formules et nos tarifs.",
-      "cta": "Voir les tarifs",
-      "dismiss": "Plus tard"
-    },
-    "manifesto": {
-      "eyebrow": "Notre approche",
-      "lead": "À",
-      "body": " l'école, on apprend les matières. Chez Groupe Mentou, on apprend à devenir soi. Notre programme réunit tutorat, lecture, expression, mouvement et mentorat dans une même méthode pensée pour aider chaque jeune à révéler sa voix, sa confiance et sa direction.",
-      "quote": "Bien plus qu'un soutien scolaire : un accompagnement complet pour grandir avec assurance.",
-      "quoteAuthor": "L'équipe Groupe Mentou"
-    },
-    "whoItsFor": {
-      "eyebrow": "Pour qui ?",
-      "title": "Pour les jeunes qui ont besoin d'un cadre pour se révéler",
-      "body": "Groupe Mentou s'adresse aux familles qui sentent qu'il y a plus à construire qu'un bulletin : une posture, une voix, une discipline et une direction.",
-      "items": [
-        {
-          "title": "Le jeune brillant mais réservé",
-          "body": "Il comprend vite, mais n'ose pas toujours prendre sa place, poser des questions ou défendre ses idées."
-        },
-        {
-          "title": "L'ado qui manque de structure",
-          "body": "Il a du potentiel, mais a besoin d'habitudes solides, d'un rythme clair et d'adultes qui tiennent le cap avec lui."
-        },
-        {
-          "title": "L'étudiant ambitieux mais dispersé",
-          "body": "Il veut réussir, mais doit apprendre à prioriser, communiquer, s'organiser et transformer son énergie en progression."
-        },
-        {
-          "title": "La famille qui cherche plus qu'un tutorat",
-          "body": "Elle veut un accompagnement global : scolaire, humain, culturel et personnel, dans un environnement exigeant et bienveillant."
-        }
-      ]
-    },
-    "pillars": {
-      "eyebrow": "Le programme",
-      "title": "Sept disciplines, un même fil conducteur",
-      "items": [
-        {
-          "roman": "I",
-          "title": "Tutorat Académique",
-          "lead": "Des bases solides",
-          "body": "Accompagnement scolaire ciblé pour viser le meilleur au secondaire et au collégial, et préparer sereinement la suite des études. Nos tuteurs adaptent chaque séance au rythme et aux besoins du jeune, avec des objectifs clairs et mesurables.",
-          "image": "/images/tutorat.jpeg",
-          "image2": "/images/tutorat1.jpeg",
-          "practice": "Séances ciblées sur les devoirs, les examens et les méthodes d'étude, avec un objectif clair à chaque rencontre.",
-          "signals": [
-            "Travail remis à temps",
-            "Notes suivies sans panique",
-            "Méthode réutilisable seul"
-          ],
-          "outcomes": [
-            "Maîtrise des matières clés",
-            "Méthodes d'étude efficaces",
-            "Confiance en classe",
-            "Préparation collégiale solide"
-          ]
-        },
-        {
-          "roman": "II",
-          "title": "Lecture Stratégique",
-          "lead": "Lire pour comprendre",
-          "body": "Une sélection de livres marquants — finance, habitudes, stratégie, communication — qu'on lit ensemble et qu'on applique au quotidien. Chaque livre devient un outil concret pour penser autrement et agir plus intelligemment.",
-          "image": "/images/lecture.jpeg",
-          "image2": "/images/lecture1.jpeg",
-          "practice": "Lecture guidée, discussion des idées fortes et application concrète dans la vie scolaire, sociale ou familiale.",
-          "signals": [
-            "Résumé clair d'un chapitre",
-            "Idées reliées au quotidien",
-            "Vocabulaire plus précis"
-          ],
-          "outcomes": [
-            "Culture financière de base",
-            "Habitudes de lecture durables",
-            "Vocabulaire et raisonnement élargis",
-            "Pensée stratégique"
-          ]
-        },
-        {
-          "roman": "III",
-          "title": "Causeries Éducatives",
-          "lead": "Prendre la parole",
-          "body": "Des moments d'échange et de débat pour développer la culture générale, la pensée critique et l'aisance à s'exprimer. Le jeune apprend à défendre ses idées, à écouter l'autre et à construire une argumentation solide.",
-          "image": "/images/causerie.jpeg",
-          "image2": "/images/causerie2.jpeg",
-          "practice": "Débats, prises de position courtes et exercices d'écoute pour apprendre à penser avant de répondre.",
-          "signals": [
-            "Opinion mieux structurée",
-            "Écoute sans couper",
-            "Arguments plus nuancés"
-          ],
-          "outcomes": [
-            "Aisance à l'oral",
-            "Arguments structurés",
-            "Écoute active",
-            "Curiosité intellectuelle"
-          ]
-        },
-        {
-          "roman": "IV",
-          "title": "L'Art du Sketch",
-          "lead": "Oser s'exprimer",
-          "body": "Improvisation et petites scènes pour gagner en confiance, poser sa voix et apprivoiser le regard des autres. À travers le jeu, le jeune développe une présence naturelle et apprend à être à l'aise dans toutes les situations sociales.",
-          "image": "/images/causerie1.jpeg",
-          "image2": "/images/sketch2.jpeg",
-          "practice": "Improvisations, scènes courtes et exercices de voix pour apprivoiser le regard des autres par le jeu.",
-          "signals": [
-            "Voix plus posée",
-            "Moins d'évitement",
-            "Présence plus assumée"
-          ],
-          "outcomes": [
-            "Confiance sur scène",
-            "Présence naturelle",
-            "Maîtrise de l'improvisation",
-            "Gestion du stress social"
-          ]
-        },
-        {
-          "roman": "V",
-          "title": "Danse & Présence",
-          "lead": "Se tenir debout",
-          "body": "Travailler la posture, le rythme et le langage du corps pour se sentir bien dans sa peau et inspirer naturellement confiance. La danse enseigne que le corps est le premier vecteur du leadership — avant même les mots.",
-          "image": "/images/danse.jpeg",
-          "image2": "/images/danse1.jpeg",
-          "practice": "Travail du rythme, de la posture et de la coordination pour développer une présence physique plus confiante.",
-          "signals": [
-            "Posture plus ouverte",
-            "Meilleure coordination",
-            "Image de soi renforcée"
-          ],
-          "outcomes": [
-            "Posture et maintien assurés",
-            "Conscience corporelle",
-            "Rythme et coordination",
-            "Image de soi positive"
-          ]
-        },
-        {
-          "roman": "VI",
-          "title": "Maîtrise Musicale",
-          "lead": "Apprendre à se concentrer",
-          "body": "L'apprentissage d'un instrument renforce la patience, l'écoute et la capacité à progresser un peu chaque jour. La musique apprend une vérité fondamentale : la discipline constante produit des résultats extraordinaires.",
-          "image": "/images/musique.jpeg",
-          "image2": "/images/musique1.jpeg",
-          "practice": "Apprentissage progressif d'un instrument ou d'un exercice musical pour entraîner concentration, patience et régularité.",
-          "signals": [
-            "Pratique plus régulière",
-            "Attention prolongée",
-            "Persévérance visible"
-          ],
-          "outcomes": [
-            "Discipline quotidienne",
-            "Concentration prolongée",
-            "Sensibilité artistique",
-            "Persévérance face à la difficulté"
-          ]
-        },
-        {
-          "roman": "VII",
-          "title": "Mentorat & Culture",
-          "lead": "Être bien entouré",
-          "body": "Un accompagnement personnel pour clarifier ses objectifs, et une ouverture sur les cultures du monde pour grandir avec curiosité et respect. Un mentor, c'est quelqu'un qui a déjà tracé un chemin et qui aide à en trouver un, à soi.",
-          "image": "/images/mentorat.jpeg",
-          "image2": "/images/mentorat1.jpeg",
-          "practice": "Échanges guidés, objectifs personnels et découvertes culturelles pour aider le jeune à nommer ce qu'il veut construire.",
-          "signals": [
-            "Objectifs plus clairs",
-            "Décisions plus réfléchies",
-            "Ouverture aux autres"
-          ],
-          "outcomes": [
-            "Clarté sur ses objectifs de vie",
-            "Réseau de pairs solides",
-            "Ouverture culturelle",
-            "Vision à long terme"
-          ]
-        }
-      ]
-    },
-    "programRhythm": {
-      "eyebrow": "Concrètement",
-      "title": "Une semaine chez Groupe Mentou",
-      "body": "Le programme combine travail académique, expression, culture et mentorat dans un rythme clair. Chaque activité sert un objectif visible : mieux apprendre, mieux parler, mieux se tenir, mieux choisir.",
-      "facts": [
-        {
-          "label": "Rythme",
-          "value": "12–15 h",
-          "note": "Un volume hebdomadaire pensé pour progresser sans écraser l'école, la famille et les autres engagements."
-        },
-        {
-          "label": "Cohortes",
-          "value": "8–12",
-          "note": "Des groupes volontairement réduits pour garder un suivi humain et une vraie qualité d'échange."
-        },
-        {
-          "label": "Formats",
-          "value": "Ateliers",
-          "note": "Tutorat, lecture, prise de parole, mouvement, musique et mentorat alternent selon le parcours."
-        },
-        {
-          "label": "Suivi",
-          "value": "Parents",
-          "note": "Les familles restent impliquées avec des points d'échange et des repères concrets sur l'évolution du jeune."
-        }
-      ]
-    },
-    "transformation": {
-      "eyebrow": "Le parcours",
-      "title": "Ce qui change, chez ceux qui passent par Groupe Mentou",
-      "pairs": [
-        {
-          "before": "Timide",
-          "after": "Charismatique"
-        },
-        {
-          "before": "Passif",
-          "after": "Stratège"
-        },
-        {
-          "before": "Désorganisé",
-          "after": "Discipliné"
-        },
-        {
-          "before": "Bonnes notes",
-          "after": "Vision globale"
-        },
-        {
-          "before": "Hésitant",
-          "after": "Affirmé"
-        }
-      ]
-    },
-    "divisions": {
-      "eyebrow": "Deux divisions",
-      "title": "Un parcours adapté à chaque étape",
-      "junior": {
-        "label": "Cohorte Junior",
-        "headline": "Prendre confiance et trouver son rythme",
-        "points": [
-          "Vaincre la timidité",
-          "Installer la discipline",
-          "Sécuriser le secondaire",
-          "Éveil aux arts de la scène"
-        ]
-      },
-      "senior": {
-        "label": "Cohorte Senior",
-        "headline": "Construire son projet et sa direction",
-        "points": [
-          "Maximiser la Cote R",
-          "Maîtriser la négociation",
-          "Pitch et stratégie",
-          "Réseau de mentors établis"
-        ]
-      }
-    },
-    "testimonials": {
-      "eyebrow": "Ils en parlent",
-      "title": "Ce que disent les familles",
-      "items": [
-        {
-          "quote": "En quelques mois, mon fils a complètement changé. Il ose s'exprimer, il s'intéresse à de nouvelles choses, il a trouvé sa place. Groupe Mentou lui a donné un cadre qu'il ne savait pas qu'il cherchait.",
-          "author": "Marie L.",
-          "role": "Maman de Léo, 14 ans",
-          "rating": 4
-        },
-        {
-          "quote": "L'approche est rigoureuse mais profondément humaine. Mes deux ados y vont avec plaisir et reviennent grandis chaque semaine. C'est rare et précieux.",
-          "author": "Karim D.",
-          "role": "Papa de Yasmine et Adam",
-          "rating": 4
-        },
-        {
-          "quote": "Avant Groupe Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch et les causeries m'ont vraiment débloqué.",
-          "author": "Sophia",
-          "role": "Élève, 17 ans",
-          "rating": 5
-        }
-      ]
-    },
-    "parentsCircle": {
-      "eyebrow": "Avec les familles",
-      "title": "Un programme qui rassemble aussi les parents",
-      "body": "Des moments d'échange et de partage entre parents, jeunes et intervenants. Parce que la confiance se construit ensemble, et qu'un bon entourage fait toute la différence.",
+      "kicker": "Tutorat privé au Québec",
+      "title": "Un tuteur qualifié pour votre enfant,",
+      "titleAccent": "et un mentor pour sa confiance.",
+      "subtitle": "Mentou Academy accompagne les élèves du secondaire et du cégep dans leurs matières scolaires et dans le développement de leur confiance, de leur discipline et de leur leadership.",
+      "primaryCta": "Demander un tuteur",
+      "secondaryCta": "Voir les tarifs",
       "points": [
-        "Rencontres parents-enfants",
-        "Spectacles et présentations",
-        "Communauté d'entraide"
-      ]
-    },
-    "admission": {
-      "eyebrow": "Rejoindre Groupe Mentou",
-      "title": "Un parcours sur mesure, en quatre étapes",
-      "body": "On prend le temps de rencontrer chaque jeune et chaque famille pour construire un accompagnement vraiment adapté.",
-      "steps": [
-        {
-          "n": "01",
-          "label": "Premier contact"
-        },
-        {
-          "n": "02",
-          "label": "Rencontre d'échange"
-        },
-        {
-          "n": "03",
-          "label": "Plan personnalisé"
-        },
-        {
-          "n": "04",
-          "label": "Intégration en cohorte"
-        }
+        "En ligne dès 30 $/h",
+        "En présentiel dès 45 $/h",
+        "Paiement sécurisé en ligne"
       ],
-      "cta": "Planifier une entrevue",
-      "secondaryCta": "Voir le processus",
-      "reassurance": "Premier appel sans engagement · réponse rapide"
+      "imageAlt": "Élève en séance de tutorat en ligne avec sa tutrice",
+      "cardTitle": "Tutorat + développement personnel",
+      "cardBody": "Des notes qui remontent et un enfant qui reprend confiance."
     },
-    "espritGroupe": {
-      "eyebrow": "Les Piliers du Groupe",
-      "title": "L'excellence,",
-      "titleAccent": "notre héritage.",
-      "pillars": [
-        {
-          "index": "01",
-          "title": "Leadership & Excellence Éducative",
-          "body": "Un mentorat rigoureux pour forger des esprits stratégiques et une soif d'apprendre constante."
-        },
-        {
-          "index": "02",
-          "title": "Développement Personnel & Savoir",
-          "body": "L'éveil de l'esprit par la lecture et la discussion de livres marquants. Nous cultivons la réflexion critique, l'éloquence et la connaissance de soi."
-        },
-        {
-          "index": "03",
-          "title": "Héritage Culturel & Prestige",
-          "body": "Réappropriation de notre identité à travers des projets créatifs de haute facture et la valorisation de nos textiles traditionnels. Nous portons notre héritage comme un étendard de distinction."
-        },
-        {
-          "index": "04",
-          "title": "Événements & Solidarité",
-          "body": "Notre force se manifeste dans l'action. À travers nos Galas de Prestige, nos tournois sportifs et nos rencontres communautaires, nous célébrons notre vitalité et créons des espaces d'excellence partagée."
-        }
-      ],
-      "esprit": {
-        "eyebrow": "Esprit du Groupe",
-        "body": "Ici, l'élégance est une posture et l'ambition une obligation. Nous ne nous contentons pas de réussir ; nous nous construisons avec rigueur et fierté.",
-        "quote": "On ne naît pas leader, on se construit en honorant ce qui nous a précédés."
-      }
-    }
-  },
-  "pillars": {
-    "title": "Les Sept Piliers",
-    "subtitle": "Chaque pilier développe une dimension essentielle du leadership.",
-    "practiceLabel": "En atelier",
-    "signalsLabel": "Signes de progression",
-    "outcomesLabel": "Ce que le jeune développe",
-    "engagement": {
-      "eyebrow": "Notre engagement",
-      "title": "Un cadre exigeant, jamais impersonnel",
-      "body": "Les piliers ne sont pas des activités isolées. Ils forment un parcours suivi, où chaque jeune est observé, encouragé et responsabilisé avec constance.",
+    "subjects": {
+      "label": "Matières populaires",
+      "items": ["Mathématiques", "Physique", "Chimie", "Sciences", "Français"]
+    },
+    "signs": {
+      "eyebrow": "Les signes qui ne trompent pas",
+      "title": "Votre enfant a peut-être besoin d'un coup de pouce",
       "items": [
         {
-          "title": "Suivre chaque progression",
-          "body": "Nous portons attention aux petites victoires : une prise de parole, une routine tenue, un effort répété, une décision plus mature."
+          "title": "Les notes baissent",
+          "body": "Les résultats glissent d'une étape à l'autre et les devoirs deviennent une source de tension à la maison."
         },
         {
-          "title": "Tenir un niveau d'exigence",
-          "body": "Groupe Mentou encourage, mais ne surprotège pas. Le jeune apprend à respecter ses engagements et à se dépasser sans se perdre."
+          "title": "La motivation s'effrite",
+          "body": "Il repousse ses travaux, décroche en classe et ne voit plus pourquoi il ferait des efforts."
         },
         {
-          "title": "Impliquer la famille",
-          "body": "Les parents restent des alliés du parcours. Ils comprennent ce qui évolue et comment soutenir le jeune hors des séances."
-        }
-      ],
-      "note": "Le but n'est pas de remplir un horaire. Le but est de bâtir une trajectoire."
-    }
-  },
-  "vision": {
-    "kicker": "Notre raison d'être",
-    "title": "L'école enseigne.",
-    "titleAccent": "Groupe Mentou forge.",
-    "subtitle": "Groupe Mentou n'est pas un soutien scolaire. C'est une école parallèle, intime et exigeante, qui prépare la prochaine génération de leaders québécois.",
-    "image": "/images/vision-hero.jpg",
-    "manifesto": {
-      "eyebrow": "Le constat",
-      "title": "Les jeunes d'aujourd'hui ont besoin d'autre chose",
-      "body": "L'école apprend à répondre. Groupe Mentou apprend à questionner. L'école valide une grille. Groupe Mentou révèle une voix. Nous croyons qu'au-delà des bulletins, ce qui distingue un futur leader, c'est sa capacité à se tenir debout, à penser par lui-même, et à transformer ses idées en actions concrètes.",
-      "quote": "Nous ne formons pas des élèves modèles. Nous accompagnons des jeunes qui veulent vivre une vie qui leur ressemble.",
-      "author": "Fondateur, Groupe Mentou"
-    },
-    "principles": {
-      "eyebrow": "Les principes",
-      "title": "Quatre convictions qui guident notre approche",
-      "items": [
-        {
-          "n": "01",
-          "title": "La confiance se construit",
-          "body": "Personne ne naît leader. La confiance vient des petits combats gagnés contre soi-même, jour après jour."
-        },
-        {
-          "n": "02",
-          "title": "L'environnement façonne",
-          "body": "On devient ce qu'on côtoie. C'est pourquoi nous construisons un cercle de pairs ambitieux et bienveillants."
-        },
-        {
-          "n": "03",
-          "title": "La discipline libère",
-          "body": "Sans rigueur, le talent stagne. Avec elle, le potentiel se déploie pleinement."
-        },
-        {
-          "n": "04",
-          "title": "Le mentorat change tout",
-          "body": "Avoir quelqu'un qui croit en soi, qui voit plus loin que soi, c'est un cadeau qui transforme une trajectoire."
+          "title": "La confiance vacille",
+          "body": "Il doute de lui, n'ose plus poser de questions et se décourage devant la moindre difficulté."
         }
       ]
     },
-    "method": {
-      "eyebrow": "La méthode",
-      "title": "Une pédagogie pensée comme un atelier",
-      "image": "/images/vision-method.jpg",
-      "steps": [
-        {
-          "label": "Observer",
-          "body": "Comprendre qui est le jeune, ce qu'il vit, ce qu'il rêve, ce qu'il évite."
-        },
-        {
-          "label": "Stimuler",
-          "body": "Proposer des défis adaptés, ni trop faciles, ni écrasants, pour faire grandir."
-        },
-        {
-          "label": "Encadrer",
-          "body": "Être présent dans la durée, célébrer les progrès, accompagner les chutes."
-        },
-        {
-          "label": "Libérer",
-          "body": "Laisser le jeune voler de ses propres ailes une fois la confiance ancrée."
-        }
-      ]
-    },
-    "founder": {
-      "eyebrow": "Le fondateur",
-      "title": "Un projet né d'une conviction profonde",
-      "name": "Richard, fondateur de Groupe Mentou",
-      "role": "Mentor, bâtisseur de cadre et accompagnateur de jeunes talents",
-      "body": "Groupe Mentou est né d'une observation simple : beaucoup de jeunes ont du potentiel, mais trop peu d'espaces pour apprendre à l'habiter pleinement. Richard a voulu créer un lieu où l'on travaille les notes, oui, mais aussi la voix, la posture, la discipline et la vision.",
-      "journey": {
-        "title": "Son parcours",
+    "services": {
+      "eyebrow": "Notre accompagnement",
+      "title": "Deux expertises, un seul objectif : la réussite de votre enfant",
+      "intro": "Chez Mentou Academy, on ne se limite pas aux matières. On aide aussi l'élève à devenir plus autonome, plus organisé et plus sûr de lui.",
+      "tutoring": {
+        "title": "Tutorat scolaire",
+        "body": "Un suivi personnalisé dans les matières où votre enfant a besoin d'aide, au rythme de son programme.",
         "items": [
-          "Accompagner des jeunes dans leurs défis scolaires, personnels et sociaux.",
-          "Observer le besoin d'un cadre plus complet que le tutorat classique.",
-          "Construire une méthode qui relie exigence, culture, expression et mentorat."
-        ]
+          "Aide aux devoirs et compréhension des notions",
+          "Préparation aux examens et aux évaluations",
+          "Rattrapage et remise à niveau",
+          "Méthodes de travail et d'étude"
+        ],
+        "imageAlt": "Élève qui fait ses devoirs avec ses cahiers et son ordinateur"
       },
-      "why": {
-        "title": "Pourquoi Groupe Mentou ?",
-        "body": "Parce qu'un jeune ne manque pas toujours de capacité. Il lui manque parfois un cercle, un rythme, une parole adulte constante et un endroit où il peut essayer, tomber, recommencer et devenir plus solide."
-      },
-      "quote": "J'ai créé Groupe Mentou pour offrir aux jeunes ce que j'aurais aimé recevoir plus tôt : un cadre exigeant, humain, et des adultes qui voient plus loin que le bulletin.",
-      "signature": "Richard",
-      "image": "/images/vision-pdg.jpg",
-      "imageAlt": "Portrait du fondateur de Groupe Mentou"
+      "growth": {
+        "title": "Développement personnel",
+        "body": "Des compétences qui servent à l'école et bien au-delà : la confiance, la discipline et le leadership.",
+        "items": [
+          "Confiance et estime de soi",
+          "Discipline, organisation et gestion du temps",
+          "Prise de parole et communication",
+          "Leadership et sens des responsabilités"
+        ],
+        "imageAlt": "Groupe de jeunes qui travaillent ensemble devant un tableau blanc"
+      }
     },
-    "cta": {
-      "title": "Prêt à rejoindre l'aventure ?",
-      "body": "Échangeons sur le parcours de votre enfant.",
-      "label": "Planifier une entrevue"
-    }
-  },
-  "admission": {
-    "kicker": "Rejoindre Groupe Mentou",
-    "title": "Une admission qui prend",
-    "titleAccent": "le temps de bien faire",
-    "subtitle": "Nous accueillons un nombre limité de jeunes chaque année pour garantir la qualité de l'accompagnement. Le processus se déroule sur quelques semaines, sans précipitation.",
-    "image": "/images/admission-hero.jpg",
-    "process": {
-      "eyebrow": "Le processus",
-      "title": "Quatre étapes, du premier contact à l'intégration",
-      "steps": [
-        {
-          "n": "01",
-          "label": "Premier contact",
-          "duration": "15 min",
-          "body": "Un appel téléphonique pour comprendre vos attentes, présenter le programme et vérifier que Groupe Mentou correspond à votre projet familial."
-        },
-        {
-          "n": "02",
-          "label": "Rencontre d'échange",
-          "duration": "1h",
-          "body": "Un entretien privé avec le jeune et ses parents. C'est le moment de poser toutes les questions et de sentir si le courant passe — dans les deux sens."
-        },
-        {
-          "n": "03",
-          "label": "Plan personnalisé",
-          "duration": "1 semaine",
-          "body": "Nous construisons un plan d'accompagnement sur mesure, basé sur les forces, les défis et les objectifs identifiés ensemble."
-        },
-        {
-          "n": "04",
-          "label": "Intégration en cohorte",
-          "duration": "Sur la durée",
-          "body": "Le jeune rejoint sa cohorte (Junior ou Senior) et commence son parcours dans les sept disciplines de Groupe Mentou."
-        }
-      ]
-    },
-    "clarity": {
-      "eyebrow": "Avant de s'engager",
-      "title": "Ce que vous saurez clairement",
-      "body": "L'admission sert autant à vous informer qu'à nous assurer que Groupe Mentou est le bon cadre pour votre jeune.",
+    "formats": {
+      "eyebrow": "Formats",
+      "title": "En présentiel ou en ligne, selon vos besoins",
       "items": [
         {
-          "title": "Le rythme recommandé",
-          "body": "Nous précisons le volume d'activités, les disponibilités et la meilleure façon d'intégrer Groupe Mentou à la semaine du jeune."
+          "title": "En présentiel",
+          "body": "À domicile sur la Rive-Sud ou à notre centre du 1765, boulevard Taschereau. Idéal pour les élèves qui ont besoin d'un cadre.",
+          "price": "45 $/h ou 500 $/mois"
         },
         {
-          "title": "Les priorités du parcours",
-          "body": "Confiance, méthode, expression, discipline ou projet d'avenir : chaque plan commence par des objectifs simples."
-        },
-        {
-          "title": "Le rôle des parents",
-          "body": "Vous savez comment vous serez informés, impliqués et accompagnés tout au long de la progression."
-        },
-        {
-          "title": "Les conditions pratiques",
-          "body": "Frais, calendrier, places disponibles et prochaine cohorte sont présentés avant toute décision."
+          "title": "En ligne",
+          "body": "Des séances en visioconférence, flexibles et efficaces, où que vous soyez au Québec.",
+          "price": "30 $/h"
         }
       ]
+    },
+    "howItWorks": {
+      "eyebrow": "Comment ça fonctionne",
+      "title": "Commencer est simple",
+      "steps": [
+        {
+          "title": "Vous réservez en ligne",
+          "body": "Choisissez votre formule et le nombre d'heures, puis réglez en toute sécurité par carte."
+        },
+        {
+          "title": "On fait connaissance",
+          "body": "Un membre de l'équipe vous contacte pour comprendre les besoins, les objectifs et l'horaire de votre enfant."
+        },
+        {
+          "title": "On jumelle votre enfant",
+          "body": "Nous choisissons un tuteur adapté à son niveau, à ses matières et à sa personnalité."
+        },
+        {
+          "title": "On suit ses progrès",
+          "body": "Les séances commencent et nous ajustons l'accompagnement en restant en contact avec vous."
+        }
+      ],
+      "cta": "Commencer maintenant"
     },
     "pricing": {
-      "eyebrow": "Tarification",
-      "title": "Investissement transparent",
+      "eyebrow": "Tarifs",
+      "title": "Des tarifs clairs, sans surprise",
+      "intro": "Choisissez la formule qui convient à votre enfant. Les heures se réservent et se paient directement en ligne.",
+      "perHour": "/ heure",
+      "perMonth": "/ mois",
+      "popular": "Meilleure valeur",
+      "cta": "Choisir cette formule",
+      "taxNote": "Taxes applicables (TPS et TVQ) ajoutées au moment du paiement. Paiement sécurisé par Stripe.",
+      "plans": {
+        "monthly": {
+          "name": "Forfait mensuel",
+          "mode": "En présentiel",
+          "description": "L'accompagnement complet pour progresser chaque semaine.",
+          "features": [
+            "12 heures par semaine",
+            "Tutorat et développement personnel",
+            "Suivi régulier avec les parents",
+            "Abonnement facturé chaque mois"
+          ]
+        },
+        "inperson-hourly": {
+          "name": "Présentiel à l'heure",
+          "mode": "En présentiel",
+          "description": "Des séances en personne, à la carte.",
+          "features": [
+            "Vous choisissez le nombre d'heures",
+            "Tuteur adapté au niveau de l'élève",
+            "Idéal pour un besoin ponctuel",
+            "Paiement unique"
+          ]
+        },
+        "online-hourly": {
+          "name": "En ligne à l'heure",
+          "mode": "En ligne",
+          "description": "La flexibilité du tutorat à distance.",
+          "features": [
+            "Vous choisissez le nombre d'heures",
+            "Séances en visioconférence",
+            "Partout au Québec",
+            "Paiement unique"
+          ]
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Pourquoi Mentou Academy",
+      "title": "Un accompagnement humain, pensé pour les familles",
       "items": [
         {
-          "period": "Par jour",
-          "price": 75,
-          "description": "Accès complet aux 7 piliers pour une journée",
-          "secondary": "Idéal pour : découverte ou journée ponctuelle",
-          "featured": false,
-          "offer": "daily"
+          "title": "Un jumelage réfléchi",
+          "body": "Chaque élève est jumelé à un tuteur choisi selon son niveau, ses matières et sa personnalité."
         },
         {
-          "period": "Par semaine",
-          "price": 150,
-          "description": "Accès complet aux 7 piliers par semaine",
-          "secondary": "Idéal pour : essai ou engagement court terme",
-          "featured": false,
-          "offer": "weekly"
+          "title": "Plus que des notes",
+          "body": "On travaille aussi la confiance, la discipline et l'autonomie, pour des progrès qui durent."
         },
         {
-          "period": "Par mois",
-          "price": 500,
-          "description": "Accès complet aux 7 piliers pour un mois",
-          "secondary": "Idéal pour : engagement sérieux et économies",
-          "featured": true,
-          "offer": "monthly"
-        }
-      ],
-      "paymentMethods": {
-        "label": "Modes de paiement acceptés",
-        "methods": [
-          "Carte de crédit (Visa, Mastercard, Amex)",
-          "PayPal",
-          "Sur place"
-        ]
-      },
-      "cta": "Choisir cette offre"
-    },
-    "eligibility": {
-      "eyebrow": "Pour qui ?",
-      "title": "Groupe Mentou s'adresse à des jeunes motivés et leurs familles",
-      "image": "/images/admission-meeting.jpg",
-      "criteria": [
-        "Jeunes résidant au Québec",
-        "Famille engagée dans le parcours de son enfant",
-        "Volonté de grandir au-delà du strict cadre scolaire",
-        "Curiosité, ouverture, envie de se dépasser"
-      ],
-      "note": "Aucune sélection sur les notes. Nous cherchons l'envie, pas la perfection.",
-      "profiles": [
-        {
-          "title": "Cohorte Junior",
-          "body": "Pour installer la confiance, la discipline, l'aisance à l'oral et les bases scolaires au bon moment."
+          "title": "Les parents dans la boucle",
+          "body": "Vous savez où en est votre enfant et ce sur quoi il travaille."
         },
         {
-          "title": "Cohorte Senior",
-          "body": "Pour clarifier un projet, gagner en autonomie, améliorer la méthode et préparer les prochaines étapes."
+          "title": "Du secondaire au cégep",
+          "body": "Du secondaire 1 au cégep, profils régulier et enrichi, jusqu'aux cours de sciences de la nature."
+        },
+        {
+          "title": "En ligne ou en présentiel",
+          "body": "Vous choisissez le format qui convient le mieux à votre enfant et à votre horaire."
+        },
+        {
+          "title": "Simple et sécurisé",
+          "body": "Réservation et paiement en ligne en quelques minutes, par carte, via Stripe."
         }
       ]
+    },
+    "testimonials": {
+      "eyebrow": "Témoignages",
+      "title": "Ce que les familles en disent"
     },
     "faq": {
       "eyebrow": "Questions fréquentes",
-      "title": "Ce que les familles nous demandent souvent",
+      "title": "Vous avez des questions ?",
       "items": [
         {
-          "q": "Groupe Mentou remplace-t-il l'école ?",
-          "a": "Non. Groupe Mentou complète l'école. Notre programme se déroule en parallèle, généralement en fin de journée, le soir et le week-end."
+          "q": "Quels niveaux scolaires accompagnez-vous ?",
+          "a": "Nous accompagnons les élèves du secondaire (1 à 5, profils régulier et enrichi) et du cégep."
         },
         {
-          "q": "Combien de jeunes par cohorte ?",
-          "a": "Nos cohortes sont volontairement réduites — entre 8 et 12 jeunes — pour garantir un suivi personnalisé et une vraie qualité d'interaction."
+          "q": "Dans quelles matières offrez-vous du tutorat ?",
+          "a": "Au secondaire : mathématiques et sciences (régulier et enrichi), physique, programmation, français et préparation aux examens du ministère de secondaire 4 et 5. Au cégep : calcul différentiel et intégral, algèbre linéaire, probabilités et statistiques, mécanique, électricité et magnétisme, ondes et physique moderne, chimie générale et des solutions, biologie cellulaire, programmation en sciences, français 101, 102, 103 et préparation à l'EUF."
         },
         {
-          "q": "Quel est l'engagement attendu ?",
-          "a": "Un engagement annuel, avec environ 4 à 6 heures par semaine d'activités structurées. La régularité prime sur l'intensité."
+          "q": "Que comprend le forfait mensuel à 500 $ ?",
+          "a": "Le forfait mensuel comprend 12 heures d'accompagnement par semaine en présentiel, qui combinent tutorat scolaire et développement personnel. Il est facturé automatiquement chaque mois."
         },
         {
-          "q": "Y a-t-il des frais ?",
-          "a": "Oui. Groupe Mentou est un programme privé. Les frais sont discutés lors de la rencontre d'échange et adaptés aux situations. Des bourses peuvent être attribuées."
+          "q": "Quelle est la différence entre le présentiel et le tutorat en ligne ?",
+          "a": "Le contenu et la qualité de l'accompagnement sont les mêmes. En présentiel, le tuteur est aux côtés de l'élève (45 $/h). En ligne, la séance se fait par visioconférence (30 $/h)."
         },
         {
-          "q": "Quand commencent les cohortes ?",
-          "a": "Nous accueillons les nouveaux jeunes en septembre principalement, avec quelques intégrations en cours d'année selon les places."
+          "q": "Comment fonctionne le paiement à l'heure ?",
+          "a": "Vous choisissez le nombre d'heures souhaité dans le formulaire, puis vous payez en ligne par carte. Les taxes applicables sont ajoutées au moment du paiement."
+        },
+        {
+          "q": "Que se passe-t-il après mon paiement ?",
+          "a": "Vous recevez une confirmation par courriel et un membre de l'équipe vous contacte pour planifier les séances et jumeler votre enfant avec le bon tuteur."
+        },
+        {
+          "q": "Mon enfant n'a pas de difficulté particulière. Le tutorat peut-il quand même l'aider ?",
+          "a": "Oui. Le tutorat et le développement personnel aident aussi les élèves qui veulent viser plus haut, mieux s'organiser ou gagner en assurance."
         }
       ]
     },
-    "cta": {
-      "title": "Commencer le processus",
-      "body": "Premier appel sans engagement. On se présente, on échange, on voit si l'aventure vous correspond.",
-      "label": "Planifier une entrevue",
-      "secondary": "Nous écrire"
-    },
-    "eventPricing": {
-      "eyebrow": "Tournoi des Nations Africaines",
-      "title": "Tarifs du",
-      "titleAccent": "tournoi",
-      "subtitle": "Un terrain, plusieurs nations, une seule fierté. La date et le lieu seront annoncés prochainement.",
-      "cta": "S'inscrire",
-      "ctaClosed": "Inscriptions bientôt ouvertes",
-      "closedNotice": "Les inscriptions au tournoi ne sont pas encore ouvertes. Les tarifs ci-dessous sont confirmés — écrivez-nous pour être prévenu dès l'ouverture.",
-      "closedCta": "Être prévenu de l'ouverture",
-      "items": [
-        {
-          "offer": "event-player",
-          "role": "Joueur",
-          "price": 90,
-          "description": "Participation au tournoi de football.",
-          "perks": [
-            "Maillot de match",
-            "Trophée + voyage en chalet pour l'équipe gagnante",
-            "Tous frais payés"
-          ],
-          "featured": true
-        },
-        {
-          "offer": "event-spectator",
-          "role": "Spectateur",
-          "price": 55,
-          "description": "Accès à la journée de tournoi.",
-          "perks": [
-            "Entrée à la journée",
-            "Boisson comprise",
-            "Ambiance et animations"
-          ],
-          "featured": false
-        }
-      ]
+    "finalCta": {
+      "title": "Prêt à aider votre enfant à reprendre confiance ?",
+      "body": "Réservez vos premières heures en ligne. Nous vous contactons ensuite pour planifier les séances.",
+      "primary": "Demander un tuteur",
+      "secondary": "Nous appeler"
     }
   },
-  "gallery": {
-    "kicker": "L'univers Groupe Mentou",
-    "title": "Des instants,",
-    "titleAccent": "des regards, des élans",
-    "subtitle": "La galerie rassemble des moments forts du programme — apprentissages, créations, ateliers, scènes et conversations.",
-    "filters": {
-      "all": "Tout voir",
-      "etude": "Étude",
-      "lecture": "Lecture",
-      "parole": "Parole",
-      "scene": "Scène",
-      "danse": "Danse",
-      "musique": "Musique",
-      "portraits": "Portraits"
+  "request": {
+    "metaTitle": "Demander un tuteur",
+    "kicker": "Demander un tuteur",
+    "title": "Trouvons le bon tuteur pour votre enfant",
+    "subtitle": "Choisissez votre formule, remplissez le formulaire et réglez en ligne. Nous vous contactons ensuite pour planifier les séances.",
+    "trust": [
+      "Paiement sécurisé par Stripe",
+      "Confirmation par courriel",
+      "Un tuteur adapté à votre enfant"
+    ],
+    "canceled": "Le paiement a été annulé. Vos informations n'ont pas été débitées, vous pouvez réessayer quand vous voulez.",
+    "steps": {
+      "plan": "1. Choisissez votre formule",
+      "parent": "2. Vos coordonnées",
+      "student": "3. L'élève",
+      "address": "4. Adresse",
+      "extra": "5. Pour mieux vous accompagner"
     },
-    "items": [
-      {
-        "src": "/images_galerie/tutorat.jpeg",
-        "alt": "Séance de tutorat",
-        "category": "etude",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-4145190.jpg",
-        "alt": "Concentration en étude",
-        "category": "etude",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/lecture.jpeg",
-        "alt": "Temps de lecture",
-        "category": "lecture",
-        "span": "tall"
-      },
-      {
-        "src": "/images/gallery/g-590493.jpg",
-        "alt": "Page tournée",
-        "category": "lecture",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/causerie.jpeg",
-        "alt": "Causerie ouverte",
-        "category": "parole",
-        "span": "tall"
-      },
-      {
-        "src": "/images/gallery/g-1741230.jpg",
-        "alt": "Lecture concentrée",
-        "category": "lecture",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/image3.jpg",
-        "alt": "Échange en groupe",
-        "category": "parole",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-1181467.jpg",
-        "alt": "Sélection de livres",
-        "category": "lecture",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-3184639.jpg",
-        "alt": "Échange en groupe",
-        "category": "parole",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/image.jpg",
-        "alt": "Sur scène ensemble",
-        "category": "scene",
-        "span": "wide"
-      },
-      {
-        "src": "/images/gallery/g-3771074.jpg",
-        "alt": "Tutorat individuel",
-        "category": "etude",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/danse.jpeg",
-        "alt": "Énergie en mouvement",
-        "category": "danse",
-        "span": "tall"
-      },
-      {
-        "src": "/images/gallery/g-358010.jpg",
-        "alt": "Pas et rythme",
-        "category": "danse",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-209948.jpg",
-        "alt": "Performance scénique",
-        "category": "danse",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-1701202.jpg",
-        "alt": "Posture et présence",
-        "category": "danse",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/musique.jpeg",
-        "alt": "Pratique musicale",
-        "category": "musique",
-        "span": "tall"
-      },
-      {
-        "src": "/images_galerie/image1.jpg",
-        "alt": "Regard d'avenir",
-        "category": "portraits",
-        "span": "small"
-      },
-      {
-        "src": "/images_galerie/image2.jpg",
-        "alt": "Sourire de cohorte",
-        "category": "portraits",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-5212703.jpg",
-        "alt": "Ambiance cohorte",
-        "category": "portraits",
-        "span": "small"
-      },
-      {
-        "src": "/images/gallery/g-7942487.jpg",
-        "alt": "Moment partagé",
-        "category": "portraits",
-        "span": "small"
-      }
-    ]
-  },
-  "contact": {
-    "kicker": "Prenons contact",
-    "title": "Échangeons sur",
-    "titleAccent": "l'avenir de votre enfant",
-    "subtitle": "Une question, une rencontre, une demande d'admission — nous lisons chaque message avec attention et répondons sous 48h.",
-    "image": "/images/contact-hero.jpg",
-    "form": {
-      "eyebrow": "Formulaire",
-      "title": "Planifier une entrevue",
-      "intro": "Remplissez ce formulaire en quelques secondes. Nous vous recontactons rapidement selon le canal qui vous convient le mieux.",
-      "reassurance": [
-        "Premier appel gratuit et sans engagement",
-        "Réponse sous 48h ouvrées, souvent plus vite",
-        "Téléphone, WhatsApp ou courriel selon votre préférence"
-      ],
-      "nextSteps": {
-        "title": "Après l'envoi",
-        "items": [
-          "Nous lisons votre demande avec attention",
-          "Nous proposons un créneau pour un premier appel",
-          "Vous décidez ensuite si vous souhaitez poursuivre"
-        ]
-      },
-      "fields": {
-        "parentName": {
-          "label": "Nom du parent",
-          "placeholder": "Votre nom complet"
-        },
-        "childName": {
-          "label": "Nom du jeune",
-          "placeholder": "Prénom et âge"
-        },
-        "email": {
-          "label": "Courriel",
-          "placeholder": "votre@email.com"
-        },
-        "phone": {
-          "label": "Téléphone",
-          "placeholder": "(438) 342-7730"
-        },
-        "preferredContact": {
-          "label": "Canal préféré",
-          "options": [
-            "Téléphone",
-            "WhatsApp",
-            "Courriel",
-            "Aucune préférence"
-          ]
-        },
-        "division": {
-          "label": "Division d'intérêt",
-          "options": [
-            "Junior",
-            "Senior",
-            "Pas encore décidé"
-          ]
-        },
-        "message": {
-          "label": "Votre message",
-          "placeholder": "Parlez-nous de votre enfant, de ses passions, de ce que vous cherchez…"
-        }
-      },
-      "consent": "J'accepte d'être recontacté par Groupe Mentou concernant ma demande.",
-      "submit": "Envoyer ma demande",
-      "submitting": "Envoi en cours…",
-      "success": "Message reçu. Nous vous répondons sous 48h.",
-      "required": "Champ requis"
-    },
-    "info": {
-      "eyebrow": "Coordonnées",
-      "title": "Plusieurs façons de nous joindre",
-      "items": [
-        {
-          "label": "Téléphone",
-          "value": "+1 (438) 342-7730",
-          "href": "tel:+14383427730",
-          "note": "Du lundi au vendredi, 9h–18h"
-        },
-        {
-          "label": "Courriel",
-          "value": "admission@mentou.ca",
-          "href": "mailto:admission@mentou.ca",
-          "note": "Réponse sous 48h"
-        },
-        {
-          "label": "WhatsApp",
-          "value": "+1 (438) 342-7730",
-          "href": "https://wa.me/14383427730",
-          "note": "Réponse rapide"
-        },
-        {
-          "label": "Adresse",
-          "value": "Québec, Canada",
-          "href": null,
-          "note": "Rencontres sur rendez-vous"
-        }
-      ]
-    },
-    "faq": {
-      "eyebrow": "Avant d'écrire",
-      "title": "Vos questions, nos réponses rapides",
-      "items": [
-        {
-          "q": "Combien de temps avant une réponse ?",
-          "a": "Sous 48h ouvrées, généralement plus vite."
-        },
-        {
-          "q": "Est-ce gratuit de prendre rendez-vous ?",
-          "a": "Oui. Le premier contact téléphonique et la rencontre d'échange sont sans engagement."
-        },
-        {
-          "q": "Puis-je venir avec mon enfant à la rencontre ?",
-          "a": "Nous l'encourageons fortement. La rencontre se fait idéalement avec parents et jeune ensemble."
-        }
-      ]
-    }
-  },
-  "footer": {
-    "rights": "Tous droits réservés.",
-    "tagline": "Entreprise privée de développement de leadership.",
-    "address": "Québec, Canada",
-    "whatsapp": "+1 (438) 342-7730"
-  },
-  "events": {
-    "kicker": "Groupe Mentou Inc.",
-    "title": "L'Arène de",
-    "titleAccent": "l'Excellence",
-    "subtitle": "Au sein du Groupe Mentou Inc., le sport ne se joue pas seulement sur le terrain ; il se vit comme une discipline de vie. Nos événements sont des théâtres où se rencontrent la stratégie, la persévérance et le respect.",
-    "image": "/images/vision-hero.jpg",
-    "recap": {
-      "eyebrow": "Soirée de lancement · 21 juillet 2026",
-      "title": "Retour sur notre",
-      "titleAccent": "soirée de lancement",
-      "subtitle": "Une salle comble, des rires, des talents et beaucoup de fierté : merci à toutes celles et ceux qui ont célébré avec nous le tout premier chapitre du Groupe Mentou.",
-      "featuredLabel": "Le film de la soirée",
-      "featuredCaption": "Les temps forts de notre toute première soirée, condensés en quelques minutes.",
-      "highlights": [
-        "Accueil, ambiance et musique",
-        "Présentation des ateliers et de la vision",
-        "Talents, quiz et moments de partage"
-      ],
-      "galleryLabel": "Souvenirs",
-      "play": "Lire la vidéo",
-      "close": "Fermer",
-      "prev": "Précédent",
-      "next": "Suivant",
-      "photoAlt": "Photo de la soirée de lancement",
-      "videoAlt": "Vidéo de la soirée de lancement"
-    },
-    "poles": {
-      "eyebrow": "Nos pôles d'action",
-      "title": "Trois arènes,",
-      "titleAccent": "une même exigence.",
-      "items": [
-        {
-          "index": "01",
-          "title": "Ligues & Compétitions",
-          "lead": "Haute Intensité",
-          "body": "Nous organisons des ligues structurées qui exigent le meilleur de chaque participant. Qu'il s'agisse de football ou de basketball, chaque match est une opportunité de tester ses capacités stratégiques et de renforcer l'esprit d'équipe."
-        },
-        {
-          "index": "02",
-          "title": "Le Gala de Prestige",
-          "lead": "L'apogée du calendrier",
-          "body": "Cet événement exclusif célèbre l'excellence sous toutes ses formes. C'est le point de rencontre où le sport, le leadership et l'héritage culturel convergent en un seul soir d'exception."
-        },
-        {
-          "index": "03",
-          "title": "Solidarité & Engagement",
-          "lead": "Communautaire",
-          "body": "Nos rencontres sont des vecteurs de cohésion sociale, visant à créer des ponts entre les générations et à ancrer fièrement notre héritage au cœur de notre ville."
-        }
-      ]
-    },
-    "conduite": {
-      "eyebrow": "Posture & Code de conduite",
-      "title": "L'élégance est une posture,",
-      "titleAccent": "la discipline, une obligation.",
-      "body": "La participation à nos événements implique une adhésion totale à nos valeurs. Sur le terrain comme lors de nos galas, chaque membre du Groupe Mentou incarne l'excellence qu'il cherche à atteindre.",
-      "values": [
-        "Respect absolu des adversaires, arbitres et spectateurs",
-        "Ponctualité et tenue irréprochable en toutes circonstances",
-        "Esprit d'équipe primant sur l'ambition personnelle",
-        "Représentation digne de l'héritage du Groupe Mentou"
-      ]
-    },
-    "cta": {
-      "eyebrow": "Rejoindre l'arène",
-      "title": "S'inscrire à la prochaine session",
-      "body": "Places limitées. Chaque cohorte est composée avec soin pour garantir un environnement d'excellence.",
-      "button": "Planifier une entrevue",
-      "href": "/admission"
-    },
-    "list": {
-      "eyebrow": "Programmation",
-      "title": "Nos",
-      "titleAccent": "rendez-vous",
-      "statusOpen": "Inscriptions ouvertes",
-      "statusPending": "Inscriptions bientôt ouvertes",
-      "statusSoon": "À venir",
-      "statusTbd": "Bientôt dévoilé",
-      "detailsLabel": "En bref",
-      "poster": {
-        "eyebrow": "Affiche officielle",
-        "title": "Tournoi des Nations Africaines",
-        "cta": "S'inscrire au tournoi",
-        "zoom": "Voir l'affiche en grand"
-      },
-      "items": [
-        {
-          "id": "football",
-          "image": "/images/event-football.jpg",
-          "category": "Tournoi sportif",
-          "title": "Tournoi des Nations Africaines",
-          "tagline": "Un terrain · Plusieurs nations · Une seule fierté",
-          "status": "pending",
-          "date": "Date à confirmer",
-          "meta": [
-            "90 $ / joueur",
-            "Complexe sportif",
-            "Trophée + voyage en chalet, tous frais payés",
-            "Spectateurs : 55 $ (boisson comprise)"
-          ],
-          "note": "Les inscriptions ne sont pas encore ouvertes. La date et le lieu seront annoncés prochainement.",
-          "cta": "",
-          "featured": true
-        },
-        {
-          "id": "basket",
-          "image": "/images/event-basket.jpg",
-          "category": "Tournoi sportif",
-          "title": "Tournoi de Basketball",
-          "tagline": "La stratégie et l'intensité sur le parquet",
-          "status": "soon",
-          "date": "Date à venir",
-          "meta": [],
-          "featured": false
-        },
-        {
-          "id": "soiree",
-          "image": "/images/event-soiree.jpg",
-          "category": "Rassemblement",
-          "title": "Soirées du Groupe",
-          "tagline": "Des moments de célébration et de cohésion",
-          "status": "tbd",
-          "date": "Programmation en préparation",
-          "meta": [],
-          "featured": false
-        },
-        {
-          "id": "gaming",
-          "image": "/images/event-gaming.jpg",
-          "category": "Compétition",
-          "title": "Concours Gaming",
-          "tagline": "L'excellence se joue aussi manette en main",
-          "status": "soon",
-          "date": "Date à venir",
-          "meta": [],
-          "featured": false
-        },
-        {
-          "id": "karaoke",
-          "image": "/images/event-karaoke.jpg",
-          "category": "Soirée musicale",
-          "title": "Soirée Karaoké",
-          "tagline": "Un micro, une scène, et le courage de se lancer",
-          "status": "soon",
-          "date": "Date à venir",
-          "meta": [],
-          "featured": false
-        }
-      ]
-    }
-  },
-  "registration": {
-    "kicker": "Inscription",
-    "title": "Réservez votre place",
-    "titleAccent": "au programme",
-    "subtitle": "Quelques informations pour préparer au mieux l'intégration au programme. Le paiement sécurisé se fait à l'étape suivante via Stripe.",
-    "offerLabel": "Offre choisie",
-    "offers": {
-      "weekly": "150 $ / semaine",
-      "monthly": "500 $ / mois",
-      "daily": "75 $ / jour"
-    },
-    "sections": {
-      "parent": "Contact principal",
-      "child": "Participant (optionnel)",
-      "address": "Adresse",
-      "extra": "Pour mieux vous accompagner"
-    },
-    "tutoring": {
-      "title": "Besoins en tutorat",
-      "levelLabel": "Niveau scolaire de l'élève",
-      "subjectsLabel": "Matières souhaitées",
-      "subjectsHint": "Cochez les matières pour lesquelles vous souhaitez du tutorat.",
-      "otherLabel": "Autre matière",
-      "otherPh": "Précisez une matière non listée (optionnel)"
+    "hours": {
+      "label": "Nombre d'heures",
+      "hint": "Entre 1 et 40 heures.",
+      "decrease": "Retirer une heure",
+      "increase": "Ajouter une heure"
     },
     "fields": {
-      "parentName": "Nom complet du contact",
+      "parentName": "Nom du parent ou tuteur légal",
       "parentEmail": "Courriel",
       "parentPhone": "Téléphone",
-      "childName": "Prénom et nom du participant (optionnel)",
-      "childAge": "Âge du participant (optionnel)",
-      "childSchool": "École ou établissement actuel (optionnel)",
-      "address": "Adresse (rue et numéro)",
+      "childName": "Prénom et nom de l'élève",
+      "childAge": "Âge",
+      "childSchool": "École",
+      "level": "Niveau scolaire",
+      "subjects": "Matières souhaitées",
+      "subjectsHint": "Choisissez d'abord le niveau scolaire pour voir les matières correspondantes.",
+      "subjectsMulti": "Plusieurs choix possibles.",
+      "otherSubject": "Autre matière ou besoin précis",
+      "address": "Adresse",
       "city": "Ville",
       "postalCode": "Code postal",
       "province": "Province",
-      "availability": "Disponibilités (soirs, week-ends…)",
-      "expectations": "Vos attentes pour le programme",
-      "suggestions": "Questions ou suggestions (optionnel)"
+      "availability": "Disponibilités",
+      "expectations": "Difficultés, objectifs ou autres détails"
     },
     "placeholders": {
-      "parentName": "Votre nom complet",
-      "parentEmail": "votre@email.com",
-      "parentPhone": "(438) 000-0000",
-      "childName": "Prénom et nom",
-      "childAge": "Ex. 14",
-      "childSchool": "Nom de l'établissement",
-      "address": "123 rue Exemple",
-      "city": "Québec",
-      "postalCode": "G1A 1A1",
+      "parentName": "Marie Tremblay",
+      "parentEmail": "marie@exemple.com",
+      "parentPhone": "(514) 555-1234",
+      "childName": "Léo Tremblay",
+      "childAge": "14",
+      "childSchool": "École secondaire ...",
+      "otherSubject": "Ex. : préparation à l'examen du ministère",
+      "address": "123, rue Principale",
+      "city": "Montréal",
+      "postalCode": "H2X 1Y4",
       "province": "Québec",
-      "availability": "Ex. mardis soir et samedis matin",
-      "expectations": "Ce que vous souhaitez développer ou voir progresser…",
-      "suggestions": "Tout ce que vous voulez nous partager"
+      "availability": "Ex. : lundi et mercredi après 16 h",
+      "expectations": "Parlez-nous de votre enfant et de ce que vous souhaitez pour lui."
     },
-    "consent": "J'accepte d'être recontacté par Groupe Mentou et j'autorise le paiement récurrent de l'offre choisie.",
-    "submit": "Procéder au paiement sécurisé",
-    "submitting": "Redirection vers le paiement…",
-    "error": "Une erreur est survenue. Réessayez ou contactez-nous.",
-    "canceled": "Paiement annulé. Vous pouvez réessayer quand vous le souhaitez.",
-    "required": "Champ requis",
+    "required": "obligatoire",
+    "optional": "facultatif",
+    "addressOnlineHint": "Facultatif pour le tutorat en ligne.",
+    "consent": "J'accepte que Mentou Academy utilise ces informations pour organiser l'accompagnement de mon enfant et me contacter.",
+    "summary": {
+      "title": "Récapitulatif",
+      "plan": "Formule",
+      "hours": "Heures",
+      "rate": "Tarif",
+      "subtotal": "Sous-total",
+      "recurring": "Facturé chaque mois",
+      "taxes": "Taxes (TPS et TVQ) ajoutées au paiement."
+    },
+    "submit": "Continuer vers le paiement",
+    "submitting": "Redirection vers le paiement...",
+    "error": "Une erreur est survenue. Vérifiez les champs obligatoires et réessayez.",
+    "missing": "Merci de remplir les champs obligatoires.",
     "thanks": {
-      "kicker": "Inscription confirmée",
-      "title": "Merci et bienvenue",
-      "titleAccent": "au Groupe Mentou",
-      "body": "Votre paiement a bien été enregistré. Vous recevrez un courriel de confirmation. Notre équipe vous contactera sous peu pour les prochaines étapes.",
+      "kicker": "Paiement confirmé",
+      "title": "Merci, c'est confirmé !",
+      "body": "Votre paiement a bien été reçu et une confirmation vous a été envoyée par courriel. Un membre de l'équipe Mentou Academy vous contactera très bientôt pour planifier les séances.",
       "cta": "Retour à l'accueil"
-    },
-    "event": {
-      "offerLabels": {
-        "event-player": "Tournoi — Joueur · 90 $",
-        "event-spectator": "Tournoi — Spectateur · 55 $"
-      },
-      "sectionPlayer": "Inscription joueur",
-      "sectionSpectator": "Billet spectateur",
-      "fields": {
-        "name": "Nom complet",
-        "email": "Courriel",
-        "phone": "Téléphone",
-        "nation": "Nation / Équipe représentée"
-      },
-      "placeholders": {
-        "name": "Prénom et nom",
-        "email": "votre@email.com",
-        "phone": "(438) 000-0000",
-        "nation": "Ex. Sénégal, Côte d'Ivoire…"
-      },
-      "consent": "J'accepte les conditions de participation et autorise le paiement.",
-      "submit": "Procéder au paiement",
-      "header": {
-        "kicker": "Inscription au tournoi",
-        "title": "Rejoignez",
-        "titleAccent": "l'arène",
-        "subtitle": "Quelques informations, puis le paiement sécurisé se fait à l'étape suivante via Stripe."
-      }
     }
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "kicker": "Contact",
+    "title": "Parlons de votre enfant",
+    "subtitle": "Une question sur nos services ou nos tarifs ? Écrivez-nous ou appelez-nous, nous vous répondrons rapidement.",
+    "channels": {
+      "phone": "Téléphone",
+      "info": "Renseignements",
+      "contact": "Écrivez-nous",
+      "area": "Région desservie",
+      "areaValue": "Québec, Canada"
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name": "Votre nom",
+      "email": "Courriel",
+      "phone": "Téléphone",
+      "message": "Votre message",
+      "namePh": "Marie Tremblay",
+      "emailPh": "marie@exemple.com",
+      "phonePh": "(514) 555-1234",
+      "messagePh": "Comment pouvons-nous vous aider ?",
+      "consent": "J'accepte d'être contacté par Mentou Academy au sujet de ma demande.",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours...",
+      "success": "Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.",
+      "error": "L'envoi a échoué. Réessayez ou écrivez-nous directement à contact@mentou.ca."
+    }
+  },
+  "comments": {
+    "leave": "Laisser un avis",
+    "close": "Fermer le formulaire",
+    "formTitle": "Partagez votre expérience",
+    "listTitle": "Avis des familles",
+    "name": "Votre nom",
+    "namePh": "Prénom N.",
+    "rating": "Votre note",
+    "message": "Votre commentaire",
+    "messagePh": "Comment s'est passé l'accompagnement de votre enfant ?",
+    "submit": "Envoyer mon avis",
+    "success": "Merci ! Votre avis a bien été publié.",
+    "moderation": "Les avis sont publiés immédiatement. L'équipe peut retirer un avis inapproprié.",
+    "more": "Voir plus d'avis",
+    "less": "Voir moins",
+    "outOf": "sur 5"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  },
+  "footer": {
+    "about": "Mentou Academy offre du tutorat privé du secondaire au cégep, à domicile, au centre et en ligne, avec un accompagnement en développement personnel.",
+    "navTitle": "Navigation",
+    "servicesTitle": "Services",
+    "services": ["Tutorat en présentiel", "Tutorat en ligne", "Aide aux devoirs", "Préparation aux examens", "Développement personnel"],
+    "contactTitle": "Contact",
+    "rights": "Tous droits réservés.",
+    "area": "Québec, Canada"
   }
 }

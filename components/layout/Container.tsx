@@ -5,6 +5,8 @@ type ContainerProps = {
   as?: "div" | "section" | "article" | "header" | "footer" | "main";
   className?: string;
   size?: "narrow" | "default" | "wide";
+  /** Animation d'apparition (voir Reveal.tsx). */
+  "data-reveal"?: "up" | "left" | "right" | "zoom" | "stagger";
 };
 
 const sizeClass = {
@@ -18,9 +20,10 @@ export default function Container({
   as: Tag = "div",
   className = "",
   size = "default",
+  "data-reveal": reveal,
 }: ContainerProps) {
   return (
-    <Tag className={`mx-auto w-full px-6 md:px-10 ${sizeClass[size]} ${className}`}>
+    <Tag data-reveal={reveal} className={`mx-auto w-full px-6 md:px-10 ${sizeClass[size]} ${className}`}>
       {children}
     </Tag>
   );

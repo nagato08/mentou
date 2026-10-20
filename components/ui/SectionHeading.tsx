@@ -1,35 +1,28 @@
-import { type ReactNode } from "react";
-import GoldLine from "./GoldLine";
-
 type SectionHeadingProps = {
   eyebrow?: string;
-  title: ReactNode;
-  subtitle?: ReactNode;
-  align?: "left" | "center";
+  title: string;
+  intro?: string;
+  align?: "center" | "left";
+  as?: "h1" | "h2";
   className?: string;
 };
 
 export default function SectionHeading({
   eyebrow,
   title,
-  subtitle,
-  align = "left",
+  intro,
+  align = "center",
+  as: Tag = "h2",
   className = "",
 }: SectionHeadingProps) {
-  const alignClass = align === "center" ? "items-center text-center" : "items-start text-left";
-
+  const alignClass = align === "center" ? "mx-auto text-center items-center" : "items-start";
   return (
-    <div className={`flex flex-col gap-5 ${alignClass} ${className}`}>
+    <div data-reveal="up" className={`flex max-w-2xl flex-col gap-4 ${alignClass} ${className}`}>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2 className="font-display text-4xl leading-tight text-bone md:text-5xl lg:text-6xl">
+      <Tag className="text-3xl font-extrabold leading-tight text-ink md:text-4xl">
         {title}
-      </h2>
-      <GoldLine />
-      {subtitle && (
-        <p className="max-w-2xl text-base leading-relaxed text-bone/70 md:text-lg">
-          {subtitle}
-        </p>
-      )}
+      </Tag>
+      {intro && <p className="text-lg leading-relaxed text-slate">{intro}</p>}
     </div>
   );
 }

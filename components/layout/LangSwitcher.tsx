@@ -21,23 +21,22 @@ export default function LangSwitcher({ currentLang }: LangSwitcherProps) {
   };
 
   return (
-    <div className="flex items-center gap-1 text-xs uppercase tracking-[0.2em]">
-      {locales.map((loc, i) => (
-        <span key={loc} className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={() => switchTo(loc)}
-            aria-current={loc === currentLang ? "true" : undefined}
-            className={
-              loc === currentLang
-                ? "text-gold"
-                : "text-bone/50 hover:text-bone transition-colors"
-            }
-          >
-            {loc}
-          </button>
-          {i < locales.length - 1 && <span className="text-bone/20">/</span>}
-        </span>
+    <div className="inline-flex items-center rounded-full border border-line p-0.5 text-xs font-bold uppercase">
+      {locales.map((loc) => (
+        <button
+          key={loc}
+          type="button"
+          onClick={() => switchTo(loc)}
+          aria-current={loc === currentLang ? "true" : undefined}
+          aria-label={loc === "fr" ? "Français" : "English"}
+          className={`min-h-9 min-w-10 rounded-full px-2.5 transition-colors ${
+            loc === currentLang
+              ? "bg-sky text-primary"
+              : "text-muted hover:text-ink"
+          }`}
+        >
+          {loc}
+        </button>
       ))}
     </div>
   );

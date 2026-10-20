@@ -2,11 +2,11 @@ import { SITE_URL } from "./seo";
 import type { Locale } from "./i18n-config";
 
 const PHONE = "+1-438-342-7730";
-const EMAIL = "admission@mentou.ca";
+const EMAIL = "info@mentou.ca";
 const WHATSAPP = "+14383427730";
 
 /**
- * Organization schema - identifies Groupe Mentou as a business entity
+ * Organization schema - identifies Mentou Academy as a business entity
  * Used globally on every page
  */
 export function organizationSchema(lang: Locale) {
@@ -14,19 +14,19 @@ export function organizationSchema(lang: Locale) {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "@id": `${SITE_URL}/#organization`,
-    name: "Groupe Mentou",
-    alternateName: "Groupe Mentou - Les Piliers des Leaders",
+    name: "Mentou Academy",
+    alternateName: "Groupe Mentou",
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/flyer/nouveau-logo.jpeg`,
-      width: 1254,
-      height: 1254,
+      url: `${SITE_URL}/logo-mark.png`,
+      width: 268,
+      height: 205,
     },
     description:
       lang === "fr"
-        ? "Programme privé de leadership pour les jeunes de 12 à 22 ans au Québec. Tutorat, mentorat, expression et discipline."
-        : "Private leadership program for young people aged 12 to 22 in Québec. Tutoring, mentorship, expression and discipline.",
+        ? "Tutorat privé en ligne et en présentiel au Québec, du primaire au cégep, avec un accompagnement en développement personnel."
+        : "Private tutoring online and in person in Québec, from elementary school to CEGEP, with personal development coaching.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Québec",
@@ -63,15 +63,15 @@ export function localBusinessSchema(lang: Locale) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#localbusiness`,
-    name: "Groupe Mentou",
-    image: `${SITE_URL}/flyer/nouveau-logo.jpeg`,
+    name: "Mentou Academy",
+    image: `${SITE_URL}/logo-mark.png`,
     url: SITE_URL,
     telephone: PHONE,
     email: EMAIL,
-    priceRange: "$$$",
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Québec",
+      streetAddress: "1765, boulevard Taschereau",
       addressRegion: "QC",
       addressCountry: "CA",
     },
@@ -83,14 +83,14 @@ export function localBusinessSchema(lang: Locale) {
         closes: "18:00",
       },
     ],
-    areaServed: {
-      "@type": "Place",
-      name: "Québec, Canada",
-    },
+    areaServed: ["Longueuil", "Brossard", "Candiac", "Saint-Constant", "Montérégie"].map((name) => ({
+      "@type": "City",
+      name,
+    })),
     description:
       lang === "fr"
-        ? "Programme privé de développement du leadership pour jeunes de 12 à 22 ans."
-        : "Private leadership development program for young people aged 12 to 22.",
+        ? "Tutorat privé et développement personnel, en ligne et en présentiel, du primaire au cégep."
+        : "Private tutoring and personal development, online and in person, from elementary school to CEGEP.",
   };
 }
 
@@ -103,7 +103,7 @@ export function websiteSchema(lang: Locale) {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: "Groupe Mentou",
+    name: "Mentou Academy",
     inLanguage: lang === "fr" ? "fr-CA" : "en-CA",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };

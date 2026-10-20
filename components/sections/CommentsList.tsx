@@ -2,63 +2,66 @@
 
 import { useState } from "react";
 import type { Comment } from "@/lib/useComments";
+import Icon from "@/components/ui/Icon";
+import type { CommentLabels } from "./CommentForm";
 
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 4;
 
 type CommentsListProps = {
   comments: Comment[];
+  labels: CommentLabels;
+  dateLocale: string;
 };
 
-export default function CommentsList({ comments }: CommentsListProps) {
+export default function CommentsList({ comments, labels, dateLocale }: CommentsListProps) {
   const [visible, setVisible] = useState(PAGE_SIZE);
-
   const displayed = comments.slice(0, visible);
   const hasMore = visible < comments.length;
-  const canCollapse = visible > PAGE_SIZE;
 
   return (
-    <div className="space-y-6">
-      {displayed.map((comment) => (
-        <div
-          key={comment.id}
-          className="p-6 bg-ink/50 border border-bone/10 rounded"
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
-            <h3 className="font-semibold text-bone">{comment.name}</h3>
-            <div className="flex items-center gap-1">
-              {[...Array(comment.rating)].map((_, i) => (
-                <span key={i} className="text-gold text-sm">★</span>
+    <div className="flex flex-col gap-4">
+      <ul className="grid gap-4 sm:grid-cols-2">
+        {displayed.map((c) => (
+          <li key={c.id} className="flex flex-col gap-3 rounded-2xl border border-line bg-white p-6 shadow-card">
+            <div className="flex gap-0.5 text-accent" aria-label={`${c.rating} ${labels.outOf}`}>
+              {Array.from({ length: 5 }, (_, i) => (
+                <Icon
+                  key={i}
+                  name="star"
+                  filled
+                  strokeWidth={1}
+                  className={`h-4 w-4 ${i < c.rating ? "" : "text-line"}`}
+                />
               ))}
-              <span className="text-xs text-bone/60 ml-2">{comment.rating}/5</span>
             </div>
-          </div>
-          <p className="text-bone text-sm leading-relaxed mb-3">{comment.message}</p>
-          <p className="text-xs text-bone/40">
-            {new Date(comment.createdAt).toLocaleDateString("fr-FR")}
-          </p>
-        </div>
-      ))}
+            <p className="flex-1 leading-relaxed text-ink">« {c.message} »</p>
+            <div className="flex items-center gap-3 border-t border-line pt-3">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-sky text-sm font-bold text-primary">
+                {c.name.trim().charAt(0).toUpperCase()}
+              </span>
+              <div className="leading-tight">
+                <p className="text-sm font-bold text-ink">{c.name}</p>
+                <p className="text-xs text-muted">
+                  {new Date(c.createdAt).toLocaleDateString(dateLocale, {
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-      <div className="flex flex-col gap-2">
-        {hasMore && (
-          <button
-            type="button"
-            onClick={() => setVisible((v) => Math.min(v + PAGE_SIZE, comments.length))}
-            className="w-full py-3 text-sm uppercase tracking-widest text-gold border border-gold/30 rounded hover:bg-gold/10 transition-colors"
-          >
-            Charger plus ({comments.length - visible} restant{comments.length - visible > 1 ? "s" : ""})
-          </button>
-        )}
-        {canCollapse && (
-          <button
-            type="button"
-            onClick={() => setVisible(PAGE_SIZE)}
-            className="w-full py-2 text-xs uppercase tracking-widest text-bone/40 hover:text-bone/60 transition-colors"
-          >
-            Voir moins
-          </button>
-        )}
-      </div>
+      {(hasMore || visible > PAGE_SIZE) && (
+        <button
+          type="button"
+          onClick={() => setVisible(hasMore ? visible + PAGE_SIZE : PAGE_SIZE)}
+          className="min-h-11 self-center rounded-full px-5 text-sm font-semibold text-primary transition-colors hover:bg-sky"
+        >
+          {hasMore ? labels.more : labels.less}
+        </button>
+      )}
     </div>
   );
 }

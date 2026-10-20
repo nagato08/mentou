@@ -1,63 +1,18 @@
-import Image from "next/image";
-import { type ReactNode } from "react";
 import Container from "@/components/layout/Container";
 
 type PageHeaderProps = {
-  kicker?: string;
-  title: ReactNode;
-  titleAccent?: string;
-  subtitle?: ReactNode;
-  image?: string;
-  children?: ReactNode;
+  kicker: string;
+  title: string;
+  subtitle?: string;
 };
 
-export default function PageHeader({
-  kicker,
-  title,
-  titleAccent,
-  subtitle,
-  image,
-  children,
-}: PageHeaderProps) {
+export default function PageHeader({ kicker, title, subtitle }: PageHeaderProps) {
   return (
-    <section className="relative min-h-[80vh] flex items-end border-b border-bone/10 overflow-hidden bg-ink">
-      {image && (
-        <>
-          <Image
-            src={image}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-            data-gsap="parallax"
-          />
-          <div aria-hidden className="absolute inset-0 bg-linear-to-b from-ink/75 via-ink/55 to-ink" />
-          <div aria-hidden className="absolute inset-0 bg-linear-to-r from-ink/70 via-transparent to-transparent" />
-        </>
-      )}
-      <Container size="wide" className="relative pb-16 md:pb-20 pt-32 md:pt-40 flex flex-col gap-6">
-        {kicker && (
-          <div className="reveal delay-1 flex items-center gap-4">
-            <span className="block h-px w-10 bg-gold" />
-            <span className="eyebrow">{kicker}</span>
-          </div>
-        )}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-bone max-w-4xl">
-          <span className="block reveal delay-2">{title}</span>
-          {titleAccent && (
-            <span className="block font-italic-display text-gold/95 reveal delay-3">
-              {titleAccent}
-            </span>
-          )}
-        </h1>
-        <span className="block h-px w-20 bg-gold reveal-rule delay-4" />
-        {subtitle && (
-          <p className="max-w-2xl text-lg md:text-xl text-bone/65 leading-relaxed reveal delay-5">
-            {subtitle}
-          </p>
-        )}
-        {children && <div className="reveal delay-6">{children}</div>}
+    <section className="bg-linear-to-b from-sky to-white">
+      <Container className="flex flex-col items-center gap-4 py-14 text-center md:py-18">
+        <span className="eyebrow">{kicker}</span>
+        <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-ink md:text-5xl">{title}</h1>
+        {subtitle && <p className="max-w-2xl text-lg leading-relaxed text-slate">{subtitle}</p>}
       </Container>
     </section>
   );

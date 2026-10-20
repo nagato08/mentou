@@ -3,12 +3,12 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Comment } from "@/lib/useComments";
 import type { Registration } from "@/lib/registration";
-import { OFFER_LABELS, isEventOffer } from "@/lib/registration";
+import { isHourlyOffer, isLegacyOffer, registrationLabel } from "@/lib/registration";
 import { levelLabel, subjectLabels } from "@/lib/tutor";
 
 type Tab = "pending" | "approved";
 type View = "comments" | "registrations";
-type RegistrationFilter = "program" | "players" | "spectators";
+type RegistrationFilter = "monthly" | "hourly" | "legacy";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -222,7 +222,7 @@ export default function AdminPage() {
           <span className="block h-px w-8 bg-gold" />
           <div className="flex flex-col">
             <span className="text-[0.6rem] uppercase tracking-[0.3em] text-gold">
-              Groupe Mentou
+              Mentou Academy
             </span>
             <h1 className="font-display text-lg leading-none">Modération</h1>
           </div>
@@ -400,15 +400,13 @@ function RegistrationsView({
 }: {
   registrations: Registration[];
 }) {
-  const [filter, setFilter] = useState<RegistrationFilter>("program");
+  const [filter, setFilter] = useState<RegistrationFilter>("monthly");
 
-  const program = registrations.filter(
-    (r) => r.offer === "weekly" || r.offer === "monthly"
-  );
-  const players = registrations.filter((r) => r.offer === "event-player");
-  const spectators = registrations.filter((r) => r.offer === "event-spectator");
+  const monthly = registrations.filter((r) => r.offer === "monthly");
+  const hourly = registrations.filter((r) => isHourlyOffer(r.offer));
+  const legacy = registrations.filter((r) => isLegacyOffer(r.offer));
   const filtered =
-    filter === "program" ? program : filter === "players" ? players : spectators;
+    filter === "monthly" ? monthly : filter === "hourly" ? hourly : legacy;
 
   const paid = filtered.filter((r) => r.status === "paid");
   const pending = filtered.filter((r) => r.status === "pending");
@@ -419,9 +417,9 @@ function RegistrationsView({
     label: string;
     count: number;
   }[] = [
-    { key: "program", label: "Piliers", count: program.length },
-    { key: "players", label: "Joueurs", count: players.length },
-    { key: "spectators", label: "Spectateurs", count: spectators.length },
+    { key: "monthly", label: "Mensuel", count: monthly.length },
+    { key: "hourly", label: "À l'heure", count: hourly.length },
+    { key: "legacy", label: "Archives", count: legacy.length },
   ];
 
   const statusStyle: Record<Registration["status"], string> = {
@@ -482,7 +480,7 @@ function RegistrationsView({
         )}
 
         {filtered.map((r) => {
-          const isEvent = isEventOffer(r.offer);
+          const isEvent = r.offer === "event-player" || r.offer === "event-spectator";
           const participant = r.childName || r.parentName;
           const dateStr = new Date(r.createdAt).toLocaleDateString("fr-FR", {
             day: "2-digit",
@@ -520,7 +518,7 @@ function RegistrationsView({
                     {statusLabel[r.status]}
                   </span>
                   <span className="text-[0.6rem] text-bone/40">
-                    {OFFER_LABELS[r.offer]}
+                    {registrationLabel(r)}
                   </span>
                 </div>
               </div>

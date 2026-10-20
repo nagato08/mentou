@@ -2,69 +2,64 @@
 
 import { useState } from "react";
 import { useComments } from "@/lib/useComments";
-import CommentForm from "./CommentForm";
+import Container from "@/components/layout/Container";
+import SectionHeading from "@/components/ui/SectionHeading";
+import CommentForm, { type CommentLabels } from "./CommentForm";
 import CommentsList from "./CommentsList";
 
 type CommentsSectionProps = {
   eyebrow: string;
   title: string;
+  labels: CommentLabels;
+  dateLocale: string;
 };
 
 export default function CommentsSection({
   eyebrow,
   title,
+  labels,
+  dateLocale,
 }: CommentsSectionProps) {
   const { approvedComments, addComment, mounted } = useComments();
   const [formOpen, setFormOpen] = useState(false);
 
-  if (!mounted) return null;
-
   return (
-    <section
-      className="border-t border-bone/10 py-16 md:py-20 lg:py-24"
-      data-gsap="fade-up"
-    >
-      <div className="container flex flex-col items-center">
-        {/* Header */}
-        <div className="flex flex-col gap-6 mb-12 text-center max-w-2xl px-4">
-          <div className="flex items-center justify-center gap-3">
-            <span className="block h-px w-8 bg-gold" />
-            <span className="eyebrow">{eyebrow}</span>
-            <span className="block h-px w-8 bg-gold" />
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-bone">
-            {title}
-          </h2>
+    <section className="section">
+      <Container>
+        <SectionHeading eyebrow={eyebrow} title={title} />
+
+        <div className="mt-6 flex justify-center lg:hidden">
+          <button
+            type="button"
+            onClick={() => setFormOpen((v) => !v)}
+            aria-expanded={formOpen}
+            className="min-h-11 rounded-full border border-line px-5 text-sm font-semibold text-primary transition-colors hover:border-primary"
+          >
+            {formOpen ? labels.close : labels.leave}
+          </button>
         </div>
 
-        {/* Toggle form button (mobile-first CTA) */}
-        <button
-          type="button"
-          onClick={() => setFormOpen(!formOpen)}
-          className="mb-10 px-6 py-3 bg-gold text-ink font-semibold rounded transition-all hover:bg-gold/90 lg:hidden"
-        >
-          {formOpen ? "Fermer le formulaire" : "Laisser un avis"}
-        </button>
-
-        {/* Grid: Form + List */}
-        <div className="w-full max-w-5xl px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Form — collapsible on mobile, always visible on desktop */}
-          <div className={`${formOpen ? "block" : "hidden"} lg:block`}>
-            <h3 className="hidden lg:block font-display text-2xl text-bone mb-6">
-              Laissez votre avis
-            </h3>
-            <CommentForm onSubmit={addComment} />
-          </div>
-
-          {/* Comments List */}
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
           <div>
-            <h3 className="font-display text-2xl text-bone mb-6">
-              Expériences partagées ({approvedComments.length})
+            <h3 className="mb-5 text-lg font-bold text-ink">
+              {labels.listTitle}
+              {mounted && ` (${approvedComments.length})`}
             </h3>
-            <CommentsList comments={approvedComments} />
+            {mounted ? (
+              <CommentsList comments={approvedComments} labels={labels} dateLocale={dateLocale} />
+            ) : (
+              <div className="h-64 animate-pulse rounded-2xl bg-paper" aria-hidden />
+            )}
+          </div>
+
+          <div className={`${formOpen ? "block" : "hidden"} lg:block`}>
+            <div className="rounded-2xl border border-line bg-paper p-6 md:p-7">
+              <h3 className="mb-5 text-lg font-bold text-ink">{labels.formTitle}</h3>
+              <CommentForm onSubmit={addComment} labels={labels} />
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
