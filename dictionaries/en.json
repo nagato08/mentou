@@ -3,7 +3,7 @@
     "siteName": "Mentou Academy",
     "companyName": "Groupe Mentou Inc.",
     "tagline": "Tutoring and personal development in Québec",
-    "description": "Private tutoring online and in person, from elementary school to CEGEP, with coaching in self-confidence, discipline and leadership."
+    "description": "Private tutoring from high school to CEGEP, at home and at our centre on the South Shore (Longueuil, Brossard, Candiac, Saint-Constant) or online, with coaching in confidence, discipline and leadership."
   },
   "nav": {
     "home": "Home",
@@ -19,13 +19,13 @@
     "backToTop": "Back to top",
     "skipToContent": "Skip to content"
   },
-  "announcement": "Tutoring available online and in person, from elementary school to CEGEP.",
+  "announcement": "In-home, in-centre and online tutoring, high school to CEGEP, on the South Shore.",
   "home": {
     "hero": {
       "kicker": "Private tutoring in Québec",
       "title": "A qualified tutor for your child,",
       "titleAccent": "and a mentor for their confidence.",
-      "subtitle": "Mentou Academy supports students from elementary school to CEGEP in their school subjects and in building their confidence, discipline and leadership.",
+      "subtitle": "Mentou Academy supports high school and CEGEP students in their school subjects and in building their confidence, discipline and leadership.",
       "primaryCta": "Request a tutor",
       "secondaryCta": "See pricing",
       "points": [
@@ -92,7 +92,7 @@
       "items": [
         {
           "title": "In person",
-          "body": "Face-to-face sessions, ideal for students who need structure and someone by their side.",
+          "body": "At home on the South Shore or at our centre, 1765 Taschereau Boulevard. Ideal for students who need structure.",
           "price": "$45/h or $500/month"
         },
         {
@@ -187,8 +187,8 @@
           "body": "You know how your child is doing and what they are working on."
         },
         {
-          "title": "Elementary to CEGEP",
-          "body": "Support adapted to every stage of the Québec school system."
+          "title": "High school to CEGEP",
+          "body": "From Secondary 1 to CEGEP, regular and enriched profiles, up to natural science courses."
         },
         {
           "title": "Online or in person",
@@ -210,11 +210,11 @@
       "items": [
         {
           "q": "Which grade levels do you support?",
-          "a": "We support students in elementary school, high school (Secondary 1 to 5) and CEGEP."
+          "a": "We support high school students (Secondary 1 to 5, regular and enriched profiles) and CEGEP students."
         },
         {
           "q": "Which subjects do you tutor?",
-          "a": "Math (CST and SN), physics, chemistry, science and French. If your child's subject is not listed, mention it in the form and we will get back to you."
+          "a": "High school: math and science (regular and enriched), physics, programming, French and Secondary 4 and 5 ministry exam preparation. CEGEP: differential and integral calculus, linear algebra, probability and statistics, mechanics, electricity and magnetism, waves and modern physics, general and solution chemistry, cell biology, programming in science, French 101, 102, 103 and EUF preparation."
         },
         {
           "q": "What does the $500 monthly plan include?",
@@ -278,7 +278,7 @@
       "childSchool": "School",
       "level": "Grade level",
       "subjects": "Subjects needed",
-      "subjectsHint": "Select all that apply.",
+      "subjectsHint": "Select all that apply. Choose the grade level first to see the matching subjects.",
       "otherSubject": "Other subject or specific need",
       "address": "Address",
       "city": "City",
@@ -378,7 +378,7 @@
     "cta": "Back to home"
   },
   "footer": {
-    "about": "Mentou Academy offers private tutoring online and in person, from elementary school to CEGEP, with personal development coaching.",
+    "about": "Mentou Academy offers private tutoring from high school to CEGEP, at home, at our centre and online, with personal development coaching.",
     "navTitle": "Navigation",
     "servicesTitle": "Services",
     "services": ["In-person tutoring", "Online tutoring", "Homework help", "Exam preparation", "Personal development"],

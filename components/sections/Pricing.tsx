@@ -11,12 +11,19 @@ function priceOf(offer: Offer): number {
   return isHourlyOffer(offer) ? HOURLY_RATES[offer] : MONTHLY_PRICE;
 }
 
-export default function Pricing({ lang, dict }: { lang: Locale; dict: Dictionary }) {
+type PricingProps = {
+  lang: Locale;
+  dict: Dictionary;
+  /** h1 sur la page Tarifs, h2 sur l'accueil. */
+  headingLevel?: "h1" | "h2";
+};
+
+export default function Pricing({ lang, dict, headingLevel = "h2" }: PricingProps) {
   const t = dict.home.pricing;
   return (
     <section id="tarifs" className="section bg-linear-to-b from-white to-sky">
       <Container>
-        <SectionHeading eyebrow={t.eyebrow} title={t.title} intro={t.intro} />
+        <SectionHeading eyebrow={t.eyebrow} title={t.title} intro={t.intro} as={headingLevel} />
 
         <ul className="mt-14 grid items-stretch gap-6 lg:grid-cols-3" data-gsap="stagger">
           {ALL_OFFERS.map((offer) => {

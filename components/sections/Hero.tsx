@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { COLLECTION_PATH, getContent } from "@/lib/content";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
@@ -75,12 +77,14 @@ export default function Hero({ lang, dict }: HeroProps) {
         <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:gap-5">
           <span className="text-sm font-bold text-ink">{dict.home.subjects.label}</span>
           <ul className="flex flex-wrap gap-2">
-            {dict.home.subjects.items.map((s) => (
-              <li
-                key={s}
-                className="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-slate"
-              >
-                {s}
+            {getContent(lang).subjects.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/${lang}/${COLLECTION_PATH.subjects}/${s.slug}`}
+                  className="inline-flex min-h-9 items-center rounded-full border border-line bg-white px-3.5 text-sm font-medium text-slate transition-colors hover:border-primary hover:text-primary"
+                >
+                  {s.label}
+                </Link>
               </li>
             ))}
           </ul>

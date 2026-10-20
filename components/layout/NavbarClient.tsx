@@ -10,9 +10,10 @@ import Logo from "./Logo";
 import Icon from "@/components/ui/Icon";
 import { buttonClass } from "@/components/ui/Button";
 
-type NavItem = {
+export type NavItem = {
   href: string;
   label: string;
+  children?: { href: string; label: string }[];
 };
 
 type NavbarClientProps = {
@@ -64,7 +65,7 @@ export default function NavbarClient({
   }, [menuOpen]);
 
   const close = () => setMenuOpen(false);
-  const isActive = (href: string) => !href.includes("#") && pathname.startsWith(href);
+  const isActive = (href: string) => href !== base && pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50">
@@ -91,21 +92,44 @@ export default function NavbarClient({
             <Logo name={labels.siteName} />
           </Link>
 
-          <nav aria-label="Principale" className="hidden items-center gap-1 lg:flex">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={`rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "text-primary"
-                    : "text-slate hover:bg-sky hover:text-primary"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav aria-label="Principale" className="hidden items-center gap-0.5 xl:flex">
+            {items.map((item) => {
+              const linkClass = `inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors ${
+                isActive(item.href) ? "text-primary" : "text-slate hover:bg-sky hover:text-primary"
+              }`;
+              if (!item.children) {
+                return (
+                  <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? "page" : undefined} className={linkClass}>
+                    {item.label}
+                  </Link>
+                );
+              }
+              // Sous-menu : s'ouvre au survol et au focus clavier.
+              return (
+                <div key={item.href} className="group relative">
+                  <Link href={item.href} aria-haspopup="true" className={linkClass}>
+                    {item.label}
+                    <Icon name="chevronDown" className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
+                  </Link>
+                  <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <ul className="min-w-60 rounded-2xl border border-line bg-white p-2 shadow-lift">
+                      {item.children.map((child, i) => (
+                        <li key={`${child.href}-${i}`}>
+                          <Link
+                            href={child.href}
+                            className={`block rounded-xl px-3.5 py-2.5 text-sm transition-colors hover:bg-sky hover:text-primary ${
+                              i === item.children!.length - 1 ? "mt-1 border-t border-line font-semibold text-primary" : "font-medium text-ink"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -114,7 +138,7 @@ export default function NavbarClient({
             </div>
             <a
               href={tel}
-              className="hidden items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-primary xl:inline-flex"
+              className="hidden items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-primary 2xl:inline-flex"
             >
               <Icon name="phone" className="h-4 w-4 text-primary" />
               {labels.phone}
@@ -128,7 +152,7 @@ export default function NavbarClient({
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((v) => !v)}
-              className="grid h-11 w-11 place-items-center rounded-full text-ink transition-colors hover:bg-sky lg:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full text-ink transition-colors hover:bg-sky xl:hidden"
             >
               <Icon name={menuOpen ? "close" : "menu"} className="h-6 w-6" />
             </button>
@@ -140,21 +164,39 @@ export default function NavbarClient({
       <div
         id="mobile-menu"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-full z-40 h-dvh overflow-y-auto border-t border-line bg-white pb-40 lg:hidden"
+        className="absolute inset-x-0 top-full z-40 h-dvh overflow-y-auto border-t border-line bg-white pb-40 xl:hidden"
       >
         <Container className="flex flex-col gap-6 py-6">
           <nav aria-label="Menu mobile" className="flex flex-col">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={close}
-                className="flex items-center justify-between border-b border-line py-4 text-lg font-semibold text-ink"
-              >
-                {item.label}
-                <Icon name="arrow" className="h-5 w-5 text-primary" />
-              </Link>
-            ))}
+            {items.map((item) =>
+              item.children ? (
+                <details key={item.href} className="group border-b border-line">
+                  <summary className="flex cursor-pointer items-center justify-between py-4 text-lg font-semibold text-ink">
+                    {item.label}
+                    <Icon name="chevronDown" className="h-5 w-5 text-primary transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="flex flex-col pb-3 pl-3">
+                    {item.children.map((child, i) => (
+                      <li key={`${child.href}-${i}`}>
+                        <Link href={child.href} onClick={close} className="block py-2.5 text-base text-slate hover:text-primary">
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={close}
+                  className="flex items-center justify-between border-b border-line py-4 text-lg font-semibold text-ink"
+                >
+                  {item.label}
+                  <Icon name="arrow" className="h-5 w-5 text-primary" />
+                </Link>
+              )
+            )}
           </nav>
           <LangSwitcher currentLang={lang} />
           <div className="flex flex-col gap-3">

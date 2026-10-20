@@ -71,7 +71,7 @@ export function localBusinessSchema(lang: Locale) {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Québec",
+      streetAddress: "1765, boulevard Taschereau",
       addressRegion: "QC",
       addressCountry: "CA",
     },
@@ -83,10 +83,10 @@ export function localBusinessSchema(lang: Locale) {
         closes: "18:00",
       },
     ],
-    areaServed: {
-      "@type": "Place",
-      name: "Québec, Canada",
-    },
+    areaServed: ["Longueuil", "Brossard", "Candiac", "Saint-Constant", "Montérégie"].map((name) => ({
+      "@type": "City",
+      name,
+    })),
     description:
       lang === "fr"
         ? "Tutorat privé et développement personnel, en ligne et en présentiel, du primaire au cégep."

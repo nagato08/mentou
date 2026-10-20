@@ -12,7 +12,7 @@ import {
   requiresAddress,
   type Offer,
 } from "@/lib/registration";
-import { TUTOR_LEVELS, TUTOR_SUBJECTS } from "@/lib/tutor";
+import { TUTOR_LEVELS, subjectsForLevel, type TutorOption } from "@/lib/tutor";
 import { formatPrice } from "@/lib/format";
 import Icon from "@/components/ui/Icon";
 
@@ -87,6 +87,16 @@ export default function TutorRequestForm({
       else next.add(id);
       return next;
     });
+
+  const optLabel = (o: TutorOption) => (lang === "en" ? o.labelEn : o.label);
+  const subjectOptions = subjectsForLevel(level);
+
+  // Change de niveau : on retire les matières qui ne s'appliquent plus.
+  const chooseLevel = (next: string) => {
+    setLevel(next);
+    const allowed = new Set(subjectsForLevel(next).map((o) => o.id));
+    setSubjects((prev) => new Set([...prev].filter((id) => allowed.has(id))));
+  };
 
   const clampHours = (n: number) => Math.min(MAX_HOURS, Math.max(MIN_HOURS, n));
 
@@ -277,14 +287,14 @@ export default function TutorRequestForm({
                     type="button"
                     role="radio"
                     aria-checked={active}
-                    onClick={() => setLevel(active ? "" : l.id)}
+                    onClick={() => chooseLevel(active ? "" : l.id)}
                     className={`min-h-11 rounded-full border px-4 text-sm font-medium transition-colors ${
                       active
                         ? "border-primary bg-primary text-white"
                         : "border-line text-slate hover:border-primary hover:text-primary"
                     }`}
                   >
-                    {l.label}
+                    {optLabel(l)}
                   </button>
                 );
               })}
@@ -295,7 +305,7 @@ export default function TutorRequestForm({
             <span className="block text-sm font-semibold text-ink">{t.fields.subjects}</span>
             <p className="mb-2 text-xs text-muted">{t.fields.subjectsHint}</p>
             <div className="grid gap-2 sm:grid-cols-2">
-              {TUTOR_SUBJECTS.map((s) => {
+              {subjectOptions.map((s) => {
                 const active = subjects.has(s.id);
                 return (
                   <label
@@ -310,7 +320,7 @@ export default function TutorRequestForm({
                       onChange={() => toggleSubject(s.id)}
                       className="h-4 w-4 shrink-0 accent-[var(--ma-primary)]"
                     />
-                    {s.label}
+                    {optLabel(s)}
                   </label>
                 );
               })}

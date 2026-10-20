@@ -3,7 +3,7 @@
     "siteName": "Mentou Academy",
     "companyName": "Groupe Mentou Inc.",
     "tagline": "Tutorat et développement personnel au Québec",
-    "description": "Tutorat privé en ligne et en présentiel, du primaire au cégep, avec un accompagnement en confiance en soi, discipline et leadership."
+    "description": "Tutorat privé du secondaire au cégep, à domicile et à notre centre sur la Rive-Sud (Longueuil, Brossard, Candiac, Saint-Constant) ou en ligne, avec un accompagnement en confiance, discipline et leadership."
   },
   "nav": {
     "home": "Accueil",
@@ -19,13 +19,13 @@
     "backToTop": "Revenir en haut de la page",
     "skipToContent": "Aller au contenu"
   },
-  "announcement": "Tutorat disponible en ligne et en présentiel, du primaire au cégep.",
+  "announcement": "Tutorat à domicile, au centre et en ligne, du secondaire au cégep, sur la Rive-Sud.",
   "home": {
     "hero": {
       "kicker": "Tutorat privé au Québec",
       "title": "Un tuteur qualifié pour votre enfant,",
       "titleAccent": "et un mentor pour sa confiance.",
-      "subtitle": "Mentou Academy accompagne les élèves du primaire au cégep dans leurs matières scolaires et dans le développement de leur confiance, de leur discipline et de leur leadership.",
+      "subtitle": "Mentou Academy accompagne les élèves du secondaire et du cégep dans leurs matières scolaires et dans le développement de leur confiance, de leur discipline et de leur leadership.",
       "primaryCta": "Demander un tuteur",
       "secondaryCta": "Voir les tarifs",
       "points": [
@@ -92,7 +92,7 @@
       "items": [
         {
           "title": "En présentiel",
-          "body": "Des séances en personne, idéales pour les élèves qui ont besoin d'un cadre et d'une présence à leurs côtés.",
+          "body": "À domicile sur la Rive-Sud ou à notre centre du 1765, boulevard Taschereau. Idéal pour les élèves qui ont besoin d'un cadre.",
           "price": "45 $/h ou 500 $/mois"
         },
         {
@@ -187,8 +187,8 @@
           "body": "Vous savez où en est votre enfant et ce sur quoi il travaille."
         },
         {
-          "title": "Du primaire au cégep",
-          "body": "Un accompagnement adapté à chaque étape du parcours scolaire québécois."
+          "title": "Du secondaire au cégep",
+          "body": "Du secondaire 1 au cégep, profils régulier et enrichi, jusqu'aux cours de sciences de la nature."
         },
         {
           "title": "En ligne ou en présentiel",
@@ -210,11 +210,11 @@
       "items": [
         {
           "q": "Quels niveaux scolaires accompagnez-vous ?",
-          "a": "Nous accompagnons les élèves du primaire, du secondaire (1 à 5) et du cégep."
+          "a": "Nous accompagnons les élèves du secondaire (1 à 5, profils régulier et enrichi) et du cégep."
         },
         {
           "q": "Dans quelles matières offrez-vous du tutorat ?",
-          "a": "Mathématiques (CST et SN), physique, chimie, sciences et français. Si la matière de votre enfant n'est pas dans la liste, indiquez-la dans le formulaire et nous vous répondrons."
+          "a": "Au secondaire : mathématiques et sciences (régulier et enrichi), physique, programmation, français et préparation aux examens du ministère de secondaire 4 et 5. Au cégep : calcul différentiel et intégral, algèbre linéaire, probabilités et statistiques, mécanique, électricité et magnétisme, ondes et physique moderne, chimie générale et des solutions, biologie cellulaire, programmation en sciences, français 101, 102, 103 et préparation à l'EUF."
         },
         {
           "q": "Que comprend le forfait mensuel à 500 $ ?",
@@ -278,7 +278,7 @@
       "childSchool": "École",
       "level": "Niveau scolaire",
       "subjects": "Matières souhaitées",
-      "subjectsHint": "Plusieurs choix possibles.",
+      "subjectsHint": "Plusieurs choix possibles. Choisissez d'abord le niveau pour voir les matières correspondantes.",
       "otherSubject": "Autre matière ou besoin précis",
       "address": "Adresse",
       "city": "Ville",
@@ -378,7 +378,7 @@
     "cta": "Retour à l'accueil"
   },
   "footer": {
-    "about": "Mentou Academy offre du tutorat privé en ligne et en présentiel, du primaire au cégep, avec un accompagnement en développement personnel.",
+    "about": "Mentou Academy offre du tutorat privé du secondaire au cégep, à domicile, au centre et en ligne, avec un accompagnement en développement personnel.",
     "navTitle": "Navigation",
     "servicesTitle": "Services",
     "services": ["Tutorat en présentiel", "Tutorat en ligne", "Aide aux devoirs", "Préparation aux examens", "Développement personnel"],

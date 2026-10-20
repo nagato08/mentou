@@ -6,6 +6,7 @@ import Services from "@/components/sections/Services";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Pricing from "@/components/sections/Pricing";
 import WhyUs from "@/components/sections/WhyUs";
+import Regions from "@/components/sections/Regions";
 import CommentsSection from "@/components/sections/CommentsSection";
 import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
@@ -49,9 +50,10 @@ export default async function HomePage({
       <JsonLd data={faqSchema(dict.home.faq.items)} />
       <Hero lang={typedLang} dict={dict} />
       <Signs dict={dict} />
-      <Services dict={dict} />
+      <Services lang={typedLang} dict={dict} />
       <HowItWorks lang={typedLang} dict={dict} />
       <Pricing lang={typedLang} dict={dict} />
+      <Regions lang={typedLang} />
       <WhyUs dict={dict} />
       <CommentsSection
         eyebrow={dict.home.testimonials.eyebrow}
