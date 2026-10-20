@@ -64,7 +64,7 @@ function Hero({ lang, page, crumbs, ctaLabel }: Pick<Props, "lang" | "page" | "c
       <Container size="wide" className="grid items-center gap-10 py-10 md:py-16 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
         {text}
         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
-          <Image src={page.image} alt={page.imageAlt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+          <Image src={page.image} alt={page.imageAlt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="hero-zoom object-cover" />
         </div>
       </Container>
     </section>

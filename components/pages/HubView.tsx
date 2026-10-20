@@ -32,12 +32,12 @@ export default function HubView({ lang, hub, pages, basePath, labels, extra }: P
 
       <section className="pb-8 pt-4">
         <Container size="wide">
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-gsap="stagger">
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal="stagger">
             {pages.map((p) => (
               <li key={p.slug}>
                 <Link
                   href={`${basePath}/${p.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card transition-shadow hover:shadow-lift"
+                  className="lift group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card hover:shadow-lift"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />

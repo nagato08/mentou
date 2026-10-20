@@ -68,9 +68,9 @@ export default function Services({ lang, dict }: { lang: Locale; dict: Dictionar
     <section id="services" className="section bg-paper">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.title} intro={t.intro} />
-        <div className="mt-14 grid gap-8 md:grid-cols-2" data-gsap="stagger">
-          <PillarCard pillar={t.tutoring} image="/images/tutorat.jpeg" icon="book" tone="primary" href={`${svc}/tutorat-scolaire`} moreLabel={labels.learnMore} />
-          <PillarCard pillar={t.growth} image="/images/mentorat.jpeg" icon="spark" tone="accent" href={`${svc}/developpement-personnel`} moreLabel={labels.learnMore} />
+        <div className="mt-14 grid gap-8 md:grid-cols-2" data-reveal="stagger">
+          <PillarCard pillar={t.tutoring} image="/images/site/home-tutorat.jpg" icon="book" tone="primary" href={`${svc}/tutorat-scolaire`} moreLabel={labels.learnMore} />
+          <PillarCard pillar={t.growth} image="/images/site/home-developpement.jpg" icon="spark" tone="accent" href={`${svc}/developpement-personnel`} moreLabel={labels.learnMore} />
         </div>
 
         <div className="mt-16">

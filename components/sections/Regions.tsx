@@ -26,12 +26,12 @@ export default function Regions({ lang }: { lang: Locale }) {
           </div>
         </div>
 
-        <ul className="grid gap-3 sm:grid-cols-2" data-gsap="stagger">
+        <ul className="grid gap-3 sm:grid-cols-2" data-reveal="stagger">
           {c.regions.map((r) => (
             <li key={r.slug}>
               <Link
                 href={`${base}/${r.slug}`}
-                className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-white p-5 shadow-card transition-colors hover:border-primary"
+                className="lift group flex items-center justify-between gap-3 rounded-2xl border border-line bg-white p-5 shadow-card hover:border-primary"
               >
                 <span className="flex items-center gap-3">
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-sky text-primary">

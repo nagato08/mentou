@@ -17,7 +17,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "mx-auto text-center items-center" : "items-start";
   return (
-    <div className={`flex max-w-2xl flex-col gap-4 ${alignClass} ${className}`}>
+    <div data-reveal="up" className={`flex max-w-2xl flex-col gap-4 ${alignClass} ${className}`}>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <Tag className="text-3xl font-extrabold leading-tight text-ink md:text-4xl">
         {title}

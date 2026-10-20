@@ -5,7 +5,7 @@ import Script from "next/script";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
-import GsapAnimations from "@/components/layout/GsapAnimationsLazy";
+import Reveal from "@/components/layout/Reveal";
 import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/seo";
@@ -70,7 +70,7 @@ export default async function LangLayout({
       <main id="contenu" className="flex-1">{children}</main>
       <Footer lang={lang as Locale} dict={dict} />
       <BackToTop label={dict.nav.backToTop} />
-      <GsapAnimations />
+      <Reveal />
 
       {GA_ID && (
         <>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/i18n-config";
@@ -37,7 +37,18 @@ export default function NavbarClient({
 }: NavbarClientProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Sous-menu desktop ouvert (href de l'entrée parente), ou null.
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
+
+  // Changement de page : on referme tout (motif « état dérivé » de React).
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setOpenMenu(null);
+    setMenuOpen(false);
+  }
   const base = `/${lang}`;
   const tel = `tel:${labels.phone.replace(/[^\d+]/g, "")}`;
   const ctaHref = `${base}/demander-un-tuteur`;
@@ -64,7 +75,25 @@ export default function NavbarClient({
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
-  const close = () => setMenuOpen(false);
+  // Sous-menu desktop : fermeture au clic extérieur et à Échap.
+  useEffect(() => {
+    if (!openMenu) return;
+    const onDown = (e: PointerEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) setOpenMenu(null);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpenMenu(null);
+    document.addEventListener("pointerdown", onDown);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [openMenu]);
+
+  const close = () => {
+    setMenuOpen(false);
+    setOpenMenu(null);
+  };
   const isActive = (href: string) => href !== base && pathname.startsWith(href);
 
   return (
@@ -92,7 +121,7 @@ export default function NavbarClient({
             <Logo name={labels.siteName} />
           </Link>
 
-          <nav aria-label="Principale" className="hidden items-center gap-0.5 xl:flex">
+          <nav ref={navRef} aria-label="Principale" className="hidden items-center gap-0.5 xl:flex">
             {items.map((item) => {
               const linkClass = `inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors ${
                 isActive(item.href) ? "text-primary" : "text-slate hover:bg-sky hover:text-primary"
@@ -104,19 +133,38 @@ export default function NavbarClient({
                   </Link>
                 );
               }
-              // Sous-menu : s'ouvre au survol et au focus clavier.
+              // Sous-menu : survol à la souris, clic au toucher ou au clavier.
+              const open = openMenu === item.href;
+              const menuId = `menu-${item.href.split("/").pop()}`;
               return (
-                <div key={item.href} className="group relative">
-                  <Link href={item.href} aria-haspopup="true" className={linkClass}>
+                <div
+                  key={item.href}
+                  className="relative"
+                  onPointerEnter={(e) => e.pointerType === "mouse" && setOpenMenu(item.href)}
+                  onPointerLeave={(e) => e.pointerType === "mouse" && setOpenMenu(null)}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    aria-controls={menuId}
+                    onClick={() => setOpenMenu(open ? null : item.href)}
+                    className={linkClass}
+                  >
                     {item.label}
-                    <Icon name="chevronDown" className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
-                  </Link>
-                  <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <Icon name="chevronDown" className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+                  </button>
+                  <div
+                    id={menuId}
+                    className={`absolute left-0 top-full z-50 pt-2 transition-all duration-150 ${
+                      open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
+                    }`}
+                  >
                     <ul className="min-w-60 rounded-2xl border border-line bg-white p-2 shadow-lift">
                       {item.children.map((child, i) => (
                         <li key={`${child.href}-${i}`}>
                           <Link
                             href={child.href}
+                            onClick={close}
                             className={`block rounded-xl px-3.5 py-2.5 text-sm transition-colors hover:bg-sky hover:text-primary ${
                               i === item.children!.length - 1 ? "mt-1 border-t border-line font-semibold text-primary" : "font-medium text-ink"
                             }`}

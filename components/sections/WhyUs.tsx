@@ -22,7 +22,7 @@ export default function WhyUs({ dict }: { dict: Dictionary }) {
         </div>
         <div>
           <SectionHeading eyebrow={t.eyebrow} title={t.title} align="left" />
-          <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2" data-gsap="stagger">
+          <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2" data-reveal="stagger">
             {t.items.map((item, i) => (
               <li key={item.title} className="flex gap-4">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-sky text-primary">

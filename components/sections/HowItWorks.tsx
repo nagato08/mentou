@@ -12,7 +12,7 @@ export default function HowItWorks({ lang, dict }: { lang: Locale; dict: Diction
     <section id="fonctionnement" className="section">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.title} />
-        <ol className="relative mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4" data-gsap="stagger">
+        <ol className="relative mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4" data-reveal="stagger">
           {t.steps.map((step, i) => (
             <li key={step.title} className="relative flex flex-col items-start gap-4">
               {/* Trait de liaison entre les étapes (desktop). */}

@@ -58,7 +58,7 @@ export default function Hero({ lang, dict }: HeroProps) {
               fill
               priority
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
+              className="hero-zoom object-cover"
             />
           </div>
           <div className="absolute -bottom-6 left-4 right-4 flex items-center gap-4 rounded-2xl bg-white p-4 shadow-lift sm:left-auto sm:right-6 sm:max-w-xs">

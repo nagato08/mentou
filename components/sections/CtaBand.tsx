@@ -15,7 +15,7 @@ export default function CtaBand({ title, body, primaryLabel, primaryHref, phoneL
   return (
     <section className="section">
       <Container>
-        <div className="relative overflow-hidden rounded-3xl bg-primary px-6 py-14 text-center text-white md:px-16" data-gsap="fade-up">
+        <div className="relative overflow-hidden rounded-3xl bg-primary px-6 py-14 text-center text-white md:px-16" data-reveal="up">
           <div aria-hidden className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />
           <div aria-hidden className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-accent/25" />
           <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">

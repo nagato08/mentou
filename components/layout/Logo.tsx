@@ -12,11 +12,11 @@ export default function Logo({ name, size = "md" }: LogoProps) {
   return (
     <span className="flex items-center gap-2.5">
       <Image
-        src="/flyer/nouveau-logo.jpeg"
+        src="/logo-mark.png"
         alt=""
         width={48}
         height={48}
-        className={`${img} rounded-full object-cover ring-1 ring-line`}
+        className={`${img} rounded-xl object-cover`}
         priority
       />
       <span className="flex flex-col leading-none">

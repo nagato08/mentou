@@ -25,7 +25,7 @@ export default function Pricing({ lang, dict, headingLevel = "h2" }: PricingProp
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.title} intro={t.intro} as={headingLevel} />
 
-        <ul className="mt-14 grid items-stretch gap-6 lg:grid-cols-3" data-gsap="stagger">
+        <ul className="mt-14 grid items-stretch gap-6 lg:grid-cols-3" data-reveal="stagger">
           {ALL_OFFERS.map((offer) => {
             const plan = t.plans[offer];
             const featured = offer === "monthly";

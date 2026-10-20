@@ -11,7 +11,7 @@ export default function Signs({ dict }: { dict: Dictionary }) {
     <section className="section">
       <Container>
         <SectionHeading eyebrow={t.eyebrow} title={t.title} />
-        <ul className="mt-12 grid gap-6 md:grid-cols-3" data-gsap="stagger">
+        <ul className="mt-12 grid gap-6 md:grid-cols-3" data-reveal="stagger">
           {t.items.map((item, i) => (
             <li key={item.title} className="rounded-2xl border border-line bg-white p-7 shadow-card">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-sky text-primary">

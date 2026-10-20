@@ -303,9 +303,12 @@ export default function TutorRequestForm({
 
           <div>
             <span className="block text-sm font-semibold text-ink">{t.fields.subjects}</span>
-            <p className="mb-2 text-xs text-muted">{t.fields.subjectsHint}</p>
+            <p className="mb-2 text-xs text-muted">{level ? t.fields.subjectsMulti : ""}</p>
+            {!level && (
+              <p className="rounded-xl bg-paper px-4 py-3 text-sm text-slate">{t.fields.subjectsHint}</p>
+            )}
             <div className="grid gap-2 sm:grid-cols-2">
-              {subjectOptions.map((s) => {
+              {(level ? subjectOptions : []).map((s) => {
                 const active = subjects.has(s.id);
                 return (
                   <label

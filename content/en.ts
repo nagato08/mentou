@@ -72,8 +72,8 @@ const en: SiteContent = {
       kicker: "Services",
       title: "Personalized academic tutoring",
       intro: "A tutor who follows your child's curriculum, fills the gaps and helps them take back control of their grades.",
-      image: "/images/tutorat.jpeg",
-      imageAlt: "Student doing homework with notebooks and a laptop",
+      image: "/images/site/service-tutorat-scolaire.jpg",
+      imageAlt: "Student working on a laptop with notes",
       blocks: [
         {
           type: "steps",
@@ -121,8 +121,8 @@ const en: SiteContent = {
       kicker: "Services",
       title: "Confidence, discipline, leadership",
       intro: "Good grades are not enough. We also help young people believe in themselves, get organized and find their place.",
-      image: "/images/mentorat.jpeg",
-      imageAlt: "Young people working together in front of a whiteboard",
+      image: "/images/site/service-developpement.jpg",
+      imageAlt: "Facilitator presenting to an attentive group",
       blocks: [
         {
           type: "statement",
@@ -132,7 +132,7 @@ const en: SiteContent = {
         {
           type: "features",
           title: "Four skills, built during sessions",
-          image: "/images/mentorat.jpeg",
+          image: "/images/site/service-developpement-groupe.jpg",
           imageAlt: "Group of young people in discussion",
           items: [
             { icon: "heart", title: "Self-confidence", body: "Daring to answer, daring to be wrong, recognizing progress." },
@@ -167,8 +167,8 @@ const en: SiteContent = {
       kicker: "Services",
       title: "In-person tutoring, at home or at our centre",
       intro: "A tutor by your child's side. The ideal format for students who need structure and consistency.",
-      image: "/images/junior.jpg",
-      imageAlt: "Student working on a tablet during a session",
+      image: "/images/site/service-domicile.jpg",
+      imageAlt: "Mother helping her child with homework at home",
       blocks: [
         {
           type: "compare",
@@ -225,8 +225,8 @@ const en: SiteContent = {
       kicker: "Services",
       title: "Online tutoring, everywhere in Québec",
       intro: "The same support as in person, with no travel and more flexible hours. At $30 per hour.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Student in an online tutoring session",
+      image: "/images/site/service-en-ligne.jpg",
+      imageAlt: "Student attending an online session on a laptop",
       blocks: [
         {
           type: "checklist",
@@ -285,8 +285,8 @@ const en: SiteContent = {
       kicker: "Services",
       title: "Ministry exam and EUF preparation",
       intro: "Year-end exams weigh heavily in the final grade. Targeted preparation makes all the difference.",
-      image: "/images/lecture.jpeg",
-      imageAlt: "Stack of books on a study desk",
+      image: "/images/site/service-examens.jpg",
+      imageAlt: "Smiling graduate on graduation day",
       blocks: [
         {
           type: "compare",
@@ -336,8 +336,8 @@ const en: SiteContent = {
       kicker: "Subjects",
       title: "Math tutoring",
       intro: "Math is the subject where gaps build up fastest. A tutor spots and fills them before they block what comes next.",
-      image: "/images/tutorat.jpeg",
-      imageAlt: "Student doing math exercises",
+      image: "/images/site/matiere-mathematiques.jpg",
+      imageAlt: "Math exercise notebook and pen",
       blocks: [
         {
           type: "levels",
@@ -366,8 +366,8 @@ const en: SiteContent = {
       kicker: "Subjects",
       title: "Science tutoring",
       intro: "Understanding rather than memorizing: we help students connect theory, labs and problems.",
-      image: "/images/mentorat.jpeg",
-      imageAlt: "Young people working together on a project",
+      image: "/images/site/matiere-sciences.jpg",
+      imageAlt: "DNA double helix model",
       blocks: [
         {
           type: "levels",
@@ -396,8 +396,8 @@ const en: SiteContent = {
       kicker: "Subjects",
       title: "Physics tutoring",
       intro: "Physics requires both solid math foundations and a good understanding of phenomena. We work on both.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Tutoring session in front of a screen",
+      image: "/images/site/matiere-physique.jpg",
+      imageAlt: "Rocket launch at dusk",
       blocks: [
         {
           type: "levels",
@@ -430,8 +430,8 @@ const en: SiteContent = {
       kicker: "Subjects",
       title: "Chemistry tutoring",
       intro: "Stoichiometry, equilibria, solutions: we help students master natural science chemistry courses.",
-      image: "/images/lecture.jpeg",
-      imageAlt: "Books and study notes",
+      image: "/images/site/matiere-chimie.jpg",
+      imageAlt: "Student doing calculations with a calculator",
       blocks: [
         {
           type: "levels",
@@ -457,8 +457,8 @@ const en: SiteContent = {
       kicker: "Subjects",
       title: "Programming tutoring",
       intro: "Learning to think like a programmer: break down a problem, write clear code and find your own bugs.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Student in front of a computer",
+      image: "/images/site/matiere-programmation.jpg",
+      imageAlt: "Hands on a keyboard in front of code",
       blocks: [
         {
           type: "levels",
@@ -485,8 +485,8 @@ const en: SiteContent = {
       kicker: "Subjects",
       title: "French tutoring",
       intro: "Reading, writing, grammar, analysis: French affects every subject. We help students express themselves clearly and confidently.",
-      image: "/images/lecture.jpeg",
-      imageAlt: "Stack of books on a desk",
+      image: "/images/site/matiere-francais.jpg",
+      imageAlt: "Open book, pen and coffee on a desk",
       blocks: [
         {
           type: "levels",
@@ -516,8 +516,8 @@ const en: SiteContent = {
       kicker: "Areas",
       title: "Tutoring in Longueuil",
       intro: "From Le Vieux-Longueuil to Saint-Hubert, our tutors come to your home. You can also visit our Taschereau Boulevard centre.",
-      image: "/images/junior.jpg",
-      imageAlt: "Student in a tutoring session",
+      image: "/images/site/region-longueuil.jpg",
+      imageAlt: "Parents supporting their child at home",
       hero: "panel",
       facts: [
         { icon: "home", label: "In-home", value: "All three boroughs" },
@@ -559,8 +559,8 @@ const en: SiteContent = {
       kicker: "Areas",
       title: "Tutoring in Brossard",
       intro: "Taschereau Boulevard runs through Brossard, and our centre is on that same boulevard. Our tutors also come to your home.",
-      image: "/images/tutorat.jpeg",
-      imageAlt: "Student doing homework",
+      image: "/images/site/region-brossard.jpg",
+      imageAlt: "Father helping his son with homework",
       hero: "panel",
       facts: [
         { icon: "school", label: "At the centre", value: CENTER },
@@ -611,8 +611,8 @@ const en: SiteContent = {
       kicker: "Areas",
       title: "In-home tutoring in Candiac",
       intro: "In Candiac, the tutor does the travelling. Your child studies at home, at a time that suits you.",
-      image: "/images/mentorat.jpeg",
-      imageAlt: "Young people in a work session",
+      image: "/images/site/region-candiac.jpg",
+      imageAlt: "Family reading together at home",
       hero: "panel",
       facts: [
         { icon: "home", label: "Main format", value: "In-home tutoring" },
@@ -651,8 +651,8 @@ const en: SiteContent = {
       kicker: "Areas",
       title: "Tutoring in Saint-Constant",
       intro: "At home when possible, online when the schedule is packed. In Saint-Constant, many families combine both.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Online tutoring session",
+      image: "/images/site/region-saint-constant.jpg",
+      imageAlt: "Family gathered in the living room",
       hero: "panel",
       facts: [
         { icon: "home", label: "In-home", value: "$45 per hour" },
@@ -711,8 +711,8 @@ const en: SiteContent = {
     kicker: "About",
     title: "Helping students succeed, and grow",
     intro: "Mentou Academy was born from a conviction: a student who regains confidence also improves their grades.",
-    image: "/images/mentorat.jpeg",
-    imageAlt: "Young people working together",
+    image: "/images/site/about.jpg",
+    imageAlt: "Students working in a library",
     blocks: [
       {
         type: "statement",
@@ -721,7 +721,7 @@ const en: SiteContent = {
       {
         type: "features",
         title: "How we work",
-        image: "/images/tutorat.jpeg",
+        image: "/images/site/about-travail.jpg",
         imageAlt: "Student in a work session",
         items: [
           { icon: "users", title: "Thoughtful matching", body: "The tutor is chosen for the student's level, subjects and personality." },

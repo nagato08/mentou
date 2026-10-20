@@ -19,9 +19,9 @@ export function organizationSchema(lang: Locale) {
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/flyer/nouveau-logo.jpeg`,
-      width: 1254,
-      height: 1254,
+      url: `${SITE_URL}/logo-mark.png`,
+      width: 512,
+      height: 512,
     },
     description:
       lang === "fr"
@@ -64,7 +64,7 @@ export function localBusinessSchema(lang: Locale) {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#localbusiness`,
     name: "Mentou Academy",
-    image: `${SITE_URL}/flyer/nouveau-logo.jpeg`,
+    image: `${SITE_URL}/logo-mark.png`,
     url: SITE_URL,
     telephone: PHONE,
     email: EMAIL,

@@ -10,7 +10,7 @@ const MAP_QUERY = "1765 boulevard Taschereau, QC";
 
 function Heading({ title, intro, center = false }: { title: string; intro?: string; center?: boolean }) {
   return (
-    <div className={`flex max-w-2xl flex-col gap-3 ${center ? "mx-auto text-center" : ""}`}>
+    <div data-reveal="up" className={`flex max-w-2xl flex-col gap-3 ${center ? "mx-auto text-center" : ""}`}>
       <h2 className="text-3xl font-extrabold leading-tight text-ink md:text-4xl">{title}</h2>
       {intro && <p className="text-lg leading-relaxed text-slate">{intro}</p>}
     </div>
@@ -23,7 +23,7 @@ function Steps({ block }: { block: Extract<Block, { type: "steps" }> }) {
       <div className="lg:sticky lg:top-32 lg:self-start">
         <Heading title={block.title} intro={block.intro} />
       </div>
-      <ol className="relative flex flex-col gap-8 border-l-2 border-sky-strong pl-8" data-gsap="stagger">
+      <ol className="relative flex flex-col gap-8 border-l-2 border-sky-strong pl-8" data-reveal="stagger">
         {block.steps.map((s, i) => (
           <li key={s.title} className="relative">
             <span className="absolute -left-[3.05rem] top-0 grid h-9 w-9 place-items-center rounded-full bg-primary text-sm font-extrabold text-white ring-4 ring-white">
@@ -42,7 +42,7 @@ function Compare({ block }: { block: Extract<Block, { type: "compare" }> }) {
   return (
     <Container>
       <Heading title={block.title} intro={block.intro} center />
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-12 grid gap-6 md:grid-cols-2" data-reveal="stagger">
         {block.columns.map((col) => (
           <article
             key={col.title}
@@ -94,7 +94,7 @@ function Features({ block }: { block: Extract<Block, { type: "features" }> }) {
   return (
     <Container size="wide">
       <Heading title={block.title} intro={block.intro} />
-      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
+      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2" data-reveal="stagger">
         <div className="relative min-h-64 overflow-hidden rounded-3xl md:col-span-2 lg:row-span-2">
           <Image src={block.image} alt={block.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
@@ -113,7 +113,7 @@ function Features({ block }: { block: Extract<Block, { type: "features" }> }) {
 function Statement({ block }: { block: Extract<Block, { type: "statement" }> }) {
   return (
     <div className="bg-sky">
-      <Container size="narrow" className="flex flex-col gap-5 py-16 md:py-20">
+      <Container size="narrow" className="flex flex-col gap-5 py-16 md:py-20" data-reveal="up">
         <p className="text-3xl font-extrabold leading-snug text-ink md:text-[2.6rem]">{block.text}</p>
         {block.body && <p className="max-w-2xl text-lg leading-relaxed text-slate">{block.body}</p>}
       </Container>
@@ -126,7 +126,7 @@ function Checklist({ block }: { block: Extract<Block, { type: "checklist" }> }) 
   return (
     <Container size="narrow">
       <Heading title={block.title} intro={block.intro} />
-      <ul className="mt-8 flex flex-col gap-3">
+      <ul className="mt-8 flex flex-col gap-3" data-reveal="stagger">
         {block.items.map((item) => (
           <li
             key={item}
@@ -150,7 +150,7 @@ function Checklist({ block }: { block: Extract<Block, { type: "checklist" }> }) 
 function Price({ block, labels }: { block: Extract<Block, { type: "price" }>; labels: Labels }) {
   return (
     <Container>
-      <div className="grid overflow-hidden rounded-3xl border border-line bg-white shadow-card lg:grid-cols-[1.2fr_1fr]">
+      <div className="grid overflow-hidden rounded-3xl border border-line bg-white shadow-card lg:grid-cols-[1.2fr_1fr]" data-reveal="zoom">
         <div className="flex flex-col gap-6 p-8 md:p-10">
           <Heading title={block.title} intro={block.body} />
           <ul className="grid gap-4 sm:grid-cols-2">
@@ -186,7 +186,7 @@ function Levels({ block }: { block: Extract<Block, { type: "levels" }> }) {
   return (
     <Container size="wide">
       <Heading title={block.title} intro={block.intro} />
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid gap-6 lg:grid-cols-2" data-reveal="stagger">
         {block.groups.map((g, i) => (
           <div key={g.title} className={`rounded-3xl p-7 ${i === 0 ? "bg-sky" : "border border-line bg-white"}`}>
             <h3 className="flex items-center gap-2.5 text-xl font-extrabold text-ink">
@@ -210,11 +210,11 @@ function Levels({ block }: { block: Extract<Block, { type: "levels" }> }) {
 function Chips({ block }: { block: Extract<Block, { type: "chips" }> }) {
   return (
     <Container className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-      <div className="max-w-md">
+      <div className="max-w-md" data-reveal="up">
         <h2 className="text-2xl font-extrabold text-ink md:text-3xl">{block.title}</h2>
         {block.body && <p className="mt-2 leading-relaxed text-slate">{block.body}</p>}
       </div>
-      <ul className="flex max-w-xl flex-wrap gap-2.5 md:justify-end">
+      <ul className="flex max-w-xl flex-wrap gap-2.5 md:justify-end" data-reveal="stagger">
         {block.chips.map((c) => (
           <li key={c} className="flex items-center gap-2 rounded-full bg-paper px-4 py-2.5 font-semibold text-ink">
             <Icon name="pin" className="h-4 w-4 text-primary" />
@@ -230,7 +230,7 @@ function MapBlock({ block, labels }: { block: Extract<Block, { type: "map" }>; l
   const q = encodeURIComponent(MAP_QUERY);
   return (
     <Container size="wide" className="grid items-stretch gap-6 lg:grid-cols-[1fr_1.3fr]">
-      <div className="flex flex-col justify-center gap-5 rounded-3xl bg-navy p-8 text-white md:p-10">
+      <div className="flex flex-col justify-center gap-5 rounded-3xl bg-navy p-8 text-white md:p-10" data-reveal="left">
         <Icon name="pin" className="h-8 w-8 text-accent" />
         <h2 className="text-3xl font-extrabold leading-tight">{block.title}</h2>
         <p className="text-lg font-bold text-accent">{labels.centerAddress}</p>
@@ -245,7 +245,7 @@ function MapBlock({ block, labels }: { block: Extract<Block, { type: "map" }>; l
           <Icon name="arrow" className="h-4 w-4" />
         </a>
       </div>
-      <div className="relative min-h-80 overflow-hidden rounded-3xl border border-line bg-paper">
+      <div className="relative min-h-80 overflow-hidden rounded-3xl border border-line bg-paper" data-reveal="right">
         <iframe
           title={labels.mapTitle}
           src={`https://www.google.com/maps?q=${q}&output=embed`}
@@ -262,7 +262,7 @@ function Nearby({ block }: { block: Extract<Block, { type: "nearby" }> }) {
   return (
     <Container>
       <Heading title={block.title} intro={block.intro} />
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2" data-reveal="stagger">
         {block.places.map((p) => (
           <li key={p.name} className="flex gap-4 border-t-2 border-primary pt-4">
             <Icon name="school" className="mt-0.5 h-6 w-6 shrink-0 text-primary" />
@@ -279,7 +279,7 @@ function Nearby({ block }: { block: Extract<Block, { type: "nearby" }> }) {
 
 function Text({ block }: { block: Extract<Block, { type: "text" }> }) {
   return (
-    <Container size="narrow">
+    <Container size="narrow" data-reveal="up">
       <h2 className="text-2xl font-extrabold text-ink md:text-3xl">{block.title}</h2>
       <p className="mt-4 text-lg leading-relaxed text-slate">{block.body}</p>
     </Container>

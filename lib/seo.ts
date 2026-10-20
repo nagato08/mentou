@@ -17,7 +17,7 @@ export function buildMetadata({
   path,
   title,
   description,
-  image = "/flyer/nouveau-logo.jpeg",
+  image = "/logo.jpg",
 }: BuildMetadataInput): Metadata {
   const url = `${SITE_URL}/${lang}${path === "/" ? "" : path}`;
   const altLang = lang === "fr" ? "en" : "fr";
@@ -43,7 +43,7 @@ export function buildMetadata({
       siteName: "Mentou Academy",
       title,
       description,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: image, alt: title }],
     },
     twitter: {
       card: "summary_large_image",

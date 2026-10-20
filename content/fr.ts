@@ -73,8 +73,8 @@ const fr: SiteContent = {
       kicker: "Services",
       title: "Tutorat scolaire personnalisé",
       intro: "Un tuteur qui suit le programme de votre enfant, comble ses lacunes et l'aide à reprendre le contrôle de ses résultats.",
-      image: "/images/tutorat.jpeg",
-      imageAlt: "Élève qui travaille ses devoirs avec ses cahiers et son ordinateur",
+      image: "/images/site/service-tutorat-scolaire.jpg",
+      imageAlt: "Élève qui travaille sur son ordinateur avec ses notes",
       blocks: [
         {
           type: "steps",
@@ -122,8 +122,8 @@ const fr: SiteContent = {
       kicker: "Services",
       title: "Confiance, discipline, leadership",
       intro: "Les bonnes notes ne suffisent pas. Nous aidons aussi les jeunes à croire en eux, à s'organiser et à prendre leur place.",
-      image: "/images/mentorat.jpeg",
-      imageAlt: "Jeunes qui travaillent ensemble devant un tableau blanc",
+      image: "/images/site/service-developpement.jpg",
+      imageAlt: "Animateur qui présente devant un groupe attentif",
       blocks: [
         {
           type: "statement",
@@ -133,7 +133,7 @@ const fr: SiteContent = {
         {
           type: "features",
           title: "Quatre compétences, travaillées en séance",
-          image: "/images/mentorat.jpeg",
+          image: "/images/site/service-developpement-groupe.jpg",
           imageAlt: "Groupe de jeunes en discussion",
           items: [
             { icon: "heart", title: "Confiance en soi", body: "Oser répondre, oser se tromper, reconnaître ses progrès." },
@@ -168,8 +168,8 @@ const fr: SiteContent = {
       kicker: "Services",
       title: "Tutorat en personne, chez vous ou à notre centre",
       intro: "Un tuteur aux côtés de votre enfant. Le format idéal pour les élèves qui ont besoin d'un cadre et de constance.",
-      image: "/images/junior.jpg",
-      imageAlt: "Élève qui travaille sur une tablette pendant une séance",
+      image: "/images/site/service-domicile.jpg",
+      imageAlt: "Mère qui aide son enfant à faire ses devoirs à la maison",
       blocks: [
         {
           type: "compare",
@@ -234,8 +234,8 @@ const fr: SiteContent = {
       kicker: "Services",
       title: "Tutorat en ligne, partout au Québec",
       intro: "Le même accompagnement qu'en présentiel, sans déplacement, avec des horaires plus souples. À 30 $ de l'heure.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Élève en séance de tutorat en ligne avec sa tutrice",
+      image: "/images/site/service-en-ligne.jpg",
+      imageAlt: "Élève qui suit une séance en ligne sur son portable",
       blocks: [
         {
           type: "checklist",
@@ -302,8 +302,8 @@ const fr: SiteContent = {
       kicker: "Services",
       title: "Préparation aux examens du ministère et à l'EUF",
       intro: "Les examens de fin d'année pèsent lourd dans la note finale. Une préparation ciblée fait toute la différence.",
-      image: "/images/lecture.jpeg",
-      imageAlt: "Pile de livres sur un bureau d'étude",
+      image: "/images/site/service-examens.jpg",
+      imageAlt: "Diplômée souriante le jour de sa remise de diplôme",
       blocks: [
         {
           type: "compare",
@@ -362,8 +362,8 @@ const fr: SiteContent = {
       kicker: "Matières",
       title: "Tutorat en mathématiques",
       intro: "Les mathématiques sont la matière où les lacunes s'accumulent le plus vite. Un tuteur les repère et les comble avant qu'elles ne bloquent la suite.",
-      image: "/images/tutorat.jpeg",
-      imageAlt: "Élève qui fait des exercices de mathématiques",
+      image: "/images/site/matiere-mathematiques.jpg",
+      imageAlt: "Cahier d'exercices de mathématiques et stylo",
       blocks: [
         {
           type: "levels",
@@ -392,8 +392,8 @@ const fr: SiteContent = {
       kicker: "Matières",
       title: "Tutorat en sciences",
       intro: "Comprendre plutôt qu'apprendre par cœur : nous aidons l'élève à faire les liens entre la théorie, les laboratoires et les problèmes.",
-      image: "/images/mentorat.jpeg",
-      imageAlt: "Jeunes qui travaillent ensemble sur un projet",
+      image: "/images/site/matiere-sciences.jpg",
+      imageAlt: "Modèle de double hélice d'ADN",
       blocks: [
         {
           type: "levels",
@@ -422,8 +422,8 @@ const fr: SiteContent = {
       kicker: "Matières",
       title: "Tutorat en physique",
       intro: "La physique demande à la fois des bases solides en mathématiques et une bonne compréhension des phénomènes. Nous travaillons les deux.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Séance de tutorat devant un écran",
+      image: "/images/site/matiere-physique.jpg",
+      imageAlt: "Lancement d'une fusée au crépuscule",
       blocks: [
         {
           type: "levels",
@@ -456,8 +456,8 @@ const fr: SiteContent = {
       kicker: "Matières",
       title: "Tutorat en chimie",
       intro: "Stœchiométrie, équilibres, solutions : nous aidons les étudiants à maîtriser les cours de chimie de sciences de la nature.",
-      image: "/images/lecture.jpeg",
-      imageAlt: "Livres et notes d'étude",
+      image: "/images/site/matiere-chimie.jpg",
+      imageAlt: "Élève qui fait des calculs avec une calculatrice",
       blocks: [
         {
           type: "levels",
@@ -483,8 +483,8 @@ const fr: SiteContent = {
       kicker: "Matières",
       title: "Tutorat en programmation",
       intro: "Apprendre à penser comme un programmeur : décomposer un problème, écrire du code clair et trouver ses erreurs.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Élève devant un ordinateur",
+      image: "/images/site/matiere-programmation.jpg",
+      imageAlt: "Mains sur un clavier devant du code",
       blocks: [
         {
           type: "levels",
@@ -511,8 +511,8 @@ const fr: SiteContent = {
       kicker: "Matières",
       title: "Tutorat en français",
       intro: "Lecture, écriture, grammaire, analyse : le français touche toutes les matières. Nous aidons l'élève à s'exprimer avec clarté et assurance.",
-      image: "/images/lecture.jpeg",
-      imageAlt: "Pile de livres sur un bureau",
+      image: "/images/site/matiere-francais.jpg",
+      imageAlt: "Livre ouvert, crayon et café sur un bureau",
       blocks: [
         {
           type: "levels",
@@ -543,8 +543,8 @@ const fr: SiteContent = {
       kicker: "Régions",
       title: "Tutorat à Longueuil",
       intro: "Du Vieux-Longueuil à Saint-Hubert, nos tuteurs se déplacent chez vous. Vous pouvez aussi venir à notre centre du boulevard Taschereau.",
-      image: "/images/junior.jpg",
-      imageAlt: "Élève en séance de tutorat",
+      image: "/images/site/region-longueuil.jpg",
+      imageAlt: "Parents qui accompagnent leur enfant à la maison",
       hero: "panel",
       facts: [
         { icon: "home", label: "À domicile", value: "Les trois arrondissements" },
@@ -586,8 +586,8 @@ const fr: SiteContent = {
       kicker: "Régions",
       title: "Tutorat à Brossard",
       intro: "Le boulevard Taschereau traverse Brossard, et notre centre est situé sur ce même boulevard. Nos tuteurs viennent aussi chez vous.",
-      image: "/images/tutorat.jpeg",
-      imageAlt: "Élève qui fait ses devoirs",
+      image: "/images/site/region-brossard.jpg",
+      imageAlt: "Père qui aide son fils à faire ses devoirs",
       hero: "panel",
       facts: [
         { icon: "school", label: "Au centre", value: CENTER },
@@ -646,8 +646,8 @@ const fr: SiteContent = {
       kicker: "Régions",
       title: "Tutorat à domicile à Candiac",
       intro: "À Candiac, c'est le tuteur qui se déplace. Votre enfant étudie chez lui, à l'heure qui vous convient.",
-      image: "/images/mentorat.jpeg",
-      imageAlt: "Jeunes en séance de travail",
+      image: "/images/site/region-candiac.jpg",
+      imageAlt: "Famille qui lit ensemble à la maison",
       hero: "panel",
       facts: [
         { icon: "home", label: "Format principal", value: "Tutorat à domicile" },
@@ -686,8 +686,8 @@ const fr: SiteContent = {
       kicker: "Régions",
       title: "Tutorat à Saint-Constant",
       intro: "Domicile quand c'est possible, en ligne quand l'horaire déborde. À Saint-Constant, beaucoup de familles combinent les deux.",
-      image: "/images/tutorat1.jpeg",
-      imageAlt: "Séance de tutorat en ligne",
+      image: "/images/site/region-saint-constant.jpg",
+      imageAlt: "Famille réunie dans le salon",
       hero: "panel",
       facts: [
         { icon: "home", label: "À domicile", value: "45 $ de l'heure" },
@@ -754,8 +754,8 @@ const fr: SiteContent = {
     kicker: "À propos",
     title: "Faire réussir les élèves, et les faire grandir",
     intro: "Mentou Academy est née d'une conviction : un élève qui reprend confiance en lui progresse aussi dans ses notes.",
-    image: "/images/mentorat.jpeg",
-    imageAlt: "Jeunes qui travaillent ensemble",
+    image: "/images/site/about.jpg",
+    imageAlt: "Étudiants qui travaillent dans une bibliothèque",
     blocks: [
       {
         type: "statement",
@@ -764,7 +764,7 @@ const fr: SiteContent = {
       {
         type: "features",
         title: "Notre façon de travailler",
-        image: "/images/tutorat.jpeg",
+        image: "/images/site/about-travail.jpg",
         imageAlt: "Élève en séance de travail",
         items: [
           { icon: "users", title: "Un jumelage réfléchi", body: "Le tuteur est choisi selon le niveau, les matières et la personnalité de l'élève." },
