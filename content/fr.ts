@@ -1,6 +1,7 @@
 import type { SiteContent } from "./types";
 
 const CENTER = "1765, boulevard Taschereau";
+const TAX = "Taxes (TPS et TVQ) en sus, ajoutées au paiement en ligne.";
 
 const fr: SiteContent = {
   labels: {
@@ -12,13 +13,18 @@ const fr: SiteContent = {
     seeAll: "Tout voir",
     learnMore: "En savoir plus",
     faqTitle: "Questions fréquentes",
-    relatedTitle: "À découvrir aussi",
-    ctaTitle: "Prêt à commencer ?",
+    otherServices: "Nos autres services",
+    otherSubjects: "Les autres matières",
+    otherRegions: "Les autres villes desservies",
+    ctaTitle: "Prêt à commencer ?",
     ctaBody: "Choisissez votre formule et réservez vos heures en ligne. Nous vous contactons ensuite pour planifier les séances.",
     ctaButton: "Demander un tuteur",
     center: "Notre centre",
     centerAddress: CENTER,
     centerBody: "Les séances en présentiel ont lieu à domicile ou à notre centre, sur le boulevard Taschereau.",
+    directions: "Itinéraire",
+    mapTitle: "Carte du centre Mentou Academy",
+    examples: "Exemples de réservation",
     regionsHome: "Présents sur la Rive-Sud",
     regionsHomeBody: "Tutorat à domicile et à notre centre à Longueuil, Brossard, Candiac, Saint-Constant et partout en Montérégie. En ligne partout au Québec.",
     monteregie: "Toute la Montérégie",
@@ -56,6 +62,7 @@ const fr: SiteContent = {
     },
   },
 
+  // ─── SERVICES ─────────────────────────────────────────────
   services: [
     {
       slug: "tutorat-scolaire",
@@ -68,33 +75,42 @@ const fr: SiteContent = {
       intro: "Un tuteur qui suit le programme de votre enfant, comble ses lacunes et l'aide à reprendre le contrôle de ses résultats.",
       image: "/images/tutorat.jpeg",
       imageAlt: "Élève qui travaille ses devoirs avec ses cahiers et son ordinateur",
-      highlights: ["Secondaire 1 à 5 et cégep", "Profils régulier et enrichi", "À domicile, au centre ou en ligne"],
-      sections: [
+      blocks: [
         {
-          title: "Ce que nous travaillons ensemble",
-          items: [
-            "Aide aux devoirs et compréhension des notions vues en classe",
-            "Rattrapage et remise à niveau après une étape difficile",
-            "Préparation aux examens et aux évaluations",
-            "Méthodes d'étude, prise de notes et organisation",
+          type: "steps",
+          title: "Une séance, concrètement",
+          intro: "Chaque séance suit le même fil, pour que l'élève sache où il s'en va.",
+          steps: [
+            { title: "Le point sur la semaine", body: "Ce qui a été vu en classe, les devoirs à remettre, les évaluations qui approchent." },
+            { title: "Les notions qui bloquent", body: "Le tuteur réexplique autrement, avec des exemples, jusqu'à ce que ce soit clair." },
+            { title: "Les exercices guidés", body: "L'élève pratique pendant que le tuteur corrige la méthode, pas seulement la réponse." },
+            { title: "Le plan pour la suite", body: "On repart avec deux ou trois objectifs précis d'ici la prochaine séance." },
           ],
         },
         {
-          title: "Un plan adapté à chaque élève",
-          body: "Lors du premier contact, nous faisons le point sur les difficultés, les objectifs et l'horaire de votre enfant. Le tuteur construit ensuite un plan de travail qui suit le rythme du programme scolaire et s'ajuste au fil des séances.",
+          type: "levels",
+          title: "Du secondaire 1 au cégep",
+          intro: "Nous suivons le programme québécois, en profil régulier comme en enrichi.",
+          groups: [
+            { title: "Secondaire 1 à 5", items: ["Mathématiques", "Sciences", "Physique", "Programmation", "Français", "Examens du ministère"] },
+            { title: "Cégep", items: ["Calcul différentiel et intégral", "Algèbre linéaire", "Mécanique", "Chimie générale", "Biologie cellulaire", "Français 101 à 103"] },
+          ],
         },
         {
-          title: "Pour qui ?",
+          type: "checklist",
+          tone: "ok",
+          title: "Pour qui ?",
           items: [
             "L'élève dont les notes baissent ou qui a échoué une étape",
-            "L'élève qui vise le profil enrichi ou une admission sélective",
+            "L'élève qui vise le profil enrichi ou un programme sélectif",
             "L'étudiant au cégep qui bloque sur un cours de sciences ou de français",
+            "Le parent qui veut un suivi régulier plutôt qu'une aide de dernière minute",
           ],
         },
       ],
       faq: [
-        { q: "Combien de séances faut-il pour voir des progrès ?", a: "Cela dépend de l'élève et de ses lacunes. Un suivi régulier, chaque semaine, donne généralement les meilleurs résultats. Le forfait mensuel (12 heures par semaine) est pensé pour cela." },
-        { q: "Le tuteur suit-il le programme de l'école ?", a: "Oui. Le tuteur travaille à partir des notions vues en classe, des devoirs et des évaluations à venir de votre enfant." },
+        { q: "Combien de séances faut-il pour voir des progrès ?", a: "Cela dépend de l'élève et de ses lacunes. Un suivi régulier, chaque semaine, donne généralement les meilleurs résultats. Le forfait mensuel (12 heures par semaine) est pensé pour cela." },
+        { q: "Le tuteur suit-il le programme de l'école ?", a: "Oui. Le tuteur travaille à partir des notions vues en classe, des devoirs et des évaluations à venir de votre enfant." },
       ],
     },
     {
@@ -104,37 +120,43 @@ const fr: SiteContent = {
       metaTitle: "Développement personnel pour adolescents",
       metaDescription: "Accompagnement en développement personnel pour les jeunes : confiance en soi, discipline, organisation, prise de parole et leadership.",
       kicker: "Services",
-      title: "Développement personnel : confiance, discipline, leadership",
+      title: "Confiance, discipline, leadership",
       intro: "Les bonnes notes ne suffisent pas. Nous aidons aussi les jeunes à croire en eux, à s'organiser et à prendre leur place.",
       image: "/images/mentorat.jpeg",
       imageAlt: "Jeunes qui travaillent ensemble devant un tableau blanc",
-      highlights: ["Confiance en soi", "Discipline et organisation", "Prise de parole et leadership"],
-      sections: [
+      blocks: [
         {
-          title: "Les compétences que nous développons",
+          type: "statement",
+          text: "Un élève qui croit en ses moyens pose plus de questions, persévère plus longtemps et apprend mieux.",
+          body: "C'est pour cela que le développement personnel fait partie de chaque accompagnement chez Mentou Academy.",
+        },
+        {
+          type: "features",
+          title: "Quatre compétences, travaillées en séance",
+          image: "/images/mentorat.jpeg",
+          imageAlt: "Groupe de jeunes en discussion",
           items: [
-            "Confiance et estime de soi",
-            "Discipline, gestion du temps et organisation du travail",
-            "Prise de parole et communication",
-            "Leadership, autonomie et sens des responsabilités",
+            { icon: "heart", title: "Confiance en soi", body: "Oser répondre, oser se tromper, reconnaître ses progrès." },
+            { icon: "calendar", title: "Discipline", body: "Un horaire d'étude réaliste, et la constance pour le tenir." },
+            { icon: "chat", title: "Prise de parole", body: "S'exprimer clairement en classe, en exposé, en entrevue." },
+            { icon: "target", title: "Leadership", body: "Se fixer des objectifs, prendre des responsabilités, entraîner les autres." },
           ],
         },
         {
-          title: "Intégré au tutorat",
-          body: "Le développement personnel fait partie de notre accompagnement. Pendant les séances, le tuteur aide l'élève à se fixer des objectifs, à tenir ses engagements et à gérer le stress des examens. Le forfait mensuel combine tutorat scolaire et développement personnel.",
-        },
-        {
-          title: "Les signes qu'il en a besoin",
+          type: "checklist",
+          tone: "warn",
+          title: "Vous reconnaissez votre enfant ?",
           items: [
             "Il se décourage vite ou dit qu'il « n'est pas bon »",
             "Il remet tout à la dernière minute",
-            "Il n'ose pas poser de questions ou prendre la parole en classe",
+            "Il n'ose pas poser de questions ni prendre la parole en classe",
+            "Il a les capacités, mais pas la motivation",
           ],
         },
       ],
       faq: [
-        { q: "Le développement personnel est-il offert séparément ?", a: "Il est intégré à notre accompagnement, en particulier dans le forfait mensuel. Parlez-nous de vos besoins et nous adapterons les séances." },
-        { q: "À partir de quel âge ?", a: "Nous accompagnons les élèves du secondaire et du cégep." },
+        { q: "Le développement personnel est-il offert séparément ?", a: "Il est intégré à notre accompagnement, en particulier dans le forfait mensuel qui combine tutorat et développement personnel. Parlez-nous de vos besoins et nous adapterons les séances." },
+        { q: "À partir de quel âge ?", a: "Nous accompagnons les élèves du secondaire et du cégep." },
       ],
     },
     {
@@ -144,31 +166,63 @@ const fr: SiteContent = {
       metaTitle: "Tutorat à domicile sur la Rive-Sud",
       metaDescription: "Tutorat en présentiel à domicile à Longueuil, Brossard, Candiac, Saint-Constant et en Montérégie, ou à notre centre au 1765, boulevard Taschereau.",
       kicker: "Services",
-      title: "Tutorat à domicile et à notre centre",
-      intro: "Un tuteur aux côtés de votre enfant, chez vous ou à notre centre. Le format idéal pour les élèves qui ont besoin d'un cadre.",
+      title: "Tutorat en personne, chez vous ou à notre centre",
+      intro: "Un tuteur aux côtés de votre enfant. Le format idéal pour les élèves qui ont besoin d'un cadre et de constance.",
       image: "/images/junior.jpg",
       imageAlt: "Élève qui travaille sur une tablette pendant une séance",
-      highlights: ["45 $ de l'heure", "Forfait mensuel 500 $", "Rive-Sud et Montérégie"],
-      sections: [
+      blocks: [
         {
-          title: "Deux options en présentiel",
-          items: [
-            "À domicile : le tuteur se déplace chez vous, sur la Rive-Sud et en Montérégie",
-            `À notre centre : au ${CENTER}, dans un environnement calme et propice à l'étude`,
+          type: "compare",
+          title: "Deux façons de faire du présentiel",
+          intro: "Même tuteur, même tarif. Choisissez le lieu qui vous simplifie la vie.",
+          columns: [
+            {
+              title: "À domicile",
+              icon: "home",
+              tag: "Rive-Sud et Montérégie",
+              items: [
+                "Le tuteur vient chez vous, à l'heure convenue",
+                "Aucun déplacement pour votre enfant",
+                "Il travaille dans son environnement habituel",
+              ],
+            },
+            {
+              title: "À notre centre",
+              icon: "school",
+              tag: "Boulevard Taschereau",
+              featured: true,
+              items: [
+                "Un lieu calme, pensé pour l'étude",
+                "Moins de distractions qu'à la maison",
+                "Idéal pour séparer l'école de la maison",
+              ],
+            },
           ],
         },
         {
-          title: "Pourquoi le présentiel ?",
-          body: "La présence d'un tuteur aide l'élève à rester concentré, à s'organiser et à garder le rythme. C'est souvent le format le plus efficace pour un élève qui décroche ou qui manque de motivation.",
+          type: "price",
+          title: "Ce que ça coûte",
+          body: "Payez à l'heure ou choisissez le forfait mensuel pour un suivi intensif.",
+          offers: [
+            { label: "À l'heure", value: "45 $", detail: "Le nombre d'heures de votre choix" },
+            { label: "Forfait mensuel", value: "500 $", detail: "12 heures par semaine, facturé chaque mois" },
+          ],
+          examples: [
+            { label: "4 heures", value: "180 $" },
+            { label: "8 heures", value: "360 $" },
+            { label: "12 heures", value: "540 $" },
+          ],
+          note: TAX,
         },
         {
-          title: "Villes desservies",
-          items: ["Longueuil", "Brossard", "Candiac", "Saint-Constant", "Partout en Montérégie"],
+          type: "map",
+          title: "Le centre Mentou Academy",
+          body: "Les séances au centre se planifient avec vous lors du premier contact. Nous vous confirmons alors l'horaire et les détails d'accès.",
         },
       ],
       faq: [
-        { q: "Quel est le tarif en présentiel ?", a: "45 $ de l'heure, ou 500 $ par mois pour le forfait mensuel qui comprend 12 heures par semaine. Taxes en sus." },
-        { q: "Mon adresse est hors de ces villes. Est-ce possible ?", a: "Nous couvrons toute la Montérégie. Indiquez votre adresse dans le formulaire et nous vous confirmerons les options. Le tutorat en ligne reste disponible partout au Québec." },
+        { q: "Mon adresse est hors de ces villes. Est-ce possible ?", a: "Nous couvrons toute la Montérégie. Indiquez votre adresse dans le formulaire et nous vous confirmerons les options. Le tutorat en ligne reste disponible partout au Québec." },
+        { q: "Peut-on alterner domicile et centre ?", a: "Oui. Le tarif est le même, vous choisissez le lieu au moment de planifier les séances." },
       ],
     },
     {
@@ -179,31 +233,64 @@ const fr: SiteContent = {
       metaDescription: "Tutorat en ligne par visioconférence pour le secondaire et le cégep, partout au Québec, à 30 $ de l'heure.",
       kicker: "Services",
       title: "Tutorat en ligne, partout au Québec",
-      intro: "La même qualité d'accompagnement qu'en présentiel, sans déplacement, avec des horaires plus souples.",
+      intro: "Le même accompagnement qu'en présentiel, sans déplacement, avec des horaires plus souples. À 30 $ de l'heure.",
       image: "/images/tutorat1.jpeg",
       imageAlt: "Élève en séance de tutorat en ligne avec sa tutrice",
-      highlights: ["30 $ de l'heure", "Partout au Québec", "Horaires flexibles"],
-      sections: [
+      blocks: [
         {
-          title: "Comment ça se passe",
+          type: "checklist",
+          tone: "ok",
+          title: "Ce qu'il vous faut",
+          intro: "Rien de compliqué. Si votre enfant peut faire un appel vidéo, il peut suivre une séance.",
           items: [
-            "Séances en visioconférence avec partage d'écran",
-            "Travail sur les exercices, les devoirs et les examens de l'élève",
-            "Un simple ordinateur ou une tablette avec une connexion internet suffit",
+            "Un ordinateur ou une tablette avec caméra et micro",
+            "Une connexion internet stable",
+            "Un coin calme pendant la séance",
+            "Ses cahiers, ses devoirs ou son examen à travailler",
           ],
         },
         {
-          title: "Idéal pour",
-          items: [
-            "Les familles hors de la Rive-Sud",
-            "Les horaires chargés (sport, travail, transport)",
-            "Les étudiants au cégep autonomes qui veulent un coup de pouce ciblé",
+          type: "compare",
+          title: "En ligne ou en personne ?",
+          columns: [
+            {
+              title: "En ligne",
+              icon: "laptop",
+              tag: "30 $/h",
+              featured: true,
+              items: [
+                "Partout au Québec",
+                "Horaires plus flexibles",
+                "Idéal à partir du secondaire 3 et au cégep",
+              ],
+            },
+            {
+              title: "En présentiel",
+              icon: "home",
+              tag: "45 $/h",
+              items: [
+                "À domicile ou à notre centre sur la Rive-Sud",
+                "Plus de cadre pour les élèves qui décrochent",
+                "Forfait mensuel disponible (500 $)",
+              ],
+            },
           ],
+        },
+        {
+          type: "price",
+          title: "Combien ça coûte",
+          offers: [{ label: "En ligne, à l'heure", value: "30 $", detail: "Le nombre d'heures de votre choix" }],
+          examples: [
+            { label: "5 heures", value: "150 $" },
+            { label: "10 heures", value: "300 $" },
+            { label: "20 heures", value: "600 $" },
+          ],
+          note: TAX,
         },
       ],
       faq: [
-        { q: "Le tutorat en ligne est-il aussi efficace ?", a: "Pour la plupart des élèves, oui, surtout au secondaire 3 et plus et au cégep. Pour les élèves qui ont du mal à se concentrer, nous recommandons plutôt le présentiel." },
-        { q: "Quel matériel faut-il ?", a: "Un ordinateur ou une tablette avec caméra, micro et connexion internet." },
+        { q: "Le tutorat en ligne est-il aussi efficace ?", a: "Pour la plupart des élèves, oui, surtout à partir du secondaire 3 et au cégep. Pour les élèves qui ont du mal à se concentrer, nous recommandons plutôt le présentiel." },
+        { q: "Comment se déroule la première séance ?", a: "Après votre réservation, nous vous contactons pour fixer l'horaire et vous envoyer le lien de la séance." },
       ],
     },
     {
@@ -214,35 +301,57 @@ const fr: SiteContent = {
       metaDescription: "Préparation aux examens du ministère de secondaire 4 et 5, profils régulier et enrichi, et à l'épreuve uniforme de français (EUF) au cégep.",
       kicker: "Services",
       title: "Préparation aux examens du ministère et à l'EUF",
-      intro: "Les examens de fin d'année comptent beaucoup dans la note finale. Une préparation ciblée fait la différence.",
+      intro: "Les examens de fin d'année pèsent lourd dans la note finale. Une préparation ciblée fait toute la différence.",
       image: "/images/lecture.jpeg",
       imageAlt: "Pile de livres sur un bureau d'étude",
-      highlights: ["Secondaire 4 et 5", "Régulier et enrichi", "EUF au cégep"],
-      sections: [
+      blocks: [
         {
-          title: "Examens du ministère, secondaire 4 et 5",
-          body: "Nous préparons les élèves aux épreuves du ministère en profil régulier et enrichi : révision des notions clés, exercices de type examen et gestion du temps.",
+          type: "compare",
+          title: "Deux examens, deux préparations",
+          columns: [
+            {
+              title: "Examens du ministère",
+              icon: "school",
+              tag: "Secondaire 4 et 5",
+              items: [
+                "Profils régulier et enrichi",
+                "Révision des notions clés de l'année",
+                "Exercices de type examen, chronométrés",
+              ],
+            },
+            {
+              title: "Épreuve uniforme de français",
+              icon: "book",
+              tag: "Cégep",
+              featured: true,
+              items: [
+                "Obligatoire pour obtenir le DEC",
+                "Analyse et structure de la dissertation critique",
+                "Qualité de la langue et révision",
+              ],
+            },
+          ],
         },
         {
-          title: "Épreuve uniforme de français (EUF)",
-          body: "Au cégep, l'EUF est obligatoire pour obtenir le diplôme d'études collégiales. Nous travaillons l'analyse, la structure de la dissertation critique et la qualité de la langue.",
-        },
-        {
-          title: "Notre méthode",
-          items: [
-            "Diagnostic des forces et des lacunes",
-            "Plan de révision réparti sur les semaines avant l'examen",
-            "Simulations en conditions réelles",
-            "Stratégies de gestion du stress",
+          type: "steps",
+          title: "Le compte à rebours",
+          intro: "Plus on commence tôt, moins la dernière semaine est stressante.",
+          steps: [
+            { title: "Huit semaines avant", body: "Diagnostic : on repère les notions solides et celles à reprendre." },
+            { title: "Six semaines avant", body: "Révision par thème, en commençant par les lacunes les plus importantes." },
+            { title: "Trois semaines avant", body: "Simulations en conditions réelles, corrigées avec l'élève." },
+            { title: "La dernière semaine", body: "Révision ciblée, gestion du temps et du stress. Pas de nouvelle matière." },
           ],
         },
       ],
       faq: [
-        { q: "Quand faut-il commencer à se préparer ?", a: "Idéalement plusieurs semaines avant l'examen, pour réviser sans pression. Mais il n'est jamais trop tard pour une révision intensive." },
+        { q: "Il reste moins d'un mois. Est-ce trop tard ?", a: "Non. Nous adaptons le plan au temps qui reste et nous concentrons sur ce qui rapporte le plus de points." },
+        { q: "Combien d'heures prévoir ?", a: "Cela dépend des lacunes. Le forfait mensuel (12 heures par semaine) convient à une préparation intensive ; quelques heures ciblées suffisent pour une révision." },
       ],
     },
   ],
 
+  // ─── MATIÈRES ─────────────────────────────────────────────
   subjects: [
     {
       slug: "mathematiques",
@@ -255,23 +364,23 @@ const fr: SiteContent = {
       intro: "Les mathématiques sont la matière où les lacunes s'accumulent le plus vite. Un tuteur les repère et les comble avant qu'elles ne bloquent la suite.",
       image: "/images/tutorat.jpeg",
       imageAlt: "Élève qui fait des exercices de mathématiques",
-      highlights: ["Régulier et enrichi", "Examens du ministère", "Cours de cégep"],
-      sections: [
+      blocks: [
         {
-          title: "Au secondaire (1 à 5)",
-          items: [
-            "Mathématiques, profil régulier",
-            "Mathématiques, profil enrichi",
-            "Préparation aux examens du ministère de secondaire 4 et 5",
+          type: "levels",
+          title: "Ce que nous couvrons",
+          groups: [
+            { title: "Secondaire 1 à 5", items: ["Profil régulier", "Profil enrichi", "Examens du ministère, secondaire 4 et 5"] },
+            { title: "Cégep", items: ["Calcul différentiel", "Calcul intégral", "Algèbre linéaire", "Probabilités et statistiques"] },
           ],
         },
         {
-          title: "Au cégep",
-          items: ["Calcul différentiel", "Calcul intégral", "Algèbre linéaire", "Probabilités et statistiques"],
+          type: "text",
+          title: "Passer au profil enrichi",
+          body: "Le passage au profil enrichi demande plus d'abstraction et de rigueur. Nous travaillons les notions avancées et les méthodes de résolution, pour que l'élève suive le rythme dès le début de l'année.",
         },
       ],
       faq: [
-        { q: "Mon enfant veut passer au profil enrichi. Pouvez-vous l'aider ?", a: "Oui. Nous travaillons les notions plus avancées et les méthodes de résolution pour l'aider à réussir en enrichi." },
+        { q: "Mon enfant a des lacunes depuis le secondaire 1. Par où commencer ?", a: "Par un diagnostic des bases. Le tuteur reprend les notions manquantes tout en suivant ce qui est vu en classe, pour ne pas prendre de retard." },
       ],
     },
     {
@@ -285,23 +394,23 @@ const fr: SiteContent = {
       intro: "Comprendre plutôt qu'apprendre par cœur : nous aidons l'élève à faire les liens entre la théorie, les laboratoires et les problèmes.",
       image: "/images/mentorat.jpeg",
       imageAlt: "Jeunes qui travaillent ensemble sur un projet",
-      highlights: ["Régulier et enrichi", "Examens du ministère", "Biologie cellulaire"],
-      sections: [
+      blocks: [
         {
-          title: "Au secondaire (1 à 5)",
-          items: [
-            "Sciences, profil régulier",
-            "Sciences, profil enrichi",
-            "Préparation aux examens du ministère de secondaire 4",
+          type: "levels",
+          title: "Ce que nous couvrons",
+          groups: [
+            { title: "Secondaire 1 à 5", items: ["Profil régulier", "Profil enrichi", "Examens du ministère"] },
+            { title: "Cégep", items: ["Biologie cellulaire"] },
           ],
         },
         {
-          title: "Au cégep",
-          items: ["Biologie cellulaire"],
+          type: "text",
+          title: "Les rapports de laboratoire",
+          body: "Nous aidons l'élève à comprendre la démarche scientifique et à structurer ses rapports : hypothèse, protocole, résultats, analyse. Sans faire le travail à sa place.",
         },
       ],
       faq: [
-        { q: "Aidez-vous pour les rapports de laboratoire ?", a: "Oui, nous aidons l'élève à comprendre la démarche et à structurer ses rapports, sans faire le travail à sa place." },
+        { q: "La biologie cellulaire est difficile à mémoriser. Comment l'aidez-vous ?", a: "Avec des schémas, des liens entre les processus et beaucoup de questions de type examen, plutôt que de la mémorisation pure." },
       ],
     },
     {
@@ -315,16 +424,27 @@ const fr: SiteContent = {
       intro: "La physique demande à la fois des bases solides en mathématiques et une bonne compréhension des phénomènes. Nous travaillons les deux.",
       image: "/images/tutorat1.jpeg",
       imageAlt: "Séance de tutorat devant un écran",
-      highlights: ["Secondaire", "Mécanique", "Électricité et magnétisme"],
-      sections: [
-        { title: "Au secondaire", items: ["Physique"] },
+      blocks: [
         {
-          title: "Au cégep",
-          items: ["Mécanique", "Électricité et magnétisme", "Ondes et physique moderne"],
+          type: "levels",
+          title: "Ce que nous couvrons",
+          groups: [
+            { title: "Secondaire", items: ["Physique"] },
+            { title: "Cégep", items: ["Mécanique", "Électricité et magnétisme", "Ondes et physique moderne"] },
+          ],
+        },
+        {
+          type: "steps",
+          title: "Une méthode pour chaque problème",
+          steps: [
+            { title: "Comprendre la situation", body: "Faire un schéma, identifier ce qu'on cherche et ce qu'on connaît." },
+            { title: "Choisir le bon principe", body: "Quelle loi s'applique, et pourquoi." },
+            { title: "Résoudre et vérifier", body: "Les calculs, puis les unités et l'ordre de grandeur du résultat." },
+          ],
         },
       ],
       faq: [
-        { q: "Mon enfant est bon en maths mais bloque en physique. Pourquoi ?", a: "La physique demande de traduire un problème concret en équations. C'est une compétence qui se travaille, avec des méthodes de résolution claires." },
+        { q: "Mon enfant est bon en maths mais bloque en physique. Pourquoi ?", a: "La physique demande de traduire un problème concret en équations. C'est une compétence qui se travaille, avec une méthode claire." },
       ],
     },
     {
@@ -338,16 +458,20 @@ const fr: SiteContent = {
       intro: "Stœchiométrie, équilibres, solutions : nous aidons les étudiants à maîtriser les cours de chimie de sciences de la nature.",
       image: "/images/lecture.jpeg",
       imageAlt: "Livres et notes d'étude",
-      highlights: ["Chimie générale", "Chimie des solutions", "Cégep"],
-      sections: [
-        { title: "Au cégep", items: ["Chimie générale", "Chimie des solutions"] },
+      blocks: [
         {
+          type: "levels",
+          title: "Ce que nous couvrons",
+          groups: [{ title: "Cégep", items: ["Chimie générale", "Chimie des solutions"] }],
+        },
+        {
+          type: "text",
           title: "Notre approche",
           body: "Nous revenons aux concepts de base quand il le faut, puis nous multiplions les exercices de type examen pour gagner en rapidité et en confiance.",
         },
       ],
       faq: [
-        { q: "Offrez-vous la chimie au secondaire ?", a: "Notre offre en chimie vise le cégep. Pour le secondaire, consultez nos services en sciences et en physique, ou parlez-nous de votre besoin." },
+        { q: "Offrez-vous la chimie au secondaire ?", a: "Notre offre en chimie vise le cégep. Pour le secondaire, consultez nos services en sciences et en physique, ou parlez-nous de votre besoin." },
       ],
     },
     {
@@ -361,14 +485,22 @@ const fr: SiteContent = {
       intro: "Apprendre à penser comme un programmeur : décomposer un problème, écrire du code clair et trouver ses erreurs.",
       image: "/images/tutorat1.jpeg",
       imageAlt: "Élève devant un ordinateur",
-      highlights: ["Secondaire", "Programmation en sciences", "Logique et résolution de problèmes"],
-      sections: [
-        { title: "Au secondaire", items: ["Programmation"] },
-        { title: "Au cégep", items: ["Programmation en sciences"] },
+      blocks: [
+        {
+          type: "levels",
+          title: "Ce que nous couvrons",
+          groups: [
+            { title: "Secondaire", items: ["Programmation"] },
+            { title: "Cégep", items: ["Programmation en sciences"] },
+          ],
+        },
+        {
+          type: "text",
+          title: "Partir de zéro, sans stress",
+          body: "Aucune expérience n'est nécessaire. Nous partons du niveau de l'élève et avançons étape par étape, avec ses propres exercices et travaux.",
+        },
       ],
-      faq: [
-        { q: "Mon enfant n'a jamais programmé. Est-ce un problème ?", a: "Non. Nous partons de son niveau et avançons étape par étape." },
-      ],
+      faq: [],
     },
     {
       slug: "francais",
@@ -381,142 +513,234 @@ const fr: SiteContent = {
       intro: "Lecture, écriture, grammaire, analyse : le français touche toutes les matières. Nous aidons l'élève à s'exprimer avec clarté et assurance.",
       image: "/images/lecture.jpeg",
       imageAlt: "Pile de livres sur un bureau",
-      highlights: ["Secondaire 1 à 5", "Français 101, 102, 103", "Préparation à l'EUF"],
-      sections: [
+      blocks: [
         {
-          title: "Au secondaire (1 à 5)",
-          items: ["Français, lecture et écriture", "Grammaire et orthographe", "Préparation aux examens du ministère"],
+          type: "levels",
+          title: "Ce que nous couvrons",
+          groups: [
+            { title: "Secondaire 1 à 5", items: ["Lecture et écriture", "Grammaire et orthographe", "Examens du ministère"] },
+            { title: "Cégep", items: ["Français 101", "Français 102", "Français 103", "Préparation à l'EUF"] },
+          ],
         },
         {
-          title: "Au cégep",
-          items: ["Français 101", "Français 102", "Français 103", "Préparation à l'épreuve uniforme de français (EUF)"],
+          type: "text",
+          title: "L'épreuve uniforme de français",
+          body: "L'EUF est obligatoire pour obtenir le diplôme d'études collégiales. Nous travaillons la dissertation critique : compréhension des textes, plan, argumentation et qualité de la langue.",
         },
       ],
-      faq: [
-        { q: "Qu'est-ce que l'EUF ?", a: "L'épreuve uniforme de français est un examen obligatoire pour obtenir le diplôme d'études collégiales. Elle porte sur la dissertation critique." },
-      ],
+      faq: [],
     },
   ],
 
+  // ─── RÉGIONS ──────────────────────────────────────────────
   regions: [
     {
       slug: "longueuil",
       label: "Longueuil",
-      summary: "Tutorat à domicile, au centre et en ligne à Longueuil.",
+      summary: "Tutorat à domicile dans tous les arrondissements et à notre centre.",
       metaTitle: "Tuteur à Longueuil, secondaire et cégep",
-      metaDescription: "Tutorat à domicile à Longueuil et à notre centre au 1765, boulevard Taschereau. Mathématiques, sciences, physique, chimie, français, du secondaire au cégep.",
+      metaDescription: "Tutorat à domicile dans le Vieux-Longueuil, à Saint-Hubert et à Greenfield Park, et à notre centre au 1765, boulevard Taschereau. Secondaire et cégep.",
       kicker: "Régions",
       title: "Tutorat à Longueuil",
-      intro: "Vous habitez Longueuil ? Nos tuteurs se déplacent chez vous, ou accueillent votre enfant à notre centre du boulevard Taschereau.",
+      intro: "Du Vieux-Longueuil à Saint-Hubert, nos tuteurs se déplacent chez vous. Vous pouvez aussi venir à notre centre du boulevard Taschereau.",
       image: "/images/junior.jpg",
       imageAlt: "Élève en séance de tutorat",
-      highlights: ["À domicile", "Au centre, boulevard Taschereau", "Secondaire et cégep"],
-      sections: [
+      hero: "panel",
+      facts: [
+        { icon: "home", label: "À domicile", value: "Les trois arrondissements" },
+        { icon: "pin", label: "Au centre", value: CENTER },
+        { icon: "laptop", label: "En ligne", value: "30 $ de l'heure" },
+      ],
+      blocks: [
         {
-          title: "Nos services à Longueuil",
-          items: [
-            "Tutorat à domicile dans tous les secteurs de Longueuil",
-            `Séances à notre centre au ${CENTER}`,
-            "Tutorat en ligne si vous préférez rester à la maison",
-          ],
+          type: "chips",
+          title: "Partout à Longueuil",
+          body: "Le tutorat à domicile est offert dans les trois arrondissements de la ville.",
+          chips: ["Le Vieux-Longueuil", "Saint-Hubert", "Greenfield Park"],
         },
         {
-          title: "Pour les élèves du secondaire et du cégep",
-          body: "Nous accompagnons les élèves des écoles secondaires de Longueuil et les étudiants des cégeps de la Rive-Sud en mathématiques, sciences, physique, chimie, programmation et français.",
+          type: "map",
+          title: "Votre centre sur la Rive-Sud",
+          body: "Notre centre est situé sur le boulevard Taschereau, l'axe qui relie Longueuil au reste de la Rive-Sud.",
+        },
+        {
+          type: "nearby",
+          title: "Pour les élèves d'ici",
+          intro: "Nous accompagnons les élèves des écoles de Longueuil et les étudiants du cégep de la ville.",
+          places: [
+            { name: "Écoles secondaires de Longueuil", note: "Mathématiques et sciences (régulier et enrichi), physique, français, examens du ministère." },
+            { name: "Cégep Édouard-Montpetit", note: "Calcul, algèbre linéaire, mécanique, chimie, biologie cellulaire, français 101 à 103 et EUF." },
+          ],
         },
       ],
       faq: [
-        { q: "Où se trouve votre centre ?", a: `Au ${CENTER}. Nous vous confirmons les détails d'accès lors de la planification des séances.` },
+        { q: "Combien coûte un tuteur à domicile à Longueuil ?", a: "45 $ de l'heure, ou 500 $ par mois avec le forfait mensuel de 12 heures par semaine. Taxes en sus." },
       ],
     },
     {
       slug: "brossard",
       label: "Brossard",
-      summary: "Tutorat à domicile et en ligne à Brossard, à deux pas de notre centre.",
+      summary: "Tuteur à domicile ou au centre, sur le boulevard Taschereau.",
       metaTitle: "Tuteur à Brossard, secondaire et cégep",
-      metaDescription: "Tutorat à domicile à Brossard et à notre centre sur le boulevard Taschereau. Aide en mathématiques, sciences, physique et français, du secondaire au cégep.",
+      metaDescription: "Tutorat à domicile à Brossard et à notre centre sur le boulevard Taschereau. Mathématiques, sciences, physique, français, examens du ministère et cégep.",
       kicker: "Régions",
       title: "Tutorat à Brossard",
-      intro: "Les familles de Brossard profitent d'un tuteur à domicile ou de notre centre, tout proche sur le boulevard Taschereau.",
+      intro: "Le boulevard Taschereau traverse Brossard, et notre centre est situé sur ce même boulevard. Nos tuteurs viennent aussi chez vous.",
       image: "/images/tutorat.jpeg",
       imageAlt: "Élève qui fait ses devoirs",
-      highlights: ["À domicile", "Centre à proximité", "Secondaire et cégep"],
-      sections: [
+      hero: "panel",
+      facts: [
+        { icon: "school", label: "Au centre", value: CENTER },
+        { icon: "home", label: "À domicile", value: "Partout à Brossard" },
+        { icon: "clock", label: "Forfait intensif", value: "12 h par semaine, 500 $/mois" },
+      ],
+      blocks: [
         {
-          title: "Nos services à Brossard",
-          items: [
-            "Tutorat à domicile partout à Brossard",
-            `Séances à notre centre au ${CENTER}`,
-            "Tutorat en ligne à 30 $ de l'heure",
+          type: "compare",
+          title: "À Brossard, vous avez le choix",
+          columns: [
+            {
+              title: "Au centre",
+              icon: "school",
+              tag: "Sur le boulevard Taschereau",
+              featured: true,
+              items: [
+                "Un lieu calme, sans les distractions de la maison",
+                "Pratique en sortant de l'école",
+                "45 $ de l'heure ou forfait mensuel",
+              ],
+            },
+            {
+              title: "À domicile",
+              icon: "home",
+              tag: "Partout à Brossard",
+              items: [
+                "Le tuteur vient chez vous",
+                "Aucun déplacement pour votre enfant",
+                "Même tarif qu'au centre",
+              ],
+            },
           ],
         },
         {
-          title: "Préparation aux examens",
-          body: "Nous préparons les élèves de secondaire 4 et 5 de Brossard aux examens du ministère, en profil régulier et enrichi.",
+          type: "steps",
+          title: "Secondaire 4 et 5 : l'année des examens",
+          intro: "Nous préparons les élèves de Brossard aux examens du ministère, en régulier comme en enrichi.",
+          steps: [
+            { title: "Dès l'automne", body: "Consolider les notions de l'année en cours, au rythme de la classe." },
+            { title: "Après les fêtes", body: "Repérer les points faibles et les reprendre un par un." },
+            { title: "Au printemps", body: "Examens blancs chronométrés et corrections détaillées." },
+          ],
         },
       ],
       faq: [
-        { q: "Combien coûte un tuteur à domicile à Brossard ?", a: "45 $ de l'heure, ou 500 $ par mois avec le forfait mensuel de 12 heures par semaine. Taxes en sus." },
+        { q: "Mon enfant étudie au cégep. Pouvez-vous l'aider ?", a: "Oui : calcul, algèbre linéaire, mécanique, électricité et magnétisme, chimie, biologie cellulaire, français 101 à 103 et préparation à l'EUF." },
       ],
     },
     {
       slug: "candiac",
       label: "Candiac",
-      summary: "Tutorat à domicile et en ligne à Candiac.",
-      metaTitle: "Tuteur à Candiac, secondaire et cégep",
-      metaDescription: "Tutorat à domicile à Candiac pour les élèves du secondaire et du cégep : mathématiques, sciences, physique, chimie, programmation et français.",
+      summary: "Le tuteur vient chez vous, à Candiac et dans les villes voisines.",
+      metaTitle: "Tuteur à domicile à Candiac, secondaire et cégep",
+      metaDescription: "Tutorat à domicile à Candiac, La Prairie, Delson et Saint-Philippe pour le secondaire et le cégep. Tutorat en ligne aussi disponible.",
       kicker: "Régions",
-      title: "Tutorat à Candiac",
-      intro: "À Candiac, nos tuteurs viennent chez vous pour accompagner votre enfant dans ses matières et dans sa confiance.",
+      title: "Tutorat à domicile à Candiac",
+      intro: "À Candiac, c'est le tuteur qui se déplace. Votre enfant étudie chez lui, à l'heure qui vous convient.",
       image: "/images/mentorat.jpeg",
       imageAlt: "Jeunes en séance de travail",
-      highlights: ["À domicile", "En ligne", "Secondaire et cégep"],
-      sections: [
+      hero: "panel",
+      facts: [
+        { icon: "home", label: "Format principal", value: "Tutorat à domicile" },
+        { icon: "laptop", label: "Pour plus de flexibilité", value: "En ligne, 30 $ de l'heure" },
+        { icon: "pin", label: "Villes voisines", value: "La Prairie, Delson, Saint-Philippe" },
+      ],
+      blocks: [
         {
-          title: "Nos services à Candiac",
-          items: [
-            "Tutorat à domicile à Candiac",
-            "Tutorat en ligne pour plus de flexibilité",
-            "Séances possibles à notre centre sur le boulevard Taschereau",
+          type: "steps",
+          title: "Comment ça se passe à domicile",
+          steps: [
+            { title: "Vous réservez en ligne", body: "Formule, nombre d'heures, matières et adresse : tout se fait dans le formulaire." },
+            { title: "On vous appelle", body: "Nous fixons ensemble les jours et les heures qui conviennent à votre famille." },
+            { title: "Le tuteur arrive chez vous", body: "Il apporte sa méthode ; votre enfant prépare ses cahiers et ses devoirs." },
+            { title: "Vous êtes tenu au courant", body: "Un suivi régulier vous indique les progrès et les points à travailler." },
           ],
         },
         {
-          title: "Un accompagnement complet",
-          body: "En plus du tutorat scolaire, nous aidons les jeunes de Candiac à gagner en confiance, en discipline et en autonomie.",
+          type: "chips",
+          title: "Candiac et les environs",
+          body: "Nous nous déplaçons aussi dans les villes voisines.",
+          chips: ["Candiac", "La Prairie", "Delson", "Saint-Philippe"],
         },
       ],
       faq: [
-        { q: "Les tuteurs se déplacent-ils à Candiac ?", a: "Oui, le tutorat à domicile est offert à Candiac. Indiquez votre adresse dans le formulaire de demande." },
+        { q: "Combien coûte un tuteur à domicile à Candiac ?", a: "45 $ de l'heure, ou 500 $ par mois avec le forfait mensuel de 12 heures par semaine. Taxes en sus." },
+        { q: "Peut-on venir au centre depuis Candiac ?", a: "Oui, notre centre au 1765, boulevard Taschereau vous accueille aussi, au même tarif." },
       ],
     },
     {
       slug: "saint-constant",
       label: "Saint-Constant",
-      summary: "Tutorat à domicile et en ligne à Saint-Constant.",
+      summary: "Domicile et en ligne combinés, pour suivre le rythme de votre famille.",
       metaTitle: "Tuteur à Saint-Constant, secondaire et cégep",
-      metaDescription: "Tutorat à domicile à Saint-Constant pour le secondaire et le cégep : mathématiques, sciences, physique, chimie et français. Tutorat en ligne aussi disponible.",
+      metaDescription: "Tutorat à domicile et en ligne à Saint-Constant, Sainte-Catherine, Delson et Saint-Mathieu pour le secondaire et le cégep.",
       kicker: "Régions",
       title: "Tutorat à Saint-Constant",
-      intro: "À Saint-Constant, profitez d'un tuteur à domicile ou de séances en ligne, selon votre horaire.",
+      intro: "Domicile quand c'est possible, en ligne quand l'horaire déborde. À Saint-Constant, beaucoup de familles combinent les deux.",
       image: "/images/tutorat1.jpeg",
       imageAlt: "Séance de tutorat en ligne",
-      highlights: ["À domicile", "En ligne", "Secondaire et cégep"],
-      sections: [
+      hero: "panel",
+      facts: [
+        { icon: "home", label: "À domicile", value: "45 $ de l'heure" },
+        { icon: "laptop", label: "En ligne", value: "30 $ de l'heure" },
+        { icon: "pin", label: "Villes voisines", value: "Sainte-Catherine, Delson, Saint-Mathieu" },
+      ],
+      blocks: [
         {
-          title: "Nos services à Saint-Constant",
-          items: [
-            "Tutorat à domicile à Saint-Constant",
-            "Tutorat en ligne à 30 $ de l'heure",
-            "Préparation aux examens du ministère et à l'EUF",
+          type: "compare",
+          title: "Combiner domicile et en ligne",
+          intro: "Vous réservez les deux types d'heures selon les semaines.",
+          columns: [
+            {
+              title: "À domicile",
+              icon: "home",
+              tag: "45 $/h",
+              items: [
+                "Pour les notions difficiles et les révisions importantes",
+                "Le tuteur vient chez vous",
+                "Plus de cadre pour garder le rythme",
+              ],
+            },
+            {
+              title: "En ligne",
+              icon: "laptop",
+              tag: "30 $/h",
+              featured: true,
+              items: [
+                "Pour les devoirs et les questions de la semaine",
+                "Aucun déplacement",
+                "Plus économique pour un suivi régulier",
+              ],
+            },
           ],
         },
         {
-          title: "Matières enseignées",
-          body: "Mathématiques (régulier et enrichi), sciences, physique, programmation et français au secondaire, et les principaux cours de sciences de la nature et de français au cégep.",
+          type: "price",
+          title: "Exemple de mois combiné",
+          body: "Une heure à domicile et une heure en ligne par semaine, pendant quatre semaines.",
+          offers: [
+            { label: "4 heures à domicile", value: "180 $", detail: "4 × 45 $" },
+            { label: "4 heures en ligne", value: "120 $", detail: "4 × 30 $" },
+          ],
+          note: `Total de 300 $ pour 8 heures. ${TAX}`,
+        },
+        {
+          type: "chips",
+          title: "Saint-Constant et les environs",
+          chips: ["Saint-Constant", "Sainte-Catherine", "Delson", "Saint-Mathieu"],
         },
       ],
       faq: [
-        { q: "Peut-on combiner domicile et en ligne ?", a: "Oui. Vous pouvez réserver des heures en présentiel et des heures en ligne selon vos besoins." },
+        { q: "Les deux types d'heures se réservent-ils ensemble ?", a: "Chaque formule se réserve séparément dans le formulaire. Indiquez dans le champ « détails » que vous souhaitez combiner les deux." },
       ],
     },
   ],
@@ -532,24 +756,27 @@ const fr: SiteContent = {
     intro: "Mentou Academy est née d'une conviction : un élève qui reprend confiance en lui progresse aussi dans ses notes.",
     image: "/images/mentorat.jpeg",
     imageAlt: "Jeunes qui travaillent ensemble",
-    highlights: ["Tutorat scolaire", "Développement personnel", "Rive-Sud et en ligne"],
-    sections: [
+    blocks: [
       {
-        title: "Notre mission",
-        body: "Accompagner chaque élève du secondaire et du cégep pour qu'il comprenne ses matières, gagne en autonomie et développe la confiance, la discipline et le leadership qui l'aideront toute sa vie.",
+        type: "statement",
+        text: "Notre mission : que chaque élève comprenne ses matières, gagne en autonomie et développe la confiance qui l'aidera toute sa vie.",
       },
       {
-        title: "Notre approche",
+        type: "features",
+        title: "Notre façon de travailler",
+        image: "/images/tutorat.jpeg",
+        imageAlt: "Élève en séance de travail",
         items: [
-          "Un jumelage réfléchi entre l'élève et son tuteur",
-          "Un plan de travail qui suit le programme scolaire",
-          "Le développement personnel intégré aux séances",
-          "Un suivi régulier avec les parents",
+          { icon: "users", title: "Un jumelage réfléchi", body: "Le tuteur est choisi selon le niveau, les matières et la personnalité de l'élève." },
+          { icon: "book", title: "Le programme de l'école", body: "On travaille ce qui est vu en classe, pas un programme parallèle." },
+          { icon: "spark", title: "Le développement personnel", body: "Confiance, discipline et leadership font partie des séances." },
+          { icon: "chat", title: "Les parents informés", body: "Un suivi régulier sur les progrès et les points à travailler." },
         ],
       },
       {
+        type: "map",
         title: "Où nous trouver",
-        body: `Notre centre est situé au ${CENTER}. Nous offrons aussi le tutorat à domicile à Longueuil, Brossard, Candiac, Saint-Constant et partout en Montérégie, ainsi qu'en ligne partout au Québec.`,
+        body: "Notre centre accueille les élèves sur rendez-vous. Nous offrons aussi le tutorat à domicile à Longueuil, Brossard, Candiac, Saint-Constant et partout en Montérégie, et en ligne partout au Québec.",
       },
     ],
     faq: [],

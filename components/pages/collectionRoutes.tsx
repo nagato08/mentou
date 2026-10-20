@@ -84,7 +84,12 @@ export function detailRoutes(collection: Collection) {
     // Pages liées : les autres pages de la même collection.
     const related = c[collection]
       .filter((p) => p.slug !== slug)
-      .map((p) => ({ label: p.label, summary: p.summary, href: `${base}/${p.slug}` }));
+      .map((p) => ({ label: p.label, href: `${base}/${p.slug}` }));
+    const relatedTitle = {
+      services: c.labels.otherServices,
+      subjects: c.labels.otherSubjects,
+      regions: c.labels.otherRegions,
+    }[collection];
 
     return (
       <>
@@ -110,6 +115,7 @@ export function detailRoutes(collection: Collection) {
             { name: page.label },
           ]}
           related={related}
+          relatedTitle={relatedTitle}
         />
       </>
     );

@@ -30,9 +30,8 @@ export default async function AboutPage({
   const typedLang = lang as Locale;
   const c = getContent(typedLang);
   const dict = await getDictionary(typedLang);
-  const related = c.services.slice(0, 4).map((p) => ({
+  const related = c.services.map((p) => ({
     label: p.label,
-    summary: p.summary,
     href: `/${lang}/${COLLECTION_PATH.services}/${p.slug}`,
   }));
 
@@ -44,6 +43,7 @@ export default async function AboutPage({
       ctaLabel={dict.nav.cta}
       crumbs={[{ name: c.labels.breadcrumbHome, href: `/${lang}` }, { name: c.about.label }]}
       related={related}
+      relatedTitle={c.labels.services}
     />
   );
 }
