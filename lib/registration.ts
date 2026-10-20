@@ -63,10 +63,10 @@ export const OFFER_LABELS: Record<StoredOffer, string> = {
   monthly: "Forfait mensuel présentiel (500 $ / mois)",
   "inperson-hourly": "Présentiel à l'heure (45 $ / h)",
   "online-hourly": "En ligne à l'heure (30 $ / h)",
-  weekly: "Ancien forfait — 150 $ / semaine",
-  daily: "Ancien forfait — 75 $ / jour",
-  "event-player": "Ancien tournoi — Joueur",
-  "event-spectator": "Ancien tournoi — Spectateur",
+  weekly: "Ancien site : 150 $ / semaine",
+  daily: "Ancien site : 75 $ / jour",
+  "event-player": "Ancien site : tournoi, joueur",
+  "event-spectator": "Ancien site : tournoi, spectateur",
 };
 
 export const HOURLY_PRODUCT_NAMES: Record<HourlyOffer, string> = {
