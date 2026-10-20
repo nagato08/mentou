@@ -16,9 +16,11 @@ export type CommentLabels = {
   submit: string;
   success: string;
   moderation: string;
-  more: string;
-  less: string;
   outOf: string;
+  prev: string;
+  next: string;
+  seeGoogle: string;
+  summary: string;
 };
 
 type CommentFormProps = {

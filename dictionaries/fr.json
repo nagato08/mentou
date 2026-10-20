@@ -364,7 +364,7 @@
   },
   "comments": {
     "leave": "Laisser un avis",
-    "close": "Fermer le formulaire",
+    "close": "Fermer",
     "formTitle": "Partagez votre expérience",
     "listTitle": "Avis des familles",
     "name": "Votre nom",
@@ -375,9 +375,11 @@
     "submit": "Envoyer mon avis",
     "success": "Merci ! Votre avis a bien été publié.",
     "moderation": "Les avis sont publiés immédiatement. L'équipe peut retirer un avis inapproprié.",
-    "more": "Voir plus d'avis",
-    "less": "Voir moins",
-    "outOf": "sur 5"
+    "outOf": "sur 5",
+    "prev": "Avis précédents",
+    "next": "Avis suivants",
+    "seeGoogle": "Voir sur Google",
+    "summary": "note moyenne"
   },
   "notFound": {
     "title": "Page introuvable",
@@ -404,6 +406,7 @@
     "noReviews": "Avis des familles",
     "google": "sur Google",
     "students": "élèves accompagnés",
-    "hoursShort": "Lun-ven 9 h à 21 h, sam-dim 8 h à 18 h"
+    "hoursShort": "Lun-ven 9 h à 21 h, sam-dim 8 h à 18 h",
+    "googleReviews": "avis sur Google"
   }
 }

@@ -364,7 +364,7 @@
   },
   "comments": {
     "leave": "Leave a review",
-    "close": "Close the form",
+    "close": "Close",
     "formTitle": "Share your experience",
     "listTitle": "Family reviews",
     "name": "Your name",
@@ -375,9 +375,11 @@
     "submit": "Send my review",
     "success": "Thank you! Your review has been published.",
     "moderation": "Reviews are published right away. The team may remove inappropriate reviews.",
-    "more": "See more reviews",
-    "less": "See less",
-    "outOf": "out of 5"
+    "outOf": "out of 5",
+    "prev": "Previous reviews",
+    "next": "Next reviews",
+    "seeGoogle": "See on Google",
+    "summary": "average rating"
   },
   "notFound": {
     "title": "Page not found",
@@ -404,6 +406,7 @@
     "noReviews": "Family reviews",
     "google": "on Google",
     "students": "students supported",
-    "hoursShort": "Mon-Fri 9 a.m.-9 p.m., Sat-Sun 8 a.m.-6 p.m."
+    "hoursShort": "Mon-Fri 9 a.m.-9 p.m., Sat-Sun 8 a.m.-6 p.m.",
+    "googleReviews": "reviews on Google"
   }
 }

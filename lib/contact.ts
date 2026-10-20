@@ -24,7 +24,8 @@ export const GOOGLE_PROFILE: {
 } = {
   // Note vérifiée sur la fiche « Groupe Mentou » (Google Maps, 20 oct. 2026).
   rating: 5,
-  reviewCount: null,
-  studentsCount: null,
+  reviewCount: 2,
+  // Chiffre confirmé par le client (20 oct. 2026).
+  studentsCount: 200,
   url: "https://www.google.com/maps/search/?api=1&query=Groupe+Mentou+1765+Boulevard+Taschereau+Longueuil",
 };

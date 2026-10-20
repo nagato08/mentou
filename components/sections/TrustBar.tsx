@@ -9,6 +9,7 @@ type Labels = {
   reviews: string;
   noReviews: string;
   google: string;
+  googleReviews: string;
   students: string;
   open7: string;
   hoursShort: string;
@@ -40,8 +41,8 @@ export default function TrustBar({ labels, lang }: { labels: Labels; lang: "fr" 
 
   const items: { icon: "star" | "users" | "clock"; strong: string; text: string; href?: string }[] = [];
   if (g.rating !== null) {
-    const count = g.reviewCount !== null ? `${g.reviewCount} ${labels.reviews} ` : "";
-    items.push({ icon: "star", strong: `${fmt(g.rating)}/5`, text: `${count}${labels.google}`, href: g.url ?? undefined });
+    const text = g.reviewCount !== null ? `${g.reviewCount} ${labels.googleReviews}` : labels.google;
+    items.push({ icon: "star", strong: `${fmt(g.rating)}/5`, text, href: g.url ?? undefined });
   }
   if (stats) {
     items.push({ icon: "star", strong: `${fmt(stats.avg)}/5`, text: `${stats.count} ${labels.reviews}`, href: "#avis" });
@@ -54,21 +55,21 @@ export default function TrustBar({ labels, lang }: { labels: Labels; lang: "fr" 
   return (
     <div className="border-y border-line bg-white">
       <Container size="wide">
-        <ul className="grid divide-line py-4 sm:grid-cols-2 sm:divide-x lg:flex lg:justify-center" aria-label={labels.noReviews}>
+        <ul className="grid grid-cols-2 gap-y-4 py-4 lg:flex lg:justify-center lg:divide-x lg:divide-line" aria-label={labels.noReviews}>
           {items.map((it) => {
             const body = (
               <>
                 <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${it.icon === "star" ? "bg-accent-soft text-accent" : "bg-sky text-primary"}`}>
                   <Icon name={it.icon} filled={it.icon === "star"} strokeWidth={it.icon === "star" ? 1 : 2} className="h-5 w-5" />
                 </span>
-                <span className="leading-tight">
+                <span className="min-w-0 leading-tight">
                   <span className="block font-extrabold text-ink">{it.strong}</span>
-                  <span className="block text-sm text-slate">{it.text}</span>
+                  <span className="block text-xs text-slate sm:text-sm">{it.text}</span>
                 </span>
               </>
             );
             return (
-              <li key={`${it.strong}-${it.text}`} className="flex justify-center px-6 py-2">
+              <li key={`${it.strong}-${it.text}`} className="flex px-2 sm:px-6 lg:justify-center lg:py-2">
                 {it.href ? (
                   <a href={it.href} className="flex items-center gap-3 hover:opacity-80" {...(it.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                     {body}
