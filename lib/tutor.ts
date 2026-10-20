@@ -14,7 +14,7 @@ export const TUTOR_LEVELS: TutorOption[] = [
   { id: "cegep", label: "Cégep" },
 ];
 
-// Matières (11). « Autre » est géré par un champ texte.
+// Matières proposées : maths, physique, chimie, sciences, français. « Autre » est géré par un champ texte.
 export const TUTOR_SUBJECTS: TutorOption[] = [
   { id: "st4", label: "Science ST/STE secondaire 4" },
   { id: "sn4", label: "Math SN secondaire 4" },
@@ -24,13 +24,19 @@ export const TUTOR_SUBJECTS: TutorOption[] = [
   { id: "phys5", label: "Physique secondaire 5" },
   { id: "chim5", label: "Chimie secondaire 5" },
   { id: "fr", label: "Français (secondaire)" },
-  { id: "hist", label: "Histoire (secondaire)" },
-  { id: "ang", label: "Anglais (secondaire)" },
   { id: "sci", label: "Science (secondaire)" },
 ];
 
+// Matières retirées de l'offre, gardées pour afficher les anciennes inscriptions.
+const LEGACY_SUBJECTS: TutorOption[] = [
+  { id: "hist", label: "Histoire (secondaire)" },
+  { id: "ang", label: "Anglais (secondaire)" },
+];
+
 const LEVEL_MAP = new Map(TUTOR_LEVELS.map((o) => [o.id, o.label]));
-const SUBJECT_MAP = new Map(TUTOR_SUBJECTS.map((o) => [o.id, o.label]));
+const SUBJECT_MAP = new Map(
+  [...TUTOR_SUBJECTS, ...LEGACY_SUBJECTS].map((o) => [o.id, o.label])
+);
 
 export const levelLabel = (id: string): string => LEVEL_MAP.get(id) ?? id ?? "";
 export const subjectLabels = (ids: string[]): string[] =>

@@ -39,7 +39,7 @@
     },
     "subjects": {
       "label": "Popular subjects",
-      "items": ["Math", "French", "English", "Science", "Physics", "Chemistry", "History"]
+      "items": ["Math", "Physics", "Chemistry", "Science", "French"]
     },
     "signs": {
       "eyebrow": "Signs to watch for",
@@ -214,7 +214,7 @@
         },
         {
           "q": "Which subjects do you tutor?",
-          "a": "Math (CST and SN), French, English, science, physics, chemistry and history. If your child's subject is not listed, mention it in the form and we will get back to you."
+          "a": "Math (CST and SN), physics, chemistry, science and French. If your child's subject is not listed, mention it in the form and we will get back to you."
         },
         {
           "q": "What does the $500 monthly plan include?",

@@ -71,7 +71,13 @@ export default function NavbarClient({
       <div className="bg-navy text-white">
         <Container size="wide" className="flex min-h-9 items-center justify-center gap-2 py-1.5 text-center text-xs font-medium sm:text-sm">
           <Icon name="laptop" className="hidden h-4 w-4 shrink-0 sm:block" />
-          {announcement}
+          <span>{announcement}</span>
+          <Link
+            href={ctaHref}
+            className="hidden shrink-0 font-bold text-accent underline-offset-2 hover:underline sm:inline"
+          >
+            {labels.cta} →
+          </Link>
         </Container>
       </div>
 

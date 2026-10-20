@@ -39,7 +39,7 @@
     },
     "subjects": {
       "label": "Matières populaires",
-      "items": ["Mathématiques", "Français", "Anglais", "Sciences", "Physique", "Chimie", "Histoire"]
+      "items": ["Mathématiques", "Physique", "Chimie", "Sciences", "Français"]
     },
     "signs": {
       "eyebrow": "Les signes qui ne trompent pas",
@@ -214,7 +214,7 @@
         },
         {
           "q": "Dans quelles matières offrez-vous du tutorat ?",
-          "a": "Mathématiques (CST et SN), français, anglais, sciences, physique, chimie et histoire. Si la matière de votre enfant n'est pas dans la liste, indiquez-la dans le formulaire et nous vous répondrons."
+          "a": "Mathématiques (CST et SN), physique, chimie, sciences et français. Si la matière de votre enfant n'est pas dans la liste, indiquez-la dans le formulaire et nous vous répondrons."
         },
         {
           "q": "Que comprend le forfait mensuel à 500 $ ?",
