@@ -45,6 +45,8 @@ export type Block =
   | { type: "map"; title: string; body: string }
   /** Établissements ou villes des environs. */
   | { type: "nearby"; title: string; intro?: string; places: { name: string; note: string }[] }
+  /** Deux colonnes « C'est pour vous si / Ce n'est pas pour vous si ». */
+  | { type: "fit"; title: string; yesTitle: string; yes: string[]; noTitle: string; no: string[] }
   /** Paragraphe simple. */
   | { type: "text"; title: string; body: string };
 
