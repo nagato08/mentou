@@ -3,36 +3,6 @@ import path from "path";
 import type { Comment } from "./useComments";
 import type { Registration, RegistrationStatus } from "./registration";
 
-const DEFAULT_COMMENTS: Comment[] = [
-  {
-    id: "default-1",
-    name: "Marie L.",
-    message:
-      "En quelques mois, mon fils a complètement changé. Il ose s'exprimer, il s'intéresse à de nouvelles choses, il a trouvé sa place.",
-    rating: 5,
-    approved: true,
-    createdAt: new Date(Date.now() - 30 * 86400000).toISOString(),
-  },
-  {
-    id: "default-2",
-    name: "Karim D.",
-    message:
-      "L'approche est rigoureuse mais profondément humaine. Mes deux ados y vont avec plaisir et reviennent grandis chaque semaine.",
-    rating: 5,
-    approved: true,
-    createdAt: new Date(Date.now() - 20 * 86400000).toISOString(),
-  },
-  {
-    id: "default-3",
-    name: "Sophia",
-    message:
-      "Avant Groupe Mentou, je n'osais pas prendre la parole en classe. Maintenant, je dirige un projet étudiant. Les exercices de sketch m'ont vraiment débloqué.",
-    rating: 4,
-    approved: true,
-    createdAt: new Date(Date.now() - 10 * 86400000).toISOString(),
-  },
-];
-
 let _client: Client | null = null;
 let _initialized = false;
 
@@ -93,16 +63,6 @@ export async function getDb(): Promise<Client> {
       await _client.execute(`ALTER TABLE registrations ADD COLUMN ${col}`);
     } catch {
       /* colonne déjà existante */
-    }
-  }
-
-  const { rows } = await _client.execute("SELECT COUNT(*) as n FROM comments");
-  if ((rows[0].n as number) === 0) {
-    for (const c of DEFAULT_COMMENTS) {
-      await _client.execute({
-        sql: "INSERT INTO comments (id, name, message, rating, approved, created_at) VALUES (?, ?, ?, ?, ?, ?)",
-        args: [c.id, c.name, c.message, c.rating, c.approved ? 1 : 0, c.createdAt],
-      });
     }
   }
 

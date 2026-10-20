@@ -110,6 +110,12 @@ const PATHS = {
       <path d="M10 21v-5h4v5" />
     </>
   ),
+  search: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <path d="M21 21l-4.3-4.3" />
+    </>
+  ),
   minus: <path d="M5 12h14" />,
   plus: <path d="M12 5v14M5 12h14" />,
   menu: <path d="M3 6h18M3 12h18M3 18h18" />,

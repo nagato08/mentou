@@ -1,77 +1,46 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import type { Comment } from "@/lib/useComments";
 import type { Registration } from "@/lib/registration";
-import { isHourlyOffer, isLegacyOffer, registrationLabel } from "@/lib/registration";
-import { levelLabel, subjectLabels } from "@/lib/tutor";
+import Logo from "@/components/layout/Logo";
+import Icon from "@/components/ui/Icon";
+import RegistrationsPanel from "@/components/admin/RegistrationsPanel";
+import CommentsPanel from "@/components/admin/CommentsPanel";
 
-type Tab = "pending" | "approved";
-type View = "comments" | "registrations";
-type RegistrationFilter = "monthly" | "hourly" | "legacy";
+type View = "registrations" | "comments";
 
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="inline-flex items-center gap-0.5" aria-label={`${rating} sur 5`}>
-      {[1, 2, 3, 4, 5].map((i) => (
-        <span
-          key={i}
-          className={i <= rating ? "text-gold" : "text-bone/20"}
-        >
-          ★
-        </span>
-      ))}
-    </span>
-  );
-}
-
-function StatCard({ label, value }: { label: string; value: number | string }) {
-  return (
-    <div className="border border-bone/10 bg-night/40 px-5 py-4 flex flex-col gap-1">
-      <span className="font-display text-3xl text-bone leading-none tabular-nums">
-        {value}
-      </span>
-      <span className="text-[0.6rem] uppercase tracking-[0.25em] text-bone/40">
-        {label}
-      </span>
-    </div>
-  );
-}
+const INPUT =
+  "min-h-12 w-full rounded-xl border border-line bg-white px-4 text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15";
 
 export default function AdminPage() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [checking, setChecking] = useState(true);
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [comments, setComments] = useState<Comment[]>([]);
   const [registrations, setRegistrations] = useState<Registration[]>([]);
-  const [view, setView] = useState<View>("comments");
-  const [tab, setTab] = useState<Tab>("pending");
-  const [loading, setLoading] = useState(false);
+  const [view, setView] = useState<View>("registrations");
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  const fetchRegistrations = useCallback(async () => {
-    const res = await fetch("/api/admin/registrations");
-    if (res.ok) setRegistrations(await res.json());
+  const fetchAll = useCallback(async () => {
+    const [c, r] = await Promise.all([fetch("/api/admin/comments"), fetch("/api/admin/registrations")]);
+    if (c.status === 401 || r.status === 401) {
+      setLoggedIn(false);
+      return;
+    }
+    if (c.ok) setComments(await c.json());
+    if (r.ok) setRegistrations(await r.json());
+    setLoggedIn(true);
   }, []);
 
-  const fetchComments = useCallback(async () => {
-    const res = await fetch("/api/admin/comments");
-    if (res.ok) {
-      setComments(await res.json());
-      setLoggedIn(true);
-      void fetchRegistrations();
-    } else if (res.status === 401) {
-      setLoggedIn(false);
-    }
-  }, [fetchRegistrations]);
-
-  // Restore session on mount (cookie may still be valid).
-  // setState runs after the awaited fetch — async, not a synchronous cascade.
+  // Session encore valide (cookie) : on recharge directement le tableau de bord.
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    void fetchComments().finally(() => setChecking(false));
-  }, [fetchComments]);
+    void fetchAll().finally(() => setChecking(false));
+  }, [fetchAll]);
 
   const login = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,11 +54,9 @@ export default function AdminPage() {
     if (res.ok) {
       setPassword("");
       setAuthError("");
-      await fetchComments();
+      await fetchAll();
     } else if (res.status === 500) {
-      setAuthError(
-        "Configuration serveur manquante (ADMIN_SECRET). Contactez l'administrateur."
-      );
+      setAuthError("Configuration du serveur incomplète (ADMIN_SECRET manquant).");
     } else {
       setAuthError("Mot de passe incorrect.");
     }
@@ -99,73 +66,53 @@ export default function AdminPage() {
     await fetch("/api/admin/login", { method: "DELETE" });
     setLoggedIn(false);
     setComments([]);
+    setRegistrations([]);
   };
 
-  const toggleApprove = async (id: string, approved: boolean) => {
-    setBusyId(id);
-    await fetch(`/api/admin/comments/${id}`, {
+  const toggleComment = async (c: Comment) => {
+    setBusyId(c.id);
+    await fetch(`/api/admin/comments/${c.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ approved: !approved }),
+      body: JSON.stringify({ approved: !c.approved }),
     });
-    await fetchComments();
+    await fetchAll();
     setBusyId(null);
   };
 
-  const deleteComment = async (id: string) => {
-    if (!confirm("Supprimer définitivement ce commentaire ?")) return;
-    setBusyId(id);
-    await fetch(`/api/admin/comments/${id}`, { method: "DELETE" });
-    await fetchComments();
+  const deleteComment = async (c: Comment) => {
+    if (!confirm(`Supprimer définitivement l'avis de ${c.name} ?`)) return;
+    setBusyId(c.id);
+    await fetch(`/api/admin/comments/${c.id}`, { method: "DELETE" });
+    await fetchAll();
     setBusyId(null);
   };
 
-  // ── Loading session check ──
+  const deleteRegistration = async (id: string) => {
+    if (!confirm("Supprimer cette inscription non payée ?")) return;
+    await fetch(`/api/admin/registrations/${id}`, { method: "DELETE" });
+    await fetchAll();
+  };
+
   if (checking) {
     return (
-      <main className="min-h-dvh bg-ink flex items-center justify-center">
-        <span className="h-6 w-6 rounded-full border-2 border-bone/20 border-t-gold animate-spin" />
+      <main className="grid min-h-dvh place-items-center">
+        <span className="h-8 w-8 animate-spin rounded-full border-3 border-sky-strong border-t-primary" aria-label="Chargement" />
       </main>
     );
   }
 
-  // ── Login screen ──
   if (!loggedIn) {
     return (
-      <main className="relative min-h-dvh bg-ink flex items-center justify-center px-4 overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #d4af37 1px, transparent 1px), linear-gradient(to bottom, #d4af37 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
-        <form
-          onSubmit={login}
-          className="relative w-full max-w-sm flex flex-col gap-6 border border-bone/10 bg-night/30 p-8 md:p-10"
-        >
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <span className="block h-px w-8 bg-gold" />
-              <span className="text-[0.6rem] uppercase tracking-[0.35em] text-gold">
-                Espace privé
-              </span>
-            </div>
-            <h1 className="font-display text-3xl text-bone leading-tight">
-              Modération
-            </h1>
-            <p className="text-sm text-bone/50">
-              Gérez les commentaires publiés sur le site.
-            </p>
+      <main className="grid min-h-dvh place-items-center bg-linear-to-b from-sky to-paper px-4 py-10">
+        <form onSubmit={login} className="flex w-full max-w-sm flex-col gap-6 rounded-3xl border border-line bg-white p-8 shadow-lift">
+          <Logo name="Mentou Academy" size="lg" />
+          <div>
+            <h1 className="text-2xl font-extrabold text-ink">Espace administration</h1>
+            <p className="mt-1 text-sm text-slate">Inscriptions et avis des familles.</p>
           </div>
-
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="pwd"
-              className="text-[0.65rem] uppercase tracking-[0.25em] text-bone/50"
-            >
+          <div>
+            <label htmlFor="pwd" className="mb-1.5 block text-sm font-semibold text-ink">
               Mot de passe
             </label>
             <input
@@ -174,405 +121,90 @@ export default function AdminPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoFocus
-              className="px-4 py-3 bg-ink border border-bone/15 text-bone placeholder:text-bone/30 focus:outline-none focus:border-gold/60 transition-colors"
-              placeholder="••••••••"
+              autoComplete="current-password"
               required
+              className={INPUT}
             />
           </div>
-
           {authError && (
-            <p
-              role="alert"
-              className="text-sm text-red-400 border-l-2 border-red-400/50 pl-3"
-            >
+            <p role="alert" className="rounded-xl bg-danger/10 px-4 py-3 text-sm font-medium text-danger">
               {authError}
             </p>
           )}
-
           <button
             type="submit"
             disabled={loading}
-            className="flex items-center justify-center gap-2 px-6 py-3.5 bg-gold text-ink font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gold-soft disabled:opacity-50 transition-colors"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-6 font-semibold text-white transition-colors hover:bg-primary-dark disabled:opacity-50"
           >
-            {loading ? (
-              <span className="h-4 w-4 rounded-full border-2 border-ink/30 border-t-ink animate-spin" />
-            ) : (
-              "Se connecter"
-            )}
+            {loading ? "Connexion..." : "Se connecter"}
           </button>
+          <Link href="/fr" className="text-center text-sm text-slate hover:text-primary">
+            Retour au site
+          </Link>
         </form>
       </main>
     );
   }
 
-  // ── Dashboard ──
-  const pending = comments.filter((c) => !c.approved);
-  const approved = comments.filter((c) => c.approved);
-  const displayed = tab === "pending" ? pending : approved;
-  const avgRating =
-    comments.length > 0
-      ? (comments.reduce((s, c) => s + c.rating, 0) / comments.length).toFixed(1)
-      : "—";
-
-  return (
-    <main className="min-h-dvh bg-ink text-bone">
-      {/* Header */}
-      <header className="sticky top-0 z-10 bg-ink/90 backdrop-blur border-b border-bone/10 px-6 md:px-10 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="block h-px w-8 bg-gold" />
-          <div className="flex flex-col">
-            <span className="text-[0.6rem] uppercase tracking-[0.3em] text-gold">
-              Mentou Academy
-            </span>
-            <h1 className="font-display text-lg leading-none">Modération</h1>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          {/* View switcher */}
-          <div className="flex border border-bone/10">
-            {(["comments", "registrations"] as View[]).map((v) => (
-              <button
-                key={v}
-                onClick={() => setView(v)}
-                className={`px-4 py-2 text-[0.6rem] uppercase tracking-[0.2em] transition-colors ${
-                  view === v
-                    ? "bg-gold text-ink font-semibold"
-                    : "text-bone/40 hover:text-bone"
-                }`}
-              >
-                {v === "comments"
-                  ? "Avis"
-                  : `Inscriptions${registrations.length ? ` (${registrations.length})` : ""}`}
-              </button>
-            ))}
-          </div>
-          <button
-            onClick={logout}
-            className="text-[0.65rem] uppercase tracking-[0.25em] text-bone/40 hover:text-bone border border-bone/10 hover:border-bone/30 px-4 py-2 transition-colors"
-          >
-            Déconnexion
-          </button>
-        </div>
-      </header>
-
-      {view === "registrations" ? (
-        <RegistrationsView registrations={registrations} />
-      ) : (
-      <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
-        {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-bone/10 border border-bone/10">
-          <StatCard label="Total" value={comments.length} />
-          <StatCard label="En attente" value={pending.length} />
-          <StatCard label="Approuvés" value={approved.length} />
-          <StatCard label="Note moy." value={avgRating} />
-        </div>
-
-        {/* Tabs */}
-        <div className="border-b border-bone/10 flex gap-8">
-          {(["pending", "approved"] as Tab[]).map((t) => {
-            const count = t === "pending" ? pending.length : approved.length;
-            const active = tab === t;
-            return (
-              <button
-                key={t}
-                onClick={() => setTab(t)}
-                className={`group flex items-center gap-2 py-4 text-sm uppercase tracking-[0.2em] border-b-2 transition-colors ${
-                  active
-                    ? "border-gold text-gold"
-                    : "border-transparent text-bone/40 hover:text-bone"
-                }`}
-              >
-                {t === "pending" ? "En attente" : "Approuvés"}
-                <span
-                  className={`text-[0.65rem] tabular-nums px-2 py-0.5 rounded-full ${
-                    active ? "bg-gold/15 text-gold" : "bg-bone/10 text-bone/50"
-                  }`}
-                >
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* List */}
-        <div className="flex flex-col gap-4">
-          {displayed.length === 0 && (
-            <div className="border border-dashed border-bone/15 py-16 flex flex-col items-center gap-3 text-center">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                className="text-bone/25"
-                aria-hidden
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 10h8M8 14h5m-9 7 3.5-3H18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v15z"
-                />
-              </svg>
-              <p className="text-bone/40 text-sm">
-                {tab === "pending"
-                  ? "Aucun commentaire en attente."
-                  : "Aucun commentaire approuvé."}
-              </p>
-            </div>
-          )}
-
-          {displayed.map((c) => (
-            <article
-              key={c.id}
-              className={`group border border-bone/10 bg-night/20 hover:bg-night/40 transition-colors p-5 md:p-6 flex flex-col gap-4 ${
-                busyId === c.id ? "opacity-50 pointer-events-none" : ""
-              }`}
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-center gap-3 min-w-0">
-                  {/* Avatar initial */}
-                  <span className="shrink-0 h-10 w-10 rounded-full border border-gold/30 flex items-center justify-center font-display text-lg text-gold">
-                    {c.name.trim().charAt(0).toUpperCase()}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="font-semibold text-bone truncate">{c.name}</p>
-                    <p className="text-xs text-bone/40 flex items-center gap-2">
-                      <Stars rating={c.rating} />
-                      <span>·</span>
-                      <span>
-                        {new Date(c.createdAt).toLocaleDateString("fr-FR", {
-                          day: "2-digit",
-                          month: "short",
-                          year: "numeric",
-                        })}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Status pill */}
-                <span
-                  className={`shrink-0 text-[0.55rem] uppercase tracking-[0.2em] px-2.5 py-1 ${
-                    c.approved
-                      ? "bg-gold/10 text-gold"
-                      : "bg-bone/10 text-bone/50"
-                  }`}
-                >
-                  {c.approved ? "Public" : "En attente"}
-                </span>
-              </div>
-
-              <p className="text-bone/75 text-sm leading-relaxed border-l-2 border-bone/10 pl-4">
-                {c.message}
-              </p>
-
-              <div className="flex gap-2 justify-end pt-1">
-                <button
-                  onClick={() => toggleApprove(c.id, c.approved)}
-                  className={`px-4 py-2 text-[0.65rem] uppercase tracking-[0.2em] transition-colors ${
-                    c.approved
-                      ? "bg-bone/10 text-bone/60 hover:bg-bone/20"
-                      : "bg-gold text-ink hover:bg-gold-soft font-semibold"
-                  }`}
-                >
-                  {c.approved ? "Masquer" : "Approuver"}
-                </button>
-                <button
-                  onClick={() => deleteComment(c.id)}
-                  className="px-4 py-2 text-[0.65rem] uppercase tracking-[0.2em] text-red-400 border border-red-400/30 hover:bg-red-400/10 transition-colors"
-                >
-                  Supprimer
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-      )}
-    </main>
-  );
-}
-
-function RegistrationsView({
-  registrations,
-}: {
-  registrations: Registration[];
-}) {
-  const [filter, setFilter] = useState<RegistrationFilter>("monthly");
-
-  const monthly = registrations.filter((r) => r.offer === "monthly");
-  const hourly = registrations.filter((r) => isHourlyOffer(r.offer));
-  const legacy = registrations.filter((r) => isLegacyOffer(r.offer));
-  const filtered =
-    filter === "monthly" ? monthly : filter === "hourly" ? hourly : legacy;
-
-  const paid = filtered.filter((r) => r.status === "paid");
-  const pending = filtered.filter((r) => r.status === "pending");
-  const canceled = filtered.filter((r) => r.status === "canceled");
-
-  const filters: {
-    key: RegistrationFilter;
-    label: string;
-    count: number;
-  }[] = [
-    { key: "monthly", label: "Mensuel", count: monthly.length },
-    { key: "hourly", label: "À l'heure", count: hourly.length },
-    { key: "legacy", label: "Archives", count: legacy.length },
+  const tabs: { key: View; label: string; icon: "users" | "chat"; count: number }[] = [
+    { key: "registrations", label: "Inscriptions", icon: "users", count: registrations.length },
+    { key: "comments", label: "Avis", icon: "chat", count: comments.length },
   ];
 
-  const statusStyle: Record<Registration["status"], string> = {
-    paid: "bg-gold/10 text-gold",
-    pending: "bg-bone/10 text-bone/50",
-    canceled: "bg-red-400/10 text-red-400",
-  };
-  const statusLabel: Record<Registration["status"], string> = {
-    paid: "Payé",
-    pending: "En attente",
-    canceled: "Annulé",
-  };
-
   return (
-    <div className="max-w-4xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-8">
-      {/* Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-bone/10 border border-bone/10">
-        <StatCard label="Total" value={filtered.length} />
-        <StatCard label="Payées" value={paid.length} />
-        <StatCard label="En attente" value={pending.length} />
-        <StatCard label="Annulées" value={canceled.length} />
-      </div>
-
-      <div className="flex flex-wrap gap-2 border-b border-bone/10 pb-4">
-        {filters.map((item) => {
-          const active = filter === item.key;
-          return (
+    <main className="min-h-dvh">
+      <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
+          <div className="flex items-center gap-3">
+            <Logo name="Mentou Academy" />
+            <span className="hidden rounded-full bg-sky px-3 py-1 text-xs font-bold text-primary sm:inline">Admin</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/fr"
+              target="_blank"
+              className="hidden min-h-10 items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-slate hover:bg-sky hover:text-primary sm:inline-flex"
+            >
+              Voir le site <Icon name="arrow" className="h-4 w-4" />
+            </Link>
             <button
-              key={item.key}
               type="button"
-              onClick={() => setFilter(item.key)}
-              className={`inline-flex items-center gap-2 px-4 py-2 text-[0.65rem] uppercase tracking-[0.2em] transition-colors ${
-                active
-                  ? "bg-gold text-ink font-semibold"
-                  : "border border-bone/10 text-bone/45 hover:border-bone/25 hover:text-bone"
+              onClick={logout}
+              className="inline-flex min-h-10 items-center rounded-full border border-line px-4 text-sm font-semibold text-ink hover:border-primary hover:text-primary"
+            >
+              Déconnexion
+            </button>
+          </div>
+        </div>
+        <nav aria-label="Sections" className="mx-auto flex max-w-6xl gap-1 px-4 md:px-8">
+          {tabs.map((t) => (
+            <button
+              key={t.key}
+              type="button"
+              onClick={() => setView(t.key)}
+              aria-current={view === t.key ? "page" : undefined}
+              className={`inline-flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${
+                view === t.key ? "border-primary text-primary" : "border-transparent text-slate hover:text-ink"
               }`}
             >
-              {item.label}
-              <span
-                className={`tabular-nums ${
-                  active ? "text-ink/70" : "text-bone/35"
-                }`}
-              >
-                {item.count}
-              </span>
+              <Icon name={t.icon} className="h-4 w-4" />
+              {t.label}
+              <span className="rounded-full bg-paper px-2 py-0.5 text-xs tabular-nums">{t.count}</span>
             </button>
-          );
-        })}
-      </div>
+          ))}
+        </nav>
+      </header>
 
-      <div className="flex flex-col gap-4">
-        {filtered.length === 0 && (
-          <div className="border border-dashed border-bone/15 py-16 text-center">
-            <p className="text-bone/40 text-sm">
-              Aucune inscription dans ce filtre pour le moment.
-            </p>
-          </div>
+      <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
+        <h1 className="mb-6 text-2xl font-extrabold text-ink md:text-3xl">
+          {view === "registrations" ? "Inscriptions" : "Avis des familles"}
+        </h1>
+        {view === "registrations" ? (
+          <RegistrationsPanel registrations={registrations} onDelete={deleteRegistration} />
+        ) : (
+          <CommentsPanel comments={comments} busyId={busyId} onToggle={toggleComment} onDelete={deleteComment} />
         )}
-
-        {filtered.map((r) => {
-          const isEvent = r.offer === "event-player" || r.offer === "event-spectator";
-          const participant = r.childName || r.parentName;
-          const dateStr = new Date(r.createdAt).toLocaleDateString("fr-FR", {
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-          });
-          return (
-            <article
-              key={r.id}
-              className="border border-bone/10 bg-night/20 p-5 md:p-6 flex flex-col gap-4"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  {isEvent ? (
-                    <p className="font-semibold text-bone">{r.parentName}</p>
-                  ) : (
-                    <p className="font-semibold text-bone">
-                      {participant}
-                      {r.childAge && (
-                        <span className="text-bone/40 font-normal">
-                          {" "}
-                          · {r.childAge} ans
-                        </span>
-                      )}
-                    </p>
-                  )}
-                  <p className="text-xs text-bone/40 mt-0.5">
-                    {isEvent ? "Tournoi" : `Parent : ${r.parentName}`} · {dateStr}
-                  </p>
-                </div>
-                <div className="flex flex-col items-end gap-1 shrink-0">
-                  <span
-                    className={`text-[0.55rem] uppercase tracking-[0.2em] px-2.5 py-1 ${statusStyle[r.status]}`}
-                  >
-                    {statusLabel[r.status]}
-                  </span>
-                  <span className="text-[0.6rem] text-bone/40">
-                    {registrationLabel(r)}
-                  </span>
-                </div>
-              </div>
-
-              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm border-t border-bone/10 pt-4">
-                <Detail label="Courriel" value={r.parentEmail} />
-                <Detail label="Téléphone" value={r.parentPhone} />
-                {isEvent ? (
-                  <Detail label="Nation / Équipe" value={r.expectations} />
-                ) : (
-                  <>
-                    <Detail label="École" value={r.childSchool} />
-                    <Detail label="Niveau" value={levelLabel(r.studentLevel)} />
-                    <Detail
-                      label="Matières"
-                      value={[...subjectLabels(r.subjects), r.otherSubject]
-                        .filter(Boolean)
-                        .join(", ")}
-                      full
-                    />
-                    <Detail
-                      label="Adresse"
-                      value={`${r.address}, ${r.city} ${r.postalCode}, ${r.province}`}
-                    />
-                    <Detail label="Disponibilités" value={r.availability} />
-                    <Detail label="Attentes" value={r.expectations} full />
-                    <Detail label="Suggestions" value={r.suggestions} full />
-                  </>
-                )}
-              </dl>
-            </article>
-          );
-        })}
       </div>
-    </div>
-  );
-}
-
-function Detail({
-  label,
-  value,
-  full,
-}: {
-  label: string;
-  value: string;
-  full?: boolean;
-}) {
-  if (!value) return null;
-  return (
-    <div className={full ? "sm:col-span-2" : ""}>
-      <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-bone/40">
-        {label}
-      </dt>
-      <dd className="text-bone/75">{value}</dd>
-    </div>
+    </main>
   );
 }
