@@ -87,6 +87,7 @@ export async function getDb(): Promise<Client> {
     "student_level TEXT",
     "subjects TEXT",
     "other_subject TEXT",
+    "hours INTEGER",
   ]) {
     try {
       await _client.execute(`ALTER TABLE registrations ADD COLUMN ${col}`);
@@ -134,6 +135,7 @@ export function rowToRegistration(row: Record<string, unknown>): Registration {
     postalCode: row.postal_code as string,
     province: row.province as string,
     offer: row.offer as Registration["offer"],
+    hours: row.hours == null ? null : Number(row.hours),
     availability: (row.availability as string) ?? "",
     expectations: (row.expectations as string) ?? "",
     suggestions: (row.suggestions as string) ?? "",

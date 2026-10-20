@@ -1,13 +1,14 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { locales, type Locale } from "@/lib/i18n-config";
+import type { Locale } from "@/lib/i18n-config";
 import Container from "./Container";
 import LangSwitcher from "./LangSwitcher";
+import Logo from "./Logo";
+import Icon from "@/components/ui/Icon";
+import { buttonClass } from "@/components/ui/Button";
 
 type NavItem = {
   href: string;
@@ -16,263 +17,151 @@ type NavItem = {
 
 type NavbarClientProps = {
   lang: Locale;
-  ctaLabel: string;
-  phoneLabel: string;
-  whatsappLabel: string;
   items: NavItem[];
-  admissionHref: string;
+  announcement: string;
+  labels: {
+    cta: string;
+    phone: string;
+    menuOpen: string;
+    menuClose: string;
+    siteName: string;
+  };
 };
 
 export default function NavbarClient({
   lang,
-  ctaLabel,
-  phoneLabel,
-  whatsappLabel,
   items,
-  admissionHref,
+  announcement,
+  labels,
 }: NavbarClientProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false); // ← Évite les différences d'hydratation
-
   const pathname = usePathname();
-
-  // Montage côté client uniquement
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const base = `/${lang}`;
+  const tel = `tel:${labels.phone.replace(/[^\d+]/g, "")}`;
+  const ctaHref = `${base}/demander-un-tuteur`;
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock scroll vertical quand menu ouvert
+  // Bloque le défilement de la page quand le menu mobile est ouvert.
   useEffect(() => {
-    const overflow = menuOpen ? "hidden" : "";
-    document.body.style.overflow = overflow;
-    document.documentElement.style.overflow = overflow;
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
     };
   }, [menuOpen]);
 
-  // ← Supprime toute scrollbar horizontale (cause du débordement)
   useEffect(() => {
-    document.documentElement.style.overflowX = "hidden";
-    document.body.style.overflowX = "hidden";
-    return () => {
-      document.documentElement.style.overflowX = "";
-      document.body.style.overflowX = "";
-    };
-  }, []);
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
 
   const close = () => setMenuOpen(false);
-  const base = `/${lang}`;
-
-  // Évite le rendu serveur qui pourrait causer un décalage
-  if (!mounted) return null;
+  const isActive = (href: string) => !href.includes("#") && pathname.startsWith(href);
 
   return (
-    <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 w-full overflow-x-clip transition-all duration-500 ${
-          scrolled || menuOpen
-            ? "bg-ink/95 backdrop-blur-md border-b border-bone/10"
-            : "bg-transparent border-b border-transparent"
+    <header className="sticky top-0 z-50">
+      <div className="bg-navy text-white">
+        <Container size="wide" className="flex min-h-9 items-center justify-center gap-2 py-1.5 text-center text-xs font-medium sm:text-sm">
+          <Icon name="laptop" className="hidden h-4 w-4 shrink-0 sm:block" />
+          {announcement}
+        </Container>
+      </div>
+
+      <div
+        className={`border-b bg-white/95 backdrop-blur transition-shadow duration-200 ${
+          scrolled ? "border-line shadow-card" : "border-transparent"
         }`}
       >
-        <Container
-          size="wide"
-          as="div"
-          className="relative flex h-20 w-full max-w-full items-center justify-between overflow-x-hidden"
-        >
-          {/* Logo */}
-          <Link
-            href={base}
-            onClick={close}
-            className="shrink-0 flex items-center"
-          >
-            <Image
-              src="/flyer/nouveau-logo.jpeg"
-              alt="Groupe Mentou"
-              width={48}
-              height={48}
-              className="h-9 w-9 rounded-full object-cover sm:h-11 sm:w-11 md:h-12 md:w-12"
-              priority
-            />
+        <Container size="wide" className="flex h-18 items-center justify-between gap-6">
+          <Link href={base} onClick={close} className="shrink-0" aria-label={labels.siteName}>
+            <Logo name={labels.siteName} />
           </Link>
 
-          {/* Desktop nav */}
-          <nav
-            aria-label="Principale"
-            className="hidden items-center gap-8 md:flex"
-          >
-            {items.map((item) => {
-              const isActive =
-                pathname === item.href ||
-                (item.href !== base && pathname.startsWith(item.href));
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`relative text-xs uppercase tracking-[0.2em] transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:bg-gold after:transition-all after:duration-300 ${
-                    isActive
-                      ? "text-gold after:w-full"
-                      : "text-bone/80 hover:text-gold after:w-0 hover:after:w-full"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+          <nav aria-label="Principale" className="hidden items-center gap-1 lg:flex">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors ${
+                  isActive(item.href)
+                    ? "text-primary"
+                    : "text-slate hover:bg-sky hover:text-primary"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* Right actions : min-w-0 permet de réduire si nécessaire */}
-          <div className="flex shrink-0 min-w-0 items-center gap-4">
-            <div className="hidden md:flex">
+          <div className="flex items-center gap-3">
+            <div className="hidden md:block">
               <LangSwitcher currentLang={lang} />
             </div>
-
             <a
-              href={`tel:${phoneLabel.replace(/[^\d+]/g, "")}`}
-              className="hidden items-center gap-2 text-xs uppercase tracking-[0.2em] text-bone/70 transition-colors hover:text-gold lg:inline-flex"
+              href={tel}
+              className="hidden items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-primary xl:inline-flex"
             >
-              <span aria-hidden>☎</span>
-              {phoneLabel}
+              <Icon name="phone" className="h-4 w-4 text-primary" />
+              {labels.phone}
             </a>
-
-            <Link
-              href={admissionHref}
-              className="hidden items-center border border-gold px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-gold transition-colors hover:bg-gold hover:text-ink md:inline-flex"
-            >
-              {ctaLabel}
+            <Link href={ctaHref} className={buttonClass("primary", "md", "max-sm:hidden")}>
+              {labels.cta}
             </Link>
-
-            {/* Hamburger - toujours visible sans débordement */}
             <button
               type="button"
-              aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-label={menuOpen ? labels.menuClose : labels.menuOpen}
               aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
               onClick={() => setMenuOpen((v) => !v)}
-              className="relative flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-1 md:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full text-ink transition-colors hover:bg-sky lg:hidden"
             >
-              <span
-                className={`block h-px w-6 bg-bone transition-all duration-300 origin-center ${
-                  menuOpen ? "translate-y-[5px] rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block h-px bg-bone transition-all duration-300 ${
-                  menuOpen ? "w-0 opacity-0" : "w-6"
-                }`}
-              />
-              <span
-                className={`block h-px w-6 bg-bone transition-all duration-300 origin-center ${
-                  menuOpen ? "-translate-y-[5px] -rotate-45" : ""
-                }`}
-              />
+              <Icon name={menuOpen ? "close" : "menu"} className="h-6 w-6" />
             </button>
           </div>
         </Container>
-      </header>
+      </div>
 
-      {/* Mobile menu (inchangé, fonctionne correctement) */}
+      {/* Menu mobile */}
       <div
-        aria-hidden={!menuOpen}
-        className={`fixed inset-0 z-40 flex flex-col overflow-y-auto bg-ink pt-20 transition-all duration-500 md:hidden ${
-          menuOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
-        }`}
+        id="mobile-menu"
+        hidden={!menuOpen}
+        className="absolute inset-x-0 top-full z-40 h-dvh overflow-y-auto border-t border-line bg-white pb-40 lg:hidden"
       >
-        <nav
-          aria-label="Menu mobile"
-          className="flex flex-col gap-0 border-t border-bone/10 px-4 py-6 sm:px-6 sm:py-10"
-        >
-          {items.map((item, i) => {
-            const isActive =
-              pathname === item.href ||
-              (item.href !== base && pathname.startsWith(item.href));
-            return (
+        <Container className="flex flex-col gap-6 py-6">
+          <nav aria-label="Menu mobile" className="flex flex-col">
+            {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={close}
-                aria-current={isActive ? "page" : undefined}
-                className={`flex items-center justify-between border-b border-bone/10 py-4 font-display text-lg transition-colors duration-300 sm:py-5 sm:text-2xl ${
-                  isActive ? "text-gold" : "text-bone hover:text-gold"
-                }`}
-                style={{ transitionDelay: menuOpen ? `${i * 60}ms` : "0ms" }}
+                className="flex items-center justify-between border-b border-line py-4 text-lg font-semibold text-ink"
               >
                 {item.label}
-                <span className={`text-lg ${isActive ? "text-gold" : "text-gold/50"}`}>→</span>
+                <Icon name="arrow" className="h-5 w-5 text-primary" />
               </Link>
-            );
-          })}
-        </nav>
-
-        <div className="mt-auto flex flex-col gap-4 px-4 pb-8 sm:gap-5 sm:px-6 sm:pb-12">
-          <div className="flex items-center gap-3 border-t border-bone/10 pt-6">
-            {locales.map((loc, i) => (
-              <span key={loc} className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (loc !== lang) {
-                      document.cookie = `NEXT_LOCALE=${loc}; path=/; max-age=31536000; samesite=lax`;
-                      const segments = window.location.pathname.split("/");
-                      segments[1] = loc;
-                      window.location.href = segments.join("/") || `/${loc}`;
-                    }
-                    close();
-                  }}
-                  className={`text-sm uppercase tracking-[0.3em] transition-colors ${
-                    loc === lang
-                      ? "font-medium text-gold"
-                      : "text-bone/50 hover:text-bone"
-                  }`}
-                >
-                  {loc}
-                </button>
-                {i < locales.length - 1 && <span className="text-bone/20">/</span>}
-              </span>
             ))}
+          </nav>
+          <LangSwitcher currentLang={lang} />
+          <div className="flex flex-col gap-3">
+            <a href={tel} onClick={close} className={buttonClass("secondary", "lg")}>
+              <Icon name="phone" className="h-5 w-5" />
+              {labels.phone}
+            </a>
+            <Link href={ctaHref} onClick={close} className={buttonClass("primary", "lg")}>
+              {labels.cta}
+            </Link>
           </div>
-
-          <a
-            href={`tel:${phoneLabel.replace(/[^\d+]/g, "")}`}
-            onClick={close}
-            className="flex w-full items-center justify-center gap-3 py-3 text-sm uppercase tracking-[0.3em] text-bone/70 transition-colors hover:text-gold"
-          >
-            <span aria-hidden>☎</span> {phoneLabel}
-          </a>
-
-          <a
-            href="https://wa.me/14383427730"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={close}
-            className="flex w-full items-center justify-center gap-3 py-3 text-sm uppercase tracking-[0.3em] text-bone/70 transition-colors hover:text-gold"
-          >
-            <span aria-hidden>💬</span> {whatsappLabel}
-          </a>
-
-          <Link
-            href={admissionHref}
-            onClick={close}
-            className="flex w-full items-center justify-between border border-gold bg-gold px-7 py-5 text-xs font-medium uppercase tracking-[0.3em] text-ink transition-colors hover:bg-gold-soft"
-          >
-            {ctaLabel} <span>→</span>
-          </Link>
-        </div>
+        </Container>
       </div>
-    </>
+    </header>
   );
 }

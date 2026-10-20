@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
   // Production source maps (smaller bundles)
   productionBrowserSourceMaps: false,
 
+  // Anciennes pages Groupe Mentou → accueil Mentou Academy (301).
+  async redirects() {
+    const removed = ["piliers", "vision", "admission", "evenements", "galerie"];
+    return removed.map((page) => ({
+      source: `/:lang(fr|en)/${page}`,
+      destination: "/:lang",
+      permanent: true,
+    }));
+  },
+
   // Caching headers for static assets
   async headers() {
     return [

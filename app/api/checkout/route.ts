@@ -1,14 +1,18 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getDb } from "@/lib/db";
-import { stripe, priceIdFor } from "@/lib/stripe";
+import { stripe, MONTHLY_PRICE_ID, taxRates } from "@/lib/stripe";
 import {
   isOffer,
-  isEventOffer,
-  EVENT_REGISTRATION_OPEN,
+  isHourlyOffer,
+  parseHours,
+  requiresAddress,
+  HOURLY_RATES,
+  HOURLY_PRODUCT_NAMES,
   type RegistrationInput,
 } from "@/lib/registration";
 import { isLevel, sanitizeSubjects } from "@/lib/tutor";
+import { hasLocale } from "@/lib/i18n-config";
 import { SITE_URL } from "@/lib/seo";
 
 export const runtime = "nodejs";
@@ -30,21 +34,15 @@ export async function POST(req: Request) {
     const body = await req.json();
     const offer = body.offer;
     if (!isOffer(offer)) {
-      return NextResponse.json({ error: "Offre invalide" }, { status: 400 });
+      return NextResponse.json({ error: "Formule invalide" }, { status: 400 });
     }
 
-    const isEvent = isEventOffer(offer);
-
-    // Garde serveur : aucun paiement tournoi tant que les inscriptions
-    // ne sont pas ouvertes, même si un lien direct est rejoué.
-    if (isEvent && !EVENT_REGISTRATION_OPEN) {
-      return NextResponse.json(
-        { error: "Les inscriptions au tournoi ne sont pas encore ouvertes." },
-        { status: 403 }
-      );
+    const lang = typeof body.lang === "string" && hasLocale(body.lang) ? body.lang : "fr";
+    const hourly = isHourlyOffer(offer);
+    const hours = hourly ? parseHours(body.hours) : null;
+    if (hourly && hours === null) {
+      return NextResponse.json({ error: "Nombre d'heures invalide" }, { status: 400 });
     }
-
-    const isOneTime = isEvent || offer === "daily";
 
     const input: RegistrationInput = {
       parentName: str(body.parentName),
@@ -58,28 +56,30 @@ export async function POST(req: Request) {
       postalCode: str(body.postalCode),
       province: str(body.province),
       offer,
+      hours,
       availability: str(body.availability),
       expectations: str(body.expectations),
-      suggestions: str(body.suggestions),
+      suggestions: "",
       studentLevel: isLevel(body.studentLevel) ? body.studentLevel : "",
       subjects: sanitizeSubjects(body.subjects),
       otherSubject: str(body.otherSubject),
     };
 
-    // Validation selon le type d'offre.
-    const required = isEvent
-      ? [input.parentName, input.parentEmail, input.parentPhone]
-      : [
-          input.parentName,
-          input.parentEmail,
-          input.parentPhone,
-          input.address,
-          input.city,
-          input.postalCode,
-          input.province,
-        ];
+    const required = [
+      input.parentName,
+      input.parentEmail,
+      input.parentPhone,
+      input.childName,
+      ...(requiresAddress(offer)
+        ? [input.address, input.city, input.postalCode, input.province]
+        : []),
+    ];
     if (required.some((v) => !v)) {
       return NextResponse.json({ error: "Champs requis manquants" }, { status: 400 });
+    }
+
+    if (!hourly && !MONTHLY_PRICE_ID) {
+      return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
     }
 
     const id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -87,9 +87,9 @@ export async function POST(req: Request) {
     await db.execute({
       sql: `INSERT INTO registrations
         (id, parent_name, parent_email, parent_phone, child_name, child_age, child_school,
-         address, city, postal_code, province, offer, availability, expectations, suggestions,
+         address, city, postal_code, province, offer, hours, availability, expectations, suggestions,
          student_level, subjects, other_subject, status, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
       args: [
         id,
         input.parentName,
@@ -103,6 +103,7 @@ export async function POST(req: Request) {
         input.postalCode,
         input.province,
         input.offer,
+        input.hours,
         input.availability,
         input.expectations,
         input.suggestions,
@@ -113,38 +114,39 @@ export async function POST(req: Request) {
       ],
     });
 
-    // Taux de taxe fixes (TPS 5 % + TVQ 9,975 %) — IDs Stripe (txr_...) via env.
-    // Ex: STRIPE_TAX_RATES="txr_gst,txr_qst"
-    const taxRates = (process.env.STRIPE_TAX_RATES ?? "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
-    const lineItem = {
-      price: priceIdFor(offer) as string,
-      quantity: 1,
-      ...(taxRates.length ? { tax_rates: taxRates } : {}),
-    };
+    const rates = taxRates();
+    const tax = rates.length ? { tax_rates: rates } : {};
 
-    // Construire les line_items + mode selon le type d'offre.
-    let sessionParams: Stripe.Checkout.SessionCreateParams;
     const common = {
       customer_email: input.parentEmail,
       client_reference_id: id,
       metadata: { registrationId: id },
-      success_url: `${SITE_URL}/fr/inscription/merci?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${SITE_URL}/fr/inscription?offre=${offer}&annule=1`,
+      locale: lang === "en" ? ("en" as const) : ("fr-CA" as const),
+      success_url: `${SITE_URL}/${lang}/inscription/merci?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${SITE_URL}/${lang}/demander-un-tuteur?offre=${offer}&annule=1`,
     };
 
-    if (!priceIdFor(offer)) {
-      return NextResponse.json({ error: "Tarif non configuré" }, { status: 503 });
-    }
-
-    if (isOneTime) {
-      sessionParams = { ...common, mode: "payment", line_items: [lineItem] };
-    } else {
-      // Abonnement récurrent (programme).
-      sessionParams = { ...common, mode: "subscription", line_items: [lineItem] };
-    }
+    const sessionParams: Stripe.Checkout.SessionCreateParams = hourly
+      ? {
+          ...common,
+          mode: "payment",
+          line_items: [
+            {
+              price_data: {
+                currency: "cad",
+                unit_amount: HOURLY_RATES[offer],
+                product_data: { name: HOURLY_PRODUCT_NAMES[offer] },
+              },
+              quantity: hours as number,
+              ...tax,
+            },
+          ],
+        }
+      : {
+          ...common,
+          mode: "subscription",
+          line_items: [{ price: MONTHLY_PRICE_ID as string, quantity: 1, ...tax }],
+        };
 
     const session = await stripe.checkout.sessions.create(sessionParams);
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import Container from "@/components/layout/Container";
+import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 
 export async function generateStaticParams() {
@@ -19,33 +21,21 @@ export default async function MerciPage({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang as Locale);
-  const t = dict.registration.thanks;
+  const t = dict.request.thanks;
 
   return (
-    <section className="min-h-[70vh] flex items-center justify-center bg-ink px-6 py-24">
-      <div className="max-w-xl text-center flex flex-col items-center gap-6">
-        <div className="flex items-center gap-3">
-          <span className="block h-px w-8 bg-gold" />
-          <span className="text-[0.65rem] uppercase tracking-[0.35em] text-gold">
-            {t.kicker}
-          </span>
-          <span className="block h-px w-8 bg-gold" />
-        </div>
-        <h1 className="font-display text-4xl md:text-6xl leading-[1.05] text-bone">
-          {t.title}{" "}
-          <em className="not-italic font-italic-display text-gold/90">
-            {t.titleAccent}
-          </em>
-        </h1>
-        <p className="text-bone/60 leading-relaxed max-w-md">{t.body}</p>
-        <Link
-          href={`/${lang}`}
-          className="mt-4 inline-flex items-center gap-2 px-7 py-3.5 border border-gold/40 text-gold text-sm uppercase tracking-[0.2em] hover:bg-gold/10 transition-colors"
-        >
+    <section className="bg-linear-to-b from-sky to-white">
+      <Container size="narrow" className="flex min-h-[65vh] flex-col items-center justify-center gap-5 py-20 text-center">
+        <span className="grid h-16 w-16 place-items-center rounded-full bg-success/10 text-success">
+          <Icon name="check" className="h-8 w-8" strokeWidth={3} />
+        </span>
+        <span className="eyebrow">{t.kicker}</span>
+        <h1 className="text-4xl font-extrabold text-ink md:text-5xl">{t.title}</h1>
+        <p className="max-w-lg text-lg leading-relaxed text-slate">{t.body}</p>
+        <Button href={`/${lang}`} size="lg" className="mt-2">
           {t.cta}
-          <span aria-hidden>→</span>
-        </Link>
-      </div>
+        </Button>
+      </Container>
     </section>
   );
 }

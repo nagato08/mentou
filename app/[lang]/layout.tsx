@@ -32,10 +32,10 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `${dict.meta.siteName} — ${dict.meta.tagline}`,
+      default: `${dict.meta.siteName} | ${dict.meta.tagline}`,
       template: `%s · ${dict.meta.siteName}`,
     },
-    description: dict.home.hero.subtitle,
+    description: dict.meta.description,
   };
 }
 
@@ -52,7 +52,13 @@ export default async function LangLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
+      <a
+        href="#contenu"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:font-semibold focus:text-white"
+      >
+        {dict.nav.skipToContent}
+      </a>
       <JsonLd
         data={[
           organizationSchema(lang as Locale),
@@ -61,7 +67,7 @@ export default async function LangLayout({
         ]}
       />
       <Navbar lang={lang as Locale} dict={dict} />
-      <main className="flex-1">{children}</main>
+      <main id="contenu" className="flex-1">{children}</main>
       <Footer lang={lang as Locale} dict={dict} />
       <BackToTop label={dict.nav.backToTop} />
       <GsapAnimations />
