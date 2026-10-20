@@ -20,8 +20,8 @@ export function organizationSchema(lang: Locale) {
     logo: {
       "@type": "ImageObject",
       url: `${SITE_URL}/logo-mark.png`,
-      width: 512,
-      height: 512,
+      width: 268,
+      height: 205,
     },
     description:
       lang === "fr"

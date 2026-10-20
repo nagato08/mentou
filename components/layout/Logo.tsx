@@ -8,15 +8,15 @@ type LogoProps = {
 /** Logo Mentou + nom « Mentou Academy ». */
 export default function Logo({ name, size = "md" }: LogoProps) {
   const [first, ...rest] = name.split(" ");
-  const img = size === "lg" ? "h-12 w-12" : "h-10 w-10";
+  const img = size === "lg" ? "h-11" : "h-9";
   return (
     <span className="flex items-center gap-2.5">
       <Image
         src="/logo-mark.png"
         alt=""
-        width={48}
-        height={48}
-        className={`${img} rounded-xl object-cover`}
+        width={268}
+        height={205}
+        className={`${img} w-auto object-contain`}
         priority
       />
       <span className="flex flex-col leading-none">
