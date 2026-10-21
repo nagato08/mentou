@@ -408,5 +408,9 @@
     "students": "élèves accompagnés",
     "hoursShort": "Lun-ven 9 h à 21 h, sam-dim 8 h à 18 h",
     "googleReviews": "avis sur Google"
+  },
+  "billing": {
+    "manage": "Gérer mon abonnement",
+    "manageHint": "Factures, carte bancaire ou résiliation du forfait mensuel."
   }
 }

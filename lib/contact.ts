@@ -5,6 +5,9 @@ export const PHONE_TEL = "tel:+14383427730";
 export const EMAIL_INFO = "info@mentou.ca";
 export const EMAIL_CONTACT = "contact@mentou.ca";
 
+/** Portail client Stripe : factures, carte, résiliation de l'abonnement (connexion par courriel). */
+export const BILLING_PORTAL_URL = "https://billing.stripe.com/p/login/aFaeVf8dZ2op6jg5xIfw400";
+
 /** Heures d'ouverture du centre (format 24 h). */
 export const OPENING_HOURS = [
   { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "21:00" },

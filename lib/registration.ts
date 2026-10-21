@@ -8,7 +8,7 @@ export type LegacyOffer = "weekly" | "daily" | "event-player" | "event-spectator
 
 export type StoredOffer = Offer | LegacyOffer;
 
-export type RegistrationStatus = "pending" | "paid" | "canceled";
+export type RegistrationStatus = "pending" | "paid" | "payment_failed" | "canceled";
 
 export type RegistrationInput = {
   parentName: string;

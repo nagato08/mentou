@@ -4,6 +4,7 @@ import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
+import { BILLING_PORTAL_URL } from "@/lib/contact";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -35,6 +36,12 @@ export default async function MerciPage({
         <Button href={`/${lang}`} size="lg" className="mt-2">
           {t.cta}
         </Button>
+        <p className="text-sm text-muted">
+          {dict.billing.manageHint}{" "}
+          <a href={BILLING_PORTAL_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+            {dict.billing.manage}
+          </a>
+        </p>
       </Container>
     </section>
   );

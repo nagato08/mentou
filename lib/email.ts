@@ -8,6 +8,7 @@ import {
   type Registration,
 } from "./registration";
 import { levelLabel, subjectLabels } from "./tutor";
+import { BILLING_PORTAL_URL } from "./contact";
 
 const apiKey = process.env.RESEND_API_KEY;
 const resend = apiKey ? new Resend(apiKey) : null;
@@ -63,6 +64,7 @@ function parentHtml(r: Registration): string {
       <strong>${esc(registrationLabel(r))}</strong>.</p>
       <p>${detail}</p>
       <p>Un membre de notre équipe vous contactera très bientôt pour planifier les séances et jumeler votre enfant avec le bon tuteur.</p>
+      ${isHourlyOffer(r.offer) ? "" : `<p>Pour consulter vos factures, changer de carte ou résilier votre abonnement : <a href="${BILLING_PORTAL_URL}">gérer mon abonnement</a> (connexion avec votre courriel).</p>`}
       <p>Pour toute question : <a href="mailto:info@mentou.ca">info@mentou.ca</a> ou +1 (438) 342-7730.</p>
       <p style="color:#475569;">L'équipe ${BRAND}</p>
     </div>`;
@@ -92,6 +94,28 @@ export async function sendRegistrationEmails(r: Registration): Promise<void> {
       html: parentHtml(r),
     }),
   ]);
+}
+
+/** Prévient l'équipe qu'un renouvellement d'abonnement a échoué. */
+export async function sendPaymentFailedEmail(r: Registration, amountDueCents: number): Promise<void> {
+  if (!resend) return;
+  await resend.emails.send({
+    from: FROM,
+    to: ADMIN_EMAIL,
+    replyTo: r.parentEmail,
+    subject: `Paiement refusé : ${r.childName || r.parentName} (abonnement mensuel)`,
+    html: `
+      <div style="font-family:system-ui,sans-serif;max-width:560px;margin:auto;">
+        <h2 style="color:#b42318;">Renouvellement refusé</h2>
+        <p style="color:#475569;">Stripe n'a pas pu prélever ${(amountDueCents / 100).toFixed(2)} $ pour l'abonnement mensuel. Stripe relancera automatiquement selon vos paramètres ; vous pouvez aussi contacter la famille.</p>
+        <table style="border-collapse:collapse;width:100%;background:#f8fafc;border:1px solid #e3e9f2;">
+          ${row("Parent", r.parentName)}
+          ${row("Courriel", r.parentEmail)}
+          ${row("Téléphone", r.parentPhone)}
+          ${row("Élève", r.childName)}
+        </table>
+      </div>`,
+  });
 }
 
 export type ContactMessage = {

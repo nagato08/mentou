@@ -5,7 +5,7 @@ import Container from "./Container";
 import Logo from "./Logo";
 import Icon from "@/components/ui/Icon";
 import OpeningHours from "@/components/ui/OpeningHours";
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL_INFO, EMAIL_CONTACT } from "@/lib/contact";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL_INFO, EMAIL_CONTACT, BILLING_PORTAL_URL } from "@/lib/contact";
 
 type FooterProps = {
   lang: Locale;
@@ -46,6 +46,7 @@ export default function Footer({ lang, dict }: FooterProps) {
             <Link href={`${base}/tarifs`} className={LINK}>{c.labels.pricing}</Link>
             <Link href={`${base}/a-propos`} className={LINK}>{c.labels.about}</Link>
             <Link href={`${base}/demander-un-tuteur`} className={LINK}>{dict.nav.cta}</Link>
+            <a href={BILLING_PORTAL_URL} target="_blank" rel="noopener noreferrer" className={LINK}>{dict.billing.manage}</a>
           </div>
         </div>
 

@@ -154,7 +154,7 @@ export default function RegistrationsPanel({
                       <a href={`tel:${r.parentPhone.replace(/[^\d+]/g, "")}`} className="inline-flex min-h-10 items-center gap-2 rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink hover:border-primary">
                         <Icon name="phone" className="h-4 w-4" /> Appeler
                       </a>
-                      {r.status !== "paid" && (
+                      {r.status === "pending" && (
                         <button
                           type="button"
                           onClick={() => onDelete(r.id)}
