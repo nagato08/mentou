@@ -10,7 +10,7 @@ async function isAuthenticated(): Promise<boolean> {
   return cookieStore.get("admin_session")?.value === process.env.ADMIN_SECRET;
 }
 
-/** Supprime une inscription non payée (paiement abandonné). Les inscriptions payées sont conservées. */
+/** Supprime une inscription au paiement non finalisé. Les inscriptions de clients (payées, refusées, résiliées) sont conservées. */
 export async function DELETE(
   _req: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -22,7 +22,7 @@ export async function DELETE(
     const { id } = await params;
     const db = await getDb();
     const result = await db.execute({
-      sql: "DELETE FROM registrations WHERE id = ? AND status != 'paid'",
+      sql: "DELETE FROM registrations WHERE id = ? AND status = 'pending'",
       args: [id],
     });
     if (result.rowsAffected === 0) {

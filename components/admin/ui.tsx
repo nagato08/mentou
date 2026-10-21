@@ -63,11 +63,12 @@ export function Chip({
   );
 }
 
-export function StatusBadge({ status }: { status: "paid" | "pending" | "canceled" }) {
+export function StatusBadge({ status }: { status: "paid" | "pending" | "payment_failed" | "canceled" }) {
   const map = {
     paid: { label: "Payée", cls: "bg-success/10 text-success", icon: "check" as const },
     pending: { label: "Paiement non finalisé", cls: "bg-accent-soft text-ink", icon: "clock" as const },
-    canceled: { label: "Annulée", cls: "bg-danger/10 text-danger", icon: "close" as const },
+    payment_failed: { label: "Paiement refusé", cls: "bg-danger/10 text-danger", icon: "alert" as const },
+    canceled: { label: "Résiliée", cls: "bg-paper text-muted", icon: "close" as const },
   }[status];
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold ${map.cls}`}>

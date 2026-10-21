@@ -408,5 +408,9 @@
     "students": "students supported",
     "hoursShort": "Mon-Fri 9 a.m.-9 p.m., Sat-Sun 8 a.m.-6 p.m.",
     "googleReviews": "reviews on Google"
+  },
+  "billing": {
+    "manage": "Manage my subscription",
+    "manageHint": "Invoices, payment card or cancelling the monthly plan."
   }
 }
